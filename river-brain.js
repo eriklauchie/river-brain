@@ -1138,25 +1138,17 @@ function plain(html){
 }
 
 /* ---------- model ---------- */
-async function apiKey(ask){
-  if(HAS_WS) return null;
-  let k = await store.get('key', null);
-  if(!k && ask){
-    k = prompt('Anthropic API key\n\nStays in this browser, only ever sent to api.anthropic.com.');
-    if(k){ k = k.trim(); await store.set('key', k); }
-  }
-  if(!k && !HAS_WS) throw new Error('No API key set yet. Click Ask again to add one.');
-  return k;
-}
+// Ask runs on a static page, so it cannot hold a secret key. It calls the shared
+// server-side proxy on Erik's carbon-kiso Railway app, which injects the
+// ANTHROPIC_API_KEY from its own env and forwards to Anthropic. No visitor key needed.
+const CLAUDE_PROXY = 'https://carbon-kiso-production.up.railway.app/api/claude';
 async function callClaude(messages, system, {tools=true, maxTokens=1300, interactive=false} = {}){
-  const headers = {'Content-Type':'application/json'};
-  const key = await apiKey(interactive);
-  if(key){ headers['x-api-key'] = key; headers['anthropic-version'] = '2023-06-01';
-           headers['anthropic-dangerous-direct-browser-access'] = 'true'; }
   const body = {model: MODEL, max_tokens: maxTokens, system, messages};
   if(tools) body.tools = [{type:'web_search_20250305', name:'web_search'}];
-  const res = await fetch('https://api.anthropic.com/v1/messages',
-                          {method:'POST', headers, body: JSON.stringify(body)});
+  // Ask runs on a static page and holds no key. Route to the shared server-side
+  // proxy (carbon-kiso Railway app), which injects ANTHROPIC_API_KEY from its env.
+  const res = await fetch(CLAUDE_PROXY,
+                          {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
   if(!res.ok) throw new Error(`API ${res.status}. ${(await res.text().catch(()=>'')).slice(0,180)}`);
   const d = await res.json();
   return (d.content||[]).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();

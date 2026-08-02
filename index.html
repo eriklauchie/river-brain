@@ -121,6 +121,34 @@ section{padding:44px 0 0;scroll-margin-top:64px}
 .reads{display:grid;grid-template-columns:1fr auto;gap:6px 14px;font-size:13px;margin-top:2px}
 .reads dt{font:10px/1.5 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .reads dd{margin:0;font-family:var(--mono);font-size:13px;text-align:right}
+/* ---------- widget viz: icons, meters, gauges ---------- */
+.w-lab .ic{width:12px;height:12px;vertical-align:-2px;margin-right:6px}
+.w .ic{color:var(--band,var(--muted))}
+.viz{display:block;width:100%;height:22px;margin-top:10px}
+.viz-col{display:block;width:66px;height:auto;flex:none}
+.viz-flex{display:flex;gap:11px;align-items:center;margin-top:6px}
+.pips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.pip{display:inline-flex;align-items:center;gap:5px;font:9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);border:1px solid var(--rule-2);border-radius:2px;padding:5px 7px}
+.pip i{width:7px;height:7px;border-radius:50%;background:var(--c,var(--muted));flex:none}
+.trendrow{display:flex;gap:22px;flex-wrap:wrap;margin:9px 0 3px}
+.tarrow{display:inline-flex;align-items:center;gap:9px}
+.tarrow svg{width:26px;height:26px;flex:none}
+.tarrow-tx{display:flex;flex-direction:column;line-height:1.2}
+.tarrow-tx b{font:800 13px var(--display);text-transform:uppercase;letter-spacing:.03em}
+.tarrow-tx span{font:10px var(--mono);color:var(--muted);margin-top:2px}
+/* 3D map tile + nav link */
+nav.tabs a.mapnav{color:var(--live);border:1px solid var(--rule-2)}
+nav.tabs a.mapnav:hover{border-color:var(--live);background:var(--bed-3)}
+.maptile{display:flex;align-items:center;gap:15px;margin-top:14px;background:var(--bed-2);border:1px solid var(--rule);border-radius:var(--r);padding:15px 17px;position:relative;overflow:hidden}
+.maptile::after{content:'';position:absolute;inset:auto 0 0 0;height:2px;background:var(--live);opacity:.85}
+.maptile:hover{border-color:var(--live);text-decoration:none}
+.maptile .mt-ic{flex:none;width:44px;height:44px;color:var(--live)}
+.maptile .mt-ic svg{width:100%;height:100%}
+.maptile .mt-tx{flex:1;min-width:0}
+.maptile .mt-tx strong{display:block;font:800 15px/1.2 var(--display);letter-spacing:.01em;text-transform:uppercase;color:var(--ink)}
+.maptile .mt-tx em{display:block;font:11px/1.4 var(--mono);color:var(--muted);font-style:normal;margin-top:3px}
+.maptile .mt-go{flex:none;font:700 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--live);border:1px solid var(--rule-2);border-radius:var(--r);padding:9px 12px}
+@media(max-width:520px){.maptile .mt-go{display:none}}
 
 /* ---------- species gallery ---------- */
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
@@ -309,6 +337,7 @@ td.num{font-family:var(--mono);white-space:nowrap}
       <a href="#life">Life</a>
       <a href="#facts">Facts</a>
       <a href="#log">Log</a>
+      <a class="mapnav" href="./map.html">3D&nbsp;Map ↗</a>
     </nav>
   </div>
 </header>
@@ -322,7 +351,6 @@ td.num{font-family:var(--mono);white-space:nowrap}
       <input id="q" placeholder="What is the river doing right now?" autocomplete="off">
       <button id="send">Ask</button>
     </div>
-    <div class="chips" id="chips"></div>
   </div>
 
   <div class="log" id="log"></div>
@@ -334,6 +362,12 @@ td.num{font-family:var(--mono);white-space:nowrap}
     </div>
     <div class="widgets" id="widgets"></div>
     <div class="widgets" id="widgets-more" style="margin-top:12px"></div>
+
+    <a class="maptile" href="./map.html">
+      <span class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"/><path d="M9 4v13M15 6.5v13"/></svg></span>
+      <span class="mt-tx"><strong>Explore the 3D river map</strong><em>Accurate stylized Grand River greenway · Bridge St to Fulton St</em></span>
+      <span class="mt-go">Open ↗</span>
+    </a>
 
   </section>
 
@@ -408,6 +442,13 @@ td.num{font-family:var(--mono);white-space:nowrap}
    ============================================================ */
 (function(){
   function el(id){ return document.getElementById(id); }
+  var XI={
+    flood:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 15c3-2.2 6 2.2 9 0s6-2.2 9 0"/><path d="M2 20c3-2.2 6 2.2 9 0s6-2.2 9 0"/><path d="M12 3l3.4 5h-6.8z"/></svg>',
+    sum:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h11"/></svg>',
+    trend:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
+    drop:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>'
+  };
+  function xMeter(pct,color,gA,gB){var p=Math.max(0,Math.min(100,pct)),gid='x'+Math.floor(Math.random()*1e6),mx=(4+p/100*192);return '<svg class="viz" viewBox="0 0 200 22" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="'+(gA||'var(--rule-2)')+'"/><stop offset="1" stop-color="'+(gB||'var(--live)')+'"/></linearGradient></defs><rect x="4" y="8" width="192" height="6" rx="3" fill="url(#'+gid+')" opacity=".55"/><rect x="'+(mx-2.5).toFixed(1)+'" y="2" width="5" height="18" rx="2" fill="var(--bed)"/><rect x="'+(mx-1.5).toFixed(1)+'" y="3" width="3" height="16" rx="1.5" fill="'+color+'"/></svg>';}
   var GAUGE_LINK = 'https://waterdata.usgs.gov/nwis/uv?site_no=04119000&legacy=1';
   var NPARK_LINK = 'https://waterdata.usgs.gov/nwis/uv?site_no=04118564&legacy=1';
 
@@ -438,12 +479,24 @@ td.num{font-family:var(--mono);white-space:nowrap}
     if(!L || !L.ok || s==null) return dead('Flood status','Live gage height not reporting. <a href="'+GAUGE_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
     var fs=floodStatus(s); var head=18-s;
     var headTxt = head>=0 ? num(head,2)+' ft below flood stage (18 ft)' : num(-head,2)+' ft over flood stage (18 ft)';
+    var maxft=25, yF=function(ft){ return 102-Math.max(0,Math.min(maxft,ft))/maxft*96; };
+    var thr=[[12,'var(--stable)'],[18,'var(--seasonal)'],[21,'var(--planned)'],[23,'var(--alert)']];
+    var ticks=thr.map(function(t){ var y=yF(t[0]); return '<line x1="8" x2="32" y1="'+y.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="'+t[1]+'" stroke-width="1.2" stroke-dasharray="3 2"/><text x="36" y="'+(y+3).toFixed(1)+'" fill="var(--muted)" font-size="9" font-family="ui-monospace,monospace">'+t[0]+'</text>'; }).join('');
+    var fy=yF(s);
+    var svg='<svg class="viz-col" viewBox="0 0 60 112" aria-hidden="true">'
+      +'<rect x="10" y="6" width="20" height="96" rx="3" fill="var(--bed-4)" stroke="var(--rule)"/>'
+      +'<rect x="10" y="'+fy.toFixed(1)+'" width="20" height="'+(102-fy).toFixed(1)+'" fill="'+fs[1]+'" opacity=".8"/>'
+      +ticks
+      +'<line x1="6" x2="34" y1="'+fy.toFixed(1)+'" y2="'+fy.toFixed(1)+'" stroke="var(--ink)" stroke-width="1.5"/>'
+      +'<circle cx="20" cy="'+fy.toFixed(1)+'" r="3" fill="var(--ink)"/></svg>';
     return '<div class="w w-6" style="--band:'+fs[1]+'">'
-      + '<div class="w-head"><span class="w-lab">Flood status</span><span class="tag t-live">Live</span></div>'
-      + '<div class="w-big" style="font-size:23px">'+fs[0]+'</div>'
-      + '<div class="w-sub">Gage '+num(s,2)+' ft, '+headTxt+'</div>'
-      + '<div class="w-sub">NWS GDRM4: 12 bankfull, 18 flood, 21 moderate, 23 major. Gage height is not river depth.</div>'
-      + '</div>';
+      +'<div class="w-head"><span class="w-lab">'+XI.flood+'Flood status</span><span class="tag t-live">Live</span></div>'
+      +'<div class="viz-flex">'+svg
+      +'<div style="flex:1">'
+      +'<div class="w-big" style="font-size:22px">'+fs[0]+'</div>'
+      +'<div class="w-sub">Gage '+num(s,2)+' ft · '+headTxt+'</div>'
+      +'<div class="w-sub">Ladder marks NWS GDRM4: 12 bankfull, 18 flood, 21 moderate, 23 major. Gage height is not river depth.</div>'
+      +'</div></div></div>';
   }
 
   function wSummary(){
@@ -451,15 +504,17 @@ td.num{font-family:var(--mono);white-space:nowrap}
     if(!L || !L.ok) return dead('Conditions summary','Live gauges unreachable right now. <a href="'+GAUGE_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
     var tempC=pickv('tempC'), flow=pickv('flow'), st=pickv('stage');
     var tF = (tempC && typeof cToF==='function') ? cToF(tempC.v) : null;
-    var parts=[];
-    if(tF!=null){ var tv=(typeof tempVerdict==='function')?tempVerdict(tF):null; parts.push('Water '+num(tF,1)+' °F'+(tv?' ('+tv[0].toLowerCase()+')':'')); }
-    if(flow){ var fv=(typeof flowVerdict==='function')?flowVerdict(flow.v):null; parts.push('flow '+num(flow.v,0)+' cfs'+(fv?', '+fv[0].toLowerCase():'')); }
-    if(st){ var fs=floodStatus(st.v); parts.push('stage '+num(st.v,2)+' ft'+(fs?', '+fs[0].toLowerCase():'')); }
+    var parts=[], pips=[];
+    if(tF!=null){ var tv=(typeof tempVerdict==='function')?tempVerdict(tF):null; parts.push('Water '+num(tF,1)+' °F'+(tv?' ('+tv[0].toLowerCase()+')':'')); pips.push(['Temp', tv?tv[1]:'var(--live)']); }
+    if(flow){ var fv=(typeof flowVerdict==='function')?flowVerdict(flow.v):null; parts.push('flow '+num(flow.v,0)+' cfs'+(fv?', '+fv[0].toLowerCase():'')); pips.push(['Flow', fv?fv[1]:'var(--live)']); }
+    if(st){ var fs=floodStatus(st.v); parts.push('stage '+num(st.v,2)+' ft'+(fs?', '+fs[0].toLowerCase():'')); pips.push(['Stage', fs?fs[1]:'var(--live)']); }
     if(!parts.length) return dead('Conditions summary','No parameters reporting right now.','w-6');
     var season = (typeof seasonNow==='function') ? seasonNow() : null;
+    var pipHtml = pips.length ? '<div class="pips">'+pips.map(function(p){ return '<span class="pip" style="--c:'+p[1]+'"><i></i>'+p[0]+'</span>'; }).join('')+'</div>' : '';
     return '<div class="w w-6" style="--band:var(--live)">'
-      + '<div class="w-head"><span class="w-lab">Conditions summary</span><span class="tag t-live">Live</span></div>'
+      + '<div class="w-head"><span class="w-lab">'+XI.sum+'Conditions summary</span><span class="tag t-live">Live</span></div>'
       + '<div class="w-sub" style="font-size:13.5px;color:var(--ink);line-height:1.55">'+parts.join('. ')+'.</div>'
+      + pipHtml
       + (season?'<div class="w-sub">Season: '+season[0]+'. '+season[1]+'</div>':'')
       + '<div class="w-sub">Live USGS synthesis, the way the River Reader opens each dispatch. Provisional data.</div>'
       + '</div>';
@@ -467,16 +522,21 @@ td.num{font-family:var(--mono);white-space:nowrap}
 
   var TREND={loaded:false, ok:false, stage:null, flow:null};
   function dir(delta, eps){ if(delta==null) return null; if(delta>eps) return ['Rising','var(--seasonal)']; if(delta<-eps) return ['Falling','var(--official)']; return ['Steady','var(--live)']; }
+  function arrowSVG(kind,color){
+    if(kind==='Rising') return '<svg viewBox="0 0 24 24" fill="'+color+'" aria-hidden="true"><path d="M12 4 L19 13 H14 V20 H10 V13 H5 Z"/></svg>';
+    if(kind==='Falling') return '<svg viewBox="0 0 24 24" fill="'+color+'" aria-hidden="true"><path d="M12 20 L5 11 H10 V4 H14 V11 H19 Z"/></svg>';
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="'+color+'" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 H17 M13 8 L17 12 L13 16"/></svg>';
+  }
   function wTrend(){
-    if(!TREND.loaded) return '<div class="w w-6" style="--band:var(--official)"><div class="w-head"><span class="w-lab">Stage and flow trend</span></div><div class="w-big" style="font-size:20px;color:var(--muted)">Reading…</div><div class="w-sub">Fetching the last several hours from USGS.</div></div>';
+    if(!TREND.loaded) return '<div class="w w-6" style="--band:var(--official)"><div class="w-head"><span class="w-lab">'+XI.trend+'Stage and flow trend</span></div><div class="w-big" style="font-size:20px;color:var(--muted)">Reading…</div><div class="w-sub">Fetching the last several hours from USGS.</div></div>';
     if(!TREND.ok) return dead('Stage and flow trend','Recent series unavailable. <a href="'+GAUGE_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
-    var sd=TREND.stage, fd=TREND.flow, rows='';
-    if(sd){ var d=dir(sd.delta,0.02); rows+='<dt>Gage height</dt><dd><span style="color:'+d[1]+'">'+d[0]+'</span> '+(sd.delta>=0?'+':'')+num(sd.delta,2)+' ft over '+sd.hrs+' h</dd>'; }
-    if(fd){ var d2=dir(fd.delta,20); rows+='<dt>Discharge</dt><dd><span style="color:'+d2[1]+'">'+d2[0]+'</span> '+(fd.delta>=0?'+':'')+num(fd.delta,0)+' cfs over '+fd.hrs+' h</dd>'; }
-    if(!rows) return dead('Stage and flow trend','No recent points returned.','w-6');
+    var sd=TREND.stage, fd=TREND.flow, cards='';
+    if(sd){ var d=dir(sd.delta,0.02); cards+='<div class="tarrow">'+arrowSVG(d[0],d[1])+'<div class="tarrow-tx"><b style="color:'+d[1]+'">'+d[0]+'</b><span>Gage '+(sd.delta>=0?'+':'')+num(sd.delta,2)+' ft · '+sd.hrs+'h</span></div></div>'; }
+    if(fd){ var d2=dir(fd.delta,20); cards+='<div class="tarrow">'+arrowSVG(d2[0],d2[1])+'<div class="tarrow-tx"><b style="color:'+d2[1]+'">'+d2[0]+'</b><span>Flow '+(fd.delta>=0?'+':'')+num(fd.delta,0)+' cfs · '+fd.hrs+'h</span></div></div>'; }
+    if(!cards) return dead('Stage and flow trend','No recent points returned.','w-6');
     return '<div class="w w-6" style="--band:var(--official)">'
-      + '<div class="w-head"><span class="w-lab">Stage and flow trend</span><span class="tag t-live">Live</span></div>'
-      + '<dl class="reads">'+rows+'</dl>'
+      + '<div class="w-head"><span class="w-lab">'+XI.trend+'Stage and flow trend</span><span class="tag t-live">Live</span></div>'
+      + '<div class="trendrow">'+cards+'</div>'
       + '<div class="w-sub">Direction over the recent window. Trend often matters more than the number.</div>'
       + '</div>';
   }
@@ -507,13 +567,14 @@ td.num{font-family:var(--mono);white-space:nowrap}
     var L=live();
     var turb=pickv('turb'), doo=pickv('do'), cond=pickv('cond');
     if(!L || !L.ok || (!turb && !doo && !cond)) return dead('Water quality read','Live water quality not reporting (North Park 04118564). <a href="'+NPARK_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
-    var rows='';
-    if(turb){ var c=clarity(turb.v); rows+='<dt>Clarity</dt><dd>'+(c?'<span style="color:'+c[1]+'">'+c[0]+'</span>, ':'')+num(turb.v,1)+' FNU</dd>'; }
+    var meter='', rows='';
+    if(turb){ var c=clarity(turb.v); var p=Math.max(3,Math.min(100, Math.log(turb.v+1)/Math.log(101)*100)); meter=xMeter(p, c?c[1]:'var(--live)', 'var(--live)', 'var(--planned)'); rows+='<dt>Clarity</dt><dd>'+(c?'<span style="color:'+c[1]+'">'+c[0]+'</span>, ':'')+num(turb.v,1)+' FNU</dd>'; }
     if(doo){ rows+='<dt>Dissolved oxygen</dt><dd>'+num(doo.v,1)+' mg/L</dd>'; }
     if(cond){ rows+='<dt>Conductance</dt><dd>'+num(cond.v,0)+' µS/cm</dd>'; }
     return '<div class="w w-6" style="--band:var(--live)">'
-      + '<div class="w-head"><span class="w-lab">Water quality read, North Park 04118564</span><span class="tag t-live">Live</span></div>'
+      + '<div class="w-head"><span class="w-lab">'+XI.drop+'Water quality read · North Park 04118564</span><span class="tag t-live">Live</span></div>'
       + '<dl class="reads">'+rows+'</dl>'
+      + meter
       + '<div class="w-sub">Turbidity is not pollution. Brown water is not automatically a spill: storms, bank erosion and bed disturbance all raise it. Provisional USGS data.</div>'
       + '</div>';
   }

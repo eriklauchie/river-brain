@@ -1,0 +1,769 @@
+{
+  "name": "River Brain — Grand River, Grand Rapids",
+  "base_research": "August 1, 2026",
+  "generated": "2026-08-02T01:26:40.216Z",
+  "reaches": {
+    "BASIN": [
+      "Basin",
+      "Whole watershed, about 5,572 sq mi"
+    ],
+    "MAINSTEM": [
+      "Mainstem GR",
+      "Grand River through Grand Rapids"
+    ],
+    "LOWER": [
+      "Lower Reach",
+      "Bridge Street to Fulton Street — active 2026-27 restoration"
+    ],
+    "UPPER": [
+      "Upper Reach",
+      "Ann Street to Bridge Street — Sixth Street Dam, federal EIS"
+    ],
+    "DOWNTOWN": [
+      "Downtown",
+      "Banks, floodwalls, bridges, parks, trails, public realm"
+    ],
+    "CORRIDOR": [
+      "Corridor",
+      "Grand Rapids area beyond downtown — verify locally"
+    ]
+  },
+  "confidence_classes": {
+    "live": [
+      "OBSERVED_LIVE",
+      "t-live",
+      "Measured right now"
+    ],
+    "official": [
+      "OFFICIAL_CURRENT",
+      "t-official",
+      "Current official position"
+    ],
+    "stable": [
+      "STABLE_FACT",
+      "t-stable",
+      "Does not change"
+    ],
+    "seasonal": [
+      "SEASONAL_LIKELY",
+      "t-seasonal",
+      "Typical for the season"
+    ],
+    "planned": [
+      "PLANNED_FUTURE",
+      "t-planned",
+      "Scheduled, not certain"
+    ],
+    "scenario": [
+      "SCENARIO_ONLY",
+      "t-scenario",
+      "Undecided, illustrative only"
+    ]
+  },
+  "gauges": {
+    "04118564": {
+      "name": "Grand River at North Park Street",
+      "use": "water temperature and water quality",
+      "url": "https://waterdata.usgs.gov/nwis/uv?site_no=04118564&legacy=1"
+    },
+    "04119000": {
+      "name": "Grand River at Grand Rapids",
+      "use": "discharge and gage height",
+      "url": "https://waterdata.usgs.gov/nwis/uv?site_no=04119000&legacy=1"
+    },
+    "GDRM4": {
+      "name": "NWS flood gauge",
+      "thresholds_ft": {
+        "bankfull": 12,
+        "flood": 18,
+        "moderate": 21,
+        "major": 23
+      }
+    }
+  },
+  "entries": [
+    {
+      "id": "identity",
+      "title": "What the Grand actually is",
+      "reach": "BASIN",
+      "confidence": "stable",
+      "topics": [
+        "water",
+        "history"
+      ],
+      "keywords": "length miles watershed longest michigan source mouth hillsdale grand haven lake michigan tributaries owashtanong name",
+      "text": "Michigan's longest river. It rises in Somerset Township, Hillsdale County, crosses the Lower Peninsula west, and reaches Lake Michigan at Grand Haven.\n\n  \n    Length | 252 miles by USGS National Hydrography Dataset. The City of Grand Rapids uses about 270. Say \"roughly 250 to 270 miles\" when you need to be unassailable.\n\n    Watershed | About 5,572 square miles, Michigan's second largest.\n\n    Discharge | Estimates vary by method: about 3,860 cfs in a mid-century USGS study, about 5,049 cfs in modern NHDPlus modelling. Neither is \"today.\"\n\n    Tributaries | Red Cedar, Looking Glass, Maple, Flat, Thornapple, Rogue, Portage, plus many smaller streams.\n\n    Cities | Jackson, Eaton Rapids, Lansing, Grand Ledge, Portland, Ionia, Lowell, Grand Rapids, Grandville, Grand Haven.\n\n    Odawa name | O-wash-ta-nong, \"far-flowing water,\" for its length.\n\n  \n  The name Grand Rapids preserves a real land-water relationship: limestone bedrock, ledges and coarse gravel once spread the river's drop across a broad noisy reach, roughly 18 feet over about a mile."
+    },
+    {
+      "id": "grammar",
+      "title": "Never say \"the Grand River\" as one place",
+      "reach": "BASIN",
+      "confidence": "stable",
+      "topics": [
+        "water"
+      ],
+      "keywords": "reach tag spatial grammar lower upper mainstem basin downtown corridor ambiguity",
+      "text": "The single biggest source of wrong river information is geographic ambiguity. A fact true for the 5,572 square mile watershed can be false for the 2.5 mile downtown corridor.\n\n  Tag | Means | \n\n  BASIN | Whole watershed. Climate, tributaries, land use, migration network. | \n\n  MAINSTEM | The river through Grand Rapids. Flood stage, urban behaviour, general recreation. | \n\n  LOWER REACH | Bridge Street to Fulton Street. The 2026-27 four-dam removal. | \n\n  UPPER REACH | Ann Street to Bridge Street. Sixth Street Dam and the sea lamprey barrier EIS. | \n\n  DOWNTOWN | Banks, floodwalls, bridges, parks, trails, events. | \n\n  CORRIDOR | Grand Rapids area above and below downtown. Still needs local verification. | \n\n  Rule: attach a reach tag to every construction statement, wildlife claim, closure, hazard and rendering."
+    },
+    {
+      "id": "gauges",
+      "title": "Gauges, and the words people get wrong",
+      "reach": "MAINSTEM",
+      "confidence": "stable",
+      "topics": [
+        "water"
+      ],
+      "keywords": "usgs 04119000 04118564 gage height stage discharge cfs velocity depth deep how deep turbidity provisional nws gdrm4 measurement reading",
+      "text": "USGS 04119000 | Grand River at Grand Rapids. Discharge and gage height.\n\n    USGS 04118564 | Grand River at North Park Street. Water temperature, dissolved oxygen, conductance, turbidity.\n\n    NWS GDRM4 | Flood thresholds, forecast, historic crests.\n\n  \n  \n    Discharge (cfs) is a flow rate, not a current speed. The same cfs is slow in a wide pool and fast in a chute.\n\n    Gage height is not river depth. It is water surface elevation against a gauge datum. This is the single most common error.\n\n    Trend (rising, stable, falling) often matters more than the number.\n\n    USGS live values are provisional and get revised.\n\n  \n  A dated example, not a normal: on July 26, 2026 the North Park station read about 25.3 C / 77.5 F, gage height 3.18 ft, conductance 625 µS/cm, dissolved oxygen 12.9 mg/L, turbidity about 3 FNU. Never replay that as today."
+    },
+    {
+      "id": "months",
+      "title": "The river year, month by month",
+      "reach": "MAINSTEM",
+      "confidence": "seasonal",
+      "topics": [
+        "water",
+        "life"
+      ],
+      "keywords": "temperature water temp month climate normals precipitation snow envelope seasonal typical air",
+      "text": "Air normals are NWS 1991-2020. The water column is a simulation envelope, not a measured normal. Use it only when no live reading is available, and label it typical.\n\n  \n  Month | Air hi/lo F | Precip in | Snow in | Water | River expression | \n\n  Jan | 31.0 / 18.6 | 2.52 | 22.6 | 0-4 C | Ice likely, low activity, thaw spikes stage fast | \n\n  Feb | 33.7 / 19.5 | 2.12 | 17.2 | 0-4 C | Cold, ice, late-winter steelhead on warm spells | \n\n  Mar | 44.5 / 26.9 | 2.39 | 7.6 | 2-7 C | Snowmelt variability, cold-water danger, flood vigilance | \n\n  Apr | 57.8 / 37.3 | 3.99 | 2.0 | 7-13 C | Spawning and migration peak, rain turbidity | \n\n  May | 69.8 / 48.6 | 4.00 | 0 | 13-19 C | Leaf-out, nursery period, recreation climbs | \n\n  Jun | 79.4 / 58.3 | 3.94 | 0 | 18-23 C | Warmwater fish active, paddling, storm pulses | \n\n  Jul | 83.1 / 62.5 | 3.86 | 0 | 22-27 C | Warmest water, thermal stress at low flow, peak construction | \n\n  Aug | 80.9 / 61.2 | 3.55 | 0 | 22-27 C | Warm, low flow makes rock features legible | \n\n  Sep | 73.9 / 53.1 | 3.43 | 0 | 18-23 C | Cooling begins, salmon strengthen, cleanup season | \n\n  Oct | 60.7 / 42.2 | 4.02 | 0.3 | 10-17 C | Salmon and steelhead, leaf fall, frontal rain | \n\n  Nov | 47.2 / 32.8 | 3.10 | 7.1 | 4-10 C | Fast cooling, steelhead, construction winds down | \n\n  Dec | 36.1 / 24.7 | 2.48 | 20.8 | 0-5 C | Snow and ice return, ice-jam scenarios | \n\n  \n  Annual normals: about 39.40 in precipitation, 77.6 in snowfall. In Fahrenheit the water runs roughly 32-38 in winter, 38-62 through spring, 65-76 in summer, 40-68 falling through autumn.\n\n  Air temperature is not a proxy for water temperature. A sunny 65 F April afternoon sits over water that will still kill you."
+    },
+    {
+      "id": "flow",
+      "title": "Flow, ice and the shape of the year",
+      "reach": "MAINSTEM",
+      "confidence": "seasonal",
+      "topics": [
+        "water"
+      ],
+      "keywords": "flow discharge seasonal high low spring snowmelt ice jam breakup portland comstock park robinson dynamite safe safety wade wading swim paddle current danger",
+      "text": "High flows peak March and April on snowmelt, often above 7,000 cfs near Grand Rapids, with a secondary fall rain peak. Lows dominate August and September, frequently under 2,000 cfs. Late July 2026 sat near 1,300 cfs at about 72 F, described by the Grand River Network as well below the seasonal average.\n\n  Ice. In early February 2026 the NWS reported the river roughly 98 percent frozen from Hillsdale County to Lake Michigan, among the thickest coverage in recent years. Thick ice raises jam risk on thaw. Recurring jam points: Portland, Comstock Park, Robinson Township. A 2019 Portland jam forced evacuations with about $1.6M damage to one owner. Grand Rapids historically dynamited jams; modern practice favours tension weirs and ice-control structures.\n\n  Simulation note: do not freeze the river uniformly. Shallow slack edges freeze first, faster water stays open, and thaw puts ice in motion."
+    },
+    {
+      "id": "flood",
+      "title": "Flood behaviour and the crest table",
+      "reach": "MAINSTEM",
+      "confidence": "official",
+      "topics": [
+        "water",
+        "history"
+      ],
+      "keywords": "flood stage crest 2013 1904 1985 2018 bankfull major moderate fema floodwall record 21.85",
+      "text": "NWS GDRM4 thresholds: 12 ft bankfull, 18 ft flood, 21 ft moderate, 23 ft major. Live-check, because rating curves change.\n\n  Date | Crest | Why it matters | \n\n  Apr 21, 2013 | 21.85 ft | Record stage. ~700 evacuated in Kent County, ~1,000 from Plaza Towers, over $10M damage, no deaths | \n\n  Feb 25, 2018 | 20.67 ft | Second highest modern crest | \n\n  Mar 1, 1985 | 19.64 ft | Previous record, broken in 2013 | \n\n  May 2020 | 19.55 ft | Recent high water | \n\n  1904 | ~19.5-20.4 ft | Largest by volume, about 54,000 cfs. Sources differ by gauge datum | \n\n  Apr 8, 2023 | 18.86 ft | Recent flood-stage event | \n\n  By volume the ranking is 1904 > 1905 > 1948 > 1947 > 2013. By stage 2013 is the record. Earliest recorded flood: 1832. The 1904 flood prompted the floodwalls begun in 1911.\n\n  Never say restoration stops flooding. FEMA's conditional review and the NRCS analysis found the Lower Reach design is not expected to increase mapped flood risk. That is the correct sentence. Flood risk remains."
+    },
+    {
+      "id": "quality",
+      "title": "Water quality: sewage conduit to recovering river",
+      "reach": "MAINSTEM",
+      "confidence": "official",
+      "topics": [
+        "water",
+        "history"
+      ],
+      "keywords": "cso sewage 12.6 billion gallons 1969 sewer improvement 400 million 59 outfalls 2015 pfas eat safe fish ecoli",
+      "text": "In 1969 as much as 12.6 billion gallons of raw sewage entered the Grand in a single year. Beginning 1991 the City ran a roughly $400 million sewer improvement programme: 59 combined sewer overflow outfalls eliminated, about 119 miles of new pipe, a 30-million-gallon retention basin. The last outfall was sealed July 13, 2015 at Washington and Lafayette, more than three years ahead of the state's 2019 mandate. Pre-programme overflows averaged about 10 billion gallons a year. Now zero through those points. Ratepayers finance it through 2042. The treatment plant itself dates to 1931.\n\n  Still reaching the river: urban stormwater sediment and road grit, nutrients, bacteria, chloride from road salt, and legacy contaminants.\n\n  PFAS. MDHHS tightened Eat Safe Fish thresholds sharply in 2024-25: the Do Not Eat trigger fell from 300 ppb to about 49.6 ppb, and the limitation trigger from 9 ppb to 1.5 ppb. Advisories are species and reach specific. Never give eating advice from memory; send people to the current MDHHS guide.\n\n  Brown water is not automatically a spill. Turbidity has many causes: storms, bank erosion, bed disturbance, construction. Check monitoring and official incident reports before naming pollution."
+    },
+    {
+      "id": "fish",
+      "title": "Fish, by guild not by wishlist",
+      "reach": "MAINSTEM",
+      "confidence": "seasonal",
+      "topics": [
+        "life"
+      ],
+      "keywords": "fish species steelhead chinook coho salmon walleye smallmouth bass catfish pike sucker redhorse sturgeon guild 107",
+      "text": "The 2011 DNR Grand River Assessment records 107 fish species in the watershed, 14 of them introduced. State listed: lake sturgeon, river redhorse and cisco are threatened; pugnose shiner is endangered. Two are extirpated: weed shiner (last reported 1941) and American eel.\n\n  Species | When and where | \n\n  Steelhead | Fall through spring. Introduced Great Lakes migrant, the biggest angling draw | \n\n  Chinook salmon | Late summer into fall migration and spawning | \n\n  Coho salmon | Fall. Do not assume Chinook timing or abundance | \n\n  Walleye | Year-round river use, spring spawning movements below dams | \n\n  Smallmouth bass | Warm season, around rock and current breaks. New boulders add habitat | \n\n  Largemouth, sunfish, rock bass | Slower margins and backwaters, not fast mid-channel | \n\n  Channel and flathead catfish | Warm-season feeding, deeper slower zones | \n\n  Northern pike | Slower vegetated habitat in the wider system | \n\n  White sucker, redhorse | Strong spring movement over gravel. Ecologically important migrants | \n\n  Lake sturgeon | Rare. State threatened since 1994. Spring spawning window. Never call it common downtown | \n\n  Sturgeon population: LGROW estimates about 100 individuals. Juveniles were confirmed September 8, 2022, proving the river reproduces its own. The GRPM, John Ball Zoo, GVSU and Encompass team hold a USFWS grant of nearly $150,000.\n\n  Say this: \"Cooling fall water increases the likelihood of Chinook, coho and steelhead movement.\" Not this: \"There are hundreds of salmon jumping here today.\" The second needs eyes on the water."
+    },
+    {
+      "id": "fishing",
+      "title": "Fishing calendar and access",
+      "reach": "MAINSTEM",
+      "confidence": "seasonal",
+      "topics": [
+        "life",
+        "people"
+      ],
+      "keywords": "fishing calendar season salmon run steelhead walleye access sixth street fish ladder brenke license dnr regulations wade wading angler catch",
+      "text": "Season | Target | \n\n  Mar-May | Steelhead spawning run peak, walleye below dams, suckers | \n\n  Jun-Aug | Smallmouth, channel and flathead catfish, pike, panfish, carp and bowfishing | \n\n  Sep-Nov | Chinook and coho, fall steelhead, lake-run browns, walleye | \n\n  Dec-Feb | Holdover steelhead, walleye | \n\n  Timing detail. Chinook enter late August as water cools; coho follow weeks later and peak mid-to-late September on Webber Dam data. MSU Extension gives 57-61 F as optimum Chinook migration temperature. Steelhead: run starts late September to early October, peaks November, holds through winter, then a large push late February through April with early March often biggest. Skamania summer-runs appear late May into early summer.\n\n  Access. Grand Rapids: Sixth Street Dam and Fish Ladder Park on the west bank (built 1974, designed by artist Joseph Kinnebrew). No fishing inside the ladder itself. Lansing: Brenke Fish Ladder in Old Town, built 1981, the sixth in a series letting fish migrate 184 miles from Lake Michigan to Moores Park Dam. Also Portland, Ionia, Lyons, and the Grand Haven pier and channel.\n\n  Lake sturgeon may not be targeted here. Release immediately if caught incidentally. Catch-and-release is closed statewide through July 15, opens July 16 on most waters; harvest remains illegal except in a few designated waters. Michigan licence required. DNR 2026 regulations run through March 31, 2027 — live-check before giving anyone legal advice.\n\n  Dam removal will disperse the concentrated downtown fishery. Scout new stacking points once the Lower Reach is finished."
+    },
+    {
+      "id": "mussels",
+      "title": "Mussels: the river’s slow infrastructure",
+      "reach": "LOWER",
+      "confidence": "official",
+      "topics": [
+        "life",
+        "build"
+      ],
+      "keywords": "mussel snuffbox relocation 9040 45000 square meters endangered biological opinion knapp street unionid zebra",
+      "text": "Mussels live in and on the bed. They filter water, cycle nutrients and shape microhabitat, and they cannot move out of the way of an excavator. Many native species need a specific host fish for their larvae, which ties fish passage directly to mussel population connectivity.\n\n  The 2024 Lower Reach survey covered about 45,000 square metres, roughly eight football fields, and relocated 9,040 mussels: 6,933 common, 2,069 state listed, and 38 federally endangered snuffbox. Crews estimated 14,000-15,000 total in the project area. Work ran August 23 to September 13, 2024. The USFWS Biological Opinion of August 14, 2024 found the project not likely to jeopardise the snuffbox with required conservation measures. FEMA issued its Conditional Letter of Map Revision December 11, 2024.\n\n  A second relocation happened below the Knapp Street bridge in July 2026, same reason: bridge work over occupied bed.\n\n  \n    Do not animate native mussels swimming around. They are a bed layer tied to substrate, depth, velocity and host access.\n\n    Disturbance is instant. Recovery is measured in years.\n\n    A good-looking new riffle is not proof the mussel community came back.\n\n    Native unionids are not zebra mussels. Do not blur them."
+    },
+    {
+      "id": "benthos",
+      "title": "Why rock matters: riffle mechanics",
+      "reach": "LOWER",
+      "confidence": "stable",
+      "topics": [
+        "life"
+      ],
+      "keywords": "benthic algae periphyton insect larvae crayfish oxygen aeration boundary layer shear riffle food web",
+      "text": "Rock habitat is food-web structure. Periphyton, algae and biofilms colonise boulders and cobble. Insect larvae live between stones. Crayfish use crevices. Small fish feed along seams; big fish use those concentrations.\n\n  A restored rough channel changes boundary layers, shear stress, oxygen exchange, sediment pockets, light and hiding places, not just the look of the water.\n\n  NRCS expects increased turbulence may improve local dissolved oxygen, especially at low summer flow. Say \"may improve local mixing and aeration.\" Do not promise an oxygen increase: DO also depends on temperature, organic demand and photosynthesis."
+    },
+    {
+      "id": "wildlife",
+      "title": "Birds, mammals, reptiles, amphibians",
+      "reach": "CORRIDOR",
+      "confidence": "seasonal",
+      "topics": [
+        "life"
+      ],
+      "keywords": "birds eagle heron otter mink beaver muskrat turtle frog migratory bobolink wood thrush",
+      "text": "The federal review named migratory birds with potential occurrence: bald eagle, black-billed cuckoo, bobolink, golden-winged warbler, lesser yellowlegs, red-headed woodpecker, rusty blackbird, semipalmated sandpiper, willow flycatcher, wood thrush.\n\n  \"Potential occurrence\" is not \"standing downtown right now.\" Treat as a regional seasonal possibility layer unless someone actually saw it.\n\n  \n    Great blue herons and other fish-eaters favour shallows and slow edges.\n\n    Bald eagles use open-water reaches as feeding and travel corridors.\n\n    Mink and river otter are plausible in the wider system; downtown presence should be observation based.\n\n    Turtles and frogs need soft banks, wetlands, backwaters and tributary mouths, not hard floodwall edge.\n\n    Spring and fall migration produce short diversity peaks.\n\n  \n  Corridor mammals include beaver, river otter, mink, muskrat, white-tailed deer. Turtles include spiny softshell, northern map, Blanding's, painted and snapping. The mudpuppy matters because it hosts the salamander mussel."
+    },
+    {
+      "id": "invasive",
+      "title": "Invasives and the barrier problem",
+      "reach": "UPPER",
+      "confidence": "official",
+      "topics": [
+        "life",
+        "build"
+      ],
+      "keywords": "sea lamprey invasive zebra mussel round goby phragmites purple loosestrife frogbit barrier glfc",
+      "text": "Sea lamprey are invasive parasites that damage Great Lakes fish populations. Sixth Street Dam is currently the first major barrier in this reach. That is why the Upper Reach cannot simply repeat the Lower Reach dam-removal approach: it must remove an aging hazardous structure and keep an effective lamprey barrier.\n\n  Named in the DNR assessment: common carp, round goby, sea lamprey, zebra mussel, curly-leaf pondweed, Eurasian watermilfoil. In floodplain and bank habitat: emerald ash borer, Dutch elm disease, garlic mustard, phragmites, purple loosestrife. European frogbit is an emerging aquatic invasive under management in the lower river.\n\n  Watch out: rusty crayfish figures that circulate online usually belong to the Ontario Grand River, a different river with the same name. Same trap applies to some mussel abundance numbers.\n\n  Rule: never optimise a future Sixth Street design for human recreation alone. Lamprey control is a governing Great Lakes fisheries requirement."
+    },
+    {
+      "id": "indigenous",
+      "title": "Indigenous presence, past and present tense",
+      "reach": "BASIN",
+      "confidence": "stable",
+      "topics": [
+        "history",
+        "people"
+      ],
+      "keywords": "odawa anishinaabe ottawa treaty grand river bands homecoming three fires ron yob mounds hopewell",
+      "text": "Indigenous presence predates and continues beyond settlement. Write it in the present tense where it is present tense.\n\n  \n    Hopewell burial mounds along the river are roughly 2,000 years old. Norton Mounds is a National Historic Landmark.\n\n    Nineteen Ottawa chiefs governed lands from Lake Michigan to Lansing, main village at what is now downtown Grand Rapids.\n\n    The 1821 Treaty of Chicago and later treaty relationships remain live political and cultural context.\n\n    The Grand River Bands of Ottawa Indians are a current community, not a historical footnote.\n\n    Homecoming of the Three Fires is a recurring June gathering at Riverside Park.\n\n  \n  Anti-tokenism rule from the documentary outline: Indigenous voices appear across multiple chapters intentionally, not in one designated segment. Frame industrial history as intention versus impact rather than assigning villains."
+    },
+    {
+      "id": "industrial",
+      "title": "Dams, canals, power and the engineered channel",
+      "reach": "MAINSTEM",
+      "confidence": "stable",
+      "topics": [
+        "history",
+        "build"
+      ],
+      "keywords": "campau 1826 sixth street dam canal 1849 electricity 1880 low head dams 1920s floodwall bridges gypsum dredging 300000",
+      "text": "1826 Louis Campau establishes a trading post at the rapids.\n\n    1841 Gypsum mining begins near Plaster Creek. Grand Rapids sits on one of North America's richest gypsum formations, with up to six miles of tunnels 85-100 ft below the city. Later reused for mushroom farming, records storage, a data centre and beer storage.\n\n    1849-1860s Sixth Street Dam and the mill canals build an industrial water-power system.\n\n    July 26, 1880 River water power generates electric lighting, which the local historical commission identifies as a national first.\n\n    1883 The Great Log Jam.\n\n    1920s-1931 Four downstream low-head dams installed. These are the ones now being removed.\n\n    1911 onward Floodwalls begun after 1904.\n\n  \n  The NRCS assessment records roughly 300,000 cubic yards of gravel, cobble and boulder historically dredged out and used as riverfront fill. That is why restoration is not \"uncovering a hidden pristine river.\" It is designing a new stable urban channel that recovers some rapids function using rock, while protecting bridges, flood conveyance and utilities."
+    },
+    {
+      "id": "logjam",
+      "title": "The Great Log Jam of 1883",
+      "reach": "MAINSTEM",
+      "confidence": "stable",
+      "topics": [
+        "history"
+      ],
+      "keywords": "log jam 1883 logs board feet bridges john walsh white friant lumber",
+      "text": "On the morning of July 26, 1883, after two weeks of record rain, a roughly seven-mile jam above the Grand Trunk Railroad Bridge broke loose. Over 600,000 logs, about 150 million board feet, tore out every railroad bridge in the city. Stewart Edward White later estimated the mass at 37 million tons.\n\n  Lumberjacks at Grand Haven reinforced booms and stopped the logs short of Lake Michigan. Captain John Walsh, a one-armed pile-driver operator born in Canada in 1838, was credited with driving the pilings that halted the jam and saved the timber. His employers gave him a gold watch. No lives lost. Damages over $500,000, roughly $15M today. Within a few years the local lumber era was over.\n\n  Earlier: log booms were run by firms like White & Friant, who controlled river traffic from about 1866 to 1889. Steamboat service to Grand Haven began in the early 1830s; the first, the Governor Mason (1837), had no whistle, so a bugler announced arrivals. The second, the Owashtanong, reportedly carried the first steamboat whistle made west of Detroit."
+    },
+    {
+      "id": "timeline",
+      "title": "Full timeline",
+      "reach": "MAINSTEM",
+      "confidence": "stable",
+      "topics": [
+        "history",
+        "build"
+      ],
+      "keywords": "timeline chronology dates history milestones",
+      "text": "When | What | \n\n  Millennia | Indigenous people live, travel, fish and gather in the valley | \n\n  1826 | Louis Campau trading post | \n\n  1832 | Earliest recorded local flood | \n\n  1838 | Ice-jam flood, ice piled 20-30 ft high, river forced into a new channel. First Grand Haven lighthouse | \n\n  1841 | Gypsum mining begins | \n\n  1849-60s | Sixth Street Dam and canals | \n\n  1850 | Grand Rapids incorporated | \n\n  1859 | Grand Haven south pier construction begins | \n\n  Jul 26, 1880 | Water power generates electric lighting | \n\n  Jul 26, 1883 | Great Log Jam | \n\n  1886 / 1892 / 1915 | Sixth Street Bridge; Blue Bridge span (575 ft); Gillett Bridge | \n\n  1904 | Largest flood by volume, ~54,000 cfs | \n\n  1911 | Floodwalls begun | \n\n  1920s-31 | Four low-head dams installed. Wastewater treatment era begins 1931 | \n\n  1962 | Grand Haven Musical Fountain built | \n\n  1969 | 12.6 billion gallons of raw sewage in one year | \n\n  1974 / 1981 | Grand Rapids fish ladder; Brenke Fish Ladder, Lansing | \n\n  1985 | Crest 19.64 ft | \n\n  1990 / 2000 / 2010 | Grand River Expedition, source to mouth | \n\n  1991 | Sewer improvement and CSO elimination begins | \n\n  2009 | Grand Rapids WhiteWater organises. ArtPrize begins | \n\n  Apr 21, 2013 | Record crest 21.85 ft | \n\n  Jul 13, 2015 | Final CSO outfall sealed | \n\n  Feb 25, 2018 | Crest 20.67 ft | \n\n  Sep 8, 2022 | Juvenile sturgeon confirmed — the river is reproducing them | \n\n  Aug-Sep 2024 | Lower Reach mussel relocation, 9,040 moved | \n\n  Jun 23, 2025 | EGLE final Lower Reach permit | \n\n  Aug 2025 | City adopts Climate Action and Adaptation Plan | \n\n  Jan 2026 | NRCS Final EA and FONSI | \n\n  Feb 25, 2026 | City awards Lower Reach construction contract | \n\n  Mar 23, 2026 | Federal funding approval announced | \n\n  May 15, 2026 | Acrisure Amphitheater opens, Lionel Richie | \n\n  May 18, 2026 | Ah-Nab-Awen mobilisation begins | \n\n  Jun 1, 2026 | Lower Reach groundbreaking | \n\n  Jul 1, 2026 | In-river work permitted to begin | \n\n  Jul 2027 | Upper Reach Draft EIS anticipated | \n\n  Fall 2027 | Lower Reach expected completion, water and weather dependent |"
+    },
+    {
+      "id": "grandhaven",
+      "title": "The mouth: Grand Haven",
+      "reach": "CORRIDOR",
+      "confidence": "stable",
+      "topics": [
+        "history",
+        "people"
+      ],
+      "keywords": "grand haven lighthouse pier coast guard city musical fountain dewey hill harbour",
+      "text": "Congress funded a lighthouse at the river mouth in 1837; the first, a stone dwelling, went up in 1838. Erosion forced reconstruction on higher ground in 1855. The Detroit & Milwaukee Railroad began the south pier in 1859 to protect its cross-lake ferries. The south pier now runs over 1,400 ft; the inner light dates to 1905, the 1904 outer light was moved back 600 ft in 1907. The two red lights are joined by a catwalk. The Coast Guard stopped maintaining them in 2009; the City owns them and the Grand Haven Lighthouse Conservancy maintains them.\n\n  Grand Haven is Coast Guard City, USA by Act of Congress, November 13, 1998."
+    },
+    {
+      "id": "lower",
+      "title": "Lower Reach: what is happening in the water",
+      "reach": "LOWER",
+      "confidence": "official",
+      "topics": [
+        "build"
+      ],
+      "keywords": "lower reach construction building taplin 14562625 25982101 nrcs mobilization july 1 cofferdam causeway boulder arch riffle j-hook dam removal four dams progress",
+      "text": "Between Bridge Street and Fulton Street. Four low-head dams removed. The drop is redistributed across two channel-wide rock grade-control structures, constructed riffles, bed grading, 125+ habitat boulders and three edge / J-hook structures.\n\n  \n    Contractor | Taplin, awarded $14,562,625.98 by City Commission, late February 2026 (reported Feb 24-25)\n\n    Ceiling | Total authorised expenditure not to exceed about $25,982,101\n\n    Federal | $11,026,695 NRCS\n\n    Staging | Ah-Nab-Awen Park. Mobilisation May 18, 2026\n\n    In-river | Not before July 1, 2026, so Sixth Street keeps working as a lamprey barrier through the control period\n\n    Duration | Two construction seasons with a winter pause. Expected complete fall 2027\n\n    Footprint | ~31.5 acres construction area, ~11.7 acres direct impact, ~6.1 acres permanent riverbed alteration\n\n  \n  Feature | Action | \n\n  Dam 4, near Bridge | Remove, grade bed upstream | \n\n  Bridge to Gillett | Bed grading, scattered habitat boulders | \n\n  Dam 3, below Bridge | Remove | \n\n  Dam 2, above Gillett | Remove; three boulder arches and constructed riffles. Main grade-control zone | \n\n  Dam 1, above Pearl | Remove; constructed riffle and habitat boulders | \n\n  Pearl to Fulton | Habitat boulders, bank vane and J-hook edge features | \n\n  Not in the design any more: purpose-built standing whitewater surf waves. Natural rough water may form around rock at some discharges. Do not render a permanent surf wave."
+    },
+    {
+      "id": "onsite",
+      "title": "What a crew will see and hear on site",
+      "reach": "LOWER",
+      "confidence": "seasonal",
+      "topics": [
+        "build",
+        "craft"
+      ],
+      "keywords": "filming shot list construction visual sound excavator causeway turbidity ppe access christine liability insurance",
+      "text": "See: excavators and loaders working off temporary rock causeways; dump trucks and rock delivery; boulder and stone stockpiles; localised cofferdam or isolated work zones; hi-vis PPE; fencing and park closures; flow squeezed around temporary access paths; sediment plumes during active bed disturbance; finished rock features appearing section by section.\n\n  Hear: diesel equipment, backup alarms, rock impact and placement, trucks on the riverfront, radio comms, and the river's own sound changing as new rough-water features come alive.\n\n  Access reality (from the team's own record): site access runs through Christine at the City. Liability insurance with the right parties added is required before you are on the job site. One crew member was let on while another was turned away on the same week, so confirm every time. Rain does not automatically stop work; ask about the rain plan rather than assuming.\n\n  Turbidity is not pollution. If you film a brown plume, caption it as construction sediment under monitoring, not a spill."
+    },
+    {
+      "id": "matrix",
+      "title": "Before, during, after",
+      "reach": "LOWER",
+      "confidence": "planned",
+      "topics": [
+        "build"
+      ],
+      "keywords": "before during after matrix hydraulics safety passage recreation sound visual discharge low moderate high",
+      "text": "System | Before | During | Expected after | \n\n  Hydraulics | Four uniform drops, pooled backwater | Causeways redirect local flow | Distributed grade control, riffles, velocity diversity | \n\n  Safety | Recirculating low-head rollers | Work-zone exclusions | Rollers gone. Current, rock, cold and high water still dangerous | \n\n  Fish passage | Four barriers Fulton to Bridge | Temporary disturbance | Improved passage Fulton toward Sixth Street | \n\n  Mussels | Existing bed community | Relocation, sediment control | Multi-year recolonisation | \n\n  Look | Smooth sheets cut by straight dam lines | Industrial landscape | Irregular rock and riffle texture, broken water | \n\n  Sound | Traffic plus concentrated drops | Equipment and rock placement | Distributed river sound across rough water | \n\n  Recreation | Dam and bank constraints | Reduced access | More varied fishing, wading, paddling. Flow dependent | \n\n  How it will read on camera by discharge. Low: rock tops and boulder fields exposed, small fast tongues, individual riffles legible. Moderate: strongest rapids readability, whitewater lines, boulder wakes, seams and eddies distinct. High: rocks submerge, river reads broad and continuous, rough water increases but geometry hides. Flood: do not glamorise. Model volume, debris, pier turbulence, inundated edges and closures."
+    },
+    {
+      "id": "upper",
+      "title": "Upper Reach: a decision tree, not a plan",
+      "reach": "UPPER",
+      "confidence": "scenario",
+      "topics": [
+        "build"
+      ],
+      "keywords": "upper reach sixth street dam removed removal eis glfc army corps alternatives draft eis july 2027 20 million barrier lamprey future decision",
+      "text": "Ann Street to Bridge Street. The Great Lakes Fishery Commission leads a federal Environmental Impact Statement with the US Army Corps of Engineers. The EIS resumed in spring 2026; scoping included an April 22 meeting with comments closing May 22.\n\n  Alternatives on the table:\n\n  No action\nFixed barrier at the present Sixth Street location\nAdjustable barrier at the present location\nFixed barrier about half a mile upstream\nAdjustable barrier about half a mile upstream\nFixed barrier about a mile upstream\nAdjustable barrier about a mile upstream\n\n  Draft EIS anticipated July 2027. Over $20 million in federal funding is identified for a new lamprey barrier, but no alternative and no construction schedule are selected.\n\n  Do not render as fact: Sixth Street Dam already removed; a specific barrier already chosen; an upstream location finalised; a construction start year; uninterrupted fish passage through the lamprey control point. Any of those is a labelled SCENARIO only."
+    },
+    {
+      "id": "climate",
+      "title": "Climate: a wider operating envelope",
+      "reach": "BASIN",
+      "confidence": "planned",
+      "topics": [
+        "water",
+        "build"
+      ],
+      "keywords": "climate change projection warming precipitation variability drought flood mid-century",
+      "text": "City projections: average air temperature about 3-5 F warmer by mid-century, summers 4-7 F warmer, days above 90 F rising from about 7.9 a year historically to roughly 20-38, annual precipitation already up about 16 percent, potentially up another 3 inches by mid-century, more winter precipitation falling as rain, and the heaviest 1 percent of events producing substantially more rain.\n\n  Signal | River response | \n\n  Hotter summers | Longer warm-water windows, thermal stress, human heat exposure | \n\n  More intense rain | Sharper discharge, turbidity and debris pulses | \n\n  More winter rain | More rain-on-snow high-water scenarios | \n\n  Variable freeze/thaw | Less continuous ice does not remove moving-ice or jam hazard | \n\n  Dry summer spells | Lower base flow, warmer water, less cool refuge | \n\n  Shifted thermal seasons | Migration and spawning timing moves rather than following a date | \n\n  The concept is greater variability, not \"the river only gets higher.\" Projections are long-term distributions. They never predict a specific future Tuesday."
+    },
+    {
+      "id": "events",
+      "title": "Annual events versus one-offs",
+      "reach": "DOWNTOWN",
+      "confidence": "official",
+      "topics": [
+        "people",
+        "craft"
+      ],
+      "keywords": "events annual calendar coast guard festival cleanup world of winter artprize dam jam regatta expedition paddlefest happening this month upcoming when",
+      "text": "Confirmed annual.\n\n  Event | When | Note | \n\n  Grand Regatta | June | Grand Rapids Rowing. June 13, 2026, 1,000 m sprint, Michigan State Games | \n\n  Homecoming of the Three Fires | June | June 13-14, 2026, Riverside Park | \n\n  Summer Science & Leadership | July | July 6-17, 2026. Students study sturgeon, mussels, aquatic ecology | \n\n  Grand Haven Coast Guard Festival | Late Jul to early Aug | 10 days around Coast Guard Day. Founded 1924, first festival 1937. 350,000+ attend | \n\n  GRPM Grand River Adventure | Mid-August | Aug 15, 2026, 4th annual | \n\n  Mayors' Grand River Cleanup | September | WMEAC. 2026 kickoff Sept 19. Billed Michigan's largest river cleanup | \n\n  Dam Jam | Late September | Brenke Fish Ladder, Lansing. New $3.5M amphitheatre, ~350 seats | \n\n  ArtPrize | Late Sep to Oct | ~19 days. Began 2009, biennial since 2018 | \n\n  World of Winter | Jan to Mar 1 | Largest free winter festival in the US. 2026 ran Jan 9 to Mar 1 | \n\n  Musical Fountain | Nightly, Memorial Day to Labor Day | Grand Haven, Dewey Hill, since 1963 | \n\n  Fourth of July | Jul 4 | Fireworks over the river, Grand Rapids and Grand Haven | \n\n  Rare or one-off. The Grand River Expedition is a source-to-mouth paddle roughly every ten years: 1990 (launched by Verlen Kruger), 2000, 2010 (largest, ~300 paddlers, 54 completing 220+ miles). A 2020 edition was cancelled by COVID. Return to the River, Paddlefest, River for All, snow snake competitions, luminary bike rides and the Ionia and Flat River cleanups run as programmes or occasional events — confirm dates with organisers each year.\n\n  Rule: a regatta has a date. A salmon run has a probability window and a yearly strength. Do not write them the same way."
+    },
+    {
+      "id": "records",
+      "title": "Records and genuine superlatives",
+      "reach": "BASIN",
+      "confidence": "stable",
+      "topics": [
+        "people",
+        "history"
+      ],
+      "keywords": "record fish state record chinook essex black buffalo world record musical fountain artprize log jam longest",
+      "text": "Record | Detail | \n\n  Chinook salmon | 46.06 lb, 43.5 in, 1978, Grand River, Kent County, angler Ray Essex of Grand Rapids. Held the Michigan record until Aug 7, 2021 | \n\n  Black buffalo | 46.54 lb, 38.5 in, 2018, Grand River, Ottawa County, by bow. Current state record. A prior 33.25 lb record also came from the Grand (2004) | \n\n  Longest river in Michigan | The Grand, 252 miles. Confirmed | \n\n  Great Log Jam 1883 | One of the largest logjams in US history | \n\n  Grand Haven Musical Fountain | Built 1962 for about $50,000. World's largest musical fountain of its kind until the Bellagio opened in 1998 | \n\n  ArtPrize | World's largest art competition. 2009 purse $449,000 including a $250,000 first prize to Ran Ortner | \n\n  Record flood | 21.85 ft, April 21, 2013 | \n\n  Gypsum | One of the richest gypsum-bearing formations in North America under the city | \n\n  Careful: Michigan's state-record flathead catfish (64.46 lb, 2025) came from Plum Creek in Monroe County, not the Grand, despite Grand Rapids coverage. The all-time record lake sturgeon (193 lb, 1974) came from Mullett Lake."
+    },
+    {
+      "id": "trivia",
+      "title": "Trivia worth putting on camera",
+      "reach": "MAINSTEM",
+      "confidence": "stable",
+      "topics": [
+        "people",
+        "history",
+        "craft"
+      ],
+      "keywords": "trivia fun facts ford gypsum drinking water bridges blue bridge artprize steamboat whistle",
+      "text": "Nobody drinks the Grand. Grand Rapids draws from Lake Michigan through an intake nearly a mile offshore; it pumped river water from 1912 until about 1990. Lansing uses ~125 groundwater wells in the Saginaw Aquifer. Jackson uses 16 wells in the Marshall Aquifer.\n\n    The Blue Bridge is the 1892 Grand Rapids & Indiana Railroad span, about 575 ft, one of Michigan's longest truss bridges, converted to pedestrian use in the 1980s and painted its signature blue.\n\n    The Sixth Street Bridge (1886, wrought iron) is a designated historic landmark. The Gillett Bridge (1915) was an interurban railway crossing.\n\n    Gerald and Betty Ford are buried on the grounds of the Ford Presidential Museum, on the west bank downtown.\n\n    Gypsum tunnels under the city have held mushrooms, microfilmed legal records for about 70 percent of Michigan counties, a data centre and Founders beer. Mining subsidence sank a section of US-131 in the 1990s.\n\n    An ArtPrize entry once floated a school-of-fish mobile on a rocky islet between the Blue Bridge and Pearl Street.\n\n    Six-foot, century-old lake sturgeon still swim here.\n\n    Déjà vu: 47 years before the current work, Ah-Nab-Awen Park was also a construction zone.\n\n    An LGROW Plaster Creek cleanup in July 2026 pulled seventeen shopping carts out of a tributary."
+    },
+    {
+      "id": "devel",
+      "title": "Riverfront development: the human river",
+      "reach": "DOWNTOWN",
+      "confidence": "official",
+      "topics": [
+        "people",
+        "build"
+      ],
+      "keywords": "amphitheater acrisure development greenway trail millage marine corps reserve center gvsu brownfield",
+      "text": "The channel is not the only thing changing. Development alters what the river feels like without changing discharge at all.\n\n  \n    Acrisure Amphitheater opened May 15, 2026. 12,000 seats, about $184M, Lionel Richie headlining with The War and Treaty and Brian Vander Ark. Anchors roughly 31 acres of riverfront redevelopment with up to 10 acres of new recreation space and a nearly four-acre Green Ribbon.\n\n    The former Marine Corps Reserve Center, 3.5 acres at 1863 Monroe Ave NW, went to federal auction: opened $1.525M on July 13, 2026, pushed to $2.8M after 47 bids under a 24-hour soft close, against an original $4.9M asking price.\n\n    A proposed 20-story riverfront apartment tower is seeking transformational brownfield incentives.\n\n    GVSU trustees approved buying riverfront property immediately south of the Seidman College of Business.\n\n    August 4, 2026 millages in Ada Township, Plainfield Township and Ottawa County each affect the Grand River Greenway. Only Ottawa's ballot language says \"greenways,\" but all three fund trails and parks along it.\n\n    Greenway construction underway along Cannonsburg Road, led by Kent County Parks.\n\n  \n  A digital twin should keep a separate human intensity layer: pedestrians, bikes, event crowds, amplified sound, night lighting, closures, staging, fishing density, rowing density."
+    },
+    {
+      "id": "crew",
+      "title": "Our aspect: what Carbon Stories is actually contracted to do",
+      "reach": "DOWNTOWN",
+      "confidence": "official",
+      "topics": [
+        "craft"
+      ],
+      "keywords": "carbon stories team crew erik wayne duane alister layah atlanta dgri client role deliverable invoice cadence we our us who",
+      "text": "Carbon Stories is the content and media production partner for the Grand River Revitalization Project, working to DGRI (Downtown Grand Rapids Inc.) and alongside the Grand River Network, City of Grand Rapids, Grand Rapids WhiteWater, LGROW and GR Parks.\n\n  \n    Erik | Founder and creative director. Primary camera, shoots 8K, drone operator\n\n    Wayne (Duane) | Producer and client liaison. Briefs, calendar, delivery, the person the client asks\n\n    Alister | Editor. Recaps, reels, vertical reformats, captions\n\n    Layah | Field capture and shoots\n\n    Atlanta | Event calendar and coordination\n\n  \n  Scope: photo, video, drone, interviews, reels and recaps across river construction, greenway trail projects, groundbreakings, activations and community events. Billed as recurring monthly \"Grand River corridor b-roll and activation.\"\n\n  Standing expectations: bi-weekly client updates; content log kept current; master catalogue at carbonstories.us/rivercontent for client self-service; deliver photos same-day when an event contact asks; watch every edit before it goes out (a partner once re-scored a cut and blew out the mix).\n\n  House style: 30 fps timeline for river work, or the fast-motion reads wrong against the rest of the series. Horizontal and vertical versions of most reels. Captions on reels, because reels get watched silent."
+    },
+    {
+      "id": "doc",
+      "title": "River for All: the documentary structure",
+      "reach": "MAINSTEM",
+      "confidence": "planned",
+      "topics": [
+        "craft"
+      ],
+      "keywords": "documentary chapters river for all ron yob jordan hamilton outline chapter 1 vignettes river shorts",
+      "text": "Four chapters. Ch 1 \"What is the Grand River?\" community and history. Ch 2 \"The Process,\" designers, engineers, planners, policymakers. Ch 3 \"The Work,\" construction. Ch 4 \"The Grand River,\" the revitalised river.\n\n  Chapter 1 outline. 30 to 45 minutes, narrated by Ron Yob, music by Jordan Hamilton. Thesis: a river shaped the City. Now the City is rediscovering its river. Six movements:\n\n  \n    Intro, 3-4 min. Ron with the river\n\n    Before the City Listened: the river as life, 5-7 min. Indigenous relationship\n\n    Progress at a Cost, 5-7 min. Settlement and industrialisation\n\n    The Reckoning: when the river pushed back, 5-8 min\n\n    Choosing Repair: from control to care, 7-10 min\n\n    A River Re-Imagined: the river as partner, 7-10 min\n\n  \n  Tone moves grounding and sacred, to credible with emotional weight, to proof and tangible change. Interview pool: GRPM historians, Indigenous historians, university historians, city and county professionals, environmental scientists, community members, a fisherman, river sports people, and populations with limited river access.\n\n  River Shorts vignettes, 2-3 min each plus 30-60 second social cuts: Water Quality, Public Safety, Clean Water Action, History, The Grand Vision, Why the Dam Needs to Be Removed, Social Equity, Sea Lamprey, Fishing, Kayaking, Equitable Access, Economic Impact, Spirit of the River, White Water, People Engaging with the River."
+    },
+    {
+      "id": "shotlog",
+      "title": "Seasonal shot windows",
+      "reach": "MAINSTEM",
+      "confidence": "seasonal",
+      "topics": [
+        "craft"
+      ],
+      "keywords": "filming shoot shooting shot shots windows photography fog ice fall color drone capture timing when to film schedule next weeks b-roll broll",
+      "text": "High-value visual states, and roughly when to get them:\n\n  Shot | Window | \n\n  Fog over cold-warm water transition | Late fall and early spring mornings | \n\n  Ice and open-water contrast, mouth of the river | January to mid-February, before the melt | \n\n  Spring high flow and debris | March to April, from bridges and floodwalls | \n\n  Low summer flow exposing boulders | August to September, best read of new rock features | \n\n  Autumn colour plus salmon fishing | Mid-to-late October | \n\n  Night bridge reflections | Year-round, best on still cold nights | \n\n  Construction milestones and rock placement | July to November 2026, then June to October 2027 | \n\n  Post-project riffle patterns at different discharges | From fall 2027, shoot the same frame at low, moderate and high flow | \n\n  Fish ladder flooding | Early April, on a high-water day | \n\n  Shoot the same locked-off frame across seasons and flows. That comparison is the whole story of the project and it cannot be recreated later."
+    },
+    {
+      "id": "traps",
+      "title": "Never say this",
+      "reach": "MAINSTEM",
+      "confidence": "stable",
+      "topics": [
+        "water",
+        "build",
+        "life",
+        "craft"
+      ],
+      "keywords": "errors mistakes never say wrong corrections traps narration script accuracy safe safety depth deep pristine spill flood claim write copy",
+      "text": "\"The river is 10 feet deep, the gauge says 10 ft.\"Stage is relative to a datum. Say the gauge reads X ft; actual depth varies across the channel.\n\n  \"They're removing Sixth Street Dam right now.\"Active work removes four downstream low-head dams in the Lower Reach. Sixth Street is a separate Upper Reach question still in federal EIS.\n\n  \"They're building a surf wave.\"Not in the authorised design. Describe flow-dependent whitewater around rock structures.\n\n  \"Restoration means it will never flood.\"Say it is modelled not to increase mapped flood risk. Then use live NWS data.\n\n  \"There are sturgeon here today.\"Needs observation. Say habitat and passage improvements target sturgeon, and spring is the likely spawning window.\n\n  \"Fish from the Grand are safe to eat.\"Advisories are species and reach specific. Live-check MDHHS.\n\n  \"The river has returned to its natural state.\"Say restored habitat and processes inside an altered urban channel.\n\n  \"Brown water means a spill.\"Turbidity has many causes. Check storms, construction monitoring and official incident reports.\n\n  \"It's warm out, so the river is warm.\"Spring water lags air by many degrees. Use live water temperature.\n\n  \"Salmon run every October 1.\"Biological timing varies. Use temperature, flow and date as a probability window."
+    },
+    {
+      "id": "sources",
+      "title": "Where the facts come from",
+      "reach": "BASIN",
+      "confidence": "stable",
+      "topics": [
+        "water",
+        "history",
+        "build"
+      ],
+      "keywords": "sources bibliography usgs nws nrcs egle dnr mdhhs grpm whitewater citations",
+      "text": "USGS 04119000 and 04118564 — live discharge, stage, temperature, water quality\n\n    NOAA / NWS gauge GDRM4 — flood thresholds, forecasts, historic crests\n\n    NWS Grand Rapids 1991-2020 climate normals\n\n    USDA NRCS, Lower Grand River Habitat Restoration Final EA, January 2026\n\n    Grand Rapids WhiteWater — project design, funding, permits, mussels, EIS status\n\n    City of Grand Rapids — contract award Feb 2026, funding approval Mar 2026, sewer improvement, wastewater, climate plan, River for All\n\n    Michigan EGLE — permits and biological assessments\n\n    Michigan DNR — 2026 fishing regulations (through Mar 31, 2027), Grand River Assessment 2011, species records\n\n    MDHHS Eat Safe Fish\n\n    Great Lakes Fishery Commission and USACE — Upper Reach EIS\n\n    Grand River Bands of Ottawa Indians\n\n    Grand Rapids Public Museum, History Grand Rapids, Junior League historical markers\n\n    LGROW, WMEAC, Grand Rapids Rowing, Grand River Network River Reader\n\n  \n  Base research compiled August 1, 2026. Construction, regulations, advisories and hydrology are time sensitive and get refreshed by the weekly deep dive."
+    }
+  ],
+  "species": [
+    {
+      "name": "Chinook salmon",
+      "wikipedia": "Chinook_salmon",
+      "group": "fish",
+      "status": "Introduced",
+      "note": "Fall run. Enters late August as water cools, peaks September into October."
+    },
+    {
+      "name": "Coho salmon",
+      "wikipedia": "Coho_salmon",
+      "group": "fish",
+      "status": "Introduced",
+      "note": "Fall run, peaks mid to late September. Do not assume Chinook timing."
+    },
+    {
+      "name": "Steelhead",
+      "wikipedia": "Rainbow_trout",
+      "group": "fish",
+      "status": "Introduced",
+      "note": "Migratory rainbow trout. Fall through spring, biggest push late February to April."
+    },
+    {
+      "name": "Lake sturgeon",
+      "wikipedia": "Lake_sturgeon",
+      "group": "fish",
+      "status": "Threatened",
+      "note": "About 100 individuals. Juveniles confirmed 2022, so the river reproduces its own. Never target."
+    },
+    {
+      "name": "River redhorse",
+      "wikipedia": "River_redhorse",
+      "group": "fish",
+      "status": "Threatened",
+      "note": "Native large-river fish. A restoration target alongside sturgeon."
+    },
+    {
+      "name": "Walleye",
+      "wikipedia": "Walleye",
+      "group": "fish",
+      "status": "Native",
+      "note": "Year-round river use, spring spawning movements below dams."
+    },
+    {
+      "name": "Smallmouth bass",
+      "wikipedia": "Smallmouth_bass",
+      "group": "fish",
+      "status": "Native",
+      "note": "Warm season, around rock and current breaks. New boulders add habitat."
+    },
+    {
+      "name": "Largemouth bass",
+      "wikipedia": "Largemouth_bass",
+      "group": "fish",
+      "status": "Native",
+      "note": "Slower margins and backwaters, stronger in the lower river."
+    },
+    {
+      "name": "Northern pike",
+      "wikipedia": "Northern_pike",
+      "group": "fish",
+      "status": "Native",
+      "note": "Slower vegetated habitat in the wider system."
+    },
+    {
+      "name": "Channel catfish",
+      "wikipedia": "Channel_catfish",
+      "group": "fish",
+      "status": "Native",
+      "note": "Warm-season feeding in deeper, slower zones."
+    },
+    {
+      "name": "Flathead catfish",
+      "wikipedia": "Flathead_catfish",
+      "group": "fish",
+      "status": "Native",
+      "note": "Large-river resident. Pools and slack water matter."
+    },
+    {
+      "name": "White sucker",
+      "wikipedia": "White_sucker",
+      "group": "fish",
+      "status": "Native",
+      "note": "Strong spring movement over gravel. An important, unglamorous migrant."
+    },
+    {
+      "name": "Gizzard shad",
+      "wikipedia": "Gizzard_shad",
+      "group": "fish",
+      "status": "Native",
+      "note": "Abundant forage fish. Big die-offs after sharp cold snaps."
+    },
+    {
+      "name": "Pugnose shiner",
+      "wikipedia": "Pugnose_shiner",
+      "group": "fish",
+      "status": "Endangered",
+      "note": "State endangered. Needs clear water and healthy vegetation."
+    },
+    {
+      "name": "Spotted gar",
+      "wikipedia": "Spotted_gar",
+      "group": "fish",
+      "status": "Concern",
+      "note": "State special concern. Juveniles documented in a lower-river bayou."
+    },
+    {
+      "name": "Snuffbox mussel",
+      "wikipedia": "Epioblasma_triquetra",
+      "group": "mussel",
+      "status": "Federally endangered",
+      "note": "38 relocated from the Lower Reach in 2024. The flagship permit species."
+    },
+    {
+      "name": "Purple wartyback",
+      "wikipedia": "Cyclonaias_tuberculata",
+      "group": "mussel",
+      "status": "State protected",
+      "note": "Among about 3,000 mussels moved below Knapp Street in July 2026."
+    },
+    {
+      "name": "Freshwater mussels",
+      "wikipedia": "Unionidae",
+      "group": "mussel",
+      "status": "Native",
+      "note": "Filter bacteria, algae and sediment. They cannot move out of the way of an excavator."
+    },
+    {
+      "name": "Bald eagle",
+      "wikipedia": "Bald_eagle",
+      "group": "wild",
+      "status": "Recovered",
+      "note": "Uses open-water reaches as a feeding and travel corridor."
+    },
+    {
+      "name": "Great blue heron",
+      "wikipedia": "Great_blue_heron",
+      "group": "wild",
+      "status": "Common",
+      "note": "Favours shallows and slow edges."
+    },
+    {
+      "name": "North American river otter",
+      "wikipedia": "North_American_river_otter",
+      "group": "wild",
+      "status": "Native",
+      "note": "Plausible in the wider system. Downtown sightings should be observation based."
+    },
+    {
+      "name": "American mink",
+      "wikipedia": "American_mink",
+      "group": "wild",
+      "status": "Native",
+      "note": "Bank hunter along the corridor."
+    },
+    {
+      "name": "North American beaver",
+      "wikipedia": "North_American_beaver",
+      "group": "wild",
+      "status": "Native",
+      "note": "Corridor resident, shapes bank vegetation."
+    },
+    {
+      "name": "Muskrat",
+      "wikipedia": "Muskrat",
+      "group": "wild",
+      "status": "Native",
+      "note": "Common in slower vegetated water."
+    },
+    {
+      "name": "Spiny softshell turtle",
+      "wikipedia": "Spiny_softshell_turtle",
+      "group": "wild",
+      "status": "Native",
+      "note": "Needs soft banks and sandbars, not hard floodwall edge."
+    },
+    {
+      "name": "Northern map turtle",
+      "wikipedia": "Northern_map_turtle",
+      "group": "wild",
+      "status": "Native",
+      "note": "Basks on logs and rock in the main channel."
+    },
+    {
+      "name": "Mudpuppy",
+      "wikipedia": "Common_mudpuppy",
+      "group": "wild",
+      "status": "Native",
+      "note": "Fully aquatic salamander. Host for the salamander mussel."
+    },
+    {
+      "name": "Sea lamprey",
+      "wikipedia": "Sea_lamprey",
+      "group": "inv",
+      "status": "Invasive",
+      "note": "Why Sixth Street Dam still matters. Any future design must keep a working barrier."
+    },
+    {
+      "name": "Round goby",
+      "wikipedia": "Round_goby",
+      "group": "inv",
+      "status": "Invasive",
+      "note": "Great Lakes invader. Eats eggs and young, reshapes the food web."
+    },
+    {
+      "name": "Zebra mussel",
+      "wikipedia": "Zebra_mussel",
+      "group": "inv",
+      "status": "Invasive",
+      "note": "Not a native unionid. Do not blur the two."
+    },
+    {
+      "name": "Common carp",
+      "wikipedia": "Common_carp",
+      "group": "inv",
+      "status": "Invasive",
+      "note": "Long established. Stirs sediment and uproots vegetation."
+    },
+    {
+      "name": "Eurasian watermilfoil",
+      "wikipedia": "Myriophyllum_spicatum",
+      "group": "inv",
+      "status": "Invasive",
+      "note": "Aquatic plant, forms dense mats in slow water."
+    },
+    {
+      "name": "Purple loosestrife",
+      "wikipedia": "Lythrum_salicaria",
+      "group": "inv",
+      "status": "Invasive",
+      "note": "Bank and floodplain invader, crowds out native wetland plants."
+    },
+    {
+      "name": "Phragmites",
+      "wikipedia": "Phragmites",
+      "group": "inv",
+      "status": "Invasive",
+      "note": "Tall reed that takes over bank and wetland edge."
+    }
+  ],
+  "river_reader": [
+    {
+      "date": "Jul 24, 2026",
+      "title": "Riverfront Bidding Battle",
+      "conditions": "72 °F, 1,300 cfs, well below the seasonal average for late July.",
+      "summary": "Federal auction for the 3.5 acre former Marine Corps Reserve Center reached $2.8M after 47 bids, up 80 percent from the $1.525M opening. Ada, Plainfield and Ottawa County millages on the August 4 ballot all shape the Greenway. Trail construction underway on Cannonsburg Road. GRPM Grand River Adventure August 15. Ah-Nab-Awen was also a construction zone 47 years ago."
+    },
+    {
+      "date": "Jul 10, 2026",
+      "title": "Another Mussel Move",
+      "conditions": "80 °F, 2,400 cfs, just below average for early July.",
+      "summary": "Biologists relocated about 3,000 freshwater mussels below Knapp Street before bridge pier work, including the state-protected purple wartyback. The yellow \"pool noodle\" in the river is a turbidity curtain. LGROW Plaster Creek cleanup pulled seventeen shopping carts. Community members made what organisers believe is the world’s largest cyanotype print on the Blue Bridge."
+    },
+    {
+      "date": "Jun 26, 2026",
+      "title": "Bridging the Thornapple",
+      "conditions": "Ada sets a new greenway connection.",
+      "summary": "Thornapple pedestrian bridge progress and Ada greenway trail work."
+    },
+    {
+      "date": "Jun 12, 2026",
+      "title": "Lower Reach Begins",
+      "conditions": "In-river construction season opens.",
+      "summary": "The Lower Reach dam removal gets underway after nearly twenty years of planning."
+    },
+    {
+      "date": "May 29, 2026",
+      "title": "Patios Mean Progress",
+      "conditions": "Oxford overhaul in overdrive.",
+      "summary": "Riverfront activation and the Oxford Trail rebuild."
+    },
+    {
+      "date": "May 15, 2026",
+      "title": "A Gizzard What?",
+      "conditions": "Plus a major bridge milestone.",
+      "summary": "Gizzard shad in the Grand, and a bridge milestone on the Greenway."
+    },
+    {
+      "date": "May 1, 2026",
+      "title": "A Rare \"Fish On!\"",
+      "conditions": "Plus Plainfield’s big dig.",
+      "summary": "A rare catch on the Grand and Plainfield Township trail excavation."
+    },
+    {
+      "date": "Apr 17, 2026",
+      "title": "A Big Dam Problem",
+      "conditions": "And more dam study.",
+      "summary": "Sixth Street Dam condition and the federal barrier study."
+    },
+    {
+      "date": "Apr 3, 2026",
+      "title": "Greenway Work Everywhere",
+      "conditions": "Construction season is here.",
+      "summary": "Simultaneous greenway construction across the corridor."
+    },
+    {
+      "date": "Feb 20, 2026",
+      "title": "Dam Good News",
+      "conditions": "Ready, set, slither.",
+      "summary": "Funding and permitting progress, plus the snow snake competition."
+    },
+    {
+      "date": "Jan 9, 2026",
+      "title": "WoW Starts Now",
+      "conditions": "Lyon gets lit.",
+      "summary": "World of Winter opens downtown and Lyon Square lights up."
+    }
+  ]
+}

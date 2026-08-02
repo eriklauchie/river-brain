@@ -710,6 +710,16 @@ const fmt = (n, d=0) => n == null ? '—'
   : n.toLocaleString('en-US',{minimumFractionDigits:d, maximumFractionDigits:d});
 
 /* ---------- the widgets ---------- */
+const RB_ICN={
+temp:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg>',
+flow:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8c3-2.2 6 2.2 9 0s6-2.2 9 0M3 13c3-2.2 6 2.2 9 0s6-2.2 9 0M3 18c3-2.2 6 2.2 9 0s6-2.2 9 0"/></svg>',
+level:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V9M12 21V4M19 21v-8"/><path d="M3 17c3-1.8 6 1.8 9 0s6-1.8 9 0"/></svg>',
+build:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21l2.5-9 3.5 2 1.5-5 4.5 12"/></svg>',
+gauge:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19a8 8 0 1 1 16 0"/><path d="M12 19l4-5"/></svg>',
+leaf:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c9 1 15-5 15-14 0 0-12-1-15 6-1.4 3.3 0 8 0 8z"/><path d="M4 20c2.5-6 6-8.5 10-9.5"/></svg>'
+};
+function rbMeter(pct,color,gA,gB){var p=Math.max(0,Math.min(100,pct)),gid='m'+Math.floor(Math.random()*1e6),mx=(4+p/100*192);return '<svg class="viz" viewBox="0 0 200 22" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="'+(gA||'var(--rule-2)')+'"/><stop offset="1" stop-color="'+(gB||'var(--live)')+'"/></linearGradient></defs><rect x="4" y="8" width="192" height="6" rx="3" fill="url(#'+gid+')" opacity=".55"/><rect x="'+(mx-2.5).toFixed(1)+'" y="2" width="5" height="18" rx="2" fill="var(--bed)"/><rect x="'+(mx-1.5).toFixed(1)+'" y="3" width="3" height="16" rx="1.5" fill="'+color+'"/></svg>';}
+
 function renderWidgets(){
   const m = new Date().getMonth();
   const el = document.getElementById('widgets');
@@ -729,20 +739,25 @@ function renderWidgets(){
   let h = '';
 
   /* 1. water temperature */
+  const tPct = tF != null ? (tF - 32) / (86 - 32) * 100 : 0;
   h += LIVE.ok && tF != null ? `
     <div class="w w-4" style="--band:var(--live)">
-      <div class="w-head"><span class="w-lab">Water temperature</span><span class="tag t-live">Live</span></div>
+      <div class="w-head"><span class="w-lab">${RB_ICN.temp}Water temperature</span><span class="tag t-live">Live</span></div>
       <div class="w-big">${fmt(tF,1)}<small>°F</small></div>
       <div class="w-sub">${fmt(tempC.v,1)} °C · usual for this date: about ${fmt(interp(TYPICAL.tempMed),0)} °F</div>
+      ${rbMeter(tPct, tV?tV[1]:'var(--live)', 'var(--official)', 'var(--seasonal)')}
       ${tV ? `<span class="verdict" style="color:${tV[1]}">${tV[0]}</span>` : ''}
     </div>` : dead('Water temperature', LIVE.err ? 'Gauge unreachable: ' + LIVE.err : 'Not reporting right now');
 
   /* 2. discharge */
+  const fBand = TYPICAL.flow[m];
+  const fPct = flow ? (flow.v - fBand[0]) / (fBand[1] - fBand[0]) * 100 : 0;
   h += LIVE.ok && flow ? `
     <div class="w w-4" style="--band:var(--live)">
-      <div class="w-head"><span class="w-lab">Discharge</span><span class="tag t-live">Live</span></div>
+      <div class="w-head"><span class="w-lab">${RB_ICN.flow}Discharge</span><span class="tag t-live">Live</span></div>
       <div class="w-big">${fmt(flow.v)}<small>cfs</small></div>
       <div class="w-sub">usual for this date: about ${fmt(interp(TYPICAL.flowMed))} cfs</div>
+      ${rbMeter(fPct, fV?fV[1]:'var(--live)', 'var(--official)', 'var(--seasonal)')}
       ${fV ? `<span class="verdict" style="color:${fV[1]}">${fV[0]}</span>` : ''}
     </div>` : dead('Discharge', LIVE.err ? 'Gauge unreachable' : 'Not reporting right now');
 
@@ -750,7 +765,7 @@ function renderWidgets(){
   const s = stage?.v;
   h += `
     <div class="w w-4" style="--band:var(--official)">
-      <div class="w-head"><span class="w-lab">Gage height</span>${s!=null?'<span class="tag t-live">Live</span>':''}</div>
+      <div class="w-head"><span class="w-lab">${RB_ICN.level}Gage height</span>${s!=null?'<span class="tag t-live">Live</span>':''}</div>
       <div class="w-big">${s != null ? fmt(s,2) : '—'}<small>ft</small></div>
       <div class="w-sub">Stage above datum. <strong>Not river depth.</strong></div>
       <div class="ladder">
@@ -766,7 +781,7 @@ function renderWidgets(){
   const [ph, phc, phn] = phaseNow();
   h += `
     <div class="w w-4" style="--band:var(--planned)">
-      <div class="w-head"><span class="w-lab">Construction</span><span class="tag t-official">Official</span></div>
+      <div class="w-head"><span class="w-lab">${RB_ICN.build}Construction</span><span class="tag t-official">Official</span></div>
       <div class="w-big" style="font-size:20px;line-height:1.15">${ph}</div>
       <div class="w-sub">${phn}</div>
       <div class="w-sub" style="color:var(--planned)">Lower Reach · Bridge St to Fulton St</div>
@@ -786,7 +801,7 @@ function renderWidgets(){
   h += `
     <div class="w w-6" style="--band:var(--live)">
       <div class="w-head">
-        <span class="w-lab">Gauge readout · North Park Street 04118564</span>
+        <span class="w-lab">${RB_ICN.gauge}Gauge readout · North Park Street 04118564</span>
         <button class="act" id="copycond">Copy for Slack</button>
       </div>
       ${rows.length ? `<dl class="reads">${rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl>`
@@ -800,7 +815,7 @@ function renderWidgets(){
   const [sn, snote] = seasonNow();
   h += `
     <div class="w w-6" style="--band:var(--seasonal)">
-      <div class="w-head"><span class="w-lab">Ecological season</span><span class="tag t-seasonal">Typical</span></div>
+      <div class="w-head"><span class="w-lab">${RB_ICN.leaf}Ecological season</span><span class="tag t-seasonal">Typical</span></div>
       <div class="w-big" style="font-size:23px">${sn}</div>
       <div class="w-sub">${snote}</div>
       <div class="w-sub">Seasonal patterns are probabilities, not observations. A run has a window; a regatta has a date.</div>
@@ -1077,15 +1092,27 @@ const READER = [
 ];
 
 function renderReader(){
-  document.getElementById('rr').innerHTML = READER.slice(0,6).map(r => `
-    <div class="rr">
+  const host = document.getElementById('rr');
+  const N = 3;
+  host.innerHTML = READER.map((r,i) => `
+    <div class="rr${i>=N?' rr-extra':''}"${i>=N?' hidden':''}>
       <div class="d">${r.d}</div>
       <h4>${r.t}</h4>
       <p><strong>${r.c}</strong> ${r.b}</p>
     </div>`).join('')
-    + `<div style="font:10.5px var(--mono);color:var(--muted);margin-top:6px">
+    + (READER.length > N ? `<button class="btn ghost" id="rr-more" style="margin-top:4px">View more (${READER.length - N})</button>` : '')
+    + `<div style="font:10.5px var(--mono);color:var(--muted);margin-top:10px">
          ${READER.length} issues on record. Every one opens with temperature, flow and how they compare to the season.
        </div>`;
+  const btn = document.getElementById('rr-more');
+  if(btn){
+    let open = false;
+    btn.addEventListener('click', () => {
+      open = !open;
+      host.querySelectorAll('.rr-extra').forEach(n => { n.hidden = !open; });
+      btn.textContent = open ? 'Show less' : `View more (${READER.length - N})`;
+    });
+  }
 }
 
 /* ============================================================================
@@ -1392,10 +1419,6 @@ async function exportBrain(){
 
 /* ---------- boot ---------- */
 function boot(){
-  document.getElementById('chips').innerHTML = SEEDS.map(s => `<button>${s}</button>`).join('');
-  document.getElementById('chips').addEventListener('click', e => {
-    if(e.target.tagName === 'BUTTON') ask(e.target.textContent);
-  });
   document.getElementById('send').addEventListener('click', () => ask(document.getElementById('q').value));
   document.getElementById('q').addEventListener('keydown', e => { if(e.key === 'Enter') ask(e.target.value); });
 

@@ -17,12 +17,12 @@
    epistemics.
    =========================================================== */
 :root{
-  --bed:#08201F; --bed-2:#0D2C2B; --bed-3:#123736; --bed-4:#17403E;
-  --rule:#1E4948; --rule-2:#2A5F5C;
-  --ink:#E9E3D5; --ink-dim:#A9B5AE; --muted:#7C918D;
+  --bed:#141517; --bed-2:#1b1d20; --bed-3:#232529; --bed-4:#2c2f34;
+  --rule:#33363c; --rule-2:#43474e;
+  --ink:#ECEDEE; --ink-dim:#B2B6BC; --muted:#7E838B;
 
-  --live:#4FD6C6; --official:#6BA4E8; --stable:#D6CDB6;
-  --seasonal:#D3A253; --planned:#F3722C; --scenario:#9A8FBF;
+  --live:#4C9BE8; --official:#7FB1EC; --stable:#C9CCD1;
+  --seasonal:#D3A253; --planned:#E8833C; --scenario:#9A8FBF;
   --alert:#E5544B;
 
   --display:'Archivo',system-ui,sans-serif;
@@ -35,8 +35,8 @@ html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
   margin:0;background:var(--bed);color:var(--ink);
   font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(1200px 520px at 10% -10%,#10403C 0,transparent 60%),
-                   radial-gradient(900px 400px at 95% -4%,#0F3A44 0,transparent 55%);
+  background-image:radial-gradient(1200px 520px at 10% -10%,#1c2530 0,transparent 60%),
+                   radial-gradient(900px 400px at 95% -4%,#171d24 0,transparent 55%);
   background-attachment:fixed;
 }
 a{color:var(--live);text-decoration:none}
@@ -48,7 +48,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 
 /* ---------- top bar: the whole navigation ---------- */
 .top{
-  position:sticky;top:0;z-index:50;background:rgba(8,32,31,.86);
+  position:sticky;top:0;z-index:50;background:rgba(20,21,23,.86);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
 }
 .topin{display:flex;align-items:center;gap:20px;height:56px}
@@ -232,9 +232,74 @@ td.num{font-family:var(--mono);white-space:nowrap}
 #toast.up{transform:translate(-50%,0)}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---- access gate (cosmetic on a static page; see report) ---- */
+#rb-gate{position:fixed;inset:0;z-index:9999;background:var(--bed);display:grid;place-items:center;padding:24px}
+#rb-gate .card{width:min(390px,92vw);background:var(--bed-2);border:1px solid var(--rule);border-radius:var(--r);padding:28px 26px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+#rb-gate .brand{display:flex;align-items:center;gap:9px;font:800 14px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--live);margin:0 0 14px}
+#rb-gate .brand i{width:9px;height:9px;border-radius:50%;background:var(--live);box-shadow:0 0 0 4px rgba(76,155,232,.22)}
+#rb-gate h2{font:800 23px/1.15 var(--display);margin:0 0 6px;color:var(--ink)}
+#rb-gate p{font:13px/1.55 var(--body);color:var(--ink-dim);margin:0 0 18px}
+#rb-gate input[type=password]{width:100%;background:var(--bed-3);border:1px solid var(--rule);border-radius:var(--r);padding:11px 12px;color:var(--ink);font:14px var(--mono);box-sizing:border-box}
+#rb-gate input[type=password]:focus{outline:2px solid var(--live);outline-offset:1px;border-color:transparent}
+#rb-gate label.rm{display:flex;align-items:center;gap:8px;font:12.5px var(--body);color:var(--ink-dim);margin:13px 0 0;cursor:pointer;user-select:none}
+#rb-gate button{margin-top:16px;width:100%;background:var(--live);color:#0b0c0e;font:700 14px var(--display);padding:11px;border-radius:var(--r)}
+#rb-gate button:hover{filter:brightness(1.06)}
+#rb-gate .err{color:var(--alert);font:12px var(--mono);margin-top:10px;min-height:15px}
+#rb-gate .fine{color:var(--muted);font:10.5px/1.55 var(--mono);margin-top:18px;border-top:1px solid var(--rule);padding-top:12px}
+#rb-forget{position:fixed;right:11px;bottom:9px;z-index:40;font:10px var(--mono);color:var(--muted);opacity:.55;cursor:pointer;background:none;border:0}
+#rb-forget:hover{opacity:1;text-decoration:underline}
+
 </style>
 </head>
 <body>
+<div id="rb-gate">
+  <form class="card" id="rb-gateform" autocomplete="off">
+    <div class="brand"><i></i>River Brain</div>
+    <h2>Private working reference</h2>
+    <p>Access for the Carbon Stories river team. Enter the access word to continue.</p>
+    <input type="password" id="rb-pass" placeholder="Access word" autocomplete="current-password" autofocus>
+    <label class="rm"><input type="checkbox" id="rb-remember"> Remember me on this device</label>
+    <button type="submit">Unlock</button>
+    <div class="err" id="rb-err" role="alert"></div>
+    <div class="fine">Heads up: this is a public static page, so this gate is a light speed bump, not real security. Anything the page loads is visible in the page source regardless.</div>
+  </form>
+</div>
+<button id="rb-forget" type="button" hidden>Forget this device</button>
+<script>
+(function(){
+  /* ===== change the access word here ===== */
+  var PASSWORD = 'riverbrain2026';
+  /* ====================================== */
+  var KEY = 'rb-unlocked-v1';
+  var gate = document.getElementById('rb-gate');
+  var forget = document.getElementById('rb-forget');
+  var form = document.getElementById('rb-gateform');
+  var pass = document.getElementById('rb-pass');
+  var rem  = document.getElementById('rb-remember');
+  var err  = document.getElementById('rb-err');
+  function unlock(){ gate.style.display = 'none'; if(forget) forget.hidden = false; }
+  var remembered = false;
+  try{ remembered = localStorage.getItem(KEY) === '1'; }catch(e){}
+  if(remembered){ unlock(); }
+  else { try{ pass.focus(); }catch(e){} }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(pass.value === PASSWORD){
+      if(rem.checked){ try{ localStorage.setItem(KEY,'1'); }catch(e){} }
+      err.textContent = '';
+      unlock();
+    } else {
+      err.textContent = 'That is not the access word.';
+      try{ pass.select(); }catch(e){}
+    }
+  });
+  if(forget) forget.addEventListener('click', function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    location.reload();
+  });
+})();
+</script>
+
 
 <header class="top">
   <div class="wrap topin">
@@ -268,6 +333,8 @@ td.num{font-family:var(--mono);white-space:nowrap}
       <span class="note" id="asof">reading the gauges…</span>
     </div>
     <div class="widgets" id="widgets"></div>
+    <div class="widgets" id="widgets-more" style="margin-top:12px"></div>
+
   </section>
 
   <section id="reader">
@@ -333,5 +400,140 @@ td.num{font-family:var(--mono);white-space:nowrap}
 
 <div id="toast"></div>
 <script src="./river-brain.js"></script>
+<script>
+/* ============================================================
+   River Brain extra live info widgets (index.html only).
+   Reads globals from river-brain.js. Never invents a reading:
+   if a value is not live, the widget says Unavailable.
+   ============================================================ */
+(function(){
+  function el(id){ return document.getElementById(id); }
+  var GAUGE_LINK = 'https://waterdata.usgs.gov/nwis/uv?site_no=04119000&legacy=1';
+  var NPARK_LINK = 'https://waterdata.usgs.gov/nwis/uv?site_no=04118564&legacy=1';
+
+  function num(n,d){
+    if(n==null || !isFinite(n)) return 'n/a';
+    try{ return (typeof fmt==='function') ? fmt(n, d||0) : Number(n).toFixed(d||0); }
+    catch(e){ return String(n); }
+  }
+  function pickv(k){ try{ return (typeof pick==='function') ? pick(k) : null; }catch(e){ return null; } }
+  function live(){ try{ return (typeof LIVE!=='undefined') ? LIVE : null; }catch(e){ return null; } }
+  function dead(label, note, span){
+    return '<div class="w '+(span||'w-6')+'" style="--band:var(--muted)">'
+      + '<div class="w-head"><span class="w-lab">'+label+'</span></div>'
+      + '<div class="w-big" style="font-size:20px;color:var(--muted)">Unavailable</div>'
+      + '<div class="w-sub">'+note+'</div></div>';
+  }
+  function floodStatus(s){
+    if(s==null) return null;
+    if(s>=23) return ['Major flood','var(--alert)'];
+    if(s>=21) return ['Moderate flood','var(--alert)'];
+    if(s>=18) return ['Flood stage','var(--planned)'];
+    if(s>=12) return ['Bankfull, watch closely','var(--seasonal)'];
+    return ['Below bankfull','var(--live)'];
+  }
+
+  function wFlood(){
+    var L=live(); var st=pickv('stage'); var s=st?st.v:null;
+    if(!L || !L.ok || s==null) return dead('Flood status','Live gage height not reporting. <a href="'+GAUGE_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
+    var fs=floodStatus(s); var head=18-s;
+    var headTxt = head>=0 ? num(head,2)+' ft below flood stage (18 ft)' : num(-head,2)+' ft over flood stage (18 ft)';
+    return '<div class="w w-6" style="--band:'+fs[1]+'">'
+      + '<div class="w-head"><span class="w-lab">Flood status</span><span class="tag t-live">Live</span></div>'
+      + '<div class="w-big" style="font-size:23px">'+fs[0]+'</div>'
+      + '<div class="w-sub">Gage '+num(s,2)+' ft, '+headTxt+'</div>'
+      + '<div class="w-sub">NWS GDRM4: 12 bankfull, 18 flood, 21 moderate, 23 major. Gage height is not river depth.</div>'
+      + '</div>';
+  }
+
+  function wSummary(){
+    var L=live();
+    if(!L || !L.ok) return dead('Conditions summary','Live gauges unreachable right now. <a href="'+GAUGE_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
+    var tempC=pickv('tempC'), flow=pickv('flow'), st=pickv('stage');
+    var tF = (tempC && typeof cToF==='function') ? cToF(tempC.v) : null;
+    var parts=[];
+    if(tF!=null){ var tv=(typeof tempVerdict==='function')?tempVerdict(tF):null; parts.push('Water '+num(tF,1)+' °F'+(tv?' ('+tv[0].toLowerCase()+')':'')); }
+    if(flow){ var fv=(typeof flowVerdict==='function')?flowVerdict(flow.v):null; parts.push('flow '+num(flow.v,0)+' cfs'+(fv?', '+fv[0].toLowerCase():'')); }
+    if(st){ var fs=floodStatus(st.v); parts.push('stage '+num(st.v,2)+' ft'+(fs?', '+fs[0].toLowerCase():'')); }
+    if(!parts.length) return dead('Conditions summary','No parameters reporting right now.','w-6');
+    var season = (typeof seasonNow==='function') ? seasonNow() : null;
+    return '<div class="w w-6" style="--band:var(--live)">'
+      + '<div class="w-head"><span class="w-lab">Conditions summary</span><span class="tag t-live">Live</span></div>'
+      + '<div class="w-sub" style="font-size:13.5px;color:var(--ink);line-height:1.55">'+parts.join('. ')+'.</div>'
+      + (season?'<div class="w-sub">Season: '+season[0]+'. '+season[1]+'</div>':'')
+      + '<div class="w-sub">Live USGS synthesis, the way the River Reader opens each dispatch. Provisional data.</div>'
+      + '</div>';
+  }
+
+  var TREND={loaded:false, ok:false, stage:null, flow:null};
+  function dir(delta, eps){ if(delta==null) return null; if(delta>eps) return ['Rising','var(--seasonal)']; if(delta<-eps) return ['Falling','var(--official)']; return ['Steady','var(--live)']; }
+  function wTrend(){
+    if(!TREND.loaded) return '<div class="w w-6" style="--band:var(--official)"><div class="w-head"><span class="w-lab">Stage and flow trend</span></div><div class="w-big" style="font-size:20px;color:var(--muted)">Reading…</div><div class="w-sub">Fetching the last several hours from USGS.</div></div>';
+    if(!TREND.ok) return dead('Stage and flow trend','Recent series unavailable. <a href="'+GAUGE_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
+    var sd=TREND.stage, fd=TREND.flow, rows='';
+    if(sd){ var d=dir(sd.delta,0.02); rows+='<dt>Gage height</dt><dd><span style="color:'+d[1]+'">'+d[0]+'</span> '+(sd.delta>=0?'+':'')+num(sd.delta,2)+' ft over '+sd.hrs+' h</dd>'; }
+    if(fd){ var d2=dir(fd.delta,20); rows+='<dt>Discharge</dt><dd><span style="color:'+d2[1]+'">'+d2[0]+'</span> '+(fd.delta>=0?'+':'')+num(fd.delta,0)+' cfs over '+fd.hrs+' h</dd>'; }
+    if(!rows) return dead('Stage and flow trend','No recent points returned.','w-6');
+    return '<div class="w w-6" style="--band:var(--official)">'
+      + '<div class="w-head"><span class="w-lab">Stage and flow trend</span><span class="tag t-live">Live</span></div>'
+      + '<dl class="reads">'+rows+'</dl>'
+      + '<div class="w-sub">Direction over the recent window. Trend often matters more than the number.</div>'
+      + '</div>';
+  }
+  function computeTrend(j){
+    var out={}, ts=(j&&j.value&&j.value.timeSeries)||[];
+    ts.forEach(function(s){
+      var code=s.variable&&s.variable.variableCode&&s.variable.variableCode[0]&&s.variable.variableCode[0].value;
+      var vals=(s.values&&s.values[0]&&s.values[0].value)||[];
+      var clean=vals.map(function(p){return {v:parseFloat(p.value), t:p.dateTime};}).filter(function(p){return isFinite(p.v)&&p.v>-999999;});
+      if(clean.length<2) return;
+      var a=clean[0], b=clean[clean.length-1];
+      var hrs=Math.max(1, Math.round((new Date(b.t)-new Date(a.t))/3600000));
+      var rec={delta:b.v-a.v, hrs:hrs};
+      if(code==='00065' && !out.stage) out.stage=rec;
+      if(code==='00060' && !out.flow) out.flow=rec;
+    });
+    return out;
+  }
+  function loadTrend(){
+    var url='https://waterservices.usgs.gov/nwis/iv/?format=json&sites=04119000,04118564&parameterCd=00060,00065&period=PT18H&siteStatus=all';
+    fetch(url,{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('USGS '+r.status); return r.json(); })
+      .then(function(j){ var t=computeTrend(j); TREND.stage=t.stage||null; TREND.flow=t.flow||null; TREND.ok=!!(t.stage||t.flow); TREND.loaded=true; render(); })
+      .catch(function(e){ TREND.ok=false; TREND.loaded=true; render(); });
+  }
+
+  function clarity(f){ if(f==null) return null; if(f<5) return ['Clear','var(--live)']; if(f<25) return ['Slightly turbid','var(--seasonal)']; if(f<100) return ['Turbid','var(--planned)']; return ['Very turbid','var(--alert)']; }
+  function wQuality(){
+    var L=live();
+    var turb=pickv('turb'), doo=pickv('do'), cond=pickv('cond');
+    if(!L || !L.ok || (!turb && !doo && !cond)) return dead('Water quality read','Live water quality not reporting (North Park 04118564). <a href="'+NPARK_LINK+'" target="_blank" rel="noopener">Open gauge</a>','w-6');
+    var rows='';
+    if(turb){ var c=clarity(turb.v); rows+='<dt>Clarity</dt><dd>'+(c?'<span style="color:'+c[1]+'">'+c[0]+'</span>, ':'')+num(turb.v,1)+' FNU</dd>'; }
+    if(doo){ rows+='<dt>Dissolved oxygen</dt><dd>'+num(doo.v,1)+' mg/L</dd>'; }
+    if(cond){ rows+='<dt>Conductance</dt><dd>'+num(cond.v,0)+' µS/cm</dd>'; }
+    return '<div class="w w-6" style="--band:var(--live)">'
+      + '<div class="w-head"><span class="w-lab">Water quality read, North Park 04118564</span><span class="tag t-live">Live</span></div>'
+      + '<dl class="reads">'+rows+'</dl>'
+      + '<div class="w-sub">Turbidity is not pollution. Brown water is not automatically a spill: storms, bank erosion and bed disturbance all raise it. Provisional USGS data.</div>'
+      + '</div>';
+  }
+
+  function render(){
+    var host=el('widgets-more'); if(!host) return;
+    host.innerHTML = wFlood() + wSummary() + wTrend() + wQuality();
+  }
+  window.rbRenderExtra = render;
+
+  var primary=el('widgets');
+  if(primary && 'MutationObserver' in window){
+    try{ new MutationObserver(function(){ render(); }).observe(primary,{childList:true}); }catch(e){}
+  }
+  try{ if(typeof renderWidgets==='function'){ var _rw=renderWidgets; window.renderWidgets=function(){ _rw.apply(this,arguments); render(); }; } }catch(e){}
+
+  function boot(){ render(); loadTrend(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+})();
+</script>
+
 </body>
 </html>

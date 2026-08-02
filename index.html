@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>River Brain — Grand River, Grand Rapids</title>
+<meta name="description" content="Live conditions, facts and answers for the Grand River through Grand Rapids, Michigan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   RIVER BRAIN v2
+   Palette from the river's own materials: wet bed, limestone,
+   silt, and the safety orange that is on site through 2027.
+   Confidence classes each own a colour. The palette is the
+   epistemics.
+   =========================================================== */
+:root{
+  --bed:#08201F; --bed-2:#0D2C2B; --bed-3:#123736; --bed-4:#17403E;
+  --rule:#1E4948; --rule-2:#2A5F5C;
+  --ink:#E9E3D5; --ink-dim:#A9B5AE; --muted:#7C918D;
+
+  --live:#4FD6C6; --official:#6BA4E8; --stable:#D6CDB6;
+  --seasonal:#D3A253; --planned:#F3722C; --scenario:#9A8FBF;
+  --alert:#E5544B;
+
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --r:4px; --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bed);color:var(--ink);
+  font:15px/1.6 var(--body);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1200px 520px at 10% -10%,#10403C 0,transparent 60%),
+                   radial-gradient(900px 400px at 95% -4%,#0F3A44 0,transparent 55%);
+  background-attachment:fixed;
+}
+a{color:var(--live);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--live);outline-offset:2px;border-radius:2px}
+::selection{background:var(--live);color:var(--bed)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* ---------- top bar: the whole navigation ---------- */
+.top{
+  position:sticky;top:0;z-index:50;background:rgba(8,32,31,.86);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
+}
+.topin{display:flex;align-items:center;gap:20px;height:56px}
+.logo{font-family:var(--display);font-weight:900;font-size:16px;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
+.logo i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--live);margin-right:7px;vertical-align:1px;font-style:normal}
+@keyframes bre{0%,100%{opacity:1}50%{opacity:.3}}
+.logo i.on{animation:bre 2.6s ease-in-out infinite}
+nav.tabs{display:flex;gap:2px;margin-left:auto}
+nav.tabs a{
+  font:500 13px/1 var(--body);color:var(--ink-dim);padding:9px 13px;border-radius:var(--r);
+}
+nav.tabs a:hover{background:var(--bed-3);color:var(--ink);text-decoration:none}
+nav.tabs a.on{background:var(--bed-4);color:var(--ink)}
+
+/* ---------- hero ask ---------- */
+.hero{padding:34px 0 8px}
+.hero h1{
+  font-family:var(--display);font-weight:900;font-size:clamp(28px,4.4vw,46px);
+  line-height:.98;letter-spacing:-.03em;margin:0 0 8px;text-wrap:balance;
+}
+.hero h1 em{font-style:normal;color:var(--live)}
+.hero p.sub{color:var(--ink-dim);margin:0 0 20px;max-width:62ch}
+.askbox{display:flex;border:1px solid var(--rule-2);border-radius:var(--r);background:var(--bed-2);overflow:hidden}
+.askbox input{flex:1;min-width:0;background:none;border:0;padding:16px 18px;font:16px var(--body);color:var(--ink)}
+.askbox input::placeholder{color:var(--muted)}
+.askbox input:focus{outline:none}
+.askbox button{background:var(--live);color:var(--bed);padding:0 24px;font:700 11px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase}
+.askbox button:disabled{opacity:.4;cursor:not-allowed}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
+.chips button{
+  font:10.5px/1 var(--mono);letter-spacing:.05em;border:1px solid var(--rule-2);
+  color:var(--ink-dim);padding:6px 10px;border-radius:var(--r);
+}
+.chips button:hover{border-color:var(--live);color:var(--ink)}
+
+/* ---------- section headers ---------- */
+section{padding:44px 0 0;scroll-margin-top:64px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:18px}
+.sh h2{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;margin:0}
+.sh .note{font:10.5px/1.5 var(--mono);color:var(--muted)}
+
+/* ---------- widgets ---------- */
+.widgets{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.w{background:var(--bed-2);border:1px solid var(--rule);border-radius:var(--r);padding:15px 16px;position:relative;overflow:hidden}
+.w::after{content:'';position:absolute;inset:auto 0 0 0;height:2px;background:var(--band,var(--muted));opacity:.85}
+.w-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.w-lab{font:9.5px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.w-big{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.025em;line-height:1}
+.w-big small{font:400 12px var(--mono);color:var(--ink-dim);margin-left:4px;letter-spacing:0}
+.w-sub{font:10.5px/1.45 var(--mono);color:var(--muted);margin-top:7px}
+.w-4{grid-column:span 3} .w-6{grid-column:span 6} .w-12{grid-column:span 12} .w-8{grid-column:span 8}
+@media(max-width:900px){.w-4{grid-column:span 6}.w-6,.w-8{grid-column:span 12}}
+@media(max-width:520px){.w-4{grid-column:span 12}}
+
+/* verdict pill, the Andy line */
+.verdict{display:inline-block;font:10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 8px;border-radius:2px;border:1px solid currentColor;margin-top:9px}
+
+/* flood ladder */
+.ladder{display:flex;flex-direction:column;gap:0;margin-top:4px}
+.rung{display:flex;align-items:center;gap:9px;padding:5px 0;border-top:1px solid var(--rule)}
+.rung:first-child{border-top:0}
+.rung .bx{width:9px;height:9px;border-radius:2px;flex:none}
+.rung .nm{font:11px var(--body);color:var(--ink-dim);flex:1}
+.rung .vl{font:11px var(--mono);color:var(--muted)}
+.rung.hit .nm{color:var(--ink);font-weight:600}
+
+/* gauge readouts table */
+.reads{display:grid;grid-template-columns:1fr auto;gap:6px 14px;font-size:13px;margin-top:2px}
+.reads dt{font:10px/1.5 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.reads dd{margin:0;font-family:var(--mono);font-size:13px;text-align:right}
+
+/* ---------- species gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.sp{background:var(--bed-3);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;text-align:left;display:block;width:100%}
+.sp:hover{border-color:var(--live)}
+.sp .ph{width:100%;aspect-ratio:4/3;background:var(--bed-4) center/cover no-repeat;display:block;position:relative}
+.sp .ph.load::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);animation:sh 1.4s infinite}
+@keyframes sh{to{transform:translateX(100%)}}
+.sp .cap{padding:8px 9px 9px}
+.sp .nm{font:600 12px/1.3 var(--body);display:block}
+.sp .st{font:9px/1.3 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:3px;display:block}
+.sp .st.rare{color:var(--seasonal)} .sp .st.inv{color:var(--alert)}
+.galfilt{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+
+/* photo strip appended to answers */
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px;margin:12px 0 4px}
+.strip .sp .ph{aspect-ratio:1/1}
+
+/* ---------- facts ---------- */
+.tools{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.find{flex:1;min-width:200px;background:var(--bed-2);border:1px solid var(--rule);color:var(--ink);
+      padding:11px 14px;border-radius:var(--r);font:14px var(--body)}
+.find::placeholder{color:var(--muted)}
+.pill{font:10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--rule-2);
+      color:var(--ink-dim);padding:7px 11px;border-radius:var(--r)}
+.pill:hover{border-color:var(--live)}
+.pill.on{background:var(--ink);border-color:var(--ink);color:var(--bed);font-weight:600}
+
+.cards{columns:2;column-gap:14px}
+@media(max-width:820px){.cards{columns:1}}
+.card{break-inside:avoid;background:var(--bed-2);border:1px solid var(--rule);border-radius:var(--r);margin:0 0 14px;overflow:hidden}
+.card>summary{list-style:none;cursor:pointer;padding:13px 15px;display:flex;align-items:center;gap:10px;justify-content:space-between}
+.card>summary::-webkit-details-marker{display:none}
+.card>summary:hover{background:var(--bed-3)}
+.card .ttl{font:700 14px/1.3 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.card .arw{font:11px var(--mono);color:var(--muted);transition:transform .18s;flex:none}
+.card[open] .arw{transform:rotate(90deg)}
+.card .meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:0 15px 11px}
+.card .bd{padding:0 15px 8px;font-size:13.5px;color:var(--ink-dim)}
+.card .bd p{margin:0 0 9px} .card .bd ul,.card .bd ol{margin:0 0 9px;padding-left:17px}
+.card .bd li{margin:4px 0} .card .bd strong{color:var(--ink);font-weight:600}
+.card .acts{display:flex;gap:5px;padding:0 15px 13px}
+.act{font:9.5px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;border:1px solid var(--rule-2);
+     color:var(--muted);padding:5px 9px;border-radius:2px}
+.act:hover{border-color:var(--live);color:var(--ink)}
+.act.done{border-color:var(--live);color:var(--live)}
+
+table{width:100%;border-collapse:collapse;font-size:12px;margin:2px 0 11px}
+th{font:500 9px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+   text-align:left;padding:5px 7px 5px 0;border-bottom:1px solid var(--rule-2)}
+td{padding:6px 7px 6px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--mono);white-space:nowrap}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:13px}
+.kv dt{font:10px/1.5 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.kv dd{margin:0}
+.trap{border-left:2px solid var(--planned);padding:7px 0 7px 11px;margin:0 0 11px}
+.trap .bad{color:var(--planned);font:11.5px var(--mono);display:block;margin-bottom:4px}
+
+/* ---------- tags ---------- */
+.tag{display:inline-flex;align-items:center;gap:5px;font:9px/1 var(--mono);letter-spacing:.1em;
+     text-transform:uppercase;padding:3px 7px;border-radius:2px;border:1px solid currentColor;white-space:nowrap}
+.tag::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+.t-live{color:var(--live)} .t-official{color:var(--official)} .t-stable{color:var(--stable)}
+.t-seasonal{color:var(--seasonal)} .t-planned{color:var(--planned)} .t-scenario{color:var(--scenario)}
+.t-plain{color:var(--muted)}
+.t-plain::before{display:none}
+
+/* ---------- answers ---------- */
+.log{display:flex;flex-direction:column;gap:16px;margin-bottom:14px}
+.log:empty{display:none}
+.msg{border:1px solid var(--rule);border-radius:var(--r);background:var(--bed-2);padding:14px 16px}
+.msg.me{background:none;border-style:dashed;color:var(--ink-dim)}
+.who{font:9.5px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.msg p{margin:0 0 9px} .msg p:last-child{margin-bottom:0}
+.msg ul,.msg ol{margin:6px 0 10px;padding-left:19px}
+.msg li{margin:3px 0}
+.msg strong{color:#fff;font-weight:600}
+.msg code{font:12.5px var(--mono);background:var(--bed-3);padding:1px 5px;border-radius:2px}
+.msg table{margin-top:6px}
+.foot-a{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:11px;padding-top:10px;border-top:1px solid var(--rule)}
+
+/* ---------- river reader ---------- */
+.rr{border-left:2px solid var(--official);padding:2px 0 2px 13px;margin-bottom:15px}
+.rr .d{font:9.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rr h4{font:700 13.5px/1.3 var(--display);text-transform:uppercase;margin:5px 0 5px;letter-spacing:.01em}
+.rr p{margin:0;font-size:13px;color:var(--ink-dim)}
+
+/* ---------- learning log ---------- */
+.dive{border:1px solid var(--rule);border-radius:var(--r);background:var(--bed-2);padding:16px 18px}
+.diverow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.btn{font:600 11px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;background:var(--planned);
+     color:#fff;padding:11px 16px;border-radius:var(--r)}
+.btn.ghost{background:none;border:1px solid var(--rule-2);color:var(--ink-dim)}
+.btn.ghost:hover{border-color:var(--live);color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.bar{height:2px;background:var(--rule);border-radius:2px;overflow:hidden;margin-top:13px}
+.bar i{display:block;height:100%;background:var(--planned);width:0;transition:width .4s}
+.entry{border-top:1px solid var(--rule);padding:14px 0 2px;margin-top:14px}
+.entry h4{font:700 13px/1.3 var(--display);text-transform:uppercase;margin:0 0 4px}
+.entry .when{font:10px var(--mono);color:var(--muted);letter-spacing:.08em}
+.entry .bd{font-size:13px;color:var(--ink-dim);margin-top:7px}
+
+.foot{margin-top:60px;padding:20px 0 40px;border-top:1px solid var(--rule);font:10.5px/1.8 var(--mono);color:var(--muted)}
+
+/* toast */
+#toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,80px);background:var(--live);color:var(--bed);
+  font:600 12px var(--mono);padding:10px 18px;border-radius:var(--r);z-index:99;transition:transform .25s;pointer-events:none}
+#toast.up{transform:translate(-50%,0)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap topin">
+    <div class="logo"><i class="on"></i>River Brain</div>
+    <nav class="tabs">
+      <a href="#now" class="on">Now</a>
+      <a href="#life">Life</a>
+      <a href="#facts">Facts</a>
+      <a href="#log">Log</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>Ask the <em>Grand River</em>.</h1>
+    <p class="sub">Live gauge readings, every fact we hold, and photos of what lives in it. Answers say which stretch of river they apply to and how much they can be trusted.</p>
+    <div class="askbox">
+      <input id="q" placeholder="What is the river doing right now?" autocomplete="off">
+      <button id="send">Ask</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div class="log" id="log"></div>
+
+  <section id="now">
+    <div class="sh">
+      <h2>Right now</h2>
+      <span class="note" id="asof">reading the gauges…</span>
+    </div>
+    <div class="widgets" id="widgets"></div>
+  </section>
+
+  <section id="reader">
+    <div class="sh">
+      <h2>River Reader</h2>
+      <span class="note">Andy Guy's dispatches, Grand River Network</span>
+    </div>
+    <div id="rr"></div>
+  </section>
+
+  <section id="life">
+    <div class="sh">
+      <h2>Life in the river</h2>
+      <span class="note">Photos from Wikimedia · tap any for detail</span>
+    </div>
+    <div class="galfilt" id="galfilt"></div>
+    <div class="gal" id="gal"></div>
+  </section>
+
+  <section id="facts">
+    <div class="sh">
+      <h2>Facts</h2>
+      <span class="note" id="cardcount">—</span>
+    </div>
+    <div class="tools">
+      <input class="find" id="find" placeholder="Search every fact, table and rule…" autocomplete="off">
+      <button class="pill on" data-f="all">All</button>
+      <button class="pill" data-f="water">Water</button>
+      <button class="pill" data-f="life">Life</button>
+      <button class="pill" data-f="history">History</button>
+      <button class="pill" data-f="build">Build</button>
+      <button class="pill" data-f="people">People</button>
+      <button class="pill" data-f="craft">Crew</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="log">
+    <div class="sh">
+      <h2>Learning log</h2>
+      <span class="note">Deep dive runs every Monday · findings are appended, never overwritten</span>
+    </div>
+    <div class="dive">
+      <div class="diverow">
+        <div>
+          <div class="w-lab">Last deep dive</div>
+          <div id="lastdive" style="font:800 19px/1.2 var(--display);margin-top:5px">Never run</div>
+          <div id="nextdive" style="font:11px var(--mono);color:var(--muted);margin-top:4px"></div>
+        </div>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          <button class="btn" id="rundive">Run deep dive</button>
+          <button class="btn ghost" id="export">Export brain</button>
+        </div>
+      </div>
+      <div class="bar"><i id="divebar"></i></div>
+      <div id="divestatus" style="font:11px var(--mono);color:var(--muted);margin-top:9px"></div>
+      <div id="entries"></div>
+    </div>
+  </section>
+
+  <footer class="foot" id="foot"></footer>
+</main>
+
+<div id="toast"></div>
+<script src="./river-brain.js"></script>
+</body>
+</html>

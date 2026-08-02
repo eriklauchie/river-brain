@@ -1,0 +1,37 @@
+name: Weekly deep dive
+
+on:
+  schedule:
+    # 07:00 UTC every Monday (03:00 Eastern in summer, 02:00 in winter)
+    - cron: '0 7 * * 1'
+  workflow_dispatch:        # also runnable by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  dive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Search for anything new about the river
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/deep-dive.mjs
+
+      - name: Commit findings
+        run: |
+          git config user.name  "river-brain"
+          git config user.email "river-brain@users.noreply.github.com"
+          git add data/updates.json data/brain.json
+          if git diff --staged --quiet; then
+            echo "Nothing new this week."
+          else
+            git commit -m "Deep dive $(date -u +%Y-%m-%d)"
+            git push
+          fi

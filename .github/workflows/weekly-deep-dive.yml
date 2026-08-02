@@ -21,7 +21,12 @@ jobs:
 
       - name: Search for anything new about the river
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Bridged to the repo secret Erik actually created, which he named
+          # `river_brain` (not ANTHROPIC_API_KEY). The deep-dive script reads the
+          # ANTHROPIC_API_KEY env var, so we map it from secrets.river_brain here.
+          # If the secret is later renamed to ANTHROPIC_API_KEY, change the value
+          # below back to ${{ secrets.ANTHROPIC_API_KEY }}.
+          ANTHROPIC_API_KEY: ${{ secrets.river_brain }}
         run: node scripts/deep-dive.mjs
 
       - name: Commit findings

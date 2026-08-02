@@ -186,6 +186,68 @@
 </style>
 </head>
 <body>
+<!-- River Brain access gate (self-contained; shares unlock with the main page) -->
+<style>
+#rb-gate{position:fixed;inset:0;z-index:99999;background:#141517;display:grid;place-items:center;padding:24px;font-family:'IBM Plex Sans',system-ui,sans-serif}
+#rb-gate .rb-card{width:min(390px,92vw);background:#1b1d20;border:1px solid #33363c;border-radius:6px;padding:28px 26px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+#rb-gate .rb-brand{display:flex;align-items:center;gap:9px;font:800 14px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#4C9BE8;margin:0 0 14px}
+#rb-gate .rb-brand i{width:9px;height:9px;border-radius:50%;background:#4C9BE8;box-shadow:0 0 0 4px rgba(76,155,232,.22)}
+#rb-gate h2{font:800 23px/1.15 'Archivo',system-ui,sans-serif;margin:0 0 6px;color:#ECEDEE}
+#rb-gate p{font:13px/1.55 'IBM Plex Sans',system-ui,sans-serif;color:#B2B6BC;margin:0 0 18px}
+#rb-gate input[type=password]{width:100%;background:#232529;border:1px solid #33363c;border-radius:6px;padding:11px 12px;color:#ECEDEE;font:14px 'IBM Plex Mono',ui-monospace,monospace;box-sizing:border-box}
+#rb-gate input[type=password]:focus{outline:2px solid #4C9BE8;outline-offset:1px;border-color:transparent}
+#rb-gate label.rb-rm{display:flex;align-items:center;gap:8px;font:12.5px 'IBM Plex Sans',system-ui,sans-serif;color:#B2B6BC;margin:13px 0 0;cursor:pointer;user-select:none}
+#rb-gate button{margin-top:16px;width:100%;background:#4C9BE8;color:#0b0c0e;font:700 14px 'Archivo',system-ui,sans-serif;padding:11px;border-radius:6px;border:0;cursor:pointer}
+#rb-gate button:hover{filter:brightness(1.06)}
+#rb-gate .rb-err{color:#E5544B;font:12px 'IBM Plex Mono',ui-monospace,monospace;margin-top:10px;min-height:15px}
+#rb-gate .rb-fine{color:#7E838B;font:10.5px/1.55 'IBM Plex Mono',ui-monospace,monospace;margin-top:18px;border-top:1px solid #33363c;padding-top:12px}
+#rb-forget{position:fixed;right:11px;bottom:9px;z-index:40;font:10px 'IBM Plex Mono',ui-monospace,monospace;color:#7E838B;opacity:.55;cursor:pointer;background:none;border:0}
+#rb-forget:hover{opacity:1;text-decoration:underline}
+</style>
+<div id="rb-gate">
+  <form class="rb-card" id="rb-gateform" autocomplete="off">
+    <div class="rb-brand"><i></i>River Brain</div>
+    <h2>Private working reference</h2>
+    <p>Access for the Carbon Stories river team. Enter the access word to continue.</p>
+    <input type="password" id="rb-pass" placeholder="Access word" autocomplete="current-password" autofocus>
+    <label class="rb-rm"><input type="checkbox" id="rb-remember"> Remember me on this device</label>
+    <button type="submit">Unlock</button>
+    <div class="rb-err" id="rb-err" role="alert"></div>
+    <div class="rb-fine">Heads up: this is a public static page, so this gate is a light speed bump, not real security. Anything the page loads is visible in the page source regardless.</div>
+  </form>
+</div>
+<button id="rb-forget" type="button" hidden>Forget this device</button>
+<script>
+(function(){
+  var PASSWORD='riverbrain2026';
+  var KEY='rb-unlocked-v1';
+  var gate=document.getElementById('rb-gate');
+  var forget=document.getElementById('rb-forget');
+  var form=document.getElementById('rb-gateform');
+  var pass=document.getElementById('rb-pass');
+  var rem=document.getElementById('rb-remember');
+  var err=document.getElementById('rb-err');
+  function unlock(){ gate.style.display='none'; if(forget) forget.hidden=false; }
+  var remembered=false;
+  try{ remembered=localStorage.getItem(KEY)==='1'; }catch(e){}
+  if(remembered){ unlock(); }
+  else { try{ pass.focus(); }catch(e){} }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(pass.value===PASSWORD){
+      if(rem.checked){ try{ localStorage.setItem(KEY,'1'); }catch(e){} }
+      err.textContent=''; unlock();
+    } else {
+      err.textContent='That is not the access word.';
+      try{ pass.select(); }catch(e){}
+    }
+  });
+  if(forget) forget.addEventListener('click', function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    location.reload();
+  });
+})();
+</script>
 <div id="app">
   <div id="labels"></div>
 

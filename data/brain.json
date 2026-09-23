@@ -1,7 +1,7 @@
 {
-  "name": "River Brain — Grand River, Grand Rapids",
+  "name": "River Brain: Grand River, Grand Rapids",
   "base_research": "August 1, 2026",
-  "generated": "2026-08-02T01:26:40.216Z",
+  "generated": "2026-09-23T05:50:43.932Z",
   "reaches": {
     "BASIN": [
       "Basin",
@@ -13,11 +13,11 @@
     ],
     "LOWER": [
       "Lower Reach",
-      "Bridge Street to Fulton Street — active 2026-27 restoration"
+      "Bridge Street to Fulton Street, active 2026-27 restoration"
     ],
     "UPPER": [
       "Upper Reach",
-      "Ann Street to Bridge Street — Sixth Street Dam, federal EIS"
+      "Ann Street to Bridge Street, Sixth Street Dam and federal EIS"
     ],
     "DOWNTOWN": [
       "Downtown",
@@ -25,40 +25,16 @@
     ],
     "CORRIDOR": [
       "Corridor",
-      "Grand Rapids area beyond downtown — verify locally"
+      "Grand Rapids area beyond downtown, verify locally"
     ]
   },
   "confidence_classes": {
-    "live": [
-      "OBSERVED_LIVE",
-      "t-live",
-      "Measured right now"
-    ],
-    "official": [
-      "OFFICIAL_CURRENT",
-      "t-official",
-      "Current official position"
-    ],
-    "stable": [
-      "STABLE_FACT",
-      "t-stable",
-      "Does not change"
-    ],
-    "seasonal": [
-      "SEASONAL_LIKELY",
-      "t-seasonal",
-      "Typical for the season"
-    ],
-    "planned": [
-      "PLANNED_FUTURE",
-      "t-planned",
-      "Scheduled, not certain"
-    ],
-    "scenario": [
-      "SCENARIO_ONLY",
-      "t-scenario",
-      "Undecided, illustrative only"
-    ]
+    "live": "OBSERVED_LIVE",
+    "official": "OFFICIAL_CURRENT",
+    "stable": "STABLE_FACT",
+    "seasonal": "SEASONAL_LIKELY",
+    "planned": "PLANNED_FUTURE",
+    "scenario": "SCENARIO_ONLY"
   },
   "gauges": {
     "04118564": {
@@ -92,7 +68,7 @@
         "history"
       ],
       "keywords": "length miles watershed longest michigan source mouth hillsdale grand haven lake michigan tributaries owashtanong name",
-      "text": "Michigan's longest river. It rises in Somerset Township, Hillsdale County, crosses the Lower Peninsula west, and reaches Lake Michigan at Grand Haven.\n\n  \n    Length | 252 miles by USGS National Hydrography Dataset. The City of Grand Rapids uses about 270. Say \"roughly 250 to 270 miles\" when you need to be unassailable.\n\n    Watershed | About 5,572 square miles, Michigan's second largest.\n\n    Discharge | Estimates vary by method: about 3,860 cfs in a mid-century USGS study, about 5,049 cfs in modern NHDPlus modelling. Neither is \"today.\"\n\n    Tributaries | Red Cedar, Looking Glass, Maple, Flat, Thornapple, Rogue, Portage, plus many smaller streams.\n\n    Cities | Jackson, Eaton Rapids, Lansing, Grand Ledge, Portland, Ionia, Lowell, Grand Rapids, Grandville, Grand Haven.\n\n    Odawa name | O-wash-ta-nong, \"far-flowing water,\" for its length.\n\n  \n  The name Grand Rapids preserves a real land-water relationship: limestone bedrock, ledges and coarse gravel once spread the river's drop across a broad noisy reach, roughly 18 feet over about a mile."
+      "text": "Michigan's longest river. It rises in Somerset Township, Hillsdale County, crosses the Lower Peninsula west, and reaches Lake Michigan at Grand Haven.\n\n    Length252 miles by USGS National Hydrography Dataset. The City of Grand Rapids uses about 270. Say \"roughly 250 to 270 miles\" when you need to be unassailable.\n    WatershedAbout 5,572 square miles, Michigan's second largest.\n    DischargeEstimates vary by method: about 3,860 cfs in a mid-century USGS study, about 5,049 cfs in modern NHDPlus modelling. Neither is \"today.\"\n    TributariesRed Cedar, Looking Glass, Maple, Flat, Thornapple, Rogue, Portage, plus many smaller streams.\n    CitiesJackson, Eaton Rapids, Lansing, Grand Ledge, Portland, Ionia, Lowell, Grand Rapids, Grandville, Grand Haven.\n    Odawa nameO-wash-ta-nong, \"far-flowing water,\" for its length.\n\n  The name Grand Rapids preserves a real land-water relationship: limestone bedrock, ledges and coarse gravel once spread the river's drop across a broad noisy reach, roughly 18 feet over about a mile."
     },
     {
       "id": "grammar",
@@ -103,7 +79,7 @@
         "water"
       ],
       "keywords": "reach tag spatial grammar lower upper mainstem basin downtown corridor ambiguity",
-      "text": "The single biggest source of wrong river information is geographic ambiguity. A fact true for the 5,572 square mile watershed can be false for the 2.5 mile downtown corridor.\n\n  Tag | Means | \n\n  BASIN | Whole watershed. Climate, tributaries, land use, migration network. | \n\n  MAINSTEM | The river through Grand Rapids. Flood stage, urban behaviour, general recreation. | \n\n  LOWER REACH | Bridge Street to Fulton Street. The 2026-27 four-dam removal. | \n\n  UPPER REACH | Ann Street to Bridge Street. Sixth Street Dam and the sea lamprey barrier EIS. | \n\n  DOWNTOWN | Banks, floodwalls, bridges, parks, trails, events. | \n\n  CORRIDOR | Grand Rapids area above and below downtown. Still needs local verification. | \n\n  Rule: attach a reach tag to every construction statement, wildlife claim, closure, hazard and rendering."
+      "text": "The single biggest source of wrong river information is geographic ambiguity. A fact true for the 5,572 square mile watershed can be false for the 2.5 mile downtown corridor.\n\nTag | Means\n\nBASIN | Whole watershed. Climate, tributaries, land use, migration network.\n\nMAINSTEM | The river through Grand Rapids. Flood stage, urban behaviour, general recreation.\n\nLOWER REACH | Bridge Street to Fulton Street. The 2026-27 four-dam removal.\n\nUPPER REACH | Ann Street to Bridge Street. Sixth Street Dam and the sea lamprey barrier EIS.\n\nDOWNTOWN | Banks, floodwalls, bridges, parks, trails, events.\n\nCORRIDOR | Grand Rapids area above and below downtown. Still needs local verification.\n  Rule: attach a reach tag to every construction statement, wildlife claim, closure, hazard and rendering."
     },
     {
       "id": "gauges",
@@ -114,7 +90,7 @@
         "water"
       ],
       "keywords": "usgs 04119000 04118564 gage height stage discharge cfs velocity depth deep how deep turbidity provisional nws gdrm4 measurement reading",
-      "text": "USGS 04119000 | Grand River at Grand Rapids. Discharge and gage height.\n\n    USGS 04118564 | Grand River at North Park Street. Water temperature, dissolved oxygen, conductance, turbidity.\n\n    NWS GDRM4 | Flood thresholds, forecast, historic crests.\n\n  \n  \n    Discharge (cfs) is a flow rate, not a current speed. The same cfs is slow in a wide pool and fast in a chute.\n\n    Gage height is not river depth. It is water surface elevation against a gauge datum. This is the single most common error.\n\n    Trend (rising, stable, falling) often matters more than the number.\n\n    USGS live values are provisional and get revised.\n\n  \n  A dated example, not a normal: on July 26, 2026 the North Park station read about 25.3 C / 77.5 F, gage height 3.18 ft, conductance 625 µS/cm, dissolved oxygen 12.9 mg/L, turbidity about 3 FNU. Never replay that as today."
+      "text": "USGS 04119000Grand River at Grand Rapids. Discharge and gage height.\n    USGS 04118564Grand River at North Park Street. Water temperature, dissolved oxygen, conductance, turbidity.\n    NWS GDRM4Flood thresholds, forecast, historic crests.\n\n    - Discharge (cfs) is a flow rate, not a current speed. The same cfs is slow in a wide pool and fast in a chute.\n\n    - Gage height is not river depth. It is water surface elevation against a gauge datum. This is the single most common error.\n\n    - Trend (rising, stable, falling) often matters more than the number.\n\n    - USGS live values are provisional and get revised.\n\n  A dated example, not a normal: on July 26, 2026 the North Park station read about 25.3 C / 77.5 F, gage height 3.18 ft, conductance 625 µS/cm, dissolved oxygen 12.9 mg/L, turbidity about 3 FNU. Never replay that as today."
     },
     {
       "id": "months",
@@ -126,7 +102,7 @@
         "life"
       ],
       "keywords": "temperature water temp month climate normals precipitation snow envelope seasonal typical air",
-      "text": "Air normals are NWS 1991-2020. The water column is a simulation envelope, not a measured normal. Use it only when no live reading is available, and label it typical.\n\n  \n  Month | Air hi/lo F | Precip in | Snow in | Water | River expression | \n\n  Jan | 31.0 / 18.6 | 2.52 | 22.6 | 0-4 C | Ice likely, low activity, thaw spikes stage fast | \n\n  Feb | 33.7 / 19.5 | 2.12 | 17.2 | 0-4 C | Cold, ice, late-winter steelhead on warm spells | \n\n  Mar | 44.5 / 26.9 | 2.39 | 7.6 | 2-7 C | Snowmelt variability, cold-water danger, flood vigilance | \n\n  Apr | 57.8 / 37.3 | 3.99 | 2.0 | 7-13 C | Spawning and migration peak, rain turbidity | \n\n  May | 69.8 / 48.6 | 4.00 | 0 | 13-19 C | Leaf-out, nursery period, recreation climbs | \n\n  Jun | 79.4 / 58.3 | 3.94 | 0 | 18-23 C | Warmwater fish active, paddling, storm pulses | \n\n  Jul | 83.1 / 62.5 | 3.86 | 0 | 22-27 C | Warmest water, thermal stress at low flow, peak construction | \n\n  Aug | 80.9 / 61.2 | 3.55 | 0 | 22-27 C | Warm, low flow makes rock features legible | \n\n  Sep | 73.9 / 53.1 | 3.43 | 0 | 18-23 C | Cooling begins, salmon strengthen, cleanup season | \n\n  Oct | 60.7 / 42.2 | 4.02 | 0.3 | 10-17 C | Salmon and steelhead, leaf fall, frontal rain | \n\n  Nov | 47.2 / 32.8 | 3.10 | 7.1 | 4-10 C | Fast cooling, steelhead, construction winds down | \n\n  Dec | 36.1 / 24.7 | 2.48 | 20.8 | 0-5 C | Snow and ice return, ice-jam scenarios | \n\n  \n  Annual normals: about 39.40 in precipitation, 77.6 in snowfall. In Fahrenheit the water runs roughly 32-38 in winter, 38-62 through spring, 65-76 in summer, 40-68 falling through autumn.\n\n  Air temperature is not a proxy for water temperature. A sunny 65 F April afternoon sits over water that will still kill you."
+      "text": "Air normals are NWS 1991-2020. The water column is a simulation envelope, not a measured normal. Use it only when no live reading is available, and label it typical.\n\nMonth | Air hi/lo F | Precip in | Snow in | Water | River expression\n\nJan | 31.0 / 18.6 | 2.52 | 22.6 | 0-4 C | Ice likely, low activity, thaw spikes stage fast\n\nFeb | 33.7 / 19.5 | 2.12 | 17.2 | 0-4 C | Cold, ice, late-winter steelhead on warm spells\n\nMar | 44.5 / 26.9 | 2.39 | 7.6 | 2-7 C | Snowmelt variability, cold-water danger, flood vigilance\n\nApr | 57.8 / 37.3 | 3.99 | 2.0 | 7-13 C | Spawning and migration peak, rain turbidity\n\nMay | 69.8 / 48.6 | 4.00 | 0 | 13-19 C | Leaf-out, nursery period, recreation climbs\n\nJun | 79.4 / 58.3 | 3.94 | 0 | 18-23 C | Warmwater fish active, paddling, storm pulses\n\nJul | 83.1 / 62.5 | 3.86 | 0 | 22-27 C | Warmest water, thermal stress at low flow, peak construction\n\nAug | 80.9 / 61.2 | 3.55 | 0 | 22-27 C | Warm, low flow makes rock features legible\n\nSep | 73.9 / 53.1 | 3.43 | 0 | 18-23 C | Cooling begins, salmon strengthen, cleanup season\n\nOct | 60.7 / 42.2 | 4.02 | 0.3 | 10-17 C | Salmon and steelhead, leaf fall, frontal rain\n\nNov | 47.2 / 32.8 | 3.10 | 7.1 | 4-10 C | Fast cooling, steelhead, construction winds down\n\nDec | 36.1 / 24.7 | 2.48 | 20.8 | 0-5 C | Snow and ice return, ice-jam scenarios\n\n  Annual normals: about 39.40 in precipitation, 77.6 in snowfall. In Fahrenheit the water runs roughly 32-38 in winter, 38-62 through spring, 65-76 in summer, 40-68 falling through autumn.\n\n  Air temperature is not a proxy for water temperature. A sunny 65 F April afternoon sits over water that will still kill you."
     },
     {
       "id": "flow",
@@ -149,7 +125,7 @@
         "history"
       ],
       "keywords": "flood stage crest 2013 1904 1985 2018 bankfull major moderate fema floodwall record 21.85",
-      "text": "NWS GDRM4 thresholds: 12 ft bankfull, 18 ft flood, 21 ft moderate, 23 ft major. Live-check, because rating curves change.\n\n  Date | Crest | Why it matters | \n\n  Apr 21, 2013 | 21.85 ft | Record stage. ~700 evacuated in Kent County, ~1,000 from Plaza Towers, over $10M damage, no deaths | \n\n  Feb 25, 2018 | 20.67 ft | Second highest modern crest | \n\n  Mar 1, 1985 | 19.64 ft | Previous record, broken in 2013 | \n\n  May 2020 | 19.55 ft | Recent high water | \n\n  1904 | ~19.5-20.4 ft | Largest by volume, about 54,000 cfs. Sources differ by gauge datum | \n\n  Apr 8, 2023 | 18.86 ft | Recent flood-stage event | \n\n  By volume the ranking is 1904 > 1905 > 1948 > 1947 > 2013. By stage 2013 is the record. Earliest recorded flood: 1832. The 1904 flood prompted the floodwalls begun in 1911.\n\n  Never say restoration stops flooding. FEMA's conditional review and the NRCS analysis found the Lower Reach design is not expected to increase mapped flood risk. That is the correct sentence. Flood risk remains."
+      "text": "NWS GDRM4 thresholds: 12 ft bankfull, 18 ft flood, 21 ft moderate, 23 ft major. Live-check, because rating curves change.\n\nDate | Crest | Why it matters\n\nApr 21, 2013 | 21.85 ft | Record stage. ~700 evacuated in Kent County, ~1,000 from Plaza Towers, over $10M damage, no deaths\n\nFeb 25, 2018 | 20.67 ft | Second highest modern crest\n\nMar 1, 1985 | 19.64 ft | Previous record, broken in 2013\n\nMay 2020 | 19.55 ft | Recent high water\n\n1904 | ~19.5-20.4 ft | Largest by volume, about 54,000 cfs. Sources differ by gauge datum\n\nApr 8, 2023 | 18.86 ft | Recent flood-stage event\n  By volume the ranking is 1904 > 1905 > 1948 > 1947 > 2013. By stage 2013 is the record. Earliest recorded flood: 1832. The 1904 flood prompted the floodwalls begun in 1911.\n\n  Never say restoration stops flooding. FEMA's conditional review and the NRCS analysis found the Lower Reach design is not expected to increase mapped flood risk. That is the correct sentence. Flood risk remains."
     },
     {
       "id": "quality",
@@ -172,7 +148,7 @@
         "life"
       ],
       "keywords": "fish species steelhead chinook coho salmon walleye smallmouth bass catfish pike sucker redhorse sturgeon guild 107",
-      "text": "The 2011 DNR Grand River Assessment records 107 fish species in the watershed, 14 of them introduced. State listed: lake sturgeon, river redhorse and cisco are threatened; pugnose shiner is endangered. Two are extirpated: weed shiner (last reported 1941) and American eel.\n\n  Species | When and where | \n\n  Steelhead | Fall through spring. Introduced Great Lakes migrant, the biggest angling draw | \n\n  Chinook salmon | Late summer into fall migration and spawning | \n\n  Coho salmon | Fall. Do not assume Chinook timing or abundance | \n\n  Walleye | Year-round river use, spring spawning movements below dams | \n\n  Smallmouth bass | Warm season, around rock and current breaks. New boulders add habitat | \n\n  Largemouth, sunfish, rock bass | Slower margins and backwaters, not fast mid-channel | \n\n  Channel and flathead catfish | Warm-season feeding, deeper slower zones | \n\n  Northern pike | Slower vegetated habitat in the wider system | \n\n  White sucker, redhorse | Strong spring movement over gravel. Ecologically important migrants | \n\n  Lake sturgeon | Rare. State threatened since 1994. Spring spawning window. Never call it common downtown | \n\n  Sturgeon population: LGROW estimates about 100 individuals. Juveniles were confirmed September 8, 2022, proving the river reproduces its own. The GRPM, John Ball Zoo, GVSU and Encompass team hold a USFWS grant of nearly $150,000.\n\n  Say this: \"Cooling fall water increases the likelihood of Chinook, coho and steelhead movement.\" Not this: \"There are hundreds of salmon jumping here today.\" The second needs eyes on the water."
+      "text": "The 2011 DNR Grand River Assessment records 107 fish species in the watershed, 14 of them introduced. State listed: lake sturgeon, river redhorse and cisco are threatened; pugnose shiner is endangered. Two are extirpated: weed shiner (last reported 1941) and American eel.\n\nSpecies | When and where\n\nSteelhead | Fall through spring. Introduced Great Lakes migrant, the biggest angling draw\n\nChinook salmon | Late summer into fall migration and spawning\n\nCoho salmon | Fall. Do not assume Chinook timing or abundance\n\nWalleye | Year-round river use, spring spawning movements below dams\n\nSmallmouth bass | Warm season, around rock and current breaks. New boulders add habitat\n\nLargemouth, sunfish, rock bass | Slower margins and backwaters, not fast mid-channel\n\nChannel and flathead catfish | Warm-season feeding, deeper slower zones\n\nNorthern pike | Slower vegetated habitat in the wider system\n\nWhite sucker, redhorse | Strong spring movement over gravel. Ecologically important migrants\n\nLake sturgeon | Rare. State threatened since 1994. Spring spawning window. Never call it common downtown\n  Sturgeon population: LGROW estimates about 100 individuals. Juveniles were confirmed September 8, 2022, proving the river reproduces its own. The GRPM, John Ball Zoo, GVSU and Encompass team hold a USFWS grant of nearly $150,000.\n\n  Say this: \"Cooling fall water increases the likelihood of Chinook, coho and steelhead movement.\" Not this: \"There are hundreds of salmon jumping here today.\" The second needs eyes on the water."
     },
     {
       "id": "fishing",
@@ -184,7 +160,7 @@
         "people"
       ],
       "keywords": "fishing calendar season salmon run steelhead walleye access sixth street fish ladder brenke license dnr regulations wade wading angler catch",
-      "text": "Season | Target | \n\n  Mar-May | Steelhead spawning run peak, walleye below dams, suckers | \n\n  Jun-Aug | Smallmouth, channel and flathead catfish, pike, panfish, carp and bowfishing | \n\n  Sep-Nov | Chinook and coho, fall steelhead, lake-run browns, walleye | \n\n  Dec-Feb | Holdover steelhead, walleye | \n\n  Timing detail. Chinook enter late August as water cools; coho follow weeks later and peak mid-to-late September on Webber Dam data. MSU Extension gives 57-61 F as optimum Chinook migration temperature. Steelhead: run starts late September to early October, peaks November, holds through winter, then a large push late February through April with early March often biggest. Skamania summer-runs appear late May into early summer.\n\n  Access. Grand Rapids: Sixth Street Dam and Fish Ladder Park on the west bank (built 1974, designed by artist Joseph Kinnebrew). No fishing inside the ladder itself. Lansing: Brenke Fish Ladder in Old Town, built 1981, the sixth in a series letting fish migrate 184 miles from Lake Michigan to Moores Park Dam. Also Portland, Ionia, Lyons, and the Grand Haven pier and channel.\n\n  Lake sturgeon may not be targeted here. Release immediately if caught incidentally. Catch-and-release is closed statewide through July 15, opens July 16 on most waters; harvest remains illegal except in a few designated waters. Michigan licence required. DNR 2026 regulations run through March 31, 2027 — live-check before giving anyone legal advice.\n\n  Dam removal will disperse the concentrated downtown fishery. Scout new stacking points once the Lower Reach is finished."
+      "text": "Season | Target\n\nMar-May | Steelhead spawning run peak, walleye below dams, suckers\n\nJun-Aug | Smallmouth, channel and flathead catfish, pike, panfish, carp and bowfishing\n\nSep-Nov | Chinook and coho, fall steelhead, lake-run browns, walleye\n\nDec-Feb | Holdover steelhead, walleye\n  Timing detail. Chinook enter late August as water cools; coho follow weeks later and peak mid-to-late September on Webber Dam data. MSU Extension gives 57-61 F as optimum Chinook migration temperature. Steelhead: run starts late September to early October, peaks November, holds through winter, then a large push late February through April with early March often biggest. Skamania summer-runs appear late May into early summer.\n\n  Access. Grand Rapids: Sixth Street Dam and Fish Ladder Park on the west bank (built 1974, designed by artist Joseph Kinnebrew). No fishing inside the ladder itself. Lansing: Brenke Fish Ladder in Old Town, built 1981, the sixth in a series letting fish migrate 184 miles from Lake Michigan to Moores Park Dam. Also Portland, Ionia, Lyons, and the Grand Haven pier and channel.\n\n  Lake sturgeon may not be targeted here. Release immediately if caught incidentally. Catch-and-release is closed statewide through July 15, opens July 16 on most waters; harvest remains illegal except in a few designated waters. Michigan licence required. DNR 2026 regulations run through March 31, 2027. Live-check before giving anyone legal advice.\n\n  Dam removal will disperse the concentrated downtown fishery. Scout new stacking points once the Lower Reach is finished."
     },
     {
       "id": "mussels",
@@ -196,7 +172,7 @@
         "build"
       ],
       "keywords": "mussel snuffbox relocation 9040 45000 square meters endangered biological opinion knapp street unionid zebra",
-      "text": "Mussels live in and on the bed. They filter water, cycle nutrients and shape microhabitat, and they cannot move out of the way of an excavator. Many native species need a specific host fish for their larvae, which ties fish passage directly to mussel population connectivity.\n\n  The 2024 Lower Reach survey covered about 45,000 square metres, roughly eight football fields, and relocated 9,040 mussels: 6,933 common, 2,069 state listed, and 38 federally endangered snuffbox. Crews estimated 14,000-15,000 total in the project area. Work ran August 23 to September 13, 2024. The USFWS Biological Opinion of August 14, 2024 found the project not likely to jeopardise the snuffbox with required conservation measures. FEMA issued its Conditional Letter of Map Revision December 11, 2024.\n\n  A second relocation happened below the Knapp Street bridge in July 2026, same reason: bridge work over occupied bed.\n\n  \n    Do not animate native mussels swimming around. They are a bed layer tied to substrate, depth, velocity and host access.\n\n    Disturbance is instant. Recovery is measured in years.\n\n    A good-looking new riffle is not proof the mussel community came back.\n\n    Native unionids are not zebra mussels. Do not blur them."
+      "text": "Mussels live in and on the bed. They filter water, cycle nutrients and shape microhabitat, and they cannot move out of the way of an excavator. Many native species need a specific host fish for their larvae, which ties fish passage directly to mussel population connectivity.\n\n  The 2024 Lower Reach survey covered about 45,000 square metres, roughly eight football fields, and relocated 9,040 mussels: 6,933 common, 2,069 state listed, and 38 federally endangered snuffbox. Crews estimated 14,000-15,000 total in the project area. Work ran August 23 to September 13, 2024. The USFWS Biological Opinion of August 14, 2024 found the project not likely to jeopardise the snuffbox with required conservation measures. FEMA issued its Conditional Letter of Map Revision December 11, 2024.\n\n  A second relocation happened below the Knapp Street bridge in July 2026, same reason: bridge work over occupied bed.\n\n    - Do not animate native mussels swimming around. They are a bed layer tied to substrate, depth, velocity and host access.\n\n    - Disturbance is instant. Recovery is measured in years.\n\n    - A good-looking new riffle is not proof the mussel community came back.\n\n    - Native unionids are not zebra mussels. Do not blur them."
     },
     {
       "id": "benthos",
@@ -218,7 +194,7 @@
         "life"
       ],
       "keywords": "birds eagle heron otter mink beaver muskrat turtle frog migratory bobolink wood thrush",
-      "text": "The federal review named migratory birds with potential occurrence: bald eagle, black-billed cuckoo, bobolink, golden-winged warbler, lesser yellowlegs, red-headed woodpecker, rusty blackbird, semipalmated sandpiper, willow flycatcher, wood thrush.\n\n  \"Potential occurrence\" is not \"standing downtown right now.\" Treat as a regional seasonal possibility layer unless someone actually saw it.\n\n  \n    Great blue herons and other fish-eaters favour shallows and slow edges.\n\n    Bald eagles use open-water reaches as feeding and travel corridors.\n\n    Mink and river otter are plausible in the wider system; downtown presence should be observation based.\n\n    Turtles and frogs need soft banks, wetlands, backwaters and tributary mouths, not hard floodwall edge.\n\n    Spring and fall migration produce short diversity peaks.\n\n  \n  Corridor mammals include beaver, river otter, mink, muskrat, white-tailed deer. Turtles include spiny softshell, northern map, Blanding's, painted and snapping. The mudpuppy matters because it hosts the salamander mussel."
+      "text": "The federal review named migratory birds with potential occurrence: bald eagle, black-billed cuckoo, bobolink, golden-winged warbler, lesser yellowlegs, red-headed woodpecker, rusty blackbird, semipalmated sandpiper, willow flycatcher, wood thrush.\n\n  \"Potential occurrence\" is not \"standing downtown right now.\" Treat as a regional seasonal possibility layer unless someone actually saw it.\n\n    - Great blue herons and other fish-eaters favour shallows and slow edges.\n\n    - Bald eagles use open-water reaches as feeding and travel corridors.\n\n    - Mink and river otter are plausible in the wider system; downtown presence should be observation based.\n\n    - Turtles and frogs need soft banks, wetlands, backwaters and tributary mouths, not hard floodwall edge.\n\n    - Spring and fall migration produce short diversity peaks.\n\n  Corridor mammals include beaver, river otter, mink, muskrat, white-tailed deer. Turtles include spiny softshell, northern map, Blanding's, painted and snapping. The mudpuppy matters because it hosts the salamander mussel."
     },
     {
       "id": "invasive",
@@ -241,8 +217,8 @@
         "history",
         "people"
       ],
-      "keywords": "odawa anishinaabe ottawa treaty grand river bands homecoming three fires ron yob mounds hopewell",
-      "text": "Indigenous presence predates and continues beyond settlement. Write it in the present tense where it is present tense.\n\n  \n    Hopewell burial mounds along the river are roughly 2,000 years old. Norton Mounds is a National Historic Landmark.\n\n    Nineteen Ottawa chiefs governed lands from Lake Michigan to Lansing, main village at what is now downtown Grand Rapids.\n\n    The 1821 Treaty of Chicago and later treaty relationships remain live political and cultural context.\n\n    The Grand River Bands of Ottawa Indians are a current community, not a historical footnote.\n\n    Homecoming of the Three Fires is a recurring June gathering at Riverside Park.\n\n  \n  Anti-tokenism rule from the documentary outline: Indigenous voices appear across multiple chapters intentionally, not in one designated segment. Frame industrial history as intention versus impact rather than assigning villains."
+      "keywords": "odawa anishinaabe ottawa treaty grand river bands homecoming three fires mounds hopewell",
+      "text": "Indigenous presence predates and continues beyond settlement. Write it in the present tense where it is present tense.\n\n    - Hopewell burial mounds along the river are roughly 2,000 years old. Norton Mounds is a National Historic Landmark.\n\n    - Nineteen Ottawa chiefs governed lands from Lake Michigan to Lansing, main village at what is now downtown Grand Rapids.\n\n    - The 1821 Treaty of Chicago and later treaty relationships remain live political and cultural context.\n\n    - The Grand River Bands of Ottawa Indians are a current community, not a historical footnote.\n\n    - Homecoming of the Three Fires is a recurring June gathering at Riverside Park.\n\n  Indigenous history here is present tense, not a chapter that ends in 1826. Industrial history is best read as intention versus impact rather than a search for villains."
     },
     {
       "id": "industrial",
@@ -254,7 +230,7 @@
         "build"
       ],
       "keywords": "campau 1826 sixth street dam canal 1849 electricity 1880 low head dams 1920s floodwall bridges gypsum dredging 300000",
-      "text": "1826 Louis Campau establishes a trading post at the rapids.\n\n    1841 Gypsum mining begins near Plaster Creek. Grand Rapids sits on one of North America's richest gypsum formations, with up to six miles of tunnels 85-100 ft below the city. Later reused for mushroom farming, records storage, a data centre and beer storage.\n\n    1849-1860s Sixth Street Dam and the mill canals build an industrial water-power system.\n\n    July 26, 1880 River water power generates electric lighting, which the local historical commission identifies as a national first.\n\n    1883 The Great Log Jam.\n\n    1920s-1931 Four downstream low-head dams installed. These are the ones now being removed.\n\n    1911 onward Floodwalls begun after 1904.\n\n  \n  The NRCS assessment records roughly 300,000 cubic yards of gravel, cobble and boulder historically dredged out and used as riverfront fill. That is why restoration is not \"uncovering a hidden pristine river.\" It is designing a new stable urban channel that recovers some rapids function using rock, while protecting bridges, flood conveyance and utilities."
+      "text": "- 1826 Louis Campau establishes a trading post at the rapids.\n\n    - 1841 Gypsum mining begins near Plaster Creek. Grand Rapids sits on one of North America's richest gypsum formations, with up to six miles of tunnels 85-100 ft below the city. Later reused for mushroom farming, records storage, a data centre and beer storage.\n\n    - 1849-1860s Sixth Street Dam and the mill canals build an industrial water-power system.\n\n    - July 26, 1880 River water power generates electric lighting, which the local historical commission identifies as a national first.\n\n    - 1883 The Great Log Jam.\n\n    - 1920s-1931 Four downstream low-head dams installed. These are the ones now being removed.\n\n    - 1911 onward Floodwalls begun after 1904.\n\n  The NRCS assessment records roughly 300,000 cubic yards of gravel, cobble and boulder historically dredged out and used as riverfront fill. That is why restoration is not \"uncovering a hidden pristine river.\" It is designing a new stable urban channel that recovers some rapids function using rock, while protecting bridges, flood conveyance and utilities."
     },
     {
       "id": "logjam",
@@ -277,7 +253,7 @@
         "build"
       ],
       "keywords": "timeline chronology dates history milestones",
-      "text": "When | What | \n\n  Millennia | Indigenous people live, travel, fish and gather in the valley | \n\n  1826 | Louis Campau trading post | \n\n  1832 | Earliest recorded local flood | \n\n  1838 | Ice-jam flood, ice piled 20-30 ft high, river forced into a new channel. First Grand Haven lighthouse | \n\n  1841 | Gypsum mining begins | \n\n  1849-60s | Sixth Street Dam and canals | \n\n  1850 | Grand Rapids incorporated | \n\n  1859 | Grand Haven south pier construction begins | \n\n  Jul 26, 1880 | Water power generates electric lighting | \n\n  Jul 26, 1883 | Great Log Jam | \n\n  1886 / 1892 / 1915 | Sixth Street Bridge; Blue Bridge span (575 ft); Gillett Bridge | \n\n  1904 | Largest flood by volume, ~54,000 cfs | \n\n  1911 | Floodwalls begun | \n\n  1920s-31 | Four low-head dams installed. Wastewater treatment era begins 1931 | \n\n  1962 | Grand Haven Musical Fountain built | \n\n  1969 | 12.6 billion gallons of raw sewage in one year | \n\n  1974 / 1981 | Grand Rapids fish ladder; Brenke Fish Ladder, Lansing | \n\n  1985 | Crest 19.64 ft | \n\n  1990 / 2000 / 2010 | Grand River Expedition, source to mouth | \n\n  1991 | Sewer improvement and CSO elimination begins | \n\n  2009 | Grand Rapids WhiteWater organises. ArtPrize begins | \n\n  Apr 21, 2013 | Record crest 21.85 ft | \n\n  Jul 13, 2015 | Final CSO outfall sealed | \n\n  Feb 25, 2018 | Crest 20.67 ft | \n\n  Sep 8, 2022 | Juvenile sturgeon confirmed — the river is reproducing them | \n\n  Aug-Sep 2024 | Lower Reach mussel relocation, 9,040 moved | \n\n  Jun 23, 2025 | EGLE final Lower Reach permit | \n\n  Aug 2025 | City adopts Climate Action and Adaptation Plan | \n\n  Jan 2026 | NRCS Final EA and FONSI | \n\n  Feb 25, 2026 | City awards Lower Reach construction contract | \n\n  Mar 23, 2026 | Federal funding approval announced | \n\n  May 15, 2026 | Acrisure Amphitheater opens, Lionel Richie | \n\n  May 18, 2026 | Ah-Nab-Awen mobilisation begins | \n\n  Jun 1, 2026 | Lower Reach groundbreaking | \n\n  Jul 1, 2026 | In-river work permitted to begin | \n\n  Jul 2027 | Upper Reach Draft EIS anticipated | \n\n  Fall 2027 | Lower Reach expected completion, water and weather dependent |"
+      "text": "When | What\n\nMillennia | Indigenous people live, travel, fish and gather in the valley\n\n1826 | Louis Campau trading post\n\n1832 | Earliest recorded local flood\n\n1838 | Ice-jam flood, ice piled 20-30 ft high, river forced into a new channel. First Grand Haven lighthouse\n\n1841 | Gypsum mining begins\n\n1849-60s | Sixth Street Dam and canals\n\n1850 | Grand Rapids incorporated\n\n1859 | Grand Haven south pier construction begins\n\nJul 26, 1880 | Water power generates electric lighting\n\nJul 26, 1883 | Great Log Jam\n\n1886 / 1892 / 1915 | Sixth Street Bridge; Blue Bridge span (575 ft); Gillett Bridge\n\n1904 | Largest flood by volume, ~54,000 cfs\n\n1911 | Floodwalls begun\n\n1920s-31 | Four low-head dams installed. Wastewater treatment era begins 1931\n\n1962 | Grand Haven Musical Fountain built\n\n1969 | 12.6 billion gallons of raw sewage in one year\n\n1974 / 1981 | Grand Rapids fish ladder; Brenke Fish Ladder, Lansing\n\n1985 | Crest 19.64 ft\n\n1990 / 2000 / 2010 | Grand River Expedition, source to mouth\n\n1991 | Sewer improvement and CSO elimination begins\n\n2009 | Grand Rapids WhiteWater organises. ArtPrize begins\n\nApr 21, 2013 | Record crest 21.85 ft\n\nJul 13, 2015 | Final CSO outfall sealed\n\nFeb 25, 2018 | Crest 20.67 ft\n\nSep 8, 2022 | Juvenile sturgeon confirmed: the river is reproducing them\n\nAug-Sep 2024 | Lower Reach mussel relocation, 9,040 moved\n\nJun 23, 2025 | EGLE final Lower Reach permit\n\nAug 2025 | City adopts Climate Action and Adaptation Plan\n\nJan 2026 | NRCS Final EA and FONSI\n\nFeb 25, 2026 | City awards Lower Reach construction contract\n\nMar 23, 2026 | Federal funding approval announced\n\nMay 15, 2026 | Acrisure Amphitheater opens, Lionel Richie\n\nMay 18, 2026 | Ah-Nab-Awen mobilisation begins\n\nJun 1, 2026 | Lower Reach groundbreaking\n\nJul 1, 2026 | In-river work permitted to begin\n\nJul 2027 | Upper Reach Draft EIS anticipated\n\nFall 2027 | Lower Reach expected completion, water and weather dependent"
     },
     {
       "id": "grandhaven",
@@ -300,19 +276,18 @@
         "build"
       ],
       "keywords": "lower reach construction building taplin 14562625 25982101 nrcs mobilization july 1 cofferdam causeway boulder arch riffle j-hook dam removal four dams progress",
-      "text": "Between Bridge Street and Fulton Street. Four low-head dams removed. The drop is redistributed across two channel-wide rock grade-control structures, constructed riffles, bed grading, 125+ habitat boulders and three edge / J-hook structures.\n\n  \n    Contractor | Taplin, awarded $14,562,625.98 by City Commission, late February 2026 (reported Feb 24-25)\n\n    Ceiling | Total authorised expenditure not to exceed about $25,982,101\n\n    Federal | $11,026,695 NRCS\n\n    Staging | Ah-Nab-Awen Park. Mobilisation May 18, 2026\n\n    In-river | Not before July 1, 2026, so Sixth Street keeps working as a lamprey barrier through the control period\n\n    Duration | Two construction seasons with a winter pause. Expected complete fall 2027\n\n    Footprint | ~31.5 acres construction area, ~11.7 acres direct impact, ~6.1 acres permanent riverbed alteration\n\n  \n  Feature | Action | \n\n  Dam 4, near Bridge | Remove, grade bed upstream | \n\n  Bridge to Gillett | Bed grading, scattered habitat boulders | \n\n  Dam 3, below Bridge | Remove | \n\n  Dam 2, above Gillett | Remove; three boulder arches and constructed riffles. Main grade-control zone | \n\n  Dam 1, above Pearl | Remove; constructed riffle and habitat boulders | \n\n  Pearl to Fulton | Habitat boulders, bank vane and J-hook edge features | \n\n  Not in the design any more: purpose-built standing whitewater surf waves. Natural rough water may form around rock at some discharges. Do not render a permanent surf wave."
+      "text": "Between Bridge Street and Fulton Street. Four low-head dams removed. The drop is redistributed across two channel-wide rock grade-control structures, constructed riffles, bed grading, 125+ habitat boulders and three edge / J-hook structures.\n\n    ContractorTaplin, awarded $14,562,625.98 by City Commission, late February 2026 (reported Feb 24-25)\n    CeilingTotal authorised expenditure not to exceed about $25,982,101\n    Federal$11,026,695 NRCS\n    StagingAh-Nab-Awen Park. Mobilisation May 18, 2026\n    In-riverNot before July 1, 2026, so Sixth Street keeps working as a lamprey barrier through the control period\n    DurationTwo construction seasons with a winter pause. Expected complete fall 2027\n    Footprint~31.5 acres construction area, ~11.7 acres direct impact, ~6.1 acres permanent riverbed alteration\n\nFeature | Action\n\nDam 4, near Bridge | Remove, grade bed upstream\n\nBridge to Gillett | Bed grading, scattered habitat boulders\n\nDam 3, below Bridge | Remove\n\nDam 2, above Gillett | Remove; three boulder arches and constructed riffles. Main grade-control zone\n\nDam 1, above Pearl | Remove; constructed riffle and habitat boulders\n\nPearl to Fulton | Habitat boulders, bank vane and J-hook edge features\n  Not in the design any more: purpose-built standing whitewater surf waves. Natural rough water may form around rock at some discharges. Do not render a permanent surf wave."
     },
     {
       "id": "onsite",
-      "title": "What a crew will see and hear on site",
+      "title": "What you will see and hear at the construction site",
       "reach": "LOWER",
       "confidence": "seasonal",
       "topics": [
-        "build",
-        "craft"
+        "build"
       ],
-      "keywords": "filming shot list construction visual sound excavator causeway turbidity ppe access christine liability insurance",
-      "text": "See: excavators and loaders working off temporary rock causeways; dump trucks and rock delivery; boulder and stone stockpiles; localised cofferdam or isolated work zones; hi-vis PPE; fencing and park closures; flow squeezed around temporary access paths; sediment plumes during active bed disturbance; finished rock features appearing section by section.\n\n  Hear: diesel equipment, backup alarms, rock impact and placement, trucks on the riverfront, radio comms, and the river's own sound changing as new rough-water features come alive.\n\n  Access reality (from the team's own record): site access runs through Christine at the City. Liability insurance with the right parties added is required before you are on the job site. One crew member was let on while another was turned away on the same week, so confirm every time. Rain does not automatically stop work; ask about the rain plan rather than assuming.\n\n  Turbidity is not pollution. If you film a brown plume, caption it as construction sediment under monitoring, not a spill."
+      "keywords": "construction site visual sound excavator causeway turbidity plume closures what does it look like",
+      "text": "See: excavators and loaders working off temporary rock causeways; dump trucks and rock delivery; boulder and stone stockpiles; localised cofferdam or isolated work zones; hi-vis PPE; fencing and park closures; flow squeezed around temporary access paths; sediment plumes during active bed disturbance; finished rock features appearing section by section.\n\n  Hear: diesel equipment, backup alarms, rock impact and placement, trucks on the riverfront, radio comms, and the river's own sound changing as new rough-water features come alive.\n\n  Access: the work zone between Bridge Street and Fulton Street is closed to the public, on the water and on the bank paths inside the fencing. The bridges stay open, and they are the best viewpoints. Rain does not automatically stop work.\n\n  Turbidity is not pollution. A brown plume below the work is construction sediment under monitoring, not a spill."
     },
     {
       "id": "matrix",
@@ -323,7 +298,7 @@
         "build"
       ],
       "keywords": "before during after matrix hydraulics safety passage recreation sound visual discharge low moderate high",
-      "text": "System | Before | During | Expected after | \n\n  Hydraulics | Four uniform drops, pooled backwater | Causeways redirect local flow | Distributed grade control, riffles, velocity diversity | \n\n  Safety | Recirculating low-head rollers | Work-zone exclusions | Rollers gone. Current, rock, cold and high water still dangerous | \n\n  Fish passage | Four barriers Fulton to Bridge | Temporary disturbance | Improved passage Fulton toward Sixth Street | \n\n  Mussels | Existing bed community | Relocation, sediment control | Multi-year recolonisation | \n\n  Look | Smooth sheets cut by straight dam lines | Industrial landscape | Irregular rock and riffle texture, broken water | \n\n  Sound | Traffic plus concentrated drops | Equipment and rock placement | Distributed river sound across rough water | \n\n  Recreation | Dam and bank constraints | Reduced access | More varied fishing, wading, paddling. Flow dependent | \n\n  How it will read on camera by discharge. Low: rock tops and boulder fields exposed, small fast tongues, individual riffles legible. Moderate: strongest rapids readability, whitewater lines, boulder wakes, seams and eddies distinct. High: rocks submerge, river reads broad and continuous, rough water increases but geometry hides. Flood: do not glamorise. Model volume, debris, pier turbulence, inundated edges and closures."
+      "text": "System | Before | During | Expected after\n\nHydraulics | Four uniform drops, pooled backwater | Causeways redirect local flow | Distributed grade control, riffles, velocity diversity\n\nSafety | Recirculating low-head rollers | Work-zone exclusions | Rollers gone. Current, rock, cold and high water still dangerous\n\nFish passage | Four barriers Fulton to Bridge | Temporary disturbance | Improved passage Fulton toward Sixth Street\n\nMussels | Existing bed community | Relocation, sediment control | Multi-year recolonisation\n\nLook | Smooth sheets cut by straight dam lines | Industrial landscape | Irregular rock and riffle texture, broken water\n\nSound | Traffic plus concentrated drops | Equipment and rock placement | Distributed river sound across rough water\n\nRecreation | Dam and bank constraints | Reduced access | More varied fishing, wading, paddling. Flow dependent\n  How it looks by discharge. Low: rock tops and boulder fields exposed, small fast tongues, individual riffles legible. Moderate: strongest rapids readability, whitewater lines, boulder wakes, seams and eddies distinct. High: rocks submerge, river reads broad and continuous, rough water increases but geometry hides. Flood: do not glamorise. Model volume, debris, pier turbulence, inundated edges and closures."
     },
     {
       "id": "upper",
@@ -334,7 +309,7 @@
         "build"
       ],
       "keywords": "upper reach sixth street dam removed removal eis glfc army corps alternatives draft eis july 2027 20 million barrier lamprey future decision",
-      "text": "Ann Street to Bridge Street. The Great Lakes Fishery Commission leads a federal Environmental Impact Statement with the US Army Corps of Engineers. The EIS resumed in spring 2026; scoping included an April 22 meeting with comments closing May 22.\n\n  Alternatives on the table:\n\n  No action\nFixed barrier at the present Sixth Street location\nAdjustable barrier at the present location\nFixed barrier about half a mile upstream\nAdjustable barrier about half a mile upstream\nFixed barrier about a mile upstream\nAdjustable barrier about a mile upstream\n\n  Draft EIS anticipated July 2027. Over $20 million in federal funding is identified for a new lamprey barrier, but no alternative and no construction schedule are selected.\n\n  Do not render as fact: Sixth Street Dam already removed; a specific barrier already chosen; an upstream location finalised; a construction start year; uninterrupted fish passage through the lamprey control point. Any of those is a labelled SCENARIO only."
+      "text": "Ann Street to Bridge Street. The Great Lakes Fishery Commission leads a federal Environmental Impact Statement with the US Army Corps of Engineers. The EIS resumed in spring 2026; scoping included an April 22 meeting with comments closing May 22.\n\n  Alternatives on the table:\n\n  - No action\n- Fixed barrier at the present Sixth Street location\n- Adjustable barrier at the present location\n- Fixed barrier about half a mile upstream\n- Adjustable barrier about half a mile upstream\n- Fixed barrier about a mile upstream\n- Adjustable barrier about a mile upstream\n\n  Draft EIS anticipated July 2027. Over $20 million in federal funding is identified for a new lamprey barrier, but no alternative and no construction schedule are selected.\n\n  Do not render as fact: Sixth Street Dam already removed; a specific barrier already chosen; an upstream location finalised; a construction start year; uninterrupted fish passage through the lamprey control point. Any of those is a labelled SCENARIO only."
     },
     {
       "id": "climate",
@@ -346,7 +321,7 @@
         "build"
       ],
       "keywords": "climate change projection warming precipitation variability drought flood mid-century",
-      "text": "City projections: average air temperature about 3-5 F warmer by mid-century, summers 4-7 F warmer, days above 90 F rising from about 7.9 a year historically to roughly 20-38, annual precipitation already up about 16 percent, potentially up another 3 inches by mid-century, more winter precipitation falling as rain, and the heaviest 1 percent of events producing substantially more rain.\n\n  Signal | River response | \n\n  Hotter summers | Longer warm-water windows, thermal stress, human heat exposure | \n\n  More intense rain | Sharper discharge, turbidity and debris pulses | \n\n  More winter rain | More rain-on-snow high-water scenarios | \n\n  Variable freeze/thaw | Less continuous ice does not remove moving-ice or jam hazard | \n\n  Dry summer spells | Lower base flow, warmer water, less cool refuge | \n\n  Shifted thermal seasons | Migration and spawning timing moves rather than following a date | \n\n  The concept is greater variability, not \"the river only gets higher.\" Projections are long-term distributions. They never predict a specific future Tuesday."
+      "text": "City projections: average air temperature about 3-5 F warmer by mid-century, summers 4-7 F warmer, days above 90 F rising from about 7.9 a year historically to roughly 20-38, annual precipitation already up about 16 percent, potentially up another 3 inches by mid-century, more winter precipitation falling as rain, and the heaviest 1 percent of events producing substantially more rain.\n\nSignal | River response\n\nHotter summers | Longer warm-water windows, thermal stress, human heat exposure\n\nMore intense rain | Sharper discharge, turbidity and debris pulses\n\nMore winter rain | More rain-on-snow high-water scenarios\n\nVariable freeze/thaw | Less continuous ice does not remove moving-ice or jam hazard\n\nDry summer spells | Lower base flow, warmer water, less cool refuge\n\nShifted thermal seasons | Migration and spawning timing moves rather than following a date\n  The concept is greater variability, not \"the river only gets higher.\" Projections are long-term distributions. They never predict a specific future Tuesday."
     },
     {
       "id": "events",
@@ -354,11 +329,10 @@
       "reach": "DOWNTOWN",
       "confidence": "official",
       "topics": [
-        "people",
-        "craft"
+        "people"
       ],
       "keywords": "events annual calendar coast guard festival cleanup world of winter artprize dam jam regatta expedition paddlefest happening this month upcoming when",
-      "text": "Confirmed annual.\n\n  Event | When | Note | \n\n  Grand Regatta | June | Grand Rapids Rowing. June 13, 2026, 1,000 m sprint, Michigan State Games | \n\n  Homecoming of the Three Fires | June | June 13-14, 2026, Riverside Park | \n\n  Summer Science & Leadership | July | July 6-17, 2026. Students study sturgeon, mussels, aquatic ecology | \n\n  Grand Haven Coast Guard Festival | Late Jul to early Aug | 10 days around Coast Guard Day. Founded 1924, first festival 1937. 350,000+ attend | \n\n  GRPM Grand River Adventure | Mid-August | Aug 15, 2026, 4th annual | \n\n  Mayors' Grand River Cleanup | September | WMEAC. 2026 kickoff Sept 19. Billed Michigan's largest river cleanup | \n\n  Dam Jam | Late September | Brenke Fish Ladder, Lansing. New $3.5M amphitheatre, ~350 seats | \n\n  ArtPrize | Late Sep to Oct | ~19 days. Began 2009, biennial since 2018 | \n\n  World of Winter | Jan to Mar 1 | Largest free winter festival in the US. 2026 ran Jan 9 to Mar 1 | \n\n  Musical Fountain | Nightly, Memorial Day to Labor Day | Grand Haven, Dewey Hill, since 1963 | \n\n  Fourth of July | Jul 4 | Fireworks over the river, Grand Rapids and Grand Haven | \n\n  Rare or one-off. The Grand River Expedition is a source-to-mouth paddle roughly every ten years: 1990 (launched by Verlen Kruger), 2000, 2010 (largest, ~300 paddlers, 54 completing 220+ miles). A 2020 edition was cancelled by COVID. Return to the River, Paddlefest, River for All, snow snake competitions, luminary bike rides and the Ionia and Flat River cleanups run as programmes or occasional events — confirm dates with organisers each year.\n\n  Rule: a regatta has a date. A salmon run has a probability window and a yearly strength. Do not write them the same way."
+      "text": "Confirmed annual.\n\nEvent | When | Note\n\nGrand Regatta | June | Grand Rapids Rowing. June 13, 2026, 1,000 m sprint, Michigan State Games\n\nHomecoming of the Three Fires | June | June 13-14, 2026, Riverside Park\n\nSummer Science & Leadership | July | July 6-17, 2026. Students study sturgeon, mussels, aquatic ecology\n\nGrand Haven Coast Guard Festival | Late Jul to early Aug | 10 days around Coast Guard Day. Founded 1924, first festival 1937. 350,000+ attend\n\nGRPM Grand River Adventure | Mid-August | Aug 15, 2026, 4th annual\n\nMayors' Grand River Cleanup | September | WMEAC. 2026 kickoff Sept 19. Billed Michigan's largest river cleanup\n\nDam Jam | Late September | Brenke Fish Ladder, Lansing. New $3.5M amphitheatre, ~350 seats\n\nArtPrize | Late Sep to Oct | ~19 days. Began 2009, biennial since 2018\n\nWorld of Winter | Jan to Mar 1 | Largest free winter festival in the US. 2026 ran Jan 9 to Mar 1\n\nMusical Fountain | Nightly, Memorial Day to Labor Day | Grand Haven, Dewey Hill, since 1963\n\nFourth of July | Jul 4 | Fireworks over the river, Grand Rapids and Grand Haven\n  Rare or one-off. The Grand River Expedition is a source-to-mouth paddle roughly every ten years: 1990 (launched by Verlen Kruger), 2000, 2010 (largest, ~300 paddlers, 54 completing 220+ miles). A 2020 edition was cancelled by COVID. Return to the River, Paddlefest, River for All, snow snake competitions, luminary bike rides and the Ionia and Flat River cleanups run as programmes or occasional events. Confirm dates with organisers each year.\n\n  Rule: a regatta has a date. A salmon run has a probability window and a yearly strength. Do not write them the same way."
     },
     {
       "id": "records",
@@ -370,20 +344,19 @@
         "history"
       ],
       "keywords": "record fish state record chinook essex black buffalo world record musical fountain artprize log jam longest",
-      "text": "Record | Detail | \n\n  Chinook salmon | 46.06 lb, 43.5 in, 1978, Grand River, Kent County, angler Ray Essex of Grand Rapids. Held the Michigan record until Aug 7, 2021 | \n\n  Black buffalo | 46.54 lb, 38.5 in, 2018, Grand River, Ottawa County, by bow. Current state record. A prior 33.25 lb record also came from the Grand (2004) | \n\n  Longest river in Michigan | The Grand, 252 miles. Confirmed | \n\n  Great Log Jam 1883 | One of the largest logjams in US history | \n\n  Grand Haven Musical Fountain | Built 1962 for about $50,000. World's largest musical fountain of its kind until the Bellagio opened in 1998 | \n\n  ArtPrize | World's largest art competition. 2009 purse $449,000 including a $250,000 first prize to Ran Ortner | \n\n  Record flood | 21.85 ft, April 21, 2013 | \n\n  Gypsum | One of the richest gypsum-bearing formations in North America under the city | \n\n  Careful: Michigan's state-record flathead catfish (64.46 lb, 2025) came from Plum Creek in Monroe County, not the Grand, despite Grand Rapids coverage. The all-time record lake sturgeon (193 lb, 1974) came from Mullett Lake."
+      "text": "Record | Detail\n\nChinook salmon | 46.06 lb, 43.5 in, 1978, Grand River, Kent County, angler Ray Essex of Grand Rapids. Held the Michigan record until Aug 7, 2021\n\nBlack buffalo | 46.54 lb, 38.5 in, 2018, Grand River, Ottawa County, by bow. Current state record. A prior 33.25 lb record also came from the Grand (2004)\n\nLongest river in Michigan | The Grand, 252 miles. Confirmed\n\nGreat Log Jam 1883 | One of the largest logjams in US history\n\nGrand Haven Musical Fountain | Built 1962 for about $50,000. World's largest musical fountain of its kind until the Bellagio opened in 1998\n\nArtPrize | World's largest art competition. 2009 purse $449,000 including a $250,000 first prize to Ran Ortner\n\nRecord flood | 21.85 ft, April 21, 2013\n\nGypsum | One of the richest gypsum-bearing formations in North America under the city\n  Careful: Michigan's state-record flathead catfish (64.46 lb, 2025) came from Plum Creek in Monroe County, not the Grand, despite Grand Rapids coverage. The all-time record lake sturgeon (193 lb, 1974) came from Mullett Lake."
     },
     {
       "id": "trivia",
-      "title": "Trivia worth putting on camera",
+      "title": "Trivia worth knowing",
       "reach": "MAINSTEM",
       "confidence": "stable",
       "topics": [
         "people",
-        "history",
-        "craft"
+        "history"
       ],
       "keywords": "trivia fun facts ford gypsum drinking water bridges blue bridge artprize steamboat whistle",
-      "text": "Nobody drinks the Grand. Grand Rapids draws from Lake Michigan through an intake nearly a mile offshore; it pumped river water from 1912 until about 1990. Lansing uses ~125 groundwater wells in the Saginaw Aquifer. Jackson uses 16 wells in the Marshall Aquifer.\n\n    The Blue Bridge is the 1892 Grand Rapids & Indiana Railroad span, about 575 ft, one of Michigan's longest truss bridges, converted to pedestrian use in the 1980s and painted its signature blue.\n\n    The Sixth Street Bridge (1886, wrought iron) is a designated historic landmark. The Gillett Bridge (1915) was an interurban railway crossing.\n\n    Gerald and Betty Ford are buried on the grounds of the Ford Presidential Museum, on the west bank downtown.\n\n    Gypsum tunnels under the city have held mushrooms, microfilmed legal records for about 70 percent of Michigan counties, a data centre and Founders beer. Mining subsidence sank a section of US-131 in the 1990s.\n\n    An ArtPrize entry once floated a school-of-fish mobile on a rocky islet between the Blue Bridge and Pearl Street.\n\n    Six-foot, century-old lake sturgeon still swim here.\n\n    Déjà vu: 47 years before the current work, Ah-Nab-Awen Park was also a construction zone.\n\n    An LGROW Plaster Creek cleanup in July 2026 pulled seventeen shopping carts out of a tributary."
+      "text": "- Nobody drinks the Grand. Grand Rapids draws from Lake Michigan through an intake nearly a mile offshore; it pumped river water from 1912 until about 1990. Lansing uses ~125 groundwater wells in the Saginaw Aquifer. Jackson uses 16 wells in the Marshall Aquifer.\n\n    - The Blue Bridge is the 1892 Grand Rapids & Indiana Railroad span, about 575 ft, one of Michigan's longest truss bridges, converted to pedestrian use in the 1980s and painted its signature blue.\n\n    - The Sixth Street Bridge (1886, wrought iron) is a designated historic landmark. The Gillett Bridge (1915) was an interurban railway crossing.\n\n    - Gerald and Betty Ford are buried on the grounds of the Ford Presidential Museum, on the west bank downtown.\n\n    - Gypsum tunnels under the city have held mushrooms, microfilmed legal records for about 70 percent of Michigan counties, a data centre and Founders beer. Mining subsidence sank a section of US-131 in the 1990s.\n\n    - An ArtPrize entry once floated a school-of-fish mobile on a rocky islet between the Blue Bridge and Pearl Street.\n\n    - Six-foot, century-old lake sturgeon still swim here.\n\n    - Déjà vu: 47 years before the current work, Ah-Nab-Awen Park was also a construction zone.\n\n    - An LGROW Plaster Creek cleanup in July 2026 pulled seventeen shopping carts out of a tributary."
     },
     {
       "id": "devel",
@@ -395,54 +368,44 @@
         "build"
       ],
       "keywords": "amphitheater acrisure development greenway trail millage marine corps reserve center gvsu brownfield",
-      "text": "The channel is not the only thing changing. Development alters what the river feels like without changing discharge at all.\n\n  \n    Acrisure Amphitheater opened May 15, 2026. 12,000 seats, about $184M, Lionel Richie headlining with The War and Treaty and Brian Vander Ark. Anchors roughly 31 acres of riverfront redevelopment with up to 10 acres of new recreation space and a nearly four-acre Green Ribbon.\n\n    The former Marine Corps Reserve Center, 3.5 acres at 1863 Monroe Ave NW, went to federal auction: opened $1.525M on July 13, 2026, pushed to $2.8M after 47 bids under a 24-hour soft close, against an original $4.9M asking price.\n\n    A proposed 20-story riverfront apartment tower is seeking transformational brownfield incentives.\n\n    GVSU trustees approved buying riverfront property immediately south of the Seidman College of Business.\n\n    August 4, 2026 millages in Ada Township, Plainfield Township and Ottawa County each affect the Grand River Greenway. Only Ottawa's ballot language says \"greenways,\" but all three fund trails and parks along it.\n\n    Greenway construction underway along Cannonsburg Road, led by Kent County Parks.\n\n  \n  A digital twin should keep a separate human intensity layer: pedestrians, bikes, event crowds, amplified sound, night lighting, closures, staging, fishing density, rowing density."
-    },
-    {
-      "id": "crew",
-      "title": "Our aspect: what Carbon Stories is actually contracted to do",
-      "reach": "DOWNTOWN",
-      "confidence": "official",
-      "topics": [
-        "craft"
-      ],
-      "keywords": "carbon stories team crew erik wayne duane alister layah atlanta dgri client role deliverable invoice cadence we our us who",
-      "text": "Carbon Stories is the content and media production partner for the Grand River Revitalization Project, working to DGRI (Downtown Grand Rapids Inc.) and alongside the Grand River Network, City of Grand Rapids, Grand Rapids WhiteWater, LGROW and GR Parks.\n\n  \n    Erik | Founder and creative director. Primary camera, shoots 8K, drone operator\n\n    Wayne (Duane) | Producer and client liaison. Briefs, calendar, delivery, the person the client asks\n\n    Alister | Editor. Recaps, reels, vertical reformats, captions\n\n    Layah | Field capture and shoots\n\n    Atlanta | Event calendar and coordination\n\n  \n  Scope: photo, video, drone, interviews, reels and recaps across river construction, greenway trail projects, groundbreakings, activations and community events. Billed as recurring monthly \"Grand River corridor b-roll and activation.\"\n\n  Standing expectations: bi-weekly client updates; content log kept current; master catalogue at carbonstories.us/rivercontent for client self-service; deliver photos same-day when an event contact asks; watch every edit before it goes out (a partner once re-scored a cut and blew out the mix).\n\n  House style: 30 fps timeline for river work, or the fast-motion reads wrong against the rest of the series. Horizontal and vertical versions of most reels. Captions on reels, because reels get watched silent."
-    },
-    {
-      "id": "doc",
-      "title": "River for All: the documentary structure",
-      "reach": "MAINSTEM",
-      "confidence": "planned",
-      "topics": [
-        "craft"
-      ],
-      "keywords": "documentary chapters river for all ron yob jordan hamilton outline chapter 1 vignettes river shorts",
-      "text": "Four chapters. Ch 1 \"What is the Grand River?\" community and history. Ch 2 \"The Process,\" designers, engineers, planners, policymakers. Ch 3 \"The Work,\" construction. Ch 4 \"The Grand River,\" the revitalised river.\n\n  Chapter 1 outline. 30 to 45 minutes, narrated by Ron Yob, music by Jordan Hamilton. Thesis: a river shaped the City. Now the City is rediscovering its river. Six movements:\n\n  \n    Intro, 3-4 min. Ron with the river\n\n    Before the City Listened: the river as life, 5-7 min. Indigenous relationship\n\n    Progress at a Cost, 5-7 min. Settlement and industrialisation\n\n    The Reckoning: when the river pushed back, 5-8 min\n\n    Choosing Repair: from control to care, 7-10 min\n\n    A River Re-Imagined: the river as partner, 7-10 min\n\n  \n  Tone moves grounding and sacred, to credible with emotional weight, to proof and tangible change. Interview pool: GRPM historians, Indigenous historians, university historians, city and county professionals, environmental scientists, community members, a fisherman, river sports people, and populations with limited river access.\n\n  River Shorts vignettes, 2-3 min each plus 30-60 second social cuts: Water Quality, Public Safety, Clean Water Action, History, The Grand Vision, Why the Dam Needs to Be Removed, Social Equity, Sea Lamprey, Fishing, Kayaking, Equitable Access, Economic Impact, Spirit of the River, White Water, People Engaging with the River."
-    },
-    {
-      "id": "shotlog",
-      "title": "Seasonal shot windows",
-      "reach": "MAINSTEM",
-      "confidence": "seasonal",
-      "topics": [
-        "craft"
-      ],
-      "keywords": "filming shoot shooting shot shots windows photography fog ice fall color drone capture timing when to film schedule next weeks b-roll broll",
-      "text": "High-value visual states, and roughly when to get them:\n\n  Shot | Window | \n\n  Fog over cold-warm water transition | Late fall and early spring mornings | \n\n  Ice and open-water contrast, mouth of the river | January to mid-February, before the melt | \n\n  Spring high flow and debris | March to April, from bridges and floodwalls | \n\n  Low summer flow exposing boulders | August to September, best read of new rock features | \n\n  Autumn colour plus salmon fishing | Mid-to-late October | \n\n  Night bridge reflections | Year-round, best on still cold nights | \n\n  Construction milestones and rock placement | July to November 2026, then June to October 2027 | \n\n  Post-project riffle patterns at different discharges | From fall 2027, shoot the same frame at low, moderate and high flow | \n\n  Fish ladder flooding | Early April, on a high-water day | \n\n  Shoot the same locked-off frame across seasons and flows. That comparison is the whole story of the project and it cannot be recreated later."
+      "text": "The channel is not the only thing changing. Development alters what the river feels like without changing discharge at all.\n\n    - Acrisure Amphitheater opened May 15, 2026. 12,000 seats, about $184M, Lionel Richie headlining with The War and Treaty and Brian Vander Ark. Anchors roughly 31 acres of riverfront redevelopment with up to 10 acres of new recreation space and a nearly four-acre Green Ribbon.\n\n    - The former Marine Corps Reserve Center, 3.5 acres at 1863 Monroe Ave NW, went to federal auction: opened $1.525M on July 13, 2026, pushed to $2.8M after 47 bids under a 24-hour soft close, against an original $4.9M asking price.\n\n    - A proposed 20-story riverfront apartment tower is seeking transformational brownfield incentives.\n\n    - GVSU trustees approved buying riverfront property immediately south of the Seidman College of Business.\n\n    - August 4, 2026 millages in Ada Township, Plainfield Township and Ottawa County each affect the Grand River Greenway. Only Ottawa's ballot language says \"greenways,\" but all three fund trails and parks along it.\n\n    - Greenway construction underway along Cannonsburg Road, led by Kent County Parks.\n\n  A digital twin should keep a separate human intensity layer: pedestrians, bikes, event crowds, amplified sound, night lighting, closures, staging, fishing density, rowing density."
     },
     {
       "id": "traps",
-      "title": "Never say this",
+      "title": "What people get wrong about the river",
       "reach": "MAINSTEM",
       "confidence": "stable",
       "topics": [
         "water",
         "build",
-        "life",
-        "craft"
+        "life"
       ],
-      "keywords": "errors mistakes never say wrong corrections traps narration script accuracy safe safety depth deep pristine spill flood claim write copy",
-      "text": "\"The river is 10 feet deep, the gauge says 10 ft.\"Stage is relative to a datum. Say the gauge reads X ft; actual depth varies across the channel.\n\n  \"They're removing Sixth Street Dam right now.\"Active work removes four downstream low-head dams in the Lower Reach. Sixth Street is a separate Upper Reach question still in federal EIS.\n\n  \"They're building a surf wave.\"Not in the authorised design. Describe flow-dependent whitewater around rock structures.\n\n  \"Restoration means it will never flood.\"Say it is modelled not to increase mapped flood risk. Then use live NWS data.\n\n  \"There are sturgeon here today.\"Needs observation. Say habitat and passage improvements target sturgeon, and spring is the likely spawning window.\n\n  \"Fish from the Grand are safe to eat.\"Advisories are species and reach specific. Live-check MDHHS.\n\n  \"The river has returned to its natural state.\"Say restored habitat and processes inside an altered urban channel.\n\n  \"Brown water means a spill.\"Turbidity has many causes. Check storms, construction monitoring and official incident reports.\n\n  \"It's warm out, so the river is warm.\"Spring water lags air by many degrees. Use live water temperature.\n\n  \"Salmon run every October 1.\"Biological timing varies. Use temperature, flow and date as a probability window."
+      "keywords": "errors mistakes wrong corrections myths accuracy safe safety depth deep pristine spill flood claim",
+      "text": "\"The river is 10 feet deep, the gauge says 10 ft.\"Stage is relative to a datum. Say the gauge reads X ft; actual depth varies across the channel.\n  \"They're removing Sixth Street Dam right now.\"Active work removes four downstream low-head dams in the Lower Reach. Sixth Street is a separate Upper Reach question still in federal EIS.\n  \"They're building a surf wave.\"Not in the authorised design. Describe flow-dependent whitewater around rock structures.\n  \"Restoration means it will never flood.\"Say it is modelled not to increase mapped flood risk. Then use live NWS data.\n  \"There are sturgeon here today.\"Needs observation. Say habitat and passage improvements target sturgeon, and spring is the likely spawning window.\n  \"Fish from the Grand are safe to eat.\"Advisories are species and reach specific. Live-check MDHHS.\n  \"The river has returned to its natural state.\"Say restored habitat and processes inside an altered urban channel.\n  \"Brown water means a spill.\"Turbidity has many causes. Check storms, construction monitoring and official incident reports.\n  \"It's warm out, so the river is warm.\"Spring water lags air by many degrees. Use live water temperature.\n  \"Salmon run every October 1.\"Biological timing varies. Use temperature, flow and date as a probability window."
+    },
+    {
+      "id": "under",
+      "title": "What is under the river",
+      "reach": "BASIN",
+      "confidence": "stable",
+      "topics": [
+        "water",
+        "history"
+      ],
+      "keywords": "under underneath below beneath layers geology rock bedrock limestone gypsum mine shale fill sediment bed strata ground",
+      "text": "From the water down, through downtown:\n\nLayer | What it is\n\nWater | A few feet deep in most of the channel, deeper in pools. Depth changes with flow. Gage height is not depth.\n\nRiverbed | Originally limestone ledges, gravel, cobble and boulder. After dredging, finer sediment pooled behind the dams. The Lower Reach rebuilds a coarse rock bed.\n\nRiverfront fill | Roughly 300,000 cubic yards of gravel, cobble and boulder dredged from the river and used to build up and extend the banks. It narrowed the channel.\n\nRiver and glacial deposits | Sand, gravel and silt left by the river and by meltwater at the end of the last ice age.\n\nLimestone bedrock | Mississippian-age limestone. Its ledges are the reason the rapids fell fast and loud.\n\nMichigan Formation | Shale, limestone and gypsum. Grand Rapids sits on one of North America's richest gypsum deposits; mining began near Plaster Creek around 1841.\n\nGypsum mines | Up to about six miles of tunnels roughly 85 to 100 feet down under parts of the metro area, mostly southwest of downtown. Later used for mushrooms, microfilmed county records, a data centre and Founders beer.\n  The 3D model at the top of the page shows these layers on the sides of the block and in the cross-section. Depths there are schematic."
+    },
+    {
+      "id": "eras",
+      "title": "How the downtown river changed, era by era",
+      "reach": "MAINSTEM",
+      "confidence": "stable",
+      "topics": [
+        "history",
+        "build"
+      ],
+      "keywords": "change changed through the years eras history timeline before after dams rapids engineered restored model 3d evolution",
+      "text": "Era | What the river looked like\n\nBefore 1826 | About 18 ft of fall over roughly a mile of limestone ledges. White water nearly bank to bank. Anishinaabe homeland, Odawa village at the rapids.\n\n1849 to 1880 | A dam at Sixth Street and a mill canal turn the rapids into water power. River power lights the city July 26, 1880.\n\n1883 | The Great Log Jam: over 600,000 logs break loose and take out every railroad bridge.\n\n1911 to 1931 | Floodwalls after the 1904 flood, about 300,000 cubic yards dredged into riverfront fill, four low-head dams below Sixth Street. The rapids become a staircase of pools.\n\n1969 | As much as 12.6 billion gallons of raw sewage in one year through combined sewer outfalls.\n\n1991 to 2015 | All 59 outfalls sealed, the last on July 13, 2015. Fish ladder since 1974. Record crest 21.85 ft in 2013; the walls held.\n\n2026 | Lower Reach construction: causeways, turbidity curtains, a cofferdam, staging at Ah-Nab-Awen. Sixth Street Dam stays.\n\nFall 2027, expected | The four dams' drop spread across two rock grade-control structures, riffles, 125 plus boulders and three J-hooks. No surf wave.\n\nAfter 2027 | Upper Reach undecided. Seven alternatives in the federal EIS; Draft EIS anticipated July 2027.\n  Scrub through all of these in the model at the top of the page."
     },
     {
       "id": "sources",
@@ -455,7 +418,7 @@
         "build"
       ],
       "keywords": "sources bibliography usgs nws nrcs egle dnr mdhhs grpm whitewater citations",
-      "text": "USGS 04119000 and 04118564 — live discharge, stage, temperature, water quality\n\n    NOAA / NWS gauge GDRM4 — flood thresholds, forecasts, historic crests\n\n    NWS Grand Rapids 1991-2020 climate normals\n\n    USDA NRCS, Lower Grand River Habitat Restoration Final EA, January 2026\n\n    Grand Rapids WhiteWater — project design, funding, permits, mussels, EIS status\n\n    City of Grand Rapids — contract award Feb 2026, funding approval Mar 2026, sewer improvement, wastewater, climate plan, River for All\n\n    Michigan EGLE — permits and biological assessments\n\n    Michigan DNR — 2026 fishing regulations (through Mar 31, 2027), Grand River Assessment 2011, species records\n\n    MDHHS Eat Safe Fish\n\n    Great Lakes Fishery Commission and USACE — Upper Reach EIS\n\n    Grand River Bands of Ottawa Indians\n\n    Grand Rapids Public Museum, History Grand Rapids, Junior League historical markers\n\n    LGROW, WMEAC, Grand Rapids Rowing, Grand River Network River Reader\n\n  \n  Base research compiled August 1, 2026. Construction, regulations, advisories and hydrology are time sensitive and get refreshed by the weekly deep dive."
+      "text": "- USGS 04119000 and 04118564: live discharge, stage, temperature, water quality\n\n    - NOAA / NWS gauge GDRM4: flood thresholds, forecasts, historic crests\n\n    - NWS Grand Rapids 1991-2020 climate normals\n\n    - USDA NRCS, Lower Grand River Habitat Restoration Final EA, January 2026\n\n    - Grand Rapids WhiteWater: project design, funding, permits, mussels, EIS status\n\n    - City of Grand Rapids: contract award Feb 2026, funding approval Mar 2026, sewer improvement, wastewater, climate plan, River for All\n\n    - Michigan EGLE: permits and biological assessments\n\n    - Michigan DNR: 2026 fishing regulations (through Mar 31, 2027), Grand River Assessment 2011, species records\n\n    - MDHHS Eat Safe Fish\n\n    - Great Lakes Fishery Commission and USACE: Upper Reach EIS\n\n    - Grand River Bands of Ottawa Indians\n\n    - Grand Rapids Public Museum, History Grand Rapids, Junior League historical markers\n\n    - LGROW, WMEAC, Grand Rapids Rowing, Grand River Network River Reader\n\n  Base research compiled August 1, 2026. Construction, regulations, advisories and hydrology are time sensitive and get refreshed by the weekly deep dive."
     }
   ],
   "species": [
@@ -700,70 +663,3152 @@
   ],
   "river_reader": [
     {
-      "date": "Jul 24, 2026",
-      "title": "Riverfront Bidding Battle",
-      "conditions": "72 °F, 1,300 cfs, well below the seasonal average for late July.",
-      "summary": "Federal auction for the 3.5 acre former Marine Corps Reserve Center reached $2.8M after 47 bids, up 80 percent from the $1.525M opening. Ada, Plainfield and Ottawa County millages on the August 4 ballot all shape the Greenway. Trail construction underway on Cannonsburg Road. GRPM Grand River Adventure August 15. Ah-Nab-Awen was also a construction zone 47 years ago."
+      "d": "Jul 24, 2026",
+      "t": "Riverfront Bidding Battle",
+      "c": "72 °F, 1,300 cfs, well below the seasonal average for late July.",
+      "b": "Federal auction for the 3.5 acre former Marine Corps Reserve Center reached $2.8M after 47 bids, up 80 percent from the $1.525M opening. Ada, Plainfield and Ottawa County millages on the August 4 ballot all shape the Greenway. Trail construction underway on Cannonsburg Road. GRPM Grand River Adventure August 15. Ah-Nab-Awen was also a construction zone 47 years ago."
     },
     {
-      "date": "Jul 10, 2026",
-      "title": "Another Mussel Move",
-      "conditions": "80 °F, 2,400 cfs, just below average for early July.",
-      "summary": "Biologists relocated about 3,000 freshwater mussels below Knapp Street before bridge pier work, including the state-protected purple wartyback. The yellow \"pool noodle\" in the river is a turbidity curtain. LGROW Plaster Creek cleanup pulled seventeen shopping carts. Community members made what organisers believe is the world’s largest cyanotype print on the Blue Bridge."
+      "d": "Jul 10, 2026",
+      "t": "Another Mussel Move",
+      "c": "80 °F, 2,400 cfs, just below average for early July.",
+      "b": "Biologists relocated about 3,000 freshwater mussels below Knapp Street before bridge pier work, including the state-protected purple wartyback. The yellow \"pool noodle\" in the river is a turbidity curtain. LGROW Plaster Creek cleanup pulled seventeen shopping carts. Community members made what organisers believe is the world’s largest cyanotype print on the Blue Bridge."
     },
     {
-      "date": "Jun 26, 2026",
-      "title": "Bridging the Thornapple",
-      "conditions": "Ada sets a new greenway connection.",
-      "summary": "Thornapple pedestrian bridge progress and Ada greenway trail work."
+      "d": "Jun 26, 2026",
+      "t": "Bridging the Thornapple",
+      "c": "Ada sets a new greenway connection.",
+      "b": "Thornapple pedestrian bridge progress and Ada greenway trail work."
     },
     {
-      "date": "Jun 12, 2026",
-      "title": "Lower Reach Begins",
-      "conditions": "In-river construction season opens.",
-      "summary": "The Lower Reach dam removal gets underway after nearly twenty years of planning."
+      "d": "Jun 12, 2026",
+      "t": "Lower Reach Begins",
+      "c": "In-river construction season opens.",
+      "b": "The Lower Reach dam removal gets underway after nearly twenty years of planning."
     },
     {
-      "date": "May 29, 2026",
-      "title": "Patios Mean Progress",
-      "conditions": "Oxford overhaul in overdrive.",
-      "summary": "Riverfront activation and the Oxford Trail rebuild."
+      "d": "May 29, 2026",
+      "t": "Patios Mean Progress",
+      "c": "Oxford overhaul in overdrive.",
+      "b": "Riverfront activation and the Oxford Trail rebuild."
     },
     {
-      "date": "May 15, 2026",
-      "title": "A Gizzard What?",
-      "conditions": "Plus a major bridge milestone.",
-      "summary": "Gizzard shad in the Grand, and a bridge milestone on the Greenway."
+      "d": "May 15, 2026",
+      "t": "A Gizzard What?",
+      "c": "Plus a major bridge milestone.",
+      "b": "Gizzard shad in the Grand, and a bridge milestone on the Greenway."
     },
     {
-      "date": "May 1, 2026",
-      "title": "A Rare \"Fish On!\"",
-      "conditions": "Plus Plainfield’s big dig.",
-      "summary": "A rare catch on the Grand and Plainfield Township trail excavation."
+      "d": "May 1, 2026",
+      "t": "A Rare \"Fish On!\"",
+      "c": "Plus Plainfield’s big dig.",
+      "b": "A rare catch on the Grand and Plainfield Township trail excavation."
     },
     {
-      "date": "Apr 17, 2026",
-      "title": "A Big Dam Problem",
-      "conditions": "And more dam study.",
-      "summary": "Sixth Street Dam condition and the federal barrier study."
+      "d": "Apr 17, 2026",
+      "t": "A Big Dam Problem",
+      "c": "And more dam study.",
+      "b": "Sixth Street Dam condition and the federal barrier study."
     },
     {
-      "date": "Apr 3, 2026",
-      "title": "Greenway Work Everywhere",
-      "conditions": "Construction season is here.",
-      "summary": "Simultaneous greenway construction across the corridor."
+      "d": "Apr 3, 2026",
+      "t": "Greenway Work Everywhere",
+      "c": "Construction season is here.",
+      "b": "Simultaneous greenway construction across the corridor."
     },
     {
-      "date": "Feb 20, 2026",
-      "title": "Dam Good News",
-      "conditions": "Ready, set, slither.",
-      "summary": "Funding and permitting progress, plus the snow snake competition."
+      "d": "Feb 20, 2026",
+      "t": "Dam Good News",
+      "c": "Ready, set, slither.",
+      "b": "Funding and permitting progress, plus the snow snake competition."
     },
     {
-      "date": "Jan 9, 2026",
-      "title": "WoW Starts Now",
-      "conditions": "Lyon gets lit.",
-      "summary": "World of Winter opens downtown and Lyon Square lights up."
+      "d": "Jan 9, 2026",
+      "t": "WoW Starts Now",
+      "c": "Lyon gets lit.",
+      "b": "World of Winter opens downtown and Lyon Square lights up."
+    }
+  ],
+  "model_eras": [
+    {
+      "era": "Before 1826",
+      "title": "The rapids",
+      "confidence": "stable",
+      "reach": "MAINSTEM",
+      "text": "The Grand dropped about 18 feet over roughly a mile here, spread across limestone ledges, gravel and boulder. That fast, shallow, loud water is the rapids the city is named for.\nAnishinaabe people have lived, fished and traveled here for millennia, and they are still here. The Odawa name for the river, Owashtanong, means far-flowing water.",
+      "look_for": "white water across the whole reach, the ledges under it, the village marker"
+    },
+    {
+      "era": "1849 to 1880",
+      "title": "Water power",
+      "confidence": "stable",
+      "reach": "MAINSTEM",
+      "text": "A dam at Sixth Street and a mill canal turned the rapids into an industrial power system. A drop that once spread across a mile was held back and spent through mills.\nOn July 26, 1880, river water power lit the city with electricity, which the local historical commission counts as a national first.",
+      "look_for": "the dam, the canal along the east bank, the mills"
+    },
+    {
+      "era": "July 26, 1883",
+      "title": "The Great Log Jam",
+      "confidence": "stable",
+      "reach": "MAINSTEM",
+      "text": "After two weeks of record rain, a jam about seven miles long broke loose above the Grand Trunk Railroad Bridge. Over 600,000 logs, about 150 million board feet, tore out every railroad bridge in the city.\nBooms at Grand Haven stopped them short of Lake Michigan. No lives were lost. Within a few years the local lumber era was over.",
+      "look_for": "the logs, the broken railroad bridge"
+    },
+    {
+      "era": "1911 to 1931",
+      "title": "The engineered river",
+      "confidence": "stable",
+      "reach": "MAINSTEM",
+      "text": "After the 1904 flood, the largest by volume at about 54,000 cfs, the city began floodwalls in 1911. Roughly 300,000 cubic yards of gravel, cobble and boulder were dredged out and used as riverfront fill, narrowing the channel.\nFour low-head dams went in below Sixth Street between the 1920s and 1931. The rapids disappeared into a staircase of pools.",
+      "look_for": "the stepped water surface, the four dams, the floodwalls, the fill under the banks"
+    },
+    {
+      "era": "1969",
+      "title": "The low point",
+      "confidence": "stable",
+      "reach": "MAINSTEM",
+      "text": "As much as 12.6 billion gallons of raw sewage entered the Grand in a single year. Combined sewers overflowed through outfalls in the walls every time it rained hard.\nIn the River for All outline this is the reckoning, the moment the river pushed back.",
+      "look_for": "the outfalls and their plumes, the colour of the water"
+    },
+    {
+      "era": "1991 to 2015",
+      "title": "Clean water",
+      "confidence": "stable",
+      "reach": "MAINSTEM",
+      "text": "A roughly $400 million sewer programme eliminated all 59 combined sewer overflow outfalls and laid about 119 miles of new pipe. The last outfall was sealed July 13, 2015, more than three years early.\nThe fish ladder at Sixth Street (1974) lets salmon and steelhead past the dam. In April 2013 the river crested at a record 21.85 ft and the walls held.",
+      "look_for": "the sealed outfalls, the fish ladder, the 2013 flood button"
+    },
+    {
+      "era": "2026, now",
+      "title": "Construction",
+      "confidence": "official",
+      "reach": "LOWER",
+      "text": "The four low-head dams between Bridge Street and Fulton Street are coming out. Crews mobilised at Ah-Nab-Awen Park on May 18, and in-river work began July 1, a date set so Sixth Street keeps blocking sea lamprey.\nMussels were moved first. Work pauses for winter and resumes in 2027. This model does not track daily progress, so for which dams are out today, check official project updates.",
+      "look_for": "the causeways, the yellow turbidity curtains, the cofferdam, the staging area, the live gauge"
+    },
+    {
+      "era": "Fall 2027, expected",
+      "title": "Lower Reach restored",
+      "confidence": "planned",
+      "reach": "LOWER",
+      "text": "The drop the four dams held is spread across two channel-wide rock grade-control structures, constructed riffles, more than 125 habitat boulders and three edge J-hooks. Rough water forms around rock, and it changes with flow.\nThere is no purpose-built surf wave. Sixth Street Dam still stands. Completion is expected fall 2027, water and weather permitting.",
+      "look_for": "the slope where the steps were, the boulder arches, the riffle, the J-hooks"
+    },
+    {
+      "era": "After 2027",
+      "title": "Upper Reach, undecided",
+      "confidence": "scenario",
+      "reach": "UPPER",
+      "text": "Sixth Street Dam is aging, and it is also the barrier that stops invasive sea lamprey. A federal Environmental Impact Statement led by the Great Lakes Fishery Commission with the Army Corps is weighing seven alternatives: no action, or a fixed or adjustable barrier at the present site, about half a mile upstream, or about a mile upstream.\nDraft EIS anticipated July 2027. Nothing shown in violet has been chosen.",
+      "look_for": "the three violet barrier locations"
+    }
+  ],
+  "model_crossings": [
+    {
+      "name": "Ann Street",
+      "lat": 42.9955,
+      "lng": -85.6722,
+      "kind": "street",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Railroad bridge",
+      "lat": 42.9905,
+      "lng": -85.673,
+      "kind": "rail",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Leonard Street",
+      "lat": 42.9866,
+      "lng": -85.6734,
+      "kind": "street",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Sixth Street Bridge",
+      "lat": 42.9767,
+      "lng": -85.6743,
+      "kind": "iron",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Sixth Street Dam",
+      "lat": 42.9744,
+      "lng": -85.6746,
+      "kind": "dam",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "I-196",
+      "lat": 42.9731,
+      "lng": -85.6749,
+      "kind": "freeway",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Bridge Street",
+      "lat": 42.9703,
+      "lng": -85.6753,
+      "kind": "street",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Gillett Bridge",
+      "lat": 42.96755,
+      "lng": -85.6754,
+      "kind": "arch",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Pearl Street",
+      "lat": 42.9665,
+      "lng": -85.6756,
+      "kind": "street",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Blue Bridge",
+      "lat": 42.9646,
+      "lng": -85.6756,
+      "kind": "blue",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Fulton Street",
+      "lat": 42.9631,
+      "lng": -85.6764,
+      "kind": "street",
+      "note": "bridge midpoint or estimate, not survey"
+    },
+    {
+      "name": "Wealthy Street",
+      "lat": 42.9561,
+      "lng": -85.68,
+      "kind": "street",
+      "note": "bridge midpoint or estimate, not survey"
+    }
+  ],
+  "model_landmarks": [
+    {
+      "name": "DeVos Place",
+      "lat": 42.96898,
+      "lng": -85.67294,
+      "built": "2003 to 2005",
+      "wikipedia": "DeVos_Place_Convention_Center",
+      "text": "Convention centre on the east bank with DeVos Performance Hall at its south end. Gillett Bridge lands at its river doors. The riverwalk runs along its west face."
+    },
+    {
+      "name": "Amway Grand Plaza, Pantlind wing",
+      "lat": 42.9665,
+      "lng": -85.6734,
+      "built": "1913",
+      "wikipedia": "Amway_Grand_Plaza_Hotel",
+      "text": "The Pantlind Hotel opened in 1913 on the east bank at Pearl and Monroe. Restored and renamed the Amway Grand Plaza in 1981, it still anchors the downtown riverfront."
+    },
+    {
+      "name": "Amway Grand Plaza tower",
+      "lat": 42.9672,
+      "lng": -85.67405,
+      "built": "1983",
+      "wikipedia": "Amway_Grand_Plaza_Hotel",
+      "text": "The 29 storey glass tower on the riverbank, at about 456 feet the tallest building in Grand Rapids when it opened. The river view rooms look straight down at the Lower Reach work."
+    },
+    {
+      "name": "JW Marriott",
+      "lat": 42.9659,
+      "lng": -85.6742,
+      "built": "2007",
+      "wikipedia": "JW_Marriott_Grand_Rapids",
+      "text": "23 storey hotel on the east bank between Pearl Street and the Blue Bridge. Its river terrace is one of the better vantage points for the Lower Reach."
+    },
+    {
+      "name": "Ford Presidential Museum",
+      "lat": 42.96841,
+      "lng": -85.67737,
+      "built": "1981",
+      "wikipedia": "Gerald_R._Ford_Presidential_Museum",
+      "text": "West bank, opened 1981. President Ford and Betty Ford are buried on the grounds overlooking the river. Ah-Nab-Awen Park sits between the museum and the water."
+    },
+    {
+      "name": "Grand Rapids Public Museum",
+      "lat": 42.96553,
+      "lng": -85.6769,
+      "built": "1994",
+      "wikipedia": "Grand_Rapids_Public_Museum",
+      "text": "West bank at Pearl Street, opened 1994 with the carousel pavilion out over the water. The Grand River Adventure event runs from its riverfront each August. Partner in the sturgeon work."
+    },
+    {
+      "name": "Bridgewater Place",
+      "lat": 42.9712,
+      "lng": -85.6765,
+      "built": "1993",
+      "wikipedia": "Bridgewater_Place,_Grand_Rapids",
+      "text": "18 storey office tower on the west bank at Bridge Street, 272 feet to the roof. Its neighbour, River House, was built as the second phase."
+    },
+    {
+      "name": "River House",
+      "lat": 42.97095,
+      "lng": -85.6772,
+      "built": "2008",
+      "wikipedia": "River_House_Condominiums",
+      "text": "34 storey condominium tower on the west bank at Bridge Street, the tallest building in Grand Rapids at 338 feet."
+    },
+    {
+      "name": "Plaza Towers",
+      "lat": 42.96367,
+      "lng": -85.67366,
+      "built": "1991",
+      "wikipedia": "Plaza_Towers_(Grand_Rapids)",
+      "text": "32 storey residential and hotel tower on the east bank at Fulton Street, about 344 feet, with the skywalk into downtown."
+    },
+    {
+      "name": "Eberhard Center, GVSU",
+      "lat": 42.96442,
+      "lng": -85.6773,
+      "built": "1988",
+      "wikipedia": "Robert_C._Pew_Grand_Rapids_Campus",
+      "text": "Grand Valley State University building on the west bank at Fulton Street, the first piece of the Pew campus. Its upper floors look down the Lower Reach."
+    },
+    {
+      "name": "Acrisure Amphitheater",
+      "lat": 42.9595,
+      "lng": -85.6764,
+      "built": "2026",
+      "wikipedia": "Acrisure_Amphitheater",
+      "text": "Outdoor amphitheater at 201 Market Avenue on the east bank below Fulton Street, opened May 15, 2026. The stage faces the river, so the river is the backdrop of every show."
+    },
+    {
+      "name": "Van Andel Arena",
+      "lat": 42.96238,
+      "lng": -85.67158,
+      "built": "1996",
+      "wikipedia": "Van_Andel_Arena",
+      "text": "Arena three blocks east of the river at Fulton Street, opened 1996. Not on the water, but it is the reason a lot of people walk across the Blue Bridge at night."
+    }
+  ],
+  "life_calendar": [
+    {
+      "name": "Chinook salmon",
+      "group": "fish",
+      "status": "Introduced",
+      "size": "Up to 3 ft, 15 to 30 lb",
+      "presence_by_month": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        1,
+        0
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        },
+        {
+          "month": "Feb",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        },
+        {
+          "month": "Mar",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        },
+        {
+          "month": "Apr",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        },
+        {
+          "month": "May",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        },
+        {
+          "month": "Jun",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        },
+        {
+          "month": "Jul",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "First kings enter from Lake Michigan as the water cools into the 60s. Look below Sixth Street Dam."
+        },
+        {
+          "month": "Sep",
+          "level": 2,
+          "text": "Peak run. Fish stack below the dam and climb the ladder. Spawning colours darken, jaws hook."
+        },
+        {
+          "month": "Oct",
+          "level": 2,
+          "text": "Peak run. Fish stack below the dam and climb the ladder. Spawning colours darken, jaws hook."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Last of the spawners, then they die. Eagles and gulls work the carcasses."
+        },
+        {
+          "month": "Dec",
+          "level": 0,
+          "text": "Not in the downtown river. Out in Lake Michigan, feeding."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Coho salmon",
+      "group": "fish",
+      "status": "Introduced",
+      "size": "20 to 30 in, 6 to 12 lb",
+      "presence_by_month": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        1,
+        0
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        },
+        {
+          "month": "Feb",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        },
+        {
+          "month": "Mar",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        },
+        {
+          "month": "Apr",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        },
+        {
+          "month": "May",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        },
+        {
+          "month": "Jun",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        },
+        {
+          "month": "Jul",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "First coho arrive a few weeks behind the kings."
+        },
+        {
+          "month": "Sep",
+          "level": 2,
+          "text": "Peak run in mid to late September."
+        },
+        {
+          "month": "Oct",
+          "level": 2,
+          "text": "Run winds down. Bright fish turn dark red for spawning."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Stragglers only."
+        },
+        {
+          "month": "Dec",
+          "level": 0,
+          "text": "Not in the downtown river until late summer."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Steelhead",
+      "group": "fish",
+      "status": "Introduced",
+      "size": "24 to 32 in, 6 to 12 lb",
+      "presence_by_month": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Winter holdovers sit in the deep pools, often under ice."
+        },
+        {
+          "month": "Feb",
+          "level": 2,
+          "text": "Spring spawning push, the biggest of the year. Early March is the peak. Fish on gravel."
+        },
+        {
+          "month": "Mar",
+          "level": 2,
+          "text": "Spring spawning push, the biggest of the year. Early March is the peak. Fish on gravel."
+        },
+        {
+          "month": "Apr",
+          "level": 2,
+          "text": "Spring spawning push, the biggest of the year. Early March is the peak. Fish on gravel."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Spawned-out fish drop back to the lake."
+        },
+        {
+          "month": "Jun",
+          "level": 0,
+          "text": "Mostly back in the lake for summer. A few summer-run Skamania linger."
+        },
+        {
+          "month": "Jul",
+          "level": 0,
+          "text": "Mostly back in the lake for summer. A few summer-run Skamania linger."
+        },
+        {
+          "month": "Aug",
+          "level": 0,
+          "text": "Mostly back in the lake for summer. A few summer-run Skamania linger."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Fall run begins late September, early October, behind the salmon."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Fall run begins late September, early October, behind the salmon."
+        },
+        {
+          "month": "Nov",
+          "level": 2,
+          "text": "Peak of the fall run below Sixth Street."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Winter holdovers sit in the deep pools, often under ice."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Lake sturgeon",
+      "group": "fish",
+      "status": "Threatened",
+      "size": "4 to 6 ft, can live a century",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Slow in cold water, holding deep."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Slow in cold water, holding deep."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Slow in cold water, holding deep."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Spawning season. Adults move onto rock and gravel when the water reaches the mid 50s F. Never target them."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Spawning season. Adults move onto rock and gravel when the water reaches the mid 50s F. Never target them."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning season. Adults move onto rock and gravel when the water reaches the mid 50s F. Never target them."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Summer feeding in the deep pools, vacuuming the bottom."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Summer feeding in the deep pools, vacuuming the bottom."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Juveniles show up in fall surveys. Six were tagged in 2022, proof the river breeds its own."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Juveniles show up in fall surveys. Six were tagged in 2022, proof the river breeds its own."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Slow in cold water, holding deep."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Slow in cold water, holding deep."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "River redhorse",
+      "group": "fish",
+      "status": "Threatened",
+      "size": "18 to 30 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Holding in runs and pools."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Holding in runs and pools."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Holding in runs and pools."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Holding in runs and pools."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Spawning on gravel bars in late May and early June."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning on gravel bars in late May and early June."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Feeding on snails and small mussels over rock, which is why the new riffles matter."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Feeding on snails and small mussels over rock, which is why the new riffles matter."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Feeding on snails and small mussels over rock, which is why the new riffles matter."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Holding in runs and pools."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Holding in runs and pools."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Holding in runs and pools."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Walleye",
+      "group": "fish",
+      "status": "Native",
+      "size": "15 to 25 in",
+      "presence_by_month": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Slow and deep through winter."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Slow and deep through winter."
+        },
+        {
+          "month": "Mar",
+          "level": 2,
+          "text": "Spring run stacks below Sixth Street Dam. Spawning on rock at 42 to 50 F."
+        },
+        {
+          "month": "Apr",
+          "level": 2,
+          "text": "Spring run stacks below Sixth Street Dam. Spawning on rock at 42 to 50 F."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Post spawn and scattered."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Deep runs by day, feeding along edges at night."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Deep runs by day, feeding along edges at night."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Deep runs by day, feeding along edges at night."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Fall movement toward the dam. Good fishing."
+        },
+        {
+          "month": "Oct",
+          "level": 2,
+          "text": "Fall movement toward the dam. Good fishing."
+        },
+        {
+          "month": "Nov",
+          "level": 2,
+          "text": "Fall movement toward the dam. Good fishing."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Slow and deep through winter."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Smallmouth bass",
+      "group": "fish",
+      "status": "Native",
+      "size": "12 to 20 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Wintering in deep, slow water."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Wintering in deep, slow water."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Wintering in deep, slow water."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Wintering in deep, slow water."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Spawning in the shallows once the water passes about 60 F. The new boulders are nest cover."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning in the shallows once the water passes about 60 F. The new boulders are nest cover."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Prime summer fishing on rock and current breaks."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Prime summer fishing on rock and current breaks."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Feeding hard before winter."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Feeding hard before winter."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Wintering in deep, slow water."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Wintering in deep, slow water."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Largemouth bass",
+      "group": "fish",
+      "status": "Native",
+      "size": "12 to 20 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Summer in the slow margins and backwaters, stronger downstream of the city."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Summer in the slow margins and backwaters, stronger downstream of the city."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Summer in the slow margins and backwaters, stronger downstream of the city."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Present but scattered. Slow water, weed edges."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Northern pike",
+      "group": "fish",
+      "status": "Native",
+      "size": "24 to 40 in",
+      "presence_by_month": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Slow, deep, still hunting."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Slow, deep, still hunting."
+        },
+        {
+          "month": "Mar",
+          "level": 2,
+          "text": "Spawning in flooded vegetation right after ice out."
+        },
+        {
+          "month": "Apr",
+          "level": 2,
+          "text": "Spawning in flooded vegetation right after ice out."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Ambush hunter in weed beds and slack water, mostly in the wider river below town."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Ambush hunter in weed beds and slack water, mostly in the wider river below town."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Ambush hunter in weed beds and slack water, mostly in the wider river below town."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Ambush hunter in weed beds and slack water, mostly in the wider river below town."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Ambush hunter in weed beds and slack water, mostly in the wider river below town."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Slow, deep, still hunting."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Slow, deep, still hunting."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Slow, deep, still hunting."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Channel catfish",
+      "group": "fish",
+      "status": "Native",
+      "size": "15 to 25 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Dormant in cold water."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Dormant in cold water."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Dormant in cold water."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Dormant in cold water."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Waking up as the water warms. Feeding at night."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning in cavities and under ledges, then hard feeding."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Spawning in cavities and under ledges, then hard feeding."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Summer nights in the deeper, slower runs. Anglers below the dam catch them."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Summer nights in the deeper, slower runs. Anglers below the dam catch them."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Dormant in cold water."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Dormant in cold water."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Dormant in cold water."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Flathead catfish",
+      "group": "fish",
+      "status": "Native",
+      "size": "25 to 45 in, 20 to 50 lb",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Wintering in the deepest pools, barely moving."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Wintering in the deepest pools, barely moving."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Wintering in the deepest pools, barely moving."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Wintering in the deepest pools, barely moving."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Wintering in the deepest pools, barely moving."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Summer nights. Big fish hunt live prey in pools and under cover."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Summer nights. Big fish hunt live prey in pools and under cover."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Summer nights. Big fish hunt live prey in pools and under cover."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Feeding before winter."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Feeding before winter."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Wintering in the deepest pools, barely moving."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Wintering in the deepest pools, barely moving."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "White sucker",
+      "group": "fish",
+      "status": "Native",
+      "size": "12 to 20 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Apr",
+          "level": 2,
+          "text": "Spring run over gravel, an unglamorous migration that feeds everything."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Spawned out, dropping back."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Bottom feeding in runs and pools."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Gizzard shad",
+      "group": "fish",
+      "status": "Native",
+      "size": "8 to 14 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Die-offs after sharp cold snaps. Gulls and eagles clean up."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Die-offs after sharp cold snaps. Gulls and eagles clean up."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Schooling in slower water."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Schooling in slower water."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Schooling in slower water."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning in the shallows."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Big schools, the forage fish that feeds walleye, bass and birds."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Big schools, the forage fish that feeds walleye, bass and birds."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Big schools, the forage fish that feeds walleye, bass and birds."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Big schools, the forage fish that feeds walleye, bass and birds."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Schooling in slower water."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Schooling in slower water."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Pugnose shiner",
+      "group": "fish",
+      "status": "Endangered",
+      "size": "About 2 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning in aquatic vegetation."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Needs clear water and healthy plants. State endangered, rarely seen."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Spotted gar",
+      "group": "fish",
+      "status": "Concern",
+      "size": "2 to 3 ft",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Spawning in quiet backwaters and bayous."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning in quiet backwaters and bayous."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Basking near the surface in slack water. Juveniles documented in a lower-river bayou."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Basking near the surface in slack water. Juveniles documented in a lower-river bayou."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Slow, deep, mostly below the city."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Snuffbox mussel",
+      "group": "mussel",
+      "status": "Federally endangered",
+      "size": "1.5 to 2.5 in shell",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Buried in gravel, filtering."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Buried in gravel, filtering."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Buried in gravel, filtering."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Buried in gravel, filtering."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Females lure logperch, clamp onto their heads and release larvae onto their gills."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Females lure logperch, clamp onto their heads and release larvae onto their gills."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Females lure logperch, clamp onto their heads and release larvae onto their gills."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Relocation season. 38 were moved out of the Lower Reach in 2024."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Relocation season. 38 were moved out of the Lower Reach in 2024."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Buried in gravel, filtering."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Buried in gravel, filtering."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Buried in gravel, filtering."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Purple wartyback",
+      "group": "mussel",
+      "status": "State protected",
+      "size": "3 to 4 in shell",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning. Larvae ride on catfish."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Spawning. Larvae ride on catfish."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Among about 3,000 mussels moved below Knapp Street in July 2026."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Filtering in the gravel."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Freshwater mussels",
+      "group": "mussel",
+      "status": "Native",
+      "size": "2 to 6 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Relocation season. Warm water, low flow, divers hand picking the bed ahead of the excavators."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Relocation season. Warm water, low flow, divers hand picking the bed ahead of the excavators."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Filtering bacteria, algae and sediment. They cannot move out of the way."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Bald eagle",
+      "group": "wild",
+      "status": "Recovered",
+      "size": "6 to 7.5 ft wingspan",
+      "presence_by_month": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 2,
+          "text": "Winter concentration wherever the water stays open. The dam tailwater is a feeding spot."
+        },
+        {
+          "month": "Feb",
+          "level": 2,
+          "text": "Winter concentration wherever the water stays open. The dam tailwater is a feeding spot."
+        },
+        {
+          "month": "Mar",
+          "level": 2,
+          "text": "Nesting begins. Eggs in the big stick nests along the corridor."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Chicks in the nest, adults fishing the shallows."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Chicks in the nest, adults fishing the shallows."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Chicks in the nest, adults fishing the shallows."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Fledglings learning to fish."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Fledglings learning to fish."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Fewer birds, then the salmon carcasses bring them back."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Fewer birds, then the salmon carcasses bring them back."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Fewer birds, then the salmon carcasses bring them back."
+        },
+        {
+          "month": "Dec",
+          "level": 2,
+          "text": "Winter concentration wherever the water stays open. The dam tailwater is a feeding spot."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Great blue heron",
+      "group": "wild",
+      "status": "Common",
+      "size": "4 ft tall, 6 ft wingspan",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "A few stay where the water stays open."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "A few stay where the water stays open."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "First birds back at the colonies."
+        },
+        {
+          "month": "Apr",
+          "level": 2,
+          "text": "Wading the shallows and slow edges at dawn and dusk. The riffle margins will be prime."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Wading the shallows and slow edges at dawn and dusk. The riffle margins will be prime."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Wading the shallows and slow edges at dawn and dusk. The riffle margins will be prime."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Wading the shallows and slow edges at dawn and dusk. The riffle margins will be prime."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Wading the shallows and slow edges at dawn and dusk. The riffle margins will be prime."
+        },
+        {
+          "month": "Sep",
+          "level": 2,
+          "text": "Wading the shallows and slow edges at dawn and dusk. The riffle margins will be prime."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Most leave as the shallows cool."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Most leave as the shallows cool."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "A few stay where the water stays open."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "North American river otter",
+      "group": "wild",
+      "status": "Native",
+      "size": "3 to 4 ft nose to tail",
+      "presence_by_month": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        },
+        {
+          "month": "Feb",
+          "level": 2,
+          "text": "Mating season, most visible on ice edges and open water."
+        },
+        {
+          "month": "Mar",
+          "level": 2,
+          "text": "Mating season, most visible on ice edges and open water."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Pups in a bank den."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Pups in a bank den."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Plausible in the wider system. Downtown sightings should be observation based."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "American mink",
+      "group": "wild",
+      "status": "Native",
+      "size": "18 to 24 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Apr",
+          "level": 2,
+          "text": "Kits in a bank den. Adults hunting hard along the edge."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Kits in a bank den. Adults hunting hard along the edge."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Bank hunter, mostly at night. Tracks in mud and snow give it away."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "North American beaver",
+      "group": "wild",
+      "status": "Native",
+      "size": "3 to 4 ft, 40 to 60 lb",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Kits born in the lodge or bank burrow."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        },
+        {
+          "month": "Oct",
+          "level": 2,
+          "text": "Cutting trees and caching branches for winter. Most visible at dusk."
+        },
+        {
+          "month": "Nov",
+          "level": 2,
+          "text": "Cutting trees and caching branches for winter. Most visible at dusk."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Corridor resident, shaping bank vegetation."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Muskrat",
+      "group": "wild",
+      "status": "Native",
+      "size": "18 to 25 in with tail",
+      "presence_by_month": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Mar",
+          "level": 2,
+          "text": "Spring dispersal and breeding. Young animals show up everywhere."
+        },
+        {
+          "month": "Apr",
+          "level": 2,
+          "text": "Spring dispersal and breeding. Young animals show up everywhere."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Common in slower vegetated water. A small V wake at dusk."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Spiny softshell turtle",
+      "group": "wild",
+      "status": "Native",
+      "size": "Shell to 18 in on females",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Hibernating buried in the bottom."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Hibernating buried in the bottom."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Hibernating buried in the bottom."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Emerging from the mud."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Basking on sandbars and logs."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Nesting on soft sandy banks, which the hard floodwall edge does not provide."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Basking and hunting in the shallows."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Basking and hunting in the shallows."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Basking and hunting in the shallows."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Slowing down."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Hibernating buried in the bottom."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Hibernating buried in the bottom."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Northern map turtle",
+      "group": "wild",
+      "status": "Native",
+      "size": "Shell 4 to 10 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Overwintering on the bottom."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Overwintering on the bottom."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Overwintering on the bottom."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "First basking days."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Basking stacked on logs and rock in the main channel."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Nesting in sand and gravel."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Basking, eating snails and mussels."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Basking, eating snails and mussels."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Basking, eating snails and mussels."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Last basking before winter."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Overwintering on the bottom."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Overwintering on the bottom."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Mudpuppy",
+      "group": "wild",
+      "status": "Native",
+      "size": "8 to 13 in",
+      "presence_by_month": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 2,
+          "text": "Most active in cold water. Anglers catch them through the ice."
+        },
+        {
+          "month": "Feb",
+          "level": 2,
+          "text": "Most active in cold water. Anglers catch them through the ice."
+        },
+        {
+          "month": "Mar",
+          "level": 2,
+          "text": "Most active in cold water. Anglers catch them through the ice."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Eggs laid under rocks. Host for the salamander mussel."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Eggs laid under rocks. Host for the salamander mussel."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Hiding under rocks by day."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Hiding under rocks by day."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Hiding under rocks by day."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Hiding under rocks by day."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Hiding under rocks by day."
+        },
+        {
+          "month": "Nov",
+          "level": 2,
+          "text": "Most active in cold water. Anglers catch them through the ice."
+        },
+        {
+          "month": "Dec",
+          "level": 2,
+          "text": "Most active in cold water. Anglers catch them through the ice."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Sea lamprey",
+      "group": "inv",
+      "status": "Invasive",
+      "size": "12 to 24 in",
+      "presence_by_month": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        },
+        {
+          "month": "Feb",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        },
+        {
+          "month": "Mar",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "First adults arrive from the lake."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Spawning run. They climb as far as Sixth Street Dam and stop. That is the wall."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning run. They climb as far as Sixth Street Dam and stop. That is the wall."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Spawned adults die."
+        },
+        {
+          "month": "Aug",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        },
+        {
+          "month": "Sep",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        },
+        {
+          "month": "Oct",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        },
+        {
+          "month": "Nov",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        },
+        {
+          "month": "Dec",
+          "level": 0,
+          "text": "Adults are out in the lake, parasitising trout and salmon. Larvae live in stream beds for years."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Round goby",
+      "group": "inv",
+      "status": "Invasive",
+      "size": "4 to 6 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Spawning repeatedly through summer. Eats eggs and young of native fish."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning repeatedly through summer. Eats eggs and young of native fish."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Spawning repeatedly through summer. Eats eggs and young of native fish."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Spawning repeatedly through summer. Eats eggs and young of native fish."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "On the bottom among rock, year round."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Zebra mussel",
+      "group": "inv",
+      "status": "Invasive",
+      "size": "Under 1.5 in",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning once the water passes about 54 F. Larvae drift."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Spawning once the water passes about 54 F. Larvae drift."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Spawning once the water passes about 54 F. Larvae drift."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Encrusting rock and native mussels. Not a native unionid."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Common carp",
+      "group": "inv",
+      "status": "Invasive",
+      "size": "20 to 30 in, can top 30 lb",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Schooled in deeper, slower water."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Schooled in deeper, slower water."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Schooled in deeper, slower water."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Schooled in deeper, slower water."
+        },
+        {
+          "month": "May",
+          "level": 2,
+          "text": "Spawning in flooded shallows, thrashing at the surface."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Spawning in flooded shallows, thrashing at the surface."
+        },
+        {
+          "month": "Jul",
+          "level": 1,
+          "text": "Rooting in soft sediment, muddying the water."
+        },
+        {
+          "month": "Aug",
+          "level": 1,
+          "text": "Rooting in soft sediment, muddying the water."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Rooting in soft sediment, muddying the water."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Schooled in deeper, slower water."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Schooled in deeper, slower water."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Schooled in deeper, slower water."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Eurasian watermilfoil",
+      "group": "inv",
+      "status": "Invasive",
+      "size": "Stems to 10 ft",
+      "presence_by_month": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0,
+        0
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 0,
+          "text": "Dies back to root crowns for winter."
+        },
+        {
+          "month": "Feb",
+          "level": 0,
+          "text": "Dies back to root crowns for winter."
+        },
+        {
+          "month": "Mar",
+          "level": 0,
+          "text": "Dies back to root crowns for winter."
+        },
+        {
+          "month": "Apr",
+          "level": 0,
+          "text": "Dies back to root crowns for winter."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Growing fast from the bottom."
+        },
+        {
+          "month": "Jun",
+          "level": 2,
+          "text": "Dense mats in slow water. Fragments spread it."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Dense mats in slow water. Fragments spread it."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Dense mats in slow water. Fragments spread it."
+        },
+        {
+          "month": "Sep",
+          "level": 2,
+          "text": "Dense mats in slow water. Fragments spread it."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Dying back."
+        },
+        {
+          "month": "Nov",
+          "level": 0,
+          "text": "Dies back to root crowns for winter."
+        },
+        {
+          "month": "Dec",
+          "level": 0,
+          "text": "Dies back to root crowns for winter."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Purple loosestrife",
+      "group": "inv",
+      "status": "Invasive",
+      "size": "3 to 6 ft",
+      "presence_by_month": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        },
+        {
+          "month": "Feb",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        },
+        {
+          "month": "Mar",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        },
+        {
+          "month": "Apr",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        },
+        {
+          "month": "May",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Green growth on wet banks."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Purple spikes in bloom, one plant setting a million seeds."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Purple spikes in bloom, one plant setting a million seeds."
+        },
+        {
+          "month": "Sep",
+          "level": 1,
+          "text": "Going to seed."
+        },
+        {
+          "month": "Oct",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        },
+        {
+          "month": "Nov",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        },
+        {
+          "month": "Dec",
+          "level": 0,
+          "text": "Dead stalks and seed through winter."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
+    },
+    {
+      "name": "Phragmites",
+      "group": "inv",
+      "status": "Invasive",
+      "size": "6 to 15 ft",
+      "presence_by_month": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "months": [
+        {
+          "month": "Jan",
+          "level": 1,
+          "text": "Dead stalks stand all winter, then new shoots in May."
+        },
+        {
+          "month": "Feb",
+          "level": 1,
+          "text": "Dead stalks stand all winter, then new shoots in May."
+        },
+        {
+          "month": "Mar",
+          "level": 1,
+          "text": "Dead stalks stand all winter, then new shoots in May."
+        },
+        {
+          "month": "Apr",
+          "level": 1,
+          "text": "Dead stalks stand all winter, then new shoots in May."
+        },
+        {
+          "month": "May",
+          "level": 1,
+          "text": "Dead stalks stand all winter, then new shoots in May."
+        },
+        {
+          "month": "Jun",
+          "level": 1,
+          "text": "Dead stalks stand all winter, then new shoots in May."
+        },
+        {
+          "month": "Jul",
+          "level": 2,
+          "text": "Full height with feathery plumes. Crowding out native cattail and sedge."
+        },
+        {
+          "month": "Aug",
+          "level": 2,
+          "text": "Full height with feathery plumes. Crowding out native cattail and sedge."
+        },
+        {
+          "month": "Sep",
+          "level": 2,
+          "text": "Full height with feathery plumes. Crowding out native cattail and sedge."
+        },
+        {
+          "month": "Oct",
+          "level": 1,
+          "text": "Turning tan."
+        },
+        {
+          "month": "Nov",
+          "level": 1,
+          "text": "Turning tan."
+        },
+        {
+          "month": "Dec",
+          "level": 1,
+          "text": "Dead stalks stand all winter, then new shoots in May."
+        }
+      ],
+      "confidence": "seasonal, typical timing, not an observation"
     }
   ]
 }

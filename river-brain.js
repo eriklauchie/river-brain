@@ -3901,16 +3901,11 @@ function plain(html){
 }
 
 /* ---------- model ---------- */
-async function apiKey(ask){
-  if(HAS_WS) return null;
-  let k = await store.get('key', null);
-  if(!k && ask){
-    k = prompt('Anthropic API key\n\nStays in this browser, only ever sent to api.anthropic.com.');
-    if(k){ k = k.trim(); await store.set('key', k); }
-  }
-  if(!k && !HAS_WS) throw new Error('No API key set yet. Click Ask again to add one.');
-  return k;
-}
+// Ask runs on a static page and cannot hold a key. It calls the Carbon proxy at
+// riverbrain.carbonstories.us/api/claude, which adds the key on the server.
+const CLAUDE_PROXY = (/carbonstories\.us$/.test(location.hostname) ? '' : 'https://riverbrain.carbonstories.us') + '/api/claude';
+async function apiKey(ask){ return null; }
+
 async function callClaude(messages, system, {tools=true, maxTokens=1300, interactive=false} = {}){
   const headers = {'Content-Type':'application/json'};
   const key = await apiKey(interactive);
@@ -3918,7 +3913,7 @@ async function callClaude(messages, system, {tools=true, maxTokens=1300, interac
            headers['anthropic-dangerous-direct-browser-access'] = 'true'; }
   const body = {model: MODEL, max_tokens: maxTokens, system, messages};
   if(tools) body.tools = [{type:'web_search_20250305', name:'web_search'}];
-  const res = await fetch('https://api.anthropic.com/v1/messages',
+  const res = await fetch(HAS_WS ? 'https://api.anthropic.com/v1/messages' : CLAUDE_PROXY,
                           {method:'POST', headers, body: JSON.stringify(body)});
   if(!res.ok) throw new Error(`API ${res.status}. ${(await res.text().catch(()=>'')).slice(0,180)}`);
   const d = await res.json();

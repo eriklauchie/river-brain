@@ -4,7 +4,7 @@ on:
   schedule:
     # 07:00 UTC every Monday (03:00 Eastern in summer, 02:00 in winter)
     - cron: '0 7 * * 1'
-  workflow_dispatch:        # also runnable by hand from the Actions tab
+  workflow_dispatch:   # also runnable by hand from the Actions tab
 
 permissions:
   contents: write
@@ -21,12 +21,13 @@ jobs:
 
       - name: Search for anything new about the river
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # The repo secret is named RIVER_BRAIN; ANTHROPIC_API_KEY wins if it is ever added.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY || secrets.RIVER_BRAIN }}
         run: node scripts/deep-dive.mjs
 
       - name: Commit findings
         run: |
-          git config user.name  "river-brain"
+          git config user.name "river-brain"
           git config user.email "river-brain@users.noreply.github.com"
           git add data/updates.json data/brain.json
           if git diff --staged --quiet; then

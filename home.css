@@ -51,5 +51,9 @@ header .logo{cursor:pointer}
 @media (max-width:540px){
   #rb-doors .rb-grid{grid-template-columns:minmax(0,1fr)}
   .rb-door{padding:15px}
+  /* phones: the header fits every tab; Home already carries the readings, so Now steps aside */
+  header nav.tabs{gap:2px}
+  header nav.tabs a{padding-left:7px;padding-right:7px}
+  header nav.tabs a[href="#now"]{display:none}
 }
 @media (prefers-reduced-motion: reduce){ .rb-door{transition:none} .rb-door:hover{transform:none} }

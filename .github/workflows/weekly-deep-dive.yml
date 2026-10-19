@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   dive:
@@ -36,3 +37,9 @@ jobs:
             git commit -m "Deep dive $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      # A push made with the workflow token does not start other workflows, so start the Pages deploy here.
+      - name: Publish to Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main

@@ -1313,9 +1313,9 @@ const LANDMARKS = [
    b:'18 storey office tower on the west bank at Bridge Street, 272 feet to the roof. Its neighbour, River House, was built as the second phase.'},
   {k:'riverhouse', t:'River House',            lat:42.97095, lng:-85.67720, w:40,  d:40,  h:103, era:[5,8], col:0xB4B7B2, wiki:'River_House_Condominiums', y:'2008',
    b:'34 storey condominium tower on the west bank at Bridge Street, the tallest building in Grand Rapids at 338 feet.'},
-  {k:'plaza',   t:'Plaza Towers',              lat:42.96367, lng:-85.67366, w:45,  d:45,  h:105, era:[5,8], col:0xB6B0A4, wiki:'Plaza_Towers_(Grand_Rapids)', y:'1991',
+  {k:'plaza',   t:'Plaza Towers',              lat:42.96367, lng:-85.67366, w:45,  d:45,  h:105, era:[5,8], col:0xB6B0A4, wiki:'Plaza_Towers', y:'1991',
    b:'32 storey residential and hotel tower on the east bank at Fulton Street, about 344 feet, with the skywalk into downtown.'},
-  {k:'eberhard',t:'Eberhard Center, GVSU',     lat:42.96442, lng:-85.67730, w:55,  d:52,  h:44,  era:[5,8], col:0xB0B4AE, wiki:'Robert_C._Pew_Grand_Rapids_Campus', y:'1988',
+  {k:'eberhard',t:'Eberhard Center, GVSU',     lat:42.96442, lng:-85.67730, w:55,  d:52,  h:44,  era:[5,8], col:0xB0B4AE, wiki:'Grand_Valley_State_University', y:'1988',
    b:'Grand Valley State University building on the west bank at Fulton Street, the first piece of the Pew campus. Its upper floors look down the Lower Reach.'},
   {k:'acrisure',t:'Acrisure Amphitheater',     lat:42.95950, lng:-85.67640, w:105, d:95,  h:26,  era:[6,8], col:0xC7B79A, wiki:'Acrisure_Amphitheater', y:'2026',
    b:'Outdoor amphitheater at 201 Market Avenue on the east bank below Fulton Street, opened May 15, 2026. The stage faces the river, so the river is the backdrop of every show.'},
@@ -1367,7 +1367,7 @@ const NOW_ERA = () => (Date.now() < new Date(2027,10,1).getTime() ? 6 : 7);
 /* ---------- what each thing is, era by era ---------- */
 const rng = (a,b) => i => i >= a && i <= b;
 const INFO = {
-  sixth:{t:'Sixth Street Dam', reach:'UPPER', c:i => i <= 5 ? 'stable' : i <= 7 ? 'official' : 'scenario', wiki:['Sixth_Street_Dam','Grand_Rapids_WhiteWater'],
+  sixth:{t:'Sixth Street Dam', reach:'UPPER', c:i => i <= 5 ? 'stable' : i <= 7 ? 'official' : 'scenario', 
     b:i => i <= 2
       ? `<p>The first dam at Sixth Street held the river back to feed the mill canal and power the growing city. The water-power era starts here.</p>`
       : i <= 7
@@ -1390,7 +1390,7 @@ const INFO = {
     ask:'How high did the river get in the 2013 flood and what held it back?'},
   bSixth:{t:'Sixth Street Bridge, 1886', reach:'UPPER', c:() => 'stable', wiki:['Sixth_Street_Bridge_(Grand_Rapids,_Michigan)'],
     b:() => `<p>Wrought iron, 1886, a designated historic landmark. A pedestrian crossing just below the dam, with the best view of the fish ladder.</p>`, ask:'Tell me about the Sixth Street Bridge.'},
-  bBlue:{t:'Blue Bridge, 1892', reach:'LOWER', c:() => 'stable', wiki:['Blue_Bridge_(Grand_Rapids,_Michigan)','Blue_Bridge_(Grand_Rapids)'],
+  bBlue:{t:'Blue Bridge, 1892', reach:'LOWER', c:() => 'stable', 
     b:i => i <= 4
       ? `<p>The Grand Rapids and Indiana Railroad span, about 575 ft, one of Michigan's longest truss bridges. In this era it still carries trains.</p>`
       : `<p>The 1892 Grand Rapids and Indiana Railroad span, about 575 ft, one of Michigan's longest truss bridges. Converted to pedestrian use in the 1980s and painted its signature blue. A World of Winter hotspot.</p>`,
@@ -1404,7 +1404,7 @@ const INFO = {
   bLeonard:{t:'Leonard Street', reach:'UPPER', c:() => 'stable', b:() => `<p>In the Upper Reach, above Sixth Street Dam. Any future barrier option upstream would sit in this stretch.</p>`, ask:'What is happening in the Upper Reach above Sixth Street?'},
   rail:{t:'Railroad bridge, 1883', reach:'MAINSTEM', c:() => 'stable',
     b:() => `<p>The jam tore out every railroad bridge in the city. Position shown is schematic.</p>`, ask:'What did the 1883 log jam destroy?'},
-  ladder:{t:'Fish ladder, 1974', reach:'UPPER', c:() => 'stable', wiki:['Fish_Ladder_Park','Fish_Ladder_Sculpture'],
+  ladder:{t:'Fish ladder, 1974', reach:'UPPER', c:() => 'stable', 
     b:() => `<p>Designed by artist Joseph Kinnebrew. It lets migrating Chinook, coho and steelhead climb past Sixth Street Dam. Fishing is not allowed inside the ladder; anglers use the walkway for access.</p><p>Salmon typically run September into October. Steelhead peak in November and again from late February to April.</p>`,
     ask:'When is the best time to see fish jumping at the fish ladder?'},
   logs:{t:'The jam', reach:'MAINSTEM', c:() => 'stable',
@@ -1475,7 +1475,7 @@ const INFO = {
     b:() => `<p>West bank. A partner in the lake sturgeon research, and host of the Grand River Adventure each August.</p>`, ask:'What does the Grand Rapids Public Museum do for the river?'},
   lyon:{t:'Lyon Square', reach:'DOWNTOWN', c:() => 'official',
     b:() => `<p>East bank landing of the Gillett Bridge. A new riverfront plaza, built alongside the river work, with an apprenticeship programme attached.</p>`, ask:'What is the Lyon Square project?'},
-  anab:{t:'Ah-Nab-Awen Park', reach:'DOWNTOWN', c:() => 'stable', wiki:['Ah-Nab-Awen_Park'],
+  anab:{t:'Ah-Nab-Awen Park', reach:'DOWNTOWN', c:() => 'stable', 
     b:() => `<p>West bank park between the Gillett Bridge and Pearl Street, next to the Ford Museum. It became the Lower Reach staging area in 2026.</p>`, ask:'What is happening at Ah-Nab-Awen Park?'},
   rapids:{t:'The rapids', reach:'MAINSTEM', c:() => 'stable',
     b:() => `<p>About 18 feet of fall over roughly a mile, broken into many small drops by limestone ledges. No single step, and white water nearly bank to bank.</p>`, ask:'What did the original rapids in Grand Rapids look like?'},
@@ -1518,7 +1518,7 @@ Object.assign(INFO, {
   bI196:{t:'I-196 bridge', reach:'UPPER', c:() => 'stable', b:() => `<p>The Gerald R. Ford Freeway crosses just below the dam and the fish ladder. The Lower Reach project starts about 300 feet upstream of Bridge Street, so this is the seam between the two projects.</p>`, ask:'Where does the I-196 freeway cross the Grand River in Grand Rapids?'},
   bBridge:{t:'Bridge Street Bridge', reach:'LOWER', c:() => 'stable', b:() => `<p>Bridge Street on the west bank becomes Michigan Street on the east. The 1988 concrete bridge replaced a 1907 arch bridge. The Lower Reach construction zone begins a few hundred feet upstream.</p>`, ask:'What is the history of the Bridge Street bridge over the Grand River in Grand Rapids?'},
   bPearl:{t:'Pearl Street Bridge', reach:'LOWER', c:() => 'stable', b:() => `<p>The first Pearl Street bridge opened November 25, 1858 across an island that has since been dredged away. Today's bridge sits between the Public Museum and the Amway Grand Plaza. Dam 1 was just upstream.</p>`, ask:'What is the history of the Pearl Street bridge in Grand Rapids?'},
-  bFulton:{t:'Fulton Street Bridge', reach:'LOWER', c:() => 'stable', wiki:['Fulton_Street_Bridge_(Grand_Rapids,_Michigan)'], b:() => `<p>Open spandrel concrete arch, 536 feet, dedicated September 29, 1928 and on the National Register. The Lower Reach project ends here, and the USGS discharge gauge reads nearby.</p>`, ask:'What is the history of the Fulton Street bridge over the Grand River?'},
+  bFulton:{t:'Fulton Street Bridge', reach:'LOWER', c:() => 'stable',  b:() => `<p>Open spandrel concrete arch, 536 feet, dedicated September 29, 1928 and on the National Register. The Lower Reach project ends here, and the USGS discharge gauge reads nearby.</p>`, ask:'What is the history of the Fulton Street bridge over the Grand River?'},
   bWealthy:{t:'Wealthy Street Bridge', reach:'MAINSTEM', c:() => 'stable', b:() => `<p>The southern edge of the model, below the amphitheater. Downstream the river bends west under US-131 and slows toward Grandville and Lake Michigan.</p>`, ask:'What is the Grand River like at Wealthy Street below downtown Grand Rapids?'},
   building:{t:'Downtown building', reach:'DOWNTOWN', c:() => 'stable', b:() => `<p>A building footprint from OpenStreetMap, extruded to its mapped height or its floor count. Downtown rises east of the river toward the hill; the west side stays lower and flatter.</p>`, ask:'What is along the river in downtown Grand Rapids?'},
   street:{t:'Street', reach:'DOWNTOWN', c:() => 'stable', b:() => `<p>Downtown streets run true east and west, so every bridge crosses the river at a slight skew to the current.</p>`, ask:'Which streets cross the Grand River in downtown Grand Rapids?'},

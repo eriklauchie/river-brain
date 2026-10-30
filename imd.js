@@ -367,33 +367,104 @@ function sources(){
   return page('sources', 'Sources and what is left out', '', body, 0, '1-61');
 }
 
-/* ------------------------------------------------------------ render */
+/* ------------------------------------------------------------ render: the map first, then visual cards, the text behind More */
+var SHEETS = {};
+function sheetFor(id, title, html){ SHEETS[id] = {t:title, h:html}; return id; }
+function card(opts){
+  /* one graphic or big number, one line of at most about 15 words, and a More button */
+  return '<div class="imd-c' + (opts.wide ? ' wide' : '') + '" id="imd-c-' + opts.id + '">' +
+    (opts.big ? '<div class="big' + (opts.cls ? ' ' + opts.cls : '') + '">' + opts.big + '</div>' : '') +
+    (opts.vis || '') +
+    '<p>' + opts.line + '</p>' +
+    '<div class="row">' + (opts.act || '') + '<button class="imd-more" data-sheet="' + opts.sheet + '">More ' + icon('chevron') + '</button><span class="imd-cite">' + (opts.cite || '') + '</span></div></div>';
+}
+function miniBars(rows, n){
+  var max = rows[0][1];
+  return '<div class="imd-mini">' + rows.slice(0, n).map(function(r){ return '<span>' + esc(r[0]) + '</span><i style="width:' + (r[1] / max * 100) + '%;background:' + r[2] + '"></i><b>' + r[1] + '%</b>'; }).join('') + '</div>';
+}
 function render(){
   var root = document.getElementById('imd-root');
   if(!root) return;
-  root.innerHTML = cover() + contents() + sacred() +
-    '<div class="imd-model" id="imd-model"><div class="bar" id="imd-bar"></div><div class="imd-stage" id="imd-stage"><div class="loading">Loading the corridor…</div></div><div class="imd-flood" id="imd-flood"></div><div class="imd-xpanel" id="imd-xpanel" hidden></div></div>' +
-    intro() + context() +
-    part(1, 'Site exploration', 'The focus area of this study encompasses four miles of Indian Mounds Drive and 363 acres of surrounding landscape. Despite its high cultural and ecological value and sensitivity, the zone has been degraded by human activity. Many community members feel unsafe on the trail due to its isolation and lack of protection from vehicles. (pp. 8-9)', 'part1') +
-    history() + inventory() + ownership() + traffic() + recreation() + regional() + input() + values() + challenges() +
-    part(2, 'Recommendations & implementation', 'Robust site analysis and community engagement efforts revealed a path forward for Indian Mounds Drive, balancing human experience with environmental stewardship. The plan proposes improved trail design on the arterial path, connecting new river access points and trail amenities with a safe, enjoyable trail. (pp. 28-29)', 'part2') +
-    objectives() + plan() + trail() + focus() + green() + om() + unified() + phasing() + funding() + permits() + sources();
-  /* anchors inside the tab: the view router treats unknown hashes as "scroll into this section" */
+  /* the full detail, by sheet */
+  sheetFor('corridor', 'The corridor', intro() + context() + inventory() + ownership() + recreation() + regional());
+  sheetFor('voices', 'What people said', input() + values());
+  sheetFor('challenges', 'The challenges', challenges());
+  sheetFor('traffic', 'Traffic study', traffic());
+  sheetFor('plan', 'The plan', objectives() + plan() + trail());
+  sheetFor('focus', 'Seven focus areas', focus());
+  sheetFor('phases', 'Phasing, management, money', phasing() + unified() + om() + funding() + permits());
+  sheetFor('history', 'Site history', history());
+  sheetFor('green', 'Green infrastructure guide', green());
+  sheetFor('sacred', 'A sacred site', sacred() + '<p class="imd-note">From the study, pp. 2, 4, 24, 31 and 54, and the Kent County study page.</p>');
+  sheetFor('who', 'Who is involved', contents());
+  sheetFor('sources', 'Sources and what is left out', sources());
+
+  var thumbs = '<div class="imd-thumbs">' + D.focus.map(function(f){ return '<button data-fly="' + f.id + '" title="' + esc(f.n) + '"><img src="' + ART + f.img + '" alt="" loading="lazy" width="1400" height="692"><span><i style="background:' + (f.kind === 'ra' ? '#287c54' : '#fcdc18') + '"></i>' + esc(f.n.replace(' Trailhead', '').replace(' at Market Ave.', '')) + '</span></button>'; }).join('') + '</div>';
+  var phases = '<div class="imd-strip"><div class="on"><b>2027-29</b>Pilot: two gates, signs, repairs<small>$77,500 to $437,500</small></div><div><b>Then</b>Trail rebuilt, 22’ wide<small>Base or buffered</small></div><div><b>As funded</b>Trailheads, river areas<small>Built together where possible</small></div></div>';
+  var years = '<div class="imd-years">' + D.history.map(function(e){ return '<span title="' + esc(e.t) + '"><b>' + esc(e.yr) + '</b>' + esc(e.t) + '</span>'; }).join('') + '</div>';
+  var who = '<div class="imd-who"><b>Kent County Parks</b><b>Grand River Network</b><b>Downtown Grand Rapids Inc.</b><b>Grand Rapids</b><b>Grandville</b><b>Wyoming</b><b>Grand Rapids Public Museum</b><b>Grand Valley Metro Council</b><b>Kent County Road Commission</b><b>MDOT</b><b>Grand River Bands of Ottawa Indians</b><b>Gun Lake Tribe</b><b>VIRIDIS Design Group</b><b>Fishbeck</b></div>';
+  var gi = '<div class="imd-who sm">' + D.gi.map(function(g){ return '<b>' + esc(g[0]) + '</b>'; }).join('') + '</div>';
+
+  root.innerHTML =
+    '<p class="imd-strap">Indian Mounds Drive Feasibility Study · Kent County Parks and Grand River Network · October 2026 · <a href="' + PDF + '" target="_blank" rel="noopener">the PDF</a></p>' +
+    '<div class="imd-model" id="imd-model"><div class="imd-topbar" id="imd-bar"></div><div class="imd-stage" id="imd-stage"><div class="loading">Loading the corridor…</div></div><div class="imd-flood" id="imd-flood"></div><div class="imd-xpanel" id="imd-xpanel" hidden></div></div>' +
+    '<div class="imd-grid">' +
+    card({id:'corridor', sheet:'corridor', big:'4 miles', line:'Wilson Ave. to Market Ave., between the Grand River and I-196, across from Millennium Park.', vis:'<img class="vis" src="' + ART + 'map-inventory.webp" alt="Site inventory map" loading="lazy" width="1200" height="925">', cite:'pp. 6-13', act:'<a class="imd-btn" href="#imd-model" data-view="inventory">' + icon('cube') + ' Existing</a>'}) +
+    card({id:'voices', sheet:'voices', big:'1,984 voices', line:'Online survey, 107 at the open house, over 2,100 people in all. Cycling leads.', vis:miniBars(D.uses, 4), cite:'pp. 22-23'}) +
+    card({id:'safety', sheet:'plan', big:'Safety first', line:'Close the road to through-traffic. A 22-foot trail: 8’ path and a two-way bike lane.', vis:'<img class="vis" src="' + ART + 'section-base.webp" alt="Base trail cross section" loading="lazy" width="1400" height="431">', cite:'pp. 31-35', act:'<a class="imd-btn" href="#imd-model" data-view="section">' + icon('ruler') + ' Section</a>', wide:true}) +
+    card({id:'wild', sheet:'voices', big:'87<sup>%</sup>', line:'want it to stay natural, quiet and wild. Over 70% back a car-free trail.', cite:'pp. 24-25'}) +
+    card({id:'worries', sheet:'challenges', big:'53 of 100', line:'Average sense of safety. Wrong-way cars, dumping and floods top the list; 98% of the site floods.', vis:'<div class="imd-scale sm"><div class="ln"></div><div class="mk" style="left:53.25%"></div><div class="lb" style="left:0">Unsafe</div><div class="lb" style="left:100%">Safe</div></div>', cite:'pp. 26-27', act:'<a class="imd-btn" href="#imd-model" data-view="flood">' + icon('flood') + ' 605 ft</a>'}) +
+    card({id:'traffic', sheet:'traffic', big:'60<sup>%</sup> on foot or bike', line:'Seven days, five count sites, June 2026. 8% of cars drove the wrong way.', vis:donut(D.traffic.split), cite:'pp. 16-17', act:'<a class="imd-btn" href="#imd-model" data-view="traffic">' + icon('people') + ' Sites</a>'}) +
+    card({id:'green', sheet:'green', vis:'<img class="ico" src="' + ART + 'ico-eco.png" alt="">' + gi, big:'Six green tools', line:'Bioswales, wetland and stream restoration, bank stabilization, filter strips, naturalized culverts.', cite:'pp. 50-51'}) +
+    card({id:'focus', sheet:'focus', big:'7 focus areas', line:'Four trailheads and three river activation areas. Tap one to fly there.', vis:thumbs, cite:'pp. 36-49', wide:true}) +
+    card({id:'phases', sheet:'phases', big:'3 steps', line:'A two-year pilot from spring 2027, then the trail, then the trailheads and river areas as money comes.', vis:phases, cite:'pp. 54-61', act:'<a class="imd-btn" href="#imd-model" data-view="pilot">' + icon('cube') + ' Pilot</a>', wide:true}) +
+    card({id:'history', sheet:'history', big:'2,000 years', line:'Burial mounds, a treaty, a railroad, a WPA road, a freeway, a landfill, a park.', vis:years, cite:'pp. 10-11', wide:true}) +
+    card({id:'sacred', sheet:'sacred', vis:'<img class="ico" src="' + ART + 'ico-culture.png" alt="">', big:'Sacred ground', line:'The burial mounds are sacred. Decisions about them are tribe-led. Nothing here locates them.', cite:'pp. 4, 24, 54', cls:'green'}) +
+    card({id:'sources', sheet:'sources', big:'Sources', line:'The study PDF, the county page, OpenStreetMap, USGS and FEMA. What was left out, and why.', cite:'', act:'<a class="imd-btn" href="' + PDF + '" target="_blank" rel="noopener">' + icon('external') + ' PDF</a>'}) +
+    card({id:'who', sheet:'who', big:'Who’s involved', line:'Led by Kent County Parks, funded by DGRI through a 2022 DNR grant, designed by VIRIDIS and Fishbeck.', vis:who, cite:'p. 2', wide:true}) +
+    '</div>';
+
   root.addEventListener('click', function(e){
+    var more = e.target.closest('[data-sheet]');
+    if(more){ openSheet(more.dataset.sheet); return; }
+    var fly = e.target.closest('button[data-fly]');
+    if(fly){ document.getElementById('imd-model').scrollIntoView({behavior:'smooth', block:'start'}); if(window.IMD_MODEL) window.IMD_MODEL.fly(fly.dataset.fly); return; }
     var a = e.target.closest('a[href^="#imd-"]');
     if(!a) return;
     var id = a.getAttribute('href').slice(1), el = document.getElementById(id);
-    if(!el) return;
     e.preventDefault();
-    el.scrollIntoView({behavior:'smooth', block:'start'});
     var M = window.IMD_MODEL;
-    if(M){
-      if(a.dataset.fly) M.fly(a.dataset.fly);
-      else if(a.dataset.view) M.preset(a.dataset.view);
-    }
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    if(M){ if(a.dataset.fly) M.fly(a.dataset.fly); else if(a.dataset.view) M.preset(a.dataset.view); }
   });
   if(window.IMD_MODEL && window.IMD_MODEL.init) window.IMD_MODEL.init();
 }
+/* the sheet: full detail, page numbers and the PDF link, over the page */
+var sheetEl = null;
+function openSheet(id){
+  var sh = SHEETS[id]; if(!sh) return;
+  closeSheet();
+  sheetEl = document.createElement('div'); sheetEl.className = 'imd-sheet'; sheetEl.id = 'imd';   /* so #imd- anchors inside still scope to this tab's styles */
+  sheetEl.id = '';
+  sheetEl.innerHTML = '<div class="imd-sheet-in" id="imd-sheet"><div class="hd"><span>' + esc(sh.t) + '</span><button class="x" aria-label="Close">× Close</button></div><div class="bd">' + sh.h + '</div></div>';
+  document.body.appendChild(sheetEl); document.body.style.overflow = 'hidden';
+  sheetEl.querySelector('.x').addEventListener('click', closeSheet);
+  sheetEl.addEventListener('click', function(e){
+    if(e.target === sheetEl){ closeSheet(); return; }
+    var a = e.target.closest('a[href^="#imd-"]');
+    if(!a) return;
+    e.preventDefault();
+    var id2 = a.getAttribute('href').slice(1), inSheet = sheetEl.querySelector('#' + id2);
+    if(inSheet && !a.dataset.view && !a.dataset.fly){ inSheet.scrollIntoView({behavior:'smooth', block:'start'}); return; }
+    closeSheet();
+    var M = window.IMD_MODEL, model = document.getElementById('imd-model');
+    if(model) model.scrollIntoView({behavior:'smooth', block:'start'});
+    if(M){ if(a.dataset.fly) M.fly(a.dataset.fly); else if(a.dataset.view) M.preset(a.dataset.view); }
+  });
+  document.addEventListener('keydown', escClose);
+}
+function escClose(e){ if(e.key === 'Escape') closeSheet(); }
+function closeSheet(){ if(sheetEl){ sheetEl.remove(); sheetEl = null; document.body.style.overflow = ''; document.removeEventListener('keydown', escClose); } }
 
 /* ------------------------------------------------------------ knowledge for Ask and Facts */
 var KBX = [

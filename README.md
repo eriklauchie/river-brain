@@ -39,7 +39,7 @@ Everything except asking questions works with **no key at all**. The key is only
 | Life in the river | The animated animals, the species strip sorted by who is active this month, the card with the calendar. All 34 species with photos are folded below it. |
 | Places on the river | Seventeen places with photos where Wikipedia has one. Tap one and the model flies to it. |
 | Facts | 38 entries, collapsed to an icon, a title and one line. Tap to open. Search and filter. Copy and Copy link on each. |
-| Indian Mounds Drive | The Kent County Parks feasibility study (October 2026) as a deep dive in the study's own design, with the 4-mile corridor and the preferred plan in 3D on real geography: existing and proposed layers, the pilot and future modules, the seven focus areas, the five traffic count sites, a water slider from 588 to 605 feet and a cross-section tool. Every number cites its page. |
+| Indian Mounds Drive | The Kent County Parks feasibility study (October 2026): the corridor map first, then a dozen visual cards with the full chapters behind More, in the study's own design, with the 4-mile corridor and the preferred plan in 3D on real geography: existing and proposed layers, the pilot and future modules, the seven focus areas, the five traffic count sites, a water slider from 588 to 605 feet and a cross-section tool. Every number cites its page. |
 | River Reader | Andy Guy's dispatches, folded. |
 | Learning log | The weekly dive, run it now, export the whole brain as markdown. |
 

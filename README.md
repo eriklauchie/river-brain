@@ -38,7 +38,8 @@ Everything except asking questions works with **no key at all**. The key is only
 | The river in 3D | The model. Views: All, Dam, Downtown, Rapids, Amp, Under, Map. Ground: model (default, the Greenway look), satellite photo, or street map. Nine eras on a timeline with Play. Layers: water, ground, built, labels, 2013 flood. Every card has Prev and Next through what is on screen. The cross-section slider runs Ann Street to Wealthy Street. |
 | Life in the river | The animated animals, the species strip sorted by who is active this month, the card with the calendar. All 34 species with photos are folded below it. |
 | Places on the river | Seventeen places with photos where Wikipedia has one. Tap one and the model flies to it. |
-| Facts | 31 entries, collapsed to an icon, a title and one line. Tap to open. Search and filter. Copy and Copy link on each. |
+| Facts | 38 entries, collapsed to an icon, a title and one line. Tap to open. Search and filter. Copy and Copy link on each. |
+| Indian Mounds Drive | The Kent County Parks feasibility study (October 2026) as a deep dive in the study's own design, with the 4-mile corridor and the preferred plan in 3D on real geography: existing and proposed layers, the pilot and future modules, the seven focus areas, the five traffic count sites, a water slider from 588 to 605 feet and a cross-section tool. Every number cites its page. |
 | River Reader | Andy Guy's dispatches, folded. |
 | Learning log | The weekly dive, run it now, export the whole brain as markdown. |
 
@@ -100,6 +101,11 @@ Timing is typical for the Grand at Grand Rapids, from DNR guidance and the resea
 ```
 index.html            the site, with the inline icon sheet
 river-brain.js        knowledge base, live tiles, species, 3D model, river life, chat, deep dive
+imd.js, imd.css       the Indian Mounds Drive deep dive (content, study styling, seven knowledge entries for Ask)
+imd-model.js          the Indian Mounds Drive corridor in 3D
+data/imd-geo.json     corridor geography: OpenStreetMap river, roads, trails, parks, city limits; FEMA floodway and 100-year floodplain
+data/imd-dem.png      USGS 3DEP ground, 25 m cells, elevation in decimetres packed into red and green
+art/imd/              small figures from the study PDF (plans, sections, maps, icons), page cited on screen
 art/                  painted species illustrations, WebP, transparent
 data/brain.json       the entire brain, machine readable, including the life calendar and model coordinates
 data/updates.json     everything learned since launch, written by the Action
@@ -127,6 +133,7 @@ In `DOCTRINE`, from the AI River Brain operating manual, and carried into every 
 - No fish-eating advice without pointing at MDHHS Eat Safe Fish.
 - Seasonal timing is typical, not observed. The wade or paddle read is derived, not official.
 - No em dashes.
+- The Grand River Burial Mounds are sacred. Never locate them or speculate about their visibility or interpretation; repeat only what the Kent County study says, and say decisions are tribe-led.
 
 ## Brand
 

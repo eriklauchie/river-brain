@@ -12,6 +12,7 @@ body.rbv:not([data-view="model"]) #model,
 body.rbv:not([data-view="life"]) #life,
 body.rbv:not([data-view="places"]) #places,
 body.rbv:not([data-view="facts"]) #facts,
+body.rbv:not([data-view="imd"]) #imd,
 body.rbv:not([data-view="learn"]) #reader,
 body.rbv:not([data-view="learn"]) #learn{display:none !important}
 body.rbv[data-view="home"] #rb-back{display:none}

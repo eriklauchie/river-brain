@@ -8,8 +8,8 @@
   var body = document.body, main = document.querySelector('main');
   if(!main || body.classList.contains('rbv')) return;
 
-  var VIEWS = ['home', 'now', 'model', 'life', 'places', 'facts', 'learn'];
-  var ALIAS = {log:'learn', learning:'learn', reader:'learn', twin:'model', lifewidget:'life', gal:'life'};
+  var VIEWS = ['home', 'now', 'model', 'life', 'places', 'facts', 'imd', 'learn'];
+  var ALIAS = {log:'learn', learning:'learn', reader:'learn', twin:'model', lifewidget:'life', gal:'life', mounds:'imd', 'indian-mounds-drive':'imd', study:'imd'};
   var MAP_URL = 'map.html';
   var MAP_KEY = 'rb-unlocked-v1';   // the Greenway map's remember-me key
 
@@ -55,6 +55,7 @@
     {to:'life',   ic:'fish',    t:'Life in the river',    d:'<i data-n="#lf-strip > *">34</i> species, and who is active this month.'},
     {to:'places', ic:'map',     t:'Places on the river',  d:'<i data-n="#placelist > *">17</i> places along the water. Tap one to fly there in 3D.'},
     {to:'facts',  ic:'brain',   t:'Facts',                d:'<i data-n="#cards > *">31</i> facts on history, ecology and the restoration.'},
+    {to:'imd',    ic:'trail',   t:'Indian Mounds Drive',  d:'The 2026 feasibility study as a deep dive, with the 4-mile corridor and its plan in 3D.'},
     {href:MAP_URL, ic:'layers', t:'Greenway map',         d:'The Grand River Greenway projects downtown, in 3D.'},
     {to:'learn',  ic:'history', t:'River Reader and log', d:'Andy Guy’s dispatches and what the brain learns each week.'}
   ];

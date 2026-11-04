@@ -2840,7 +2840,7 @@ function morphK(now){
 function deepBuild(){
   const D = RiverDeep, PAL = D.PAL, rnd = D.rng(20261104);
   const sLo = xr(X0 + 2), sHi = xr(X1 - 2), sMin = xr(X0 + 0.1), sMax = xr(X1 - 0.1);
-  const Dp = {U:0, applied:-1, view:false, below:false, fogN:60, fogF:320, t:0, yDirty:true, cDirty:true, objs:[], st:{}, rnd:D.rng(7)};
+  const Dp = {U:0, applied:-1, view:false, below:false, fogN:40, fogF:240, t:0, yDirty:true, cDirty:true, objs:[], st:{}, rnd:D.rng(7)};
   /* nodes in the gravel bed, under the banks, in the river deposits, the limestone and the shale */
   const nodes = [];
   const put = (n, h, b0, b1, u0, u1) => {
@@ -2879,7 +2879,7 @@ function deepBuild(){
   const latte = new THREE.Color(PAL.latte), gold = new THREE.Color(PAL.gold), aqua = new THREE.Color(PAL.aqua), cc = new THREE.Color();
   const lines = new THREE.LineSegments(D.lineGeo(net, i => {
     const h = lerp(nodes[net.na[i]].h, nodes[net.nb[i]].h, net.f[i]), v = hn(i*0.37, h*1.7);
-    if(h < 2) cc.copy(latte).lerp(gold, v*0.6); else cc.copy(latte).lerp(aqua, 0.35 + 0.15*Math.min(h - 2, 2) + v*0.2);
+    if(h < 2) cc.copy(latte).lerp(gold, 0.5 + v*0.4); else cc.copy(latte).lerp(aqua, 0.35 + 0.15*Math.min(h - 2, 2) + v*0.2);
     const k = net.hair[i] ? 0.18 : h < 2 ? 0.95 : 0.7;
     return [cc.r*k, cc.g*k, cc.b*k];
   }), new THREE.LineBasicMaterial(D.glow({vertexColors:true, opacity:0, depthTest:false})));
@@ -2904,7 +2904,7 @@ function deepBuild(){
   motes.renderOrder = 4; motes.frustumCulled = false;
   /* light shafts along the river, leaning toward the sun, one shared geometry and material */
   const dir = new THREE.Vector3().subVectors(R.sun.position, R.sun.target.position).normalize(), UP = new THREE.Vector3(0, 1, 0);
-  const shaftM = D.shaftMat(new THREE.Color(PAL.latte).lerp(aqua, 0.45), 0.12, 0.45, 420), shaftG = new THREE.CylinderGeometry(0.9, 2.4, 44, 16, 1, true), shafts = new THREE.Group();
+  const shaftM = D.shaftMat(new THREE.Color(PAL.latte).lerp(aqua, 0.45).multiplyScalar(0.2), 0.12, 0.45, 420), shaftG = new THREE.CylinderGeometry(0.9, 2.4, 44, 16, 1, true), shafts = new THREE.Group();
   [6, 22, 38, 54, 70, 86, 102].forEach(x => {
     const p = Wr(x, (rnd() - .5)*3, 0), pivot = new THREE.Group(), m = new THREE.Mesh(shaftG, shaftM);
     m.quaternion.setFromUnitVectors(UP, dir); m.position.copy(dir).multiplyScalar(22); m.scale.set(0.7 + rnd()*0.8, 1, 0.7 + rnd()*0.8); m.renderOrder = 5;
@@ -2949,9 +2949,9 @@ function deepMood(Dp, k){
   const o = Dp.orig, f = R.scene.fog;
   f.color.copy(o.fog).lerp(Dp.deepFog, k);
   f.near = lerp(o.near, Dp.fogN, k); f.far = lerp(o.far, Dp.fogF, k);
-  R.hemi.color.copy(o.hc).lerp(Dp.hc, k*0.8); R.hemi.groundColor.copy(o.hg).lerp(Dp.hg, k); R.hemi.intensity = lerp(o.hi, 0.72, k);
-  R.sun.intensity = lerp(o.si, o.si*0.62, k);
-  R.renderer.toneMappingExposure = lerp(o.ex, 0.82, k);
+  R.hemi.color.copy(o.hc).lerp(Dp.hc, k*0.8); R.hemi.groundColor.copy(o.hg).lerp(Dp.hg, k); R.hemi.intensity = lerp(o.hi, 0.55, k);
+  R.sun.intensity = lerp(o.si, o.si*0.45, k);
+  R.renderer.toneMappingExposure = lerp(o.ex, 0.62, k);
   RiverDeep.backdrop(Dp.st, R.canvas, k, a => { const s = a.toFixed(3); return `linear-gradient(180deg,rgba(46,118,110,${s}) 0%,rgba(20,66,64,${s}) 52%,rgba(9,34,34,${s}) 100%)`; });
 }
 function deepStep(dt, now){
@@ -2971,7 +2971,7 @@ function deepStep(dt, now){
     Dp.below = below;
     Dp.U = RiverDeep.ease(Dp.U, S.water && (Dp.view || below) ? 1 : 0, dt, 3);
     const fk = 1 - Math.exp(-dt*3);
-    Dp.fogN = lerp(Dp.fogN, below ? 3 : 60, fk); Dp.fogF = lerp(Dp.fogF, below ? 70 : 320, fk);
+    Dp.fogN = lerp(Dp.fogN, below ? 3 : 40, fk); Dp.fogF = lerp(Dp.fogF, below ? 70 : 240, fk);
     const U = Dp.U;
     if(U === 0 && Dp.applied === 0) return;
     const k = RiverDeep.smooth(U);

@@ -79,6 +79,17 @@ Data that shapes it, all in `river-brain.js` inside the `Twin` module:
 
 Change a number, reload, and the model, cross-section and physics all follow. A test harness lives in the build notes: water above bed, bed above rock, strata continuous, flood inside the walls, and no landmark standing in the river.
 
+## The Greenway map
+
+`map.html` is the whole Kent County Greenway on a real 3D map: 98 stops from Lowell and the Flat River to Millennium Park and the Ottawa County line, with 13 project routes drawn along the streets they follow. It keeps the original paper look (chips, legend, timeline, tour, stop cards), now on MapLibre with OpenFreeMap vector tiles, terrain shading and extruded OpenStreetMap buildings in the same palette.
+
+- Stops, dates, facts and sources live in `data/greenway.json`. Change a stop there and push; the Greenway map data workflow then redraws the routes from OpenStreetMap.
+- Photo 3D: when the Carbon Google key works (served by river.carbonstories.us/projectmap/config.js), a chip switches to Google photorealistic 3D. Until the Map Tiles API and billing are on for that key, the chip hides itself.
+- No WebGL, or `?flat`: a flat drawing of the same data. `?pmdebug` says which base loaded.
+- Deep link a stop with `#stop=<id>`.
+- Coordinates were checked against places search or taken from Carbon's own river map; stops marked "general area" show a ring instead of a point.
+- The access word is checked against its SHA-256, not stored in the page.
+
 ## River Life
 
 `SEASON` in the `Life` module holds, for every species, a twelve-month presence array (0 not here, 1 present, 2 active) and short texts by month. `MODELS` holds the recipe for each animal: body profile, fins, colours, pattern, how many swim, how deep, which camera. The thumbnails in the strip are rendered from the same models at load time, so there is nothing to draw by hand when a species is added.
@@ -111,10 +122,15 @@ data/brain.json       the entire brain, machine readable, including the life cal
 data/updates.json     everything learned since launch, written by the Action
 scripts/deep-dive.mjs the weekly research pass
 scripts/city.mjs     buildings, parks and streets from OpenStreetMap into data/city.json
+map.html              the Grand River Greenway map, Lowell to Grandville (behind the access word)
+data/greenway.json    every Greenway stop and project route on that map
+data/greenway-geo.json  river, trail and route lines from OpenStreetMap, written by the Greenway map data workflow
+scripts/greenway.mjs  the OpenStreetMap fetch for that file
 data/city.json        written by the City map data workflow
 .github/workflows/
   weekly-deep-dive.yml  Monday cron
   city.yml              monthly city map refresh
+  greenway.yml          monthly Greenway line refresh, and on every change to data/greenway.json
   pages.yml             deploy on push
 ```
 

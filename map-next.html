@@ -437,7 +437,7 @@
    Google Photorealistic 3D Tiles in CesiumJS. No WebGL, or ?flat: a flat drawing of the same data.
    Stops and project routes: data/greenway.json. Real trail and river lines: data/greenway-geo.json,
    written monthly from OpenStreetMap by scripts/greenway.mjs. */
-var V='20261104a';
+var V='20261104b';
 var MAPLIBRE='https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/';
 var CESIUM='https://cdn.jsdelivr.net/npm/cesium@1.121.0/Build/Cesium/';
 var CONFIG='https://river.carbonstories.us/projectmap/config.js';
@@ -513,7 +513,9 @@ function style(){
       {id:'bldg',type:'fill-extrusion',source:'ofm','source-layer':'building',minzoom:13,paint:{'fill-extrusion-color':COL.bldg,
         'fill-extrusion-height':['coalesce',['get','render_height'],8],'fill-extrusion-base':['coalesce',['get','render_min_height'],0],
         'fill-extrusion-opacity':['interpolate',['linear'],['zoom'],13,0,14,0.92],'fill-extrusion-vertical-gradient':true}},
-      {id:'water-name',type:'symbol',source:'ofm','source-layer':'water_name',layout:{'text-field':['get','name'],'text-font':F.i,'text-size':12,'text-letter-spacing':0.12,'symbol-placement':['match',['geometry-type'],'LineString','line','point']},
+      {id:'water-name',type:'symbol',source:'ofm','source-layer':'water_name',filter:['==',['geometry-type'],'Point'],layout:{'text-field':['get','name'],'text-font':F.i,'text-size':12,'text-letter-spacing':0.12},
+        paint:{'text-color':'#2b6d9c','text-halo-color':'#cfe8f6','text-halo-width':1.4}},
+      {id:'water-name-line',type:'symbol',source:'ofm','source-layer':'water_name',filter:['==',['geometry-type'],'LineString'],layout:{'text-field':['get','name'],'text-font':F.i,'text-size':12,'text-letter-spacing':0.12,'symbol-placement':'line'},
         paint:{'text-color':'#2b6d9c','text-halo-color':'#cfe8f6','text-halo-width':1.4}},
       {id:'waterway-name',type:'symbol',source:'ofm','source-layer':'waterway',minzoom:11,filter:['has','name'],layout:{'text-field':['get','name'],'text-font':F.i,'text-size':11.5,'text-letter-spacing':0.12,'symbol-placement':'line','symbol-spacing':420},
         paint:{'text-color':'#2b6d9c','text-halo-color':'#cfe8f6','text-halo-width':1.4}},
@@ -578,7 +580,9 @@ function mapBase(){
     window.__gwmap=map;
     return new Promise(function(res,rej){
       var ok=false;
-      map.on('error',function(e){if(!ok&&e&&e.error&&/style|planet/i.test(String(e.error.message||'')))rej(e.error);});
+      // A style the renderer refuses never fires load, so fail over to the flat map straight away.
+      map.on('error',function(e){var m=String(e&&e.error&&e.error.message||'');if(Q.has('pmdebug'))console.warn('map error',m);
+        if(!ok&&(/style|planet|layers\[|sources\./i.test(m)))rej(e.error);});
       setTimeout(function(){if(!ok)rej(new Error('map timed out'));},20000);
       map.on('load',function(){ok=true;
         try{map.setSky({'sky-color':'#cfe2ee','horizon-color':'#FFF8E7','fog-color':'#efe8d6','sky-horizon-blend':0.55,'horizon-fog-blend':0.6,'fog-ground-blend':0.35,'atmosphere-blend':0.6});}catch(e){}

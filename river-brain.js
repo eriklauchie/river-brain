@@ -1159,6 +1159,199 @@ function renderReader(){
 
 
 /* ============================================================================
+   UNDER THE SURFACE
+   The look of everything below the water line, borrowed from the Carbon
+   forest: a dusk teal atmosphere, light shafts from the surface, caustic
+   shimmer on the bed, drifting motes, and a glowing mycelium-style thread
+   network with pulses travelling along it. Purely decorative: nothing here is
+   data, nothing is labelled and nothing can be tapped. Each scene wraps its
+   use in try/catch, so if any of this fails the old look stays.
+   ========================================================================= */
+const RiverDeep = (() => {
+  /* Carbon colours */
+  const PAL = {red:0xDF5842, gold:0xFBD059, aqua:0xA1D7D8, green:0xBFE1BF, latte:0xFFF8E7, char:0x555555};
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  /* seeded random, so the network grows the same way on every load */
+  function rng(seed){
+    let s = (seed >>> 0) || 1;
+    return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0)/4294967296; };
+  }
+  /* ease a 0..1 blend toward its target, frame-rate independent */
+  function ease(u, to, dt, rate){ u += (to - u)*(1 - Math.exp(-dt*rate)); return Math.abs(to - u) < 0.003 ? to : u; }
+  const smooth = k => k*k*(3 - 2*k);
+  let DOT = null;
+  function dot(){
+    if(DOT) return DOT;
+    const c = document.createElement('canvas'); c.width = c.height = 64;
+    const x = c.getContext('2d'), g = x.createRadialGradient(32, 32, 0, 32, 32, 32);
+    g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.22, 'rgba(255,255,255,.75)'); g.addColorStop(.5, 'rgba(255,255,255,.18)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+    x.fillStyle = g; x.fillRect(0, 0, 64, 64);
+    DOT = new THREE.CanvasTexture(c);
+    return DOT;
+  }
+  /* Additive light that leaves the canvas alpha alone. Both canvases are
+     transparent over a CSS background, and plain additive blending would
+     punch dark holes in it wherever a glow lands. */
+  function glow(o){
+    return Object.assign({transparent:true, depthWrite:false, fog:false, toneMapped:false,
+      blending:THREE.CustomBlending, blendEquation:THREE.AddEquation, blendSrc:THREE.SrcAlphaFactor, blendDst:THREE.OneFactor,
+      blendEquationAlpha:THREE.AddEquation, blendSrcAlpha:THREE.ZeroFactor, blendDstAlpha:THREE.OneFactor}, o || {});
+  }
+  /* a soft shaft of light, the forest's fresnel cylinder. uA and uB set where it fades along its length (uv.y is 1 at the top) */
+  function shaftMat(col, a, b, far){
+    return new THREE.ShaderMaterial(glow({
+      side:THREE.DoubleSide,
+      uniforms:{uOp:{value:0}, uTime:{value:0}, uCol:{value:new THREE.Color(col)}, uA:{value:a}, uB:{value:b}, uFar:{value:far}},
+      vertexShader:`varying vec2 vUv; varying vec3 vN; varying vec3 vV; varying float vD;
+        void main(){ vUv = uv; vec4 w = modelMatrix*vec4(position, 1.0); vN = normalize((modelMatrix*vec4(normal, 0.0)).xyz); vV = normalize(cameraPosition - w.xyz);
+          vec4 mv = viewMatrix*w; vD = -mv.z; gl_Position = projectionMatrix*mv; }`,
+      fragmentShader:`uniform float uOp; uniform float uTime; uniform float uA; uniform float uB; uniform float uFar; uniform vec3 uCol;
+        varying vec2 vUv; varying vec3 vN; varying vec3 vV; varying float vD;
+        void main(){ float e = pow(abs(dot(normalize(vN), normalize(vV))), 2.0);
+          float len = smoothstep(0.0, uA, vUv.y)*(1.0 - smoothstep(uB, 1.0, vUv.y));
+          float fl = 0.72 + 0.28*sin(uTime*0.35 + vUv.x*12.566);
+          float fade = 1.0 - smoothstep(uFar*0.4, uFar, vD);
+          gl_FragColor = vec4(uCol*(e*len*fl*fade*uOp), 1.0); }`
+    }));
+  }
+  /* caustic shimmer: bright ridges where three slow waves cancel. With wet, a per-vertex mask keeps it inside the channel */
+  function causticMat(o){
+    return new THREE.ShaderMaterial(glow({
+      defines:o.wet ? {WET:''} : {},
+      polygonOffset:true, polygonOffsetFactor:-1, polygonOffsetUnits:-4,
+      uniforms:{uOp:{value:0}, uTime:{value:0}, uScale:{value:o.scale}, uDen:{value:0}, uNear:{value:0}, uFar:{value:1e4},
+        uCol:{value:new THREE.Color(o.col)}, uCol2:{value:new THREE.Color(o.col2)}},
+      vertexShader:`varying vec3 vW; varying float vD;
+        #ifdef WET
+        attribute float wet; varying float vWet;
+        #endif
+        void main(){ vec4 w = modelMatrix*vec4(position, 1.0); vW = w.xyz;
+          #ifdef WET
+          vWet = wet;
+          #endif
+          vec4 mv = viewMatrix*w; vD = -mv.z; gl_Position = projectionMatrix*mv; }`,
+      fragmentShader:`uniform float uOp; uniform float uTime; uniform float uScale; uniform float uDen; uniform float uNear; uniform float uFar;
+        uniform vec3 uCol; uniform vec3 uCol2; varying vec3 vW; varying float vD;
+        #ifdef WET
+        varying float vWet;
+        #endif
+        float web(vec2 p, float t){
+          float v = sin(p.x + t*0.7 + 1.4*sin(p.y*1.3 + t*0.4)) + sin(p.y*1.1 - t*0.6 + 1.6*sin(p.x*0.9 - t*0.5)) + sin((p.x + p.y)*0.8 + t*0.5 + sin(p.x*1.7 + t*0.3));
+          return pow(max(0.0, 1.0 - abs(v)*0.42), 6.0);
+        }
+        void main(){
+          vec2 p = vW.xz*uScale;
+          float c = 0.65*web(p, uTime) + 0.35*web(p*1.9 + vec2(3.1, 1.7), uTime*1.3);
+          float f = uDen > 0.0 ? exp(-uDen*uDen*vD*vD) : 1.0 - smoothstep(uNear, uFar, vD);
+          float m = uOp*f;
+          #ifdef WET
+          m *= vWet;
+          #endif
+          gl_FragColor = vec4(mix(uCol2, uCol, c)*(c*m), 1.0);
+        }`
+    }));
+  }
+  /* Grow a thread network between nodes {a, b} on a plane: each node joins its
+     k nearest, every join wanders a little, and short hairs branch off it.
+     Returns the points as parameters; each scene lifts them into its own space. */
+  function weave(nodes, o){
+    const r = o.rnd, n = nodes.length, edges = [], adj = nodes.map(() => []), seen = new Set();
+    for(let i = 0; i < n; i++){
+      const near = [];
+      for(let j = 0; j < n; j++){ if(j === i) continue; const d = o.metric(nodes[i], nodes[j]); if(d < o.maxD) near.push([j, d]); }
+      near.sort((p, q) => p[1] - q[1]);
+      for(const [j] of near.slice(0, o.k)){
+        const key = i < j ? i + '-' + j : j + '-' + i; if(seen.has(key)) continue; seen.add(key);
+        adj[i].push(edges.length); adj[j].push(edges.length); edges.push({a:i, b:j, pts:null, cum:null, len:1});
+      }
+    }
+    const A = [], B = [], NA = [], NB = [], FF = [], SAG = [], DROP = [], HAIR = [], segs = [];
+    const add = (a, b, na, nb, f, sag, drop, hair) => { A.push(a); B.push(b); NA.push(na); NB.push(nb); FF.push(f); SAG.push(sag); DROP.push(drop); HAIR.push(hair); return A.length - 1; };
+    for(const e of edges){
+      const p = nodes[e.a], q = nodes[e.b], da = q.a - p.a, db = q.b - p.b, L = Math.hypot(da, db) || 1e-3;
+      const pa = -db/L, pb = da/L, amp = (o.amp[0] + r()*(o.amp[1] - o.amp[0]))*Math.min(1, L/o.maxD*1.6), fq = 1 + r()*1.5, sag = o.sag*(0.4 + r()*0.6);
+      const N = Math.max(4, Math.min(o.maxSeg, Math.ceil(L/o.step)));
+      e.pts = [];
+      let prev = -1;
+      for(let k = 0; k <= N; k++){
+        const f = k/N, w = Math.sin(f*Math.PI*fq)*amp*Math.sin(f*Math.PI) + (k === 0 || k === N ? 0 : (r() - .5)*o.jit);
+        const idx = add(p.a + da*f + pa*w, p.b + db*f + pb*w, e.a, e.b, f, sag*Math.sin(f*Math.PI), 0, 0);
+        e.pts.push(idx);
+        if(prev >= 0) segs.push(prev, idx);
+        prev = idx;
+        if(o.hair && k > 0 && k < N && k % 2 === 0){
+          for(let h = 0; h < o.hair; h++){
+            const ang = r()*6.2832, l = o.hairLen[0] + r()*(o.hairLen[1] - o.hairLen[0]);
+            segs.push(idx, add(A[idx] + Math.cos(ang)*l, B[idx] + Math.sin(ang)*l, e.a, e.b, f, SAG[idx], r()*o.hairDrop, 1));
+          }
+        }
+      }
+    }
+    return {nodes, edges, adj, n:A.length, a:Float32Array.from(A), b:Float32Array.from(B), na:Uint16Array.from(NA), nb:Uint16Array.from(NB),
+      f:Float32Array.from(FF), sag:Float32Array.from(SAG), drop:Float32Array.from(DROP), hair:Uint8Array.from(HAIR), segs:Uint32Array.from(segs)};
+  }
+  /* line geometry for a network, one colour per point */
+  function lineGeo(net, colOf){
+    const nv = net.segs.length, g = new THREE.BufferGeometry(), col = new Float32Array(nv*3);
+    for(let i = 0; i < nv; i++){ const c = colOf(net.segs[i]); col[i*3] = c[0]; col[i*3 + 1] = c[1]; col[i*3 + 2] = c[2]; }
+    g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(nv*3), 3));
+    g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+    return g;
+  }
+  /* copy point positions (xyz per point) into the line segments */
+  function fillLines(net, P, g){
+    const pos = g.attributes.position.array, s = net.segs;
+    for(let i = 0; i < s.length; i++){ const k = s[i]*3, o = i*3; pos[o] = P[k]; pos[o + 1] = P[k + 1]; pos[o + 2] = P[k + 2]; }
+    g.attributes.position.needsUpdate = true;
+  }
+  function measure(net, P){
+    for(const e of net.edges){
+      const cum = new Float32Array(e.pts.length);
+      for(let k = 1; k < e.pts.length; k++){ const a = e.pts[k - 1]*3, b = e.pts[k]*3; cum[k] = cum[k - 1] + Math.hypot(P[b] - P[a], P[b + 1] - P[a + 1], P[b + 2] - P[a + 2]); }
+      e.cum = cum; e.len = Math.max(1e-3, cum[cum.length - 1]);
+    }
+  }
+  /* pulses that travel the threads and turn onto a joining thread at each node */
+  function pulses(net, count, r, sp){
+    const ps = [], m = net.edges.length;
+    for(let i = 0; i < count && m; i++) ps.push({e:Math.floor(r()*m), t:r(), fwd:r() < .5, sp:sp[0] + r()*(sp[1] - sp[0])});
+    return ps;
+  }
+  function stepPulses(net, ps, P, dt, out, r){
+    for(let i = 0; i < ps.length; i++){
+      const p = ps[i];
+      let e = net.edges[p.e];
+      p.t += p.sp*dt/e.len;
+      if(p.t >= 1){
+        const end = p.fwd ? e.b : e.a, opts = net.adj[end].filter(x => x !== p.e);
+        p.e = opts.length ? opts[Math.floor(r()*opts.length)] : p.e;
+        e = net.edges[p.e]; p.fwd = e.a === end; p.t = 0;
+      }
+      const d = (p.fwd ? p.t : 1 - p.t)*e.len, cum = e.cum;
+      let k = 1; while(k < cum.length - 1 && cum[k] < d) k++;
+      const f = clamp((d - cum[k - 1])/Math.max(1e-5, cum[k] - cum[k - 1]), 0, 1), a = e.pts[k - 1]*3, b = e.pts[k]*3;
+      out[i*3] = P[a] + (P[b] - P[a])*f; out[i*3 + 1] = P[a + 1] + (P[b + 1] - P[a + 1])*f; out[i*3 + 2] = P[a + 2] + (P[b + 2] - P[a + 2])*f;
+    }
+  }
+  /* pulse colours: mostly gold, some latte, a little aqua */
+  function pulseCols(n, r){
+    const out = new Float32Array(n*3), gold = new THREE.Color(PAL.gold).multiplyScalar(1.4), latte = new THREE.Color(PAL.latte), aqua = new THREE.Color(PAL.aqua).multiplyScalar(1.2);
+    for(let i = 0; i < n; i++){ const v = r(), c = v < .7 ? gold : v < .9 ? latte : aqua; out[i*3] = c.r; out[i*3 + 1] = c.g; out[i*3 + 2] = c.b; }
+    return out;
+  }
+  /* the canvas sits over a CSS background; under water it fades to a dusk teal one */
+  function backdrop(st, el, k, css){
+    if(!el) return;
+    if(k <= 0){ if(st.bgK !== 0){ el.style.background = ''; st.bgK = 0; } return; }
+    if(st.bgK !== undefined && Math.abs(st.bgK - k) < 0.01 && k < 1 && st.bgK > 0) return;
+    if(st.bgK === k) return;
+    st.bgK = k; el.style.background = css(k);
+  }
+  return {PAL, rng, ease, smooth, dot, glow, shaftMat, causticMat, weave, lineGeo, fillLines, measure, pulses, stepPulses, pulseCols, backdrop};
+})();
+
+
+/* ============================================================================
    THE RIVER, LAYER BY LAYER
    A digital model of the downtown Grand River, Ann Street to Wealthy Street,
    laid over real coordinates so it lines up with the map and the satellite
@@ -2633,6 +2826,204 @@ function buildSection(){
 }
 function placeSection(x){ const p = Wr(x, 0, 0); const c = curveAt(xr(x)); R.secPlane.position.set(p[0], (Y(42) + Y(BOTTOM))/2, p[2]); R.secPlane.rotation.y = Math.atan2(-c.tz, c.tx); }
 
+/* ---------- below the surface, in the Carbon forest's language ----------
+   Decorative only, never picked. Fades in when the Under view is chosen (and
+   holds while the camera stays low) or when the camera dips under the water
+   line, and only while Water is on. Above water the scene is untouched: every
+   value it blends is put back exactly when the blend reaches zero. */
+const DEEP_FOG = 0x144240, DEEP_LO = 39, DEEP_HI = 73;   /* the caustic ribbon reuses terrain columns 39 to 73, z -17 to 17 */
+function morphK(now){
+  if(!MORPH.on) return 1;
+  const t = clamp((now - MORPH.t0)/MORPH.dur, 0, 1);
+  return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2;
+}
+function deepBuild(){
+  const D = RiverDeep, PAL = D.PAL, rnd = D.rng(20261104);
+  const sLo = xr(X0 + 2), sHi = xr(X1 - 2), sMin = xr(X0 + 0.1), sMax = xr(X1 - 0.1);
+  const Dp = {U:0, applied:-1, view:false, below:false, fogN:60, fogF:320, t:0, yDirty:true, cDirty:true, objs:[], st:{}, rnd:D.rng(7)};
+  /* nodes in the gravel bed, under the banks, in the river deposits, the limestone and the shale */
+  const nodes = [];
+  const put = (n, h, b0, b1, u0, u1) => {
+    for(let i = 0; i < n; i++){
+      const a = sLo + (sHi - sLo)*(i + rnd())/n, b = (rnd() < .5 ? -1 : 1)*(b0 + rnd()*(b1 - b0));
+      nodes.push({a, b, h, u:u0 + rnd()*(u1 - u0), x:clamp(xo(a), X0 + 0.1, X1 - 0.1), z:b/ZS});
+    }
+  };
+  put(34, 0, 0, 2.0, .4, .8); put(14, 1, 3, 9, .3, .8); put(14, 2, 0, 12, .3, .8); put(14, 3, 0, 14, .1, .9); put(10, 4, 0, 14, .15, .85);
+  const net = D.weave(nodes, {rnd, k:3, maxD:16, step:0.9, maxSeg:26, amp:[0.2, 1.1], jit:0.12, sag:1.2, hair:1, hairLen:[0.25, 0.8], hairDrop:1.5,
+    metric:(p, q) => Math.hypot(p.a - q.a, p.b - q.b) + Math.abs(p.h - q.h)*2.5});
+  const N = net.n, P = new Float32Array(N*3), xs = new Float32Array(N), zs = new Float32Array(N);
+  for(let i = 0; i < N; i++){
+    const s = clamp(net.a[i], sMin, sMax), zR = clamp(net.b[i], -ZW + 0.15, ZW - 0.15), c = curveAt(s);
+    P[i*3] = c.X - c.tz*zR; P[i*3 + 2] = c.Z + c.tx*zR; xs[i] = clamp(xo(s), X0 + 0.05, X1 - 0.05); zs[i] = zR/ZS;
+  }
+  Object.assign(Dp, {net, P, xs, zs, y0:new Float32Array(N), y1:new Float32Array(N)});
+  /* caustic ribbon over the channel floor, laid on the terrain's own vertices so it never floats or sinks */
+  const tp = R.ter.g.attributes.position.array, tnv = NZ + 1, cols = DEEP_HI - DEEP_LO + 1, cn = (NX + 1)*cols, cpos = new Float32Array(cn*3), cidx = [];
+  for(let a = 0; a <= NX; a++) for(let j = 0; j < cols; j++){
+    const k = a*cols + j, t = (a*tnv + DEEP_LO + j)*3;
+    cpos[k*3] = tp[t]; cpos[k*3 + 1] = tp[t + 1]; cpos[k*3 + 2] = tp[t + 2];
+    if(a < NX && j < cols - 1){ const q = (a + 1)*cols + j; cidx.push(k, k + 1, q, q, k + 1, q + 1); }
+  }
+  const cg = new THREE.BufferGeometry();
+  cg.setAttribute('position', new THREE.BufferAttribute(cpos, 3));
+  cg.setAttribute('wet', new THREE.BufferAttribute(new Float32Array(cn), 1));
+  cg.setIndex(cidx);
+  const caus = new THREE.Mesh(cg, D.causticMat({wet:true, scale:3.4, col:PAL.latte, col2:PAL.aqua}));
+  caus.renderOrder = 1; caus.frustumCulled = false;
+  Object.assign(Dp, {caus, cols});
+  deepTargets(Dp);
+  for(let i = 0; i < N; i++){ Dp.y0[i] = Dp.y1[i]; P[i*3 + 1] = Dp.y1[i]; }
+  D.measure(net, P);
+  /* threads: latte to gold near the bed, latte to aqua down in the rock, hairs dim */
+  const latte = new THREE.Color(PAL.latte), gold = new THREE.Color(PAL.gold), aqua = new THREE.Color(PAL.aqua), cc = new THREE.Color();
+  const lines = new THREE.LineSegments(D.lineGeo(net, i => {
+    const h = lerp(nodes[net.na[i]].h, nodes[net.nb[i]].h, net.f[i]), v = hn(i*0.37, h*1.7);
+    if(h < 2) cc.copy(latte).lerp(gold, v*0.6); else cc.copy(latte).lerp(aqua, 0.35 + 0.15*Math.min(h - 2, 2) + v*0.2);
+    const k = net.hair[i] ? 0.18 : h < 2 ? 0.95 : 0.7;
+    return [cc.r*k, cc.g*k, cc.b*k];
+  }), new THREE.LineBasicMaterial(D.glow({vertexColors:true, opacity:0, depthTest:false})));
+  lines.renderOrder = 10; lines.frustumCulled = false;
+  D.fillLines(net, P, lines.geometry);
+  /* pulses travelling the threads */
+  const PN = 80, ps = D.pulses(net, PN, rnd, [1.6, 3.4]), pg = new THREE.BufferGeometry(), pp = new Float32Array(PN*3);
+  pg.setAttribute('position', new THREE.BufferAttribute(pp, 3));
+  pg.setAttribute('color', new THREE.BufferAttribute(D.pulseCols(PN, rnd), 3));
+  const pts = new THREE.Points(pg, new THREE.PointsMaterial(D.glow({map:D.dot(), size:7, sizeAttenuation:false, vertexColors:true, opacity:0, depthTest:false})));
+  pts.renderOrder = 11; pts.frustumCulled = false;
+  /* suspended motes over the river corridor */
+  const MN = 340, mg = new THREE.BufferGeometry(), mp = new Float32Array(MN*3), mc = new Float32Array(MN*3);
+  for(let i = 0; i < MN; i++){
+    const c = curveAt(sLo + (sHi - sLo)*rnd()), zR = (rnd()*2 - 1)*13, v = rnd(), col = v < .5 ? latte : v < .8 ? aqua : gold, k = 0.35 + rnd()*0.4;
+    mp[i*3] = c.X - c.tz*zR; mp[i*3 + 1] = 0.05 + rnd()*8; mp[i*3 + 2] = c.Z + c.tx*zR;
+    mc[i*3] = col.r*k; mc[i*3 + 1] = col.g*k; mc[i*3 + 2] = col.b*k;
+  }
+  mg.setAttribute('position', new THREE.BufferAttribute(mp, 3));
+  mg.setAttribute('color', new THREE.BufferAttribute(mc, 3));
+  const motes = new THREE.Points(mg, new THREE.PointsMaterial(D.glow({map:D.dot(), size:3.2, sizeAttenuation:false, vertexColors:true, opacity:0})));
+  motes.renderOrder = 4; motes.frustumCulled = false;
+  /* light shafts along the river, leaning toward the sun, one shared geometry and material */
+  const dir = new THREE.Vector3().subVectors(R.sun.position, R.sun.target.position).normalize(), UP = new THREE.Vector3(0, 1, 0);
+  const shaftM = D.shaftMat(new THREE.Color(PAL.latte).lerp(aqua, 0.45), 0.12, 0.45, 420), shaftG = new THREE.CylinderGeometry(0.9, 2.4, 44, 16, 1, true), shafts = new THREE.Group();
+  [6, 22, 38, 54, 70, 86, 102].forEach(x => {
+    const p = Wr(x, (rnd() - .5)*3, 0), pivot = new THREE.Group(), m = new THREE.Mesh(shaftG, shaftM);
+    m.quaternion.setFromUnitVectors(UP, dir); m.position.copy(dir).multiplyScalar(22); m.scale.set(0.7 + rnd()*0.8, 1, 0.7 + rnd()*0.8); m.renderOrder = 5;
+    pivot.position.set(p[0], p[1], p[2]); pivot.add(m); shafts.add(pivot);
+  });
+  Dp.orig = {fog:R.scene.fog.color.clone(), near:R.scene.fog.near, far:R.scene.fog.far, hc:R.hemi.color.clone(), hg:R.hemi.groundColor.clone(),
+             hi:R.hemi.intensity, si:R.sun.intensity, ex:R.renderer.toneMappingExposure};
+  Object.assign(Dp, {lines, pts, ps, pp, motes, mp, shafts, shaftM, deepFog:new THREE.Color(DEEP_FOG), hc:new THREE.Color(PAL.aqua), hg:new THREE.Color(0x173B39)});
+  for(const o of [caus, shafts, motes, lines, pts]){ o.visible = false; R.scene.add(o); Dp.objs.push(o); }
+  R.dp = Dp;
+}
+/* where the threads sit and where the channel is wet, for the current era and layers */
+function deepTargets(Dp){
+  const e = ERAS[ERA], sed = S.sediment, net = Dp.net, nodes = net.nodes, ny = new Float32Array(nodes.length);
+  for(let i = 0; i < nodes.length; i++){
+    const n = nodes[i], st = strata(n.x, n.z, e, sed);
+    const b = n.h === 0 ? st[0] : n.h === 1 ? st[1] : n.h === 2 ? st[2] : n.h === 3 ? [st[3][0], st[5][1]] : st[6];
+    ny[i] = (n.h <= 2 && b[0] - b[1] < 0.6) ? b[0] - 0.4 - n.u*1.5 : lerp(b[0], b[1], n.u);
+  }
+  for(let i = 0; i < net.n; i++){
+    const y = lerp(ny[net.na[i]], ny[net.nb[i]], net.f[i]) - net.sag[i] - net.drop[i];
+    Dp.y1[i] = Y(Math.max(BOTTOM + 4, Math.min(y, groundFt(Dp.xs[i], Dp.zs[i], e, sed) - 0.35)));
+  }
+  const wet = Dp.caus.geometry.attributes.wet, w = wet.array, cols = Dp.cols, sf = {floodK:S.floodK}, on = S.water && sed;
+  for(let a = 0; a <= NX; a++){
+    const x = X0 + (X1 - X0)*a/NX, ws = on ? wsFt(x, e, sf) : 0;
+    for(let j = 0; j < cols; j++) w[a*cols + j] = on ? clamp((ws - groundFt(x, Z0 + (Z1 - Z0)*(DEEP_LO + j)/NZ, e, sed))/1.2, 0, 1) : 0;
+  }
+  wet.needsUpdate = true;
+}
+/* called at the start of retarget, while MORPH still describes the move in progress */
+function deepRetarget(){
+  const Dp = R.dp; if(!Dp) return;
+  try{
+    const k = Dp.yDirty ? morphK(performance.now()) : 1;
+    for(let i = 0; i < Dp.net.n; i++) Dp.y0[i] += (Dp.y1[i] - Dp.y0[i])*k;
+    deepTargets(Dp);
+    Dp.yDirty = true; Dp.cDirty = true;
+  }catch(err){ deepFail(err); }
+}
+function deepMood(Dp, k){
+  const o = Dp.orig, f = R.scene.fog;
+  f.color.copy(o.fog).lerp(Dp.deepFog, k);
+  f.near = lerp(o.near, Dp.fogN, k); f.far = lerp(o.far, Dp.fogF, k);
+  R.hemi.color.copy(o.hc).lerp(Dp.hc, k*0.8); R.hemi.groundColor.copy(o.hg).lerp(Dp.hg, k); R.hemi.intensity = lerp(o.hi, 0.72, k);
+  R.sun.intensity = lerp(o.si, o.si*0.62, k);
+  R.renderer.toneMappingExposure = lerp(o.ex, 0.82, k);
+  RiverDeep.backdrop(Dp.st, R.canvas, k, a => { const s = a.toFixed(3); return `linear-gradient(180deg,rgba(46,118,110,${s}) 0%,rgba(20,66,64,${s}) 52%,rgba(9,34,34,${s}) 100%)`; });
+}
+function deepStep(dt, now){
+  const Dp = R.dp; if(!Dp) return;
+  try{
+    const c = R.cam;
+    if(Dp.view && !R.tween && c.ph < 0.98) Dp.view = false;
+    let below = false;
+    if(S.water && c.r < 40 && R.wat.mesh.visible){
+      const p = R.camera.position, st = inv(p.x, p.z);
+      if(st.x > X0 && st.x < X1){
+        const e = ERAS[ERA];
+        if(Math.abs(st.d) < (halfW(st.x, e.w) + waterExt(st.x, e))*ZS)
+          below = p.y < Y(wsFt(st.x, e, S)) && p.y > Y(groundFt(st.x, st.z, e, S.sediment)) - 0.05;
+      }
+    }
+    Dp.below = below;
+    Dp.U = RiverDeep.ease(Dp.U, S.water && (Dp.view || below) ? 1 : 0, dt, 3);
+    const fk = 1 - Math.exp(-dt*3);
+    Dp.fogN = lerp(Dp.fogN, below ? 3 : 60, fk); Dp.fogF = lerp(Dp.fogF, below ? 70 : 320, fk);
+    const U = Dp.U;
+    if(U === 0 && Dp.applied === 0) return;
+    const k = RiverDeep.smooth(U);
+    deepMood(Dp, k);
+    Dp.applied = U;
+    for(const o of Dp.objs) o.visible = U > 0;
+    if(U === 0) return;
+    const mt = RM ? 0 : dt;
+    Dp.t += mt;
+    /* threads follow the bed and strata through era changes */
+    if(Dp.yDirty){
+      const m = morphK(now), P = Dp.P;
+      for(let i = 0; i < Dp.net.n; i++) P[i*3 + 1] = Dp.y0[i] + (Dp.y1[i] - Dp.y0[i])*m;
+      RiverDeep.fillLines(Dp.net, P, Dp.lines.geometry);
+      if(!MORPH.on) Dp.yDirty = false;
+    }
+    Dp.lines.material.opacity = 0.85*k; Dp.pts.material.opacity = k; Dp.motes.material.opacity = 0.7*k;
+    RiverDeep.stepPulses(Dp.net, Dp.ps, Dp.P, dt*(RM ? 0.2 : 1), Dp.pp, Dp.rnd);
+    Dp.pts.geometry.attributes.position.needsUpdate = true;
+    if(mt > 0){
+      const mp = Dp.mp;
+      for(let i = 0, n = mp.length/3; i < n; i++){
+        const o = i*3;
+        mp[o + 1] += mt*0.16; mp[o] += Math.sin(Dp.t*0.3 + i*1.7)*mt*0.1; mp[o + 2] += Math.cos(Dp.t*0.27 + i*2.3)*mt*0.1;
+        if(mp[o + 1] > 8) mp[o + 1] = 0.05;
+      }
+      Dp.motes.geometry.attributes.position.needsUpdate = true;
+    }
+    const su = Dp.shaftM.uniforms; su.uOp.value = k; su.uTime.value = Dp.t;
+    Dp.shafts.children.forEach((p, i) => { p.rotation.z = Math.sin(Dp.t*0.16 + i*1.7)*0.035; p.rotation.x = Math.cos(Dp.t*0.12 + i)*0.03; });
+    const wv = R.wat.mesh.visible && R.wat.mesh.material.opacity > 0.05;
+    Dp.caus.visible = wv;
+    if(wv){
+      if(Dp.cDirty){
+        const tp = R.ter.g.attributes.position.array, cp = Dp.caus.geometry.attributes.position.array, cols = Dp.cols, tnv = NZ + 1;
+        for(let a = 0; a <= NX; a++) for(let j = 0; j < cols; j++) cp[(a*cols + j)*3 + 1] = tp[(a*tnv + DEEP_LO + j)*3 + 1] + 0.0015;
+        Dp.caus.geometry.attributes.position.needsUpdate = true;
+        if(!MORPH.on) Dp.cDirty = false;
+      }
+      const cu = Dp.caus.material.uniforms; cu.uOp.value = 0.6*k; cu.uTime.value = Dp.t; cu.uNear.value = R.scene.fog.near; cu.uFar.value = R.scene.fog.far;
+    }
+  }catch(err){ deepFail(err); }
+}
+/* if anything in the layer breaks, put the scene back exactly as it was and drop the layer */
+function deepFail(err){
+  console.warn('under-surface layer turned off', err);
+  const Dp = R.dp; R.dp = null; if(!Dp) return;
+  try{ deepMood(Dp, 0); }catch(_){}
+  try{ R.canvas.style.background = ''; }catch(_){}
+  for(const o of Dp.objs){ try{ R.scene.remove(o); }catch(_){} }
+}
+
 /* ============================================================================
    INTERFACE, CONTROLS, LOOP
    ========================================================================= */
@@ -2727,6 +3118,7 @@ function liveChip(){
 /* ---------- morphing between states ---------- */
 function retarget(instant){
   if(!R || !R.gl) return;
+  deepRetarget();
   const T = R.ter, K = R.sk, Wt = R.wat, Cp = R.cap;
   const tp = T.g.attributes.position.array;
   for(let k = 0; k < T.n; k++) T.y0[k] = tp[k*3 + 1];
@@ -2804,6 +3196,7 @@ function goView(name, instant){
   let d = to.th - R.cam.th; d = ((d + Math.PI) % (2*Math.PI) + 2*Math.PI) % (2*Math.PI) - Math.PI; to.th = R.cam.th + d;
   HOST.querySelectorAll('[data-v]').forEach(b => b.classList.toggle('on', b.dataset.v === name));
   R.viewName = name;
+  if(R.dp) R.dp.view = name === 'under';
   if(instant || RM){ Object.assign(R.cam, to); R.tween = null; return; }
   R.tween = {from:Object.assign({}, R.cam), to, t0:performance.now(), dur:1000};
 }
@@ -3104,7 +3497,7 @@ function frame(now){
   if(!R.visible || document.hidden){ R.last = now; return; }
   const dt = Math.min(0.05, (now - (R.last || now))/1000); R.last = now; R.time += dt;
   stepTween(now); applyCam(); stepMorph(now);
-  rippleWater(R.time); stepParticles(dt); pulses(R.time);
+  rippleWater(R.time); stepParticles(dt); pulses(R.time); deepStep(dt, now);
   R.renderer.render(R.scene, R.camera);
   placeLabels();
 }
@@ -3139,7 +3532,7 @@ function init(host){
       const scene = new THREE.Scene();
       scene.fog = new THREE.Fog(0xE3E6E1, 260, 620);
       const camera = new THREE.PerspectiveCamera(36, 1, 0.3, 1200);
-      scene.add(new THREE.HemisphereLight(0xDCE6EE, 0x7D7669, 0.55));
+      const hemi = new THREE.HemisphereLight(0xDCE6EE, 0x7D7669, 0.55); scene.add(hemi);
       const sun = new THREE.DirectionalLight(0xFFF1DC, 0.72);
       const mid = W(60, 0, 0); sun.position.set(mid[0] + 70, 120, mid[2] + 50); sun.target.position.set(mid[0], 0, mid[2]);
       sun.castShadow = true; sun.shadow.mapSize.set(Math.min(4096, renderer.capabilities.maxTextureSize), Math.min(4096, renderer.capabilities.maxTextureSize));
@@ -3148,11 +3541,12 @@ function init(host){
       renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       const fill = new THREE.DirectionalLight(0xCFDCE8, 0.16); fill.position.set(-60, 40, -80); scene.add(fill);
       const c0 = W(X0, Z0, 0), c1 = W(X1, Z1, 0), c2 = W(X0, Z1, 0), c3 = W(X1, Z0, 0);
-      Object.assign(R, {gl:true, renderer, scene, camera, pick:[], pickF:[], ray:new THREE.Raycaster(),
+      Object.assign(R, {gl:true, renderer, scene, camera, hemi, sun, pick:[], pickF:[], ray:new THREE.Raycaster(),
         cam:{tx:0, ty:0, tz:0, r:200, th:0.62, ph:1.0}, tween:null,
         bb:{x0:Math.min(c0[0], c1[0], c2[0], c3[0]), x1:Math.max(c0[0], c1[0], c2[0], c3[0]), z0:Math.min(c0[2], c1[2], c2[2], c3[2]), z1:Math.max(c0[2], c1[2], c2[2], c3[2])},
         wc0:new THREE.Color(), wc1:new THREE.Color(), silt:new THREE.Color(0x7A6A45), wo0:0, wo1:0});
       buildTerrain(); buildSkirts(); buildWater(); buildCaps(); buildParticles(); buildSection(); buildFeatures(); buildLabels();
+      try{ deepBuild(); }catch(err){ console.warn('under-surface layer unavailable', err); R.dp = null; }
       bindControls();
       resize();
       R.lastTall = R.w/R.h < 0.9;
@@ -3602,7 +3996,7 @@ function buildPlace(scene){
   pg.setAttribute('position', new THREE.BufferAttribute(pp, 3));
   const motes = new THREE.Points(pg, new THREE.PointsMaterial({color:0xD9F3EA, size:.045, transparent:true, opacity:.5, depthWrite:false}));
   scene.add(motes);
-  return {surf, motes, rays, log};
+  return {surf, motes, rays, log, bed};
 }
 const VIEWS = {
   under:{pos:[0, -1.05, 6.2], look:[0, -1.5, 0]}, shallow:{pos:[4, -0.6, 4.5], look:[7, -1.3, 0]}, bed:{pos:[0, -1.6, 2.6], look:[0, -2.45, 0]},
@@ -3778,6 +4172,122 @@ function pickDefault(){
   return SPECIES[0].n;
 }
 
+/* ---------- below the surface, in the Carbon forest's language ----------
+   Decorative only: a thread network in the gravel with travelling pulses,
+   light shafts from the surface, caustic shimmer on the bed, glowing motes,
+   a few weed tufts and a dusk teal backdrop. It fades in while the camera is
+   under the surface and out for the views above it. */
+const bedY = x => -2.5 + (x > 7 ? (x - 7)*0.45 : 0);
+function weedGeo(rnd){
+  const pos = [], SEG = 5;
+  for(let b = 0; b < 7; b++){
+    const h = 0.45 + rnd()*0.5, w = 0.03 + rnd()*0.02, ang = rnd()*Math.PI, ca = Math.cos(ang), sa = Math.sin(ang);
+    const ox = (rnd() - .5)*0.22, oz = (rnd() - .5)*0.22, bend = (rnd() - .5)*0.5;
+    const pt = (k, side) => { const t = k/SEG, ww = w*(1 - t*0.85)*side, bx = bend*t*t; return [ox + ww*ca - bx*sa, t*h, oz + ww*sa + bx*ca]; };
+    for(let k = 0; k < SEG; k++){ const a0 = pt(k, -1), a1 = pt(k, 1), b0 = pt(k + 1, -1), b1 = pt(k + 1, 1); pos.push(...a0, ...a1, ...b0, ...b0, ...a1, ...b1); }
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.computeVertexNormals();
+  return g;
+}
+function deepBuild(place){
+  const D = RiverDeep, PAL = D.PAL, rnd = D.rng(1104), scene = R.scene;
+  const Dp = {U:0, applied:-1, t:0, objs:[], st:{}, rnd:D.rng(11)};
+  const latte = new THREE.Color(PAL.latte), gold = new THREE.Color(PAL.gold), aqua = new THREE.Color(PAL.aqua), cc = new THREE.Color();
+  /* thread network woven through the gravel, dipping in and out of it */
+  const nodes = [];
+  for(let i = 0; i < 46; i++) nodes.push({a:-12 + rnd()*23, b:-10 + rnd()*16, o:-0.01 + rnd()*0.05});
+  const net = D.weave(nodes, {rnd, k:3, maxD:4.5, step:0.18, maxSeg:30, amp:[0.08, 0.45], jit:0.03, sag:0.04, hair:1, hairLen:[0.08, 0.26], hairDrop:0.03,
+    metric:(p, q) => Math.hypot(p.a - q.a, p.b - q.b)});
+  const N = net.n, P = new Float32Array(N*3);
+  for(let i = 0; i < N; i++){
+    const x = clamp(net.a[i], -14, 11.5), z = clamp(net.b[i], -14, 7);
+    P[i*3] = x; P[i*3 + 2] = z;
+    P[i*3 + 1] = bedY(x) + 0.03 + lerp(nodes[net.na[i]].o, nodes[net.nb[i]].o, net.f[i]) - net.sag[i] - net.drop[i];
+  }
+  D.measure(net, P);
+  const lines = new THREE.LineSegments(D.lineGeo(net, i => { cc.copy(latte).lerp(gold, hash(i, 3.7)*0.6); const k = net.hair[i] ? 0.2 : 0.9; return [cc.r*k, cc.g*k, cc.b*k]; }),
+    new THREE.LineBasicMaterial(D.glow({vertexColors:true, opacity:0})));
+  lines.renderOrder = 2; lines.frustumCulled = false;
+  D.fillLines(net, P, lines.geometry);
+  const PN = 46, ps = D.pulses(net, PN, rnd, [0.35, 0.8]), pg = new THREE.BufferGeometry(), pp = new Float32Array(PN*3);
+  pg.setAttribute('position', new THREE.BufferAttribute(pp, 3));
+  pg.setAttribute('color', new THREE.BufferAttribute(D.pulseCols(PN, rnd), 3));
+  const pts = new THREE.Points(pg, new THREE.PointsMaterial(D.glow({map:D.dot(), size:0.16, sizeAttenuation:true, vertexColors:true, opacity:0})));
+  pts.renderOrder = 3; pts.frustumCulled = false;
+  /* light shafts hanging from the surface, leaning away from the sun */
+  const dir = new THREE.Vector3(3, 8, 5).normalize(), UP = new THREE.Vector3(0, 1, 0), L = 3.6;
+  const shaftM = D.shaftMat(new THREE.Color(PAL.latte).lerp(aqua, 0.35), 0.75, 0.9, 18), shaftG = new THREE.CylinderGeometry(0.16, 0.5, L, 14, 1, true), shafts = new THREE.Group();
+  [[-7.5, -5], [-3.5, -2.5], [0.5, -6], [3.8, -1.5], [6, -5.5], [-9.5, 0.5]].forEach(([x, z]) => {
+    const pivot = new THREE.Group(), m = new THREE.Mesh(shaftG, shaftM), s = 0.8 + rnd()*0.7;
+    m.quaternion.setFromUnitVectors(UP, dir); m.position.copy(dir).multiplyScalar(-L/2); m.scale.set(s, 1, s); m.renderOrder = 2;
+    pivot.position.set(x, -0.02, z); pivot.add(m); shafts.add(pivot);
+  });
+  /* caustics on the bed, sharing the bed's own geometry */
+  const bed = place.bed, caus = new THREE.Mesh(bed.geometry, D.causticMat({scale:2.4, col:PAL.latte, col2:PAL.aqua}));
+  caus.position.copy(bed.position); caus.position.y += 0.012; caus.rotation.copy(bed.rotation); caus.renderOrder = 1; caus.frustumCulled = false;
+  /* glowing motes */
+  const MN = 160, mg = new THREE.BufferGeometry(), mp = new Float32Array(MN*3), mc = new Float32Array(MN*3);
+  for(let i = 0; i < MN; i++){
+    const v = rnd(), col = v < .5 ? latte : v < .8 ? aqua : gold, k = 0.4 + rnd()*0.4;
+    mp[i*3] = (rnd() - .5)*22; mp[i*3 + 1] = -2.45 + rnd()*2.3; mp[i*3 + 2] = -9 + rnd()*14;
+    mc[i*3] = col.r*k; mc[i*3 + 1] = col.g*k; mc[i*3 + 2] = col.b*k;
+  }
+  mg.setAttribute('position', new THREE.BufferAttribute(mp, 3));
+  mg.setAttribute('color', new THREE.BufferAttribute(mc, 3));
+  const motes = new THREE.Points(mg, new THREE.PointsMaterial(D.glow({map:D.dot(), size:0.06, sizeAttenuation:true, vertexColors:true, opacity:0})));
+  motes.renderOrder = 3; motes.frustumCulled = false;
+  /* a few weed tufts at the back and sides, clear of the animals; one geometry, one material */
+  const wg = weedGeo(rnd), wm = new THREE.MeshStandardMaterial({color:0x4C7A55, roughness:.9, metalness:0, side:THREE.DoubleSide}), weeds = new THREE.Group();
+  [[-6.5, -4.2], [-4.2, -6.5], [-8.8, -2.4], [5.2, -4.8], [7.4, -3.0], [3.0, -7.2], [-1.5, -8.0], [9.2, -5.6], [-10.2, -6.4]].forEach(([x, z]) => {
+    const m = new THREE.Mesh(wg, wm); m.position.set(x, bedY(x) - 0.03, z); m.rotation.y = rnd()*6.28; m.userData.s = 0.8 + rnd()*0.6; m.scale.setScalar(0.001); weeds.add(m);
+  });
+  Dp.orig = {fog:scene.fog.color.clone()};
+  Object.assign(Dp, {net, P, lines, pts, ps, pp, shafts, shaftM, caus, motes, mp, weeds, deepFog:new THREE.Color(0x12443F)});
+  for(const o of [caus, shafts, motes, lines, pts, weeds]){ o.visible = false; scene.add(o); Dp.objs.push(o); }
+  R.deep = Dp;
+}
+function deepStep(dt){
+  const Dp = R.deep; if(!Dp) return;
+  try{
+    Dp.U = RiverDeep.ease(Dp.U, R.camera.position.y < -0.05 ? 1 : 0, dt, 3);
+    const U = Dp.U;
+    if(U === 0 && Dp.applied === 0) return;
+    const k = RiverDeep.smooth(U);
+    R.scene.fog.color.copy(Dp.orig.fog).lerp(Dp.deepFog, k);
+    RiverDeep.backdrop(Dp.st, R.canvas, k, a => { const s = a.toFixed(3); return `radial-gradient(700px 400px at 50% 0%,rgba(64,146,134,${s}) 0,rgba(24,88,80,${s}) 55%,rgba(10,44,42,${s}) 100%)`; });
+    Dp.applied = U;
+    for(const o of Dp.objs) o.visible = U > 0;
+    if(U === 0) return;
+    const mt = RM ? 0 : dt;
+    Dp.t += mt;
+    Dp.lines.material.opacity = 0.75*k; Dp.pts.material.opacity = k; Dp.motes.material.opacity = 0.8*k;
+    RiverDeep.stepPulses(Dp.net, Dp.ps, Dp.P, dt*(RM ? 0.2 : 1), Dp.pp, Dp.rnd);
+    Dp.pts.geometry.attributes.position.needsUpdate = true;
+    const su = Dp.shaftM.uniforms; su.uOp.value = k; su.uTime.value = Dp.t;
+    Dp.shafts.children.forEach((p, i) => { p.rotation.z = Math.sin(Dp.t*0.18 + i*1.7)*0.06; p.rotation.x = Math.cos(Dp.t*0.13 + i)*0.04; });
+    const cu = Dp.caus.material.uniforms; cu.uOp.value = 0.5*k; cu.uTime.value = Dp.t; cu.uDen.value = R.scene.fog.density;
+    if(mt > 0){
+      const mp = Dp.mp;
+      for(let i = 0, n = mp.length/3; i < n; i++){
+        const o = i*3;
+        mp[o + 1] += mt*0.035; mp[o] += Math.sin(Dp.t*0.5 + i*1.3)*mt*0.03; mp[o + 2] += Math.cos(Dp.t*0.4 + i*2.1)*mt*0.03;
+        if(mp[o + 1] > -0.12) mp[o + 1] = -2.45;
+      }
+      Dp.motes.geometry.attributes.position.needsUpdate = true;
+    }
+    Dp.weeds.children.forEach((m, i) => { const s = m.userData.s; m.scale.set(s, s*Math.max(0.001, k), s); m.rotation.z = Math.sin(Dp.t*0.6 + i*1.9)*0.06; m.rotation.x = Math.sin(Dp.t*0.45 + i)*0.04; });
+  }catch(err){ deepFail(err); }
+}
+function deepFail(err){
+  console.warn('under-surface layer turned off', err);
+  const Dp = R.deep; R.deep = null; if(!Dp) return;
+  try{ R.scene.fog.color.copy(Dp.orig.fog); }catch(_){}
+  try{ R.canvas.style.background = ''; }catch(_){}
+  for(const o of Dp.objs){ try{ R.scene.remove(o); }catch(_){} }
+}
+
 /* ---------- frame ---------- */
 function frame(now){
   requestAnimationFrame(frame);
@@ -3798,6 +4308,7 @@ function frame(now){
   for(let i = 0; i < mp.length; i += 3){ mp[i + 1] += dt*0.04; mp[i] += Math.sin(t + i)*0.0006; if(mp[i + 1] > -0.05) mp[i + 1] = -2.5; }
   R.place.motes.geometry.attributes.position.needsUpdate = true;
   R.place.rays.rotation.y = Math.sin(t*0.1)*0.05;
+  deepStep(dt);
   R.renderer.render(R.scene, R.camera);
 }
 let RM = false;
@@ -3840,6 +4351,7 @@ function init(host){
       const front = new THREE.DirectionalLight(0xBFE6DD, 0.35); front.position.set(-2, 1, 8); scene.add(front);
       const camera = new THREE.PerspectiveCamera(42, 1.6, 0.05, 80);
       Object.assign(R, {gl:true, renderer, scene, camera, look:new THREE.Vector3(0, -1.5, 0), place:buildPlace(scene)});
+      try{ deepBuild(R.place); }catch(err){ console.warn('under-surface layer unavailable', err); R.deep = null; }
       resize();
       if(typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(stage); else window.addEventListener('resize', resize);
       if(typeof IntersectionObserver !== 'undefined') new IntersectionObserver(es => es.forEach(en => { R.visible = en.isIntersecting; }), {rootMargin:'120px'}).observe(stage);

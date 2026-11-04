@@ -437,7 +437,7 @@
    Google Photorealistic 3D Tiles in CesiumJS. No WebGL, or ?flat: a flat drawing of the same data.
    Stops and project routes: data/greenway.json. Real trail and river lines: data/greenway-geo.json,
    written monthly from OpenStreetMap by scripts/greenway.mjs. */
-var V='20261104c';
+var V='20261104d';
 var MAPLIBRE='https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/';
 var CESIUM='https://cdn.jsdelivr.net/npm/cesium@1.121.0/Build/Cesium/';
 var CONFIG='https://river.carbonstories.us/projectmap/config.js';
@@ -886,11 +886,31 @@ function fillIntro(){
   if(st.length)el.innerHTML=st.map(function(x){return '<div class="stat"><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>';}).join('');
   var n=STOPS.length;$('tourhud').querySelector('.thud-count').textContent='1 / '+n;
 }
+/* ---------- v1's Jump to bar, now one stop per stretch of the county ---------- */
+function jumpBar(){
+  var SHORT={lowell:'Lowell',ada:'Ada',pettis:'Pettis',north:'Rogue',northend:'Riverside',downtown:'Downtown',south:'Southside',west:'Millennium'};
+  var bar=document.createElement('div');bar.id='jumpbar';
+  bar.style.cssText='position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;display:flex;gap:6px;background:rgba(255,251,240,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:6px 8px;border-radius:999px;box-shadow:0 4px 18px rgba(60,60,60,.16);font-family:Roboto,sans-serif;max-width:94vw;flex-wrap:wrap;justify-content:center;';
+  var lab=document.createElement('span');lab.textContent='JUMP TO';
+  lab.style.cssText='font-size:10px;font-weight:700;letter-spacing:.16em;color:#8a8577;align-self:center;padding:0 6px 0 4px;';
+  bar.appendChild(lab);
+  AREAS.forEach(function(a){
+    var b=document.createElement('button');b.textContent=SHORT[a.id]||a.name;b.title=a.name;
+    b.style.cssText='border:0;background:transparent;color:#3d3d3d;font-weight:700;font-size:12px;padding:7px 12px;border-radius:999px;cursor:pointer;transition:background .15s,color .15s;';
+    b.onmouseenter=function(){if(!b._on)b.style.background='rgba(161,215,216,.45)';};
+    b.onmouseleave=function(){if(!b._on)b.style.background='transparent';};
+    b.onclick=function(){$('intro').classList.add('hide');closePanel();if(base)base.area(areaBounds(a.id));
+      [].forEach.call(bar.querySelectorAll('button'),function(x){x._on=false;x.style.background='transparent';x.style.color='#3d3d3d';});
+      b._on=true;b.style.background='#DF5842';b.style.color='#fff';};
+    bar.appendChild(b);
+  });
+  document.body.appendChild(bar);
+}
 var mapApi=null;
 Promise.all([getJson('data/greenway.json?v='+V),getJson('data/greenway-geo.json?v='+V).catch(function(){return null;})]).then(function(r){
   DATA=r[0];GEO=r[1];STOPS=DATA.stops;SEGS=DATA.segments||[];AREAS=DATA.areas||[];
   STOPS.forEach(function(s){if(s.seg){var sg=SEGS.filter(function(x){return x.id===s.seg;})[0];if(sg){sg.sy=sg.sy||s.sy;sg.dy=sg.dy||s.dy;sg.status=sg.status||s.status;}}});
-  fillIntro();buildStopList();wireUi();setYear(TODAY);
+  fillIntro();buildStopList();wireUi();setYear(TODAY);try{jumpBar();}catch(e){}
   var flat=Q.has('flat')||!webgl();
   return (flat?flatBase():mapBase().catch(function(e){if(Q.has('pmdebug'))console.warn('map failed',e);try{$('map').innerHTML='';}catch(_){}return flatBase();}));
 }).then(function(api){

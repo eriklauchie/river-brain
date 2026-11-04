@@ -1,0 +1,3383 @@
+{
+ "version": "2026-11-04",
+ "title": "Grand River Greenway, Kent County",
+ "home": {
+  "center": [
+   -85.615,
+   42.985
+  ],
+  "zoom": 10.55,
+  "pitch": 48,
+  "bearing": -12
+ },
+ "bounds": [
+  [
+   -86.05,
+   42.78
+  ],
+  [
+   -85.18,
+   43.22
+  ]
+ ],
+ "areas": [
+  {
+   "id": "lowell",
+   "name": "Lowell & the Flat River"
+  },
+  {
+   "id": "ada",
+   "name": "Ada & the Thornapple"
+  },
+  {
+   "id": "pettis",
+   "name": "Knapp, Pettis & Cannonsburg"
+  },
+  {
+   "id": "north",
+   "name": "Northland, Belmont & the Rogue"
+  },
+  {
+   "id": "northend",
+   "name": "Riverside Park & the North End"
+  },
+  {
+   "id": "downtown",
+   "name": "Downtown Grand Rapids"
+  },
+  {
+   "id": "south",
+   "name": "Southside & Plaster Creek"
+  },
+  {
+   "id": "west",
+   "name": "Walker, Millennium Park & Grandville"
+  }
+ ],
+ "phases": {
+  "2023": "Groundwork: Lyon Square and the museum riverfront start, the Secchia arch is dedicated",
+  "2024": "Momentum: the amphitheater rises, the Butterworth trailhead opens, mussels move ahead of the rapids work",
+  "2025": "First wins: Lyon Square, the Cascade Road bridge and the Pettis South trail open",
+  "2026": "Big year: the Thornapple bridge, amphitheater and Rogue River trail open, rapids work begins",
+  "2027": "Knapp bridge, Cannonsburg west and Amway Stadium; the downtown rapids take shape",
+  "2028": "Ah-Nab-Awen reopens on a restored river; Ada to Lowell is the last big gap"
+ },
+ "stats": [
+  [
+   "98",
+   "places on the map"
+  ],
+  [
+   "13",
+   "being built now"
+  ],
+  [
+   "15",
+   "opened since 2025"
+  ],
+  [
+   "23",
+   "with Carbon video"
+  ]
+ ],
+ "labels": [
+  [
+   42.934,
+   -85.342,
+   "Lowell"
+  ],
+  [
+   42.956,
+   -85.487,
+   "Ada"
+  ],
+  [
+   43.12,
+   -85.56,
+   "Rockford"
+  ],
+  [
+   43.039,
+   -85.662,
+   "Comstock Park"
+  ],
+  [
+   42.97,
+   -85.66,
+   "Grand Rapids"
+  ],
+  [
+   42.99,
+   -85.76,
+   "Walker"
+  ],
+  [
+   42.91,
+   -85.763,
+   "Grandville"
+  ],
+  [
+   42.91,
+   -85.49,
+   "Cascade"
+  ],
+  [
+   43.08,
+   -85.6,
+   "Belmont"
+  ]
+ ],
+ "stops": [
+  {
+   "id": "grand-river-valley-rail-trail-lowell",
+   "name": "Fred Meijer Grand River Valley Rail Trail, Lowell end",
+   "status": "anchor",
+   "lat": 42.934,
+   "lon": -85.322,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Fred Meijer River Valley Rail Trails partners",
+   "place": "Lowell, MI",
+   "blurb": "The west end of the 62 mile rail trail that runs from Lowell's east edge to Saranac, Ionia and Owosso.",
+   "facts": [
+    "Begins at Montcalm Ave"
+   ],
+   "sources": [
+    "https://www.lowellareatrailway.org/trails-and-park-links",
+    "https://fmrvrt.org/projects-in-the-works/lowell-area-trailway-connector/"
+   ],
+   "tags": [
+    "regional"
+   ],
+   "area": "lowell"
+  },
+  {
+   "id": "flat-river-valley-rail-trail-lowell",
+   "name": "Fred Meijer Flat River Valley Rail Trail, Lowell end",
+   "status": "anchor",
+   "lat": 42.9455,
+   "lon": -85.331,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Fred Meijer River Valley Rail Trails partners / LARA",
+   "place": "Lowell, MI",
+   "blurb": "The south end of the rail trail north to Belding and Greenville, which starts at the 3.2 mile Lowell Area Trailway on Foreman Street.",
+   "facts": [
+    "Starts on Foreman St east of Cherry Creek Elementary"
+   ],
+   "sources": [
+    "https://www.lowellareatrailway.org/trails-and-park-links"
+   ],
+   "tags": [
+    "regional"
+   ],
+   "area": "lowell"
+  },
+  {
+   "id": "fallasburg-park",
+   "name": "Fallasburg Park",
+   "status": "anchor",
+   "lat": 42.9855,
+   "lon": -85.3345,
+   "precision": "area",
+   "radius": 500,
+   "lead": "Kent County Parks",
+   "place": "Vergennes Township, MI",
+   "blurb": "A historic county park on the Flat River north of Lowell beside the Fallasburg covered bridge, popular for picnics and weddings.",
+   "facts": [],
+   "sources": [
+    "https://www.topoquest.com/place-detail.php?id=625815",
+    "https://www.kentcountymi.gov/345/All-Parks-A---Z",
+    "https://northcountrytrail.org/our-work/trail-towns/lowell/"
+   ],
+   "tags": [
+    "amenities",
+    "culture"
+   ],
+   "area": "lowell"
+  },
+  {
+   "id": "north-country-trail-hq",
+   "name": "North Country Trail Association headquarters",
+   "status": "anchor",
+   "lat": 42.9347,
+   "lon": -85.3371,
+   "precision": "site",
+   "lead": "North Country Trail Association",
+   "place": "Lowell, MI",
+   "blurb": "The national office of the North Country Trail on Lowell's Main Street, which offers hikers trail information and restrooms. The Greenway is meant to join the trail here.",
+   "facts": [
+    "229 E Main St",
+    "National Park Service office in the same building"
+   ],
+   "sources": [
+    "https://northcountrytrail.org/our-work/trail-towns/lowell/",
+    "https://grandriver.network/projects/ada-to-lowell/"
+   ],
+   "tags": [
+    "regional"
+   ],
+   "area": "lowell"
+  },
+  {
+   "id": "lowell-riverwalk-flat-river",
+   "name": "Lowell Riverwalk and Flat River confluence",
+   "status": "anchor",
+   "lat": 42.9345,
+   "lon": -85.3392,
+   "precision": "area",
+   "radius": 300,
+   "lead": "City of Lowell",
+   "place": "Lowell, MI",
+   "blurb": "Downtown Lowell's riverwalk along the Flat River near the Showboat, a short walk above where the Flat joins the Grand.",
+   "facts": [
+    "Flat River boat launch and accessible kayak launch just north of the Showboat"
+   ],
+   "sources": [
+    "https://northcountrytrail.org/our-work/trail-towns/lowell/",
+    "https://www.lowellareatrailway.org/trails-and-park-links",
+    "https://bridgelookup.com/bridge/253148"
+   ],
+   "tags": [
+    "amenities",
+    "access",
+    "water"
+   ],
+   "area": "lowell"
+  },
+  {
+   "id": "lowell-recreation-park",
+   "name": "Lowell Recreation Park (former fairgrounds)",
+   "status": "anchor",
+   "lat": 42.929,
+   "lon": -85.3435,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Lowell",
+   "place": "Lowell, MI",
+   "blurb": "The city park on South Hudson Street on the former Kent County Youth Fair grounds, with a boat launch on the Grand. It is the midpoint of the new Lowell connector trail.",
+   "facts": [
+    "225 S Hudson St SE",
+    "Fair moved to Deer Run on Cascade Rd about 2020"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/lowell-river-valley-rail-trail-connection/",
+    "https://digital-release.woodtv.com/news/kent-county-youth-fair-moving-to-new-location/amp/",
+    "https://bridgecondition.com/bridge/michigan/mi-000000000005091",
+    "https://www.lowellareatrailway.org/trails-and-park-links"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "area": "lowell"
+  },
+  {
+   "id": "lowell-river-valley-rail-trail-connection",
+   "name": "Lowell to River Valley Rail Trail connection",
+   "status": "construction",
+   "lat": 42.9262,
+   "lon": -85.356,
+   "precision": "route",
+   "lead": "Lowell Area Recreation Authority (LARA)",
+   "place": "Lowell and Lowell Charter Township, MI",
+   "start": "Summer 2026 (start listed Aug 4, 2026)",
+   "goal": "Winter 2026",
+   "sy": 2026,
+   "dy": 2026,
+   "blurb": "A 2.2 mile riverside path with boardwalk and bridges that will link the township riverfront park to downtown Lowell and the rail trails heading to Ionia, Owosso and Greenville.",
+   "facts": [
+    "Route: Along the Grand River from the township's North Riverfront Park east to Lowell Recreation Park (former fairgrounds) on S Hudson St, then on to the Fred Meijer Grand River Valley Rail Trail",
+    "2.2 mi path, steel and glulam timber bridges, culvert and boardwalk; MDOT let value $4.58M",
+    "Phase 1 North Riverside Park to Recreation Park; Phase 2 to the Grand River Valley Rail Trail",
+    "Design Williams & Works; partners Lowell Twp, City of Lowell, Kent County, MDOT"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/lowell-river-valley-rail-trail-connection/",
+    "https://projects.constructconnect.com/details/7504120-hot-mix-asphalt-shared-use-path-glulam-timber-superstructure-steel-pedestrian-bridge-precast-concrete-culvert-and-prefabricated-pedestrian-bridge-near-bowes-road&find_loc=michigan-49331",
+    "https://lowellsfirstlook.com/lowell-area-recreation-authority-trail-connector-project-continues/",
+    "https://grandriver.network/wp-content/uploads/2025/07/GRG-Vision-and-Framework.pdf"
+   ],
+   "tags": [
+    "backbone",
+    "regional"
+   ],
+   "tour": true,
+   "area": "lowell",
+   "seg": "lowell-connector",
+   "zoom": 14.4
+  },
+  {
+   "id": "lowell-grand-river-riverfront-park",
+   "name": "Grand River Riverfront Park (Lowell Township)",
+   "status": "anchor",
+   "lat": 42.9222,
+   "lon": -85.3691,
+   "precision": "site",
+   "lead": "Lowell Charter Township",
+   "place": "Lowell Charter Township, MI",
+   "blurb": "An 80 acre township park on both banks of the Grand west of Lowell, with sports fields, a splash pad, river overlooks, a fishing pier and a canoe launch. It is the planned eastern trailhead where Kent County launched its Greenway push in August 2025.",
+   "facts": [
+    "South park 12200 Grand River Dr SE; north park 11998 Fulton St",
+    "About 1 mi paved path on the south side, about 2.5 mi of loops on the north",
+    "Hosted the Aug 19, 2025 Greenway kickoff"
+   ],
+   "sources": [
+    "https://outdoormichigan.org/feature/1721",
+    "https://grkids.com/view/parks/entry/5e34dba8",
+    "https://www.fox17online.com/weather/weather-articles/riverfront-park-in-lowell-offers-splash-pad-river-access-and-more-for-families",
+    "https://www.kentcountymi.gov/CivicAlerts.asp?AID=281",
+    "https://www.lowellareatrailway.org/trails-and-park-links"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "tour": true,
+   "area": "lowell"
+  },
+  {
+   "id": "timpson-pedestrian-bridge",
+   "name": "Riverfront Park pedestrian bridge (Lowell Township)",
+   "status": "completed",
+   "lat": 42.9248,
+   "lon": -85.3713,
+   "precision": "site",
+   "lead": "Lowell Charter Township",
+   "place": "Lowell Charter Township, MI",
+   "goal": "2019 to 2020",
+   "dy": 2020,
+   "blurb": "A long timber truss bridge for walkers over the Grand River that joins the north and south halves of the township riverfront park, stopping on an island midstream.",
+   "facts": [
+    "About 600 to 650 ft",
+    "Built above the 100 year floodplain",
+    "Named for former supervisor John Timpson Sr."
+   ],
+   "sources": [
+    "https://www.waymarking.com/waymarks/WM127J4_Grand_River_Riverfront_Park_Pedestrian_Bridge_Lowell_Michigan",
+    "https://www.fox17online.com/weather/weather-articles/riverfront-park-in-lowell-offers-splash-pad-river-access-and-more-for-families",
+    "https://www.lowellareatrailway.org/trails-and-park-links"
+   ],
+   "tags": [
+    "bridge",
+    "backbone",
+    "flood"
+   ],
+   "area": "lowell"
+  },
+  {
+   "id": "ada-to-lowell-trail",
+   "name": "Ada to Lowell trail",
+   "status": "future",
+   "lat": 42.935,
+   "lon": -85.42,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Kent County Parks",
+   "place": "Ada, Cascade and Lowell Townships, MI",
+   "start": "TBD",
+   "goal": "2031",
+   "blurb": "The planned 9 mile final piece of the Kent County backbone, following the river from Ada to Lowell to reach the Grand River Valley and Flat River Valley rail trails and the North Country Trail.",
+   "facts": [
+    "Route: Along the Grand River from downtown Ada east to Grand River Riverfront Park and the City of Lowell; alignment not published",
+    "About 9 mi",
+    "Partners: Ada, Cascade and Lowell townships, City of Lowell, MDOT, DNR",
+    "County said in 2025 it had about 65 to 70 percent of funding for south Ada to Lowell",
+    "Kent County asked the state for $5M in Apr 2026 (Lowell Township location, finish by Sept 30, 2027)",
+    "Design and fundraising underway in 2026"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/ada-to-lowell/",
+    "https://www.senate.michigan.gov/media/rlaaouc3/submission_439_final.pdf",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3",
+    "https://www.crainsgrandrapids.com/news/economic-development/150m-investment-planned-through-2026-on-kent-county-section-of-regional-river-trail",
+    "https://content.govdelivery.com/attachments/KENTCOMI/2026/06/11/file_attachments/3681260/KC_Parks_2025_AnnualReport_R4_Digital-Pages.pdf"
+   ],
+   "tags": [
+    "neighborhood",
+    "regional"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "gr-to-lowell-south-rail-trail",
+   "name": "Grand Rapids to Lowell south route (rails with trail)",
+   "status": "future",
+   "lat": 42.945,
+   "lon": -85.44,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Kent County",
+   "place": "Grand Rapids, Grand Rapids Twp, Ada and Lowell Twps, MI",
+   "goal": "After 2026",
+   "blurb": "A long range second route south of the river that would run beside the Grand Rapids Eastern railroad from Grand Rapids to Lowell.",
+   "facts": [
+    "Route: Beside the active Grand Rapids Eastern rail line from the Grand River in Grand Rapids east through Ada (River St, Legacy Park, McGraw Park) to the Lowell footbridge and the Grand River Valley Rail Trail",
+    "About 20 mi; 2022 estimate $28.65M, unfunded",
+    "Needs an easement from the railroad owner",
+    "Listed as future in the 2025 framework"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf",
+    "https://grandriver.network/wp-content/uploads/2025/07/GRG-Vision-and-Framework.pdf"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "ada-grand-river-nature-preserve",
+   "name": "Grand River Nature Trail and Preserve",
+   "status": "anchor",
+   "lat": 42.9483,
+   "lon": -85.4698,
+   "precision": "site",
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A 100 acre township preserve along the Grand with a 1.2 mile nature trail. The Greenway framework lists future river edge trail work here.",
+   "facts": [
+    "1.2 mi trail",
+    "Grand River Natural Area river edge trail improvements listed as future in the 2025 framework"
+   ],
+   "sources": [
+    "https://outdoormichigan.org/feature/1721",
+    "https://grandriver.network/wp-content/uploads/2025/07/GRG-Vision-and-Framework.pdf"
+   ],
+   "tags": [
+    "amenities"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "ada-township-park",
+   "name": "Ada Township Park",
+   "status": "anchor",
+   "lat": 42.9433,
+   "lon": -85.4757,
+   "precision": "site",
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A township park on Grand River Drive SE east of the village, with a picnic shelter, fishing and the parking lot for the Grand River nature preserve.",
+   "facts": [],
+   "sources": [
+    "https://outdoormichigan.org/feature/1721"
+   ],
+   "tags": [
+    "amenities"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "ada-dnr-boat-launch",
+   "name": "Ada river access at Fulton Street (DNR)",
+   "status": "anchor",
+   "lat": 42.9559,
+   "lon": -85.4766,
+   "precision": "site",
+   "lead": "Michigan DNR",
+   "place": "Ada Township, MI",
+   "blurb": "A public boat ramp on the Grand River at the M-21 Fulton Street bridge, just downstream of the Thornapple confluence.",
+   "facts": [
+    "621 Fulton St, Ada"
+   ],
+   "sources": [
+    "https://www.howsyourriver.com/access_sites/fulton-street-bridge",
+    "https://bridgelookup.com/bridge/253147"
+   ],
+   "tags": [
+    "water"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "fulton-m21-underpass",
+   "name": "Fulton Street (M-21) trail underpass",
+   "status": "future",
+   "lat": 42.9555,
+   "lon": -85.479,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A planned trail underpass beneath M-21 that would link downtown Ada and the Thornapple riverfront to the Grand River and the state boat launch.",
+   "facts": [
+    "Route: From Legacy Park along the Thornapple River to its mouth, then under Fulton St (M-21) to the DNR boat launch",
+    "2022 catalogue: $2.62M, 30% design, needs EGLE permit",
+    "Still listed near term in the 2025 framework"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf",
+    "https://grandriver.network/wp-content/uploads/2025/07/GRG-Vision-and-Framework.pdf"
+   ],
+   "tags": [
+    "bridge",
+    "backbone",
+    "water"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "legacy-park-ada",
+   "name": "Legacy Park",
+   "status": "anchor",
+   "lat": 42.9541,
+   "lon": -85.4849,
+   "precision": "site",
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A riverside park on the south edge of downtown Ada along the Thornapple, with a lower river path reached by stairs from the village.",
+   "facts": [
+    "Joined to Covered Bridge Park and the new Thornapple bridge"
+   ],
+   "sources": [
+    "https://www.yahoo.com/news/pickleball-splash-pad-river-access-193835330.html",
+    "https://fox17online.com/news/local-news/east-grand-rapids-forest-hills-cascade/ada-township-breaks-ground-on-2-5m-pedestrian-bridge-over-thornapple-river"
+   ],
+   "tags": [
+    "amenities"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "covered-bridge-park",
+   "name": "Covered Bridge Park",
+   "status": "completed",
+   "lat": 42.953,
+   "lon": -85.485,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "start": "Sept 2025",
+   "goal": "Opened Aug 2026",
+   "sy": 2025,
+   "dy": 2026,
+   "blurb": "An expanded 15 acre park on both banks of the Thornapple around the covered bridge, with a splash pad, playground, pickleball, dog park, veterans memorial, kayak launch and river overlooks.",
+   "facts": [
+    "$8.5M Connecting Community campaign",
+    "Links Leonard Field and Legacy Park",
+    "Greenspace runs from the covered bridge toward the Thornapple and Grand confluence"
+   ],
+   "sources": [
+    "https://www.wgvunews.org/news/2026-08-26/ada-celebrates-grand-opening-of-expanded-8-5m-covered-bridge-park",
+    "https://www.fox17online.com/news/local-news/developers-break-ground-at-covered-bridge-park-in-ada",
+    "https://www.yahoo.com/news/pickleball-splash-pad-river-access-193835330.html"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "chief-hazy-cloud-park",
+   "name": "Chief Hazy Cloud Park",
+   "status": "anchor",
+   "lat": 42.9635,
+   "lon": -85.4858,
+   "precision": "site",
+   "lead": "Kent County Parks",
+   "place": "Ada Township, MI",
+   "blurb": "A county park on Pettis Avenue with about three miles of Grand River frontage after land purchases grew it to 395 acres. It is planned as the Greenway trailhead for Ada.",
+   "facts": [
+    "329 Pettis Ave NE",
+    "Shelter, playground, ball diamonds, fishing and hand launch for canoes and kayaks",
+    "Master plan (2017) calls for trailheads, restrooms, equestrian and nature trails and a bridge to Roselle Park",
+    "Planned trailhead with restrooms and about 100 parking spaces in the Greenway catalogue"
+   ],
+   "sources": [
+    "https://www.mypacer.com/parks/263810/chief-hazy-cloud-park-ada",
+    "https://www.kentcountymi.gov/356/Chief-Hazy-Cloud-Park",
+    "https://app.kentcountymi.gov/News/2021/0603.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://gr-riverfront.squarespace.com/developments/grand-river-greenway-trail"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "ada-dam",
+   "name": "Ada Dam (Thornapple River)",
+   "status": "anchor",
+   "lat": 42.9507,
+   "lon": -85.4859,
+   "precision": "site",
+   "lead": "Thornapple Association (private)",
+   "place": "Ada Township, MI",
+   "blurb": "A 32 foot hydroelectric dam on the Thornapple just upstream of the covered bridge, less than a mile from the Grand. No removal or restoration project was found.",
+   "facts": [
+    "About 1.4 to 1.6 MW",
+    "615 ft long",
+    "Listed here as a river landmark; schema has no dam kind"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thornapple_River",
+    "https://damindex.com/dam/ada-mi00501",
+    "https://www.eaglecreekre.com/node/105"
+   ],
+   "tags": [
+    "enviro"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "pettis-trail-south",
+   "name": "Pettis Ave Trail South",
+   "status": "completed",
+   "lat": 42.9606,
+   "lon": -85.4862,
+   "precision": "route",
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "start": "Summer 2025",
+   "goal": "Fall 2025",
+   "sy": 2025,
+   "dy": 2025,
+   "blurb": "A township trail along Pettis Avenue from Chief Hazy Cloud Park toward downtown Ada, set off from the road by a retaining wall in places. It continues an earlier Ada path from Knapp Street to the park.",
+   "facts": [
+    "Route: Along Pettis Ave from Chief Hazy Cloud Park south to Vergennes, toward downtown Ada",
+    "About $2.5M from the Ada trail millage",
+    "Design Moore & Bruggink; contractor C&D Hughes",
+    "Project address 301 Pettis Ave SE",
+    "South end street named Vergennes in the source; exact OSM name of the end street not confirmed",
+    "Knapp St to Chief Hazy Cloud section was built about 2022"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/pettis-ave-trail-south/",
+    "https://www.fox17online.com/news/local-news/ada-townships-trail-expansion-promises-improved-connectivity-despite-temporary-traffic-hurdles"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "ada",
+   "seg": "pettis-south",
+   "zoom": 14.4
+  },
+  {
+   "id": "ada-covered-bridge",
+   "name": "Ada Covered Bridge",
+   "status": "anchor",
+   "lat": 42.9525,
+   "lon": -85.4864,
+   "precision": "site",
+   "lead": "Kent County / Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A 125 foot rebuilt 1867 Brown truss covered bridge carrying Bronson Street foot and bike traffic over the Thornapple River just above its mouth. It is the centerpiece of Covered Bridge Park.",
+   "facts": [
+    "Listed on the National Register in 1970",
+    "Rebuilt after a 1979 fire",
+    "Pedestrian only since 1930"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ada_Covered_Bridge"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "thornapple-river-pedestrian-bridge",
+   "name": "Thornapple River pedestrian bridge",
+   "status": "completed",
+   "lat": 42.9532,
+   "lon": -85.4878,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "start": "Jan 5, 2026",
+   "goal": "Opened about July 16, 2026",
+   "sy": 2026,
+   "dy": 2026,
+   "blurb": "A new 270 foot bridge for walkers and riders over the Thornapple on the north side of Thornapple River Drive, joining Legacy Park and downtown Ada to township trails south of the river.",
+   "facts": [
+    "270 ft plus more than 200 ft of boardwalk on the south side (network page says 170 ft)",
+    "$2.5M: $1.575M trail millage, $500K campaign, $425K MEDC grant",
+    "Contractor Grand River Construction; design Progressive Companies",
+    "Project address 7421 Thornapple River Dr SE"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/thornapple-river-pedestrian-bridge/",
+    "https://fox17online.com/news/local-news/east-grand-rapids-forest-hills-cascade/ada-township-breaks-ground-on-2-5m-pedestrian-bridge-over-thornapple-river",
+    "https://www.fox17online.com/news/local-news/east-grand-rapids-forest-hills-cascade/as-ada-pedestrian-bridge-nears-opening-businesses-look-ahead-to-increased-foot-traffic",
+    "https://grandriver.network/2026/04/spring-construction/"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "ada"
+  },
+  {
+   "id": "cascade-road-pedestrian-bridge",
+   "name": "Cascade Road pedestrian bridge (Thornapple River)",
+   "status": "completed",
+   "lat": 42.9095,
+   "lon": -85.498,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Cascade Charter Township",
+   "place": "Cascade Charter Township, MI",
+   "start": "Oct 2024",
+   "goal": "May 2025",
+   "sy": 2024,
+   "dy": 2025,
+   "blurb": "Upgrades to the Cascade Road bridge over the Thornapple that give walkers a wider path with a barrier, higher railing and lighting, near the Cascade dam.",
+   "facts": [
+    "Funded by state ARPA and the Cascade DDA",
+    "Completion of both phases set for May 2025; final opening not confirmed"
+   ],
+   "sources": [
+    "https://www.cascadetwp.com/projects/cascade-rd-pedestrian-bridge"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "cascade-dam",
+   "name": "Cascade Dam (Thornapple River)",
+   "status": "anchor",
+   "lat": 42.9095,
+   "lon": -85.4989,
+   "precision": "site",
+   "lead": "Cascade Charter Township",
+   "place": "Cascade Charter Township, MI",
+   "blurb": "A 41 foot township owned hydroelectric dam on the Thornapple just southwest of Cascade Road. No removal is planned; EGLE limits seasonal drawdowns to protect mussels.",
+   "facts": [
+    "About 1.4 to 1.6 MW, operated under contract",
+    "High hazard dam regulated by FERC",
+    "Fall 2026 drawdown suspended",
+    "Listed here as a river landmark; schema has no dam kind"
+   ],
+   "sources": [
+    "https://www.cascadetwp.com/community/cascade-dam/",
+    "https://en.wikipedia.org/wiki/Thornapple_River",
+    "https://damindex.com/dam/cascade-mi00502"
+   ],
+   "tags": [
+    "enviro"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "chief-hazy-cloud-equestrian-trailhead",
+   "name": "Chief Hazy Cloud Park equestrian trailhead",
+   "status": "completed",
+   "lat": 42.979,
+   "lon": -85.506,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Kent County Parks",
+   "place": "Ada Township, MI",
+   "start": "2024",
+   "goal": "Lot fall 2025; horse trails spring 2026",
+   "sy": 2024,
+   "dy": 2026,
+   "blurb": "A new entry drive and parking lot with trailer spaces serving more than three miles of horse trails in the park. Bikes are not allowed on the horse trails.",
+   "facts": [
+    "791 Pettis Ave NE",
+    "About 10 trailer and 20 car spaces",
+    "Horse trails with two bridge crossings",
+    "Construction bid $250,894"
+   ],
+   "sources": [
+    "https://projects.constructconnect.com/details/6456444-chief-hazy-cloud-park-trailhead-parking-development&find_loc=michigan-49301",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/3fecf42",
+    "https://www.kentcountymi.gov/332/Parks-Projects"
+   ],
+   "tags": [
+    "regional"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "park-to-park-bridge",
+   "name": "Chief Hazy Cloud to Roselle Park bridge",
+   "status": "future",
+   "lat": 42.976,
+   "lon": -85.509,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Kent County Parks with Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A proposed signature suspension bridge for walkers and riders across the Grand River between Chief Hazy Cloud Park and Ada's Roselle Park, to be funded by donations.",
+   "facts": [
+    "Would join more than 600 acres of parkland",
+    "Listed near term in the 2025 framework; no date or cost published",
+    "Named in Kent County's 2026 state appropriation request"
+   ],
+   "sources": [
+    "https://kentcountyparksfoundation.squarespace.com/grand-river-greenways",
+    "https://app.kentcountymi.gov/News/2021/0603.pdf",
+    "https://grandriver.network/wp-content/uploads/2025/07/GRG-Vision-and-Framework.pdf",
+    "https://www.senate.michigan.gov/media/rlaaouc3/submission_439_final.pdf",
+    "https://www.fox17online.com/news/local-news/ada-townships-trail-expansion-promises-improved-connectivity-despite-temporary-traffic-hurdles"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "ada-fulton-street-trail",
+   "name": "Fulton Street trail (Ada)",
+   "status": "future",
+   "lat": 42.958,
+   "lon": -85.515,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A planned 1.1 mile path linking Grand Rapids Township trails to Ada's network and the river along Fulton Street.",
+   "facts": [
+    "Route: Along Fulton St from the west Ada Township line to Carl Dr, then to Grand River Ave",
+    "About 1.1 mi; 2022 estimate $2.53M",
+    "Status since 2022 not confirmed; may be built"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "roselle-park",
+   "name": "Roselle Park",
+   "status": "anchor",
+   "lat": 42.9814,
+   "lon": -85.5368,
+   "precision": "area",
+   "radius": 450,
+   "lead": "Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "A 242 acre township nature park on Grand River Drive with over a mile of river frontage, paved loops through old pastures and wetland trails. The silos of the former Ada Beef farm still stand.",
+   "facts": [
+    "1010 Grand River Dr NE",
+    "About 2 to 3 mi of trails; restrooms open all year",
+    "Hosted a Jan 2026 Greenway open house"
+   ],
+   "sources": [
+    "https://naturenearby.org/explore/roselle-park/",
+    "https://walkingmichiganparks.blogspot.com/2020/12/roselle-park-1010-grand-river-dr-ne-ada.html",
+    "https://www.wgvunews.org/news/2026-01-29/next-phase-of-grand-river-greenway-projects-starts-this-spring"
+   ],
+   "tags": [
+    "amenities",
+    "enviro"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "crahen-ave-rail-bridge",
+   "name": "Crahen Avenue trail bridge over the railroad",
+   "status": "construction",
+   "lat": 42.9641,
+   "lon": -85.5609,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Grand Rapids Township",
+   "place": "Grand Rapids Township, MI",
+   "start": "2025 approach work",
+   "goal": "Install targeted Sept 12, 2026",
+   "sy": 2025,
+   "dy": 2026,
+   "blurb": "A 140 foot weathering steel trail bridge beside Crahen Avenue over the Grand Rapids Eastern rail line, closing a gap in the township's trail network toward Ada, Kentwood and Plainfield.",
+   "facts": [
+    "140 ft; nearly $1M",
+    "Township has about 16 mi of trail",
+    "Not part of the Kent County Greenway program; whether it is the rail crossing Erik named is unconfirmed"
+   ],
+   "sources": [
+    "https://www.fox17online.com/news/local-news/east-grand-rapids-ada-cascade/a-missing-link-new-bridge-aims-to-make-crahen-avenue-safer-for-pedestrians-and-cyclists",
+    "https://bridgecondition.com/bridge/michigan/mi-000000000005067"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "area": "ada"
+  },
+  {
+   "id": "cannonsburg-trail-phase-2",
+   "name": "Cannonsburg Trail, Northland Dr to Chauncey Ave",
+   "status": "upcoming",
+   "lat": 43.0626,
+   "lon": -85.566,
+   "precision": "route",
+   "lead": "Kent County Parks",
+   "place": "Cannon Township / Plainfield Charter Township, MI",
+   "start": "By summer 2027",
+   "sy": 2027,
+   "blurb": "The western half of the Cannonsburg Trail, which will tie the Northland Drive trail and tunnel to the section already being built east of Chauncey Avenue.",
+   "facts": [
+    "Route: Along Cannonsburg Rd NE from Northland Dr NE east to Chauncey Ave NE",
+    "Earlier releases expected a 2026 fall start; the Parks Foundation now says construction by summer 2027",
+    "Whole Cannonsburg Trail budget about $4M (Kent County and ARPA via DGRI)",
+    "Exact alignment and side of road not published"
+   ],
+   "sources": [
+    "https://kentcountyparksfoundation.squarespace.com/grand-river-greenways",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/40cf4a5",
+    "https://grandriver.network/projects/cannonsburg-trail/"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "carbon": true,
+   "area": "pettis",
+   "seg": "cannonsburg-2",
+   "zoom": 14.4
+  },
+  {
+   "id": "cannonsburg-trail-phase-1",
+   "name": "Cannonsburg Trail, Chauncey Ave to Pettis Ave",
+   "status": "construction",
+   "lat": 43.0566,
+   "lon": -85.5405,
+   "precision": "route",
+   "lead": "Kent County Parks",
+   "place": "Cannon Township, MI",
+   "start": "July 2026",
+   "goal": "Late fall 2026",
+   "sy": 2026,
+   "dy": 2026,
+   "blurb": "The eastern half of the Cannonsburg Trail, a roadside path toward the Cannonsburg ski area that meets the Pettis Trail and includes a small bridge over Bear Creek.",
+   "facts": [
+    "Route: Along Cannonsburg Rd NE from Chauncey Ave NE east to Pettis Ave NE, crossing Bear Creek",
+    "Includes a small Bear Creek bridge",
+    "Design Prein&Newhof; contractor Bob's Asphalt & Paving",
+    "Partners Cannon Township and DGRI"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/cannonsburg-trail/",
+    "https://kentcountyparksfoundation.squarespace.com/grand-river-greenways",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3",
+    "https://www.cannontwp.gov/parks-recreation"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "pettis",
+   "seg": "cannonsburg-1",
+   "zoom": 14.4
+  },
+  {
+   "id": "pettis-trail-north",
+   "name": "Pettis Ave Trail North",
+   "status": "construction",
+   "lat": 43.02899,
+   "lon": -85.53032,
+   "precision": "route",
+   "lead": "Kent County Parks",
+   "place": "Ada Township / Cannon Township, MI",
+   "start": "July 2026",
+   "goal": "Winter 2026 to 2027",
+   "sy": 2026,
+   "dy": 2027,
+   "blurb": "A 3.5 mile separated path along hilly, curving Pettis Avenue that links the Cannonsburg Trail to Ada Township's trail network at Knapp Street. It is the last link in the White Pine Trail to Ada route.",
+   "facts": [
+    "Route: Along Pettis Ave NE from Knapp St NE (near Forest Hills Eastern) north to Cannonsburg Rd NE",
+    "3.5 mi, 10 ft wide shared use path",
+    "Bid package: 18,100 ft of path grading, one pedestrian bridge, about 19,855 sq ft of retaining wall",
+    "Bid value $7.10M; network page lists $5.2M budget",
+    "Design Land & Resource Engineering; contractor Anlaan Corporation",
+    "Partners Cannon Township and DGRI",
+    "County bulletin says wrap up late November; Parks Foundation says opening winter 2027"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/pettis-ave-trail-north/",
+    "https://projects.constructconnect.com/details/7458295-grand-river-greenway-section-5-7-project&find_loc=michigan-49301",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3",
+    "https://kentcountyparksfoundation.squarespace.com/grand-river-greenways",
+    "https://www.fox17online.com/news/local-news/east-grand-rapids-forest-hills-cascade/the-missing-link-new-2-5-mile-trail-to-connect-ada-to-the-grand-river-greenway",
+    "https://www.wgvunews.org/news/2026-01-29/next-phase-of-grand-river-greenway-projects-starts-this-spring"
+   ],
+   "tags": [
+    "backbone",
+    "regional"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "pettis",
+   "seg": "pettis-north",
+   "zoom": 14.4
+  },
+  {
+   "id": "knapp-street-pedestrian-bridge",
+   "name": "Knapp Street pedestrian bridge",
+   "status": "construction",
+   "lat": 43.00564,
+   "lon": -85.54319,
+   "precision": "site",
+   "lead": "Kent County Parks with Ada Township",
+   "place": "Ada Township / Grand Rapids Township, MI",
+   "start": "Dec 2025 award; in-river work 2026 to 2027",
+   "goal": "Summer 2027 (August 2027)",
+   "sy": 2025,
+   "dy": 2027,
+   "blurb": "A separate steel bike and pedestrian bridge and raised boardwalk along the south side of the Knapp Street bridge over the Grand. It links Grand Rapids Township trails on the west bank with Ada and Cannon trails and the Greenway on the east.",
+   "facts": [
+    "Route: South side of Knapp St NE from Grand River Dr NE east over the Grand River to Watercrest Dr NE",
+    "About 2,750 ft of pathway: 300 ft asphalt plus about 43 prefabricated steel sections",
+    "Main bridge about 575 ft; total cost about $10.2M (Ada Twp $4.4M, DGRI $4.6M, Road Commission $1.3M)",
+    "About 3,000 mussels moved in June 2026, including the federally protected snuffbox",
+    "Design Moore & Bruggink; contractor Milbocker & Sons",
+    "Knapp St closures expected in 2027; DNR boat launch sits at the bridge (2281 Shady Dr NE)"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/knapp-st-pedestrian-bridge/",
+    "https://www.fox17online.com/news/local-news/east-grand-rapids-ada-cascade/new-pedestrian-bridge-planned-to-connect-trails-across-the-grand-river-in-ada",
+    "https://projects.constructconnect.com/details/7285003-knapp-street-pedestrian-bridge-project&find_loc=michigan-49525",
+    "https://bridgelookup.com/bridge/253237",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3",
+    "https://content.govdelivery.com/attachments/KENTCOMI/2026/06/11/file_attachments/3681260/KC_Parks_2025_AnnualReport_R4_Digital-Pages.pdf"
+   ],
+   "tags": [
+    "bridge",
+    "backbone",
+    "water"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "pettis",
+   "seg": "knapp",
+   "zoom": 14.4
+  },
+  {
+   "id": "ada-trail-connection",
+   "name": "Ada trail connection at the rail line",
+   "status": "future",
+   "lat": 43.0056,
+   "lon": -85.547,
+   "precision": "area",
+   "radius": 160,
+   "lead": "Kent County Parks with Ada Township",
+   "place": "Ada Township, MI",
+   "blurb": "Where the Knapp Street bridge path is expected to tie into the trail along the rail line on the west side of the river. Carbon marked it as the likely connection point; no published plan names it yet.",
+   "facts": [
+    "Marked on the Carbon river map as the probable tie in for the Knapp Street bridge path",
+    "Not found in any county or township project list as of Nov 2026"
+   ],
+   "sources": [],
+   "tags": [
+    "backbone"
+   ],
+   "carbon": true,
+   "area": "pettis"
+  },
+  {
+   "id": "rockford-dam-overlook",
+   "name": "Rockford Dam Overlook",
+   "status": "anchor",
+   "lat": 43.1204,
+   "lon": -85.5618,
+   "precision": "site",
+   "lead": "City of Rockford",
+   "place": "Rockford, MI",
+   "blurb": "A small downtown Rockford park on Bridge Street overlooking the dam on the Rogue River, right beside the White Pine Trail.",
+   "facts": [
+    "No dam removal or restoration plan found in public sources"
+   ],
+   "sources": [
+    "https://activerain.com/blogsview/309487/downtown-parks-in-rockford-michigan----part-two----dam-overlook",
+    "https://en.wikipedia.org/wiki/Rogue_River_(Michigan)",
+    "https://bridgelookup.com/bridge/253245"
+   ],
+   "tags": [
+    "amenities",
+    "regional",
+    "enviro"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "rogue-river-park-expansion",
+   "name": "Rogue River Park land addition (6624 Belmont Ave)",
+   "status": "future",
+   "lat": 43.08,
+   "lon": -85.601,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Kent County",
+   "place": "Belmont (Plainfield Charter Township), MI",
+   "goal": "Dec 31, 2027 (requested)",
+   "blurb": "A requested state appropriation for Kent County to buy state owned land next to Rogue River Park and add natural surface trails around its ponds.",
+   "facts": [
+    "$438,500 request, sponsor Sen. Mark Huizenga, posted Apr 16, 2026",
+    "Not confirmed as funded"
+   ],
+   "sources": [
+    "https://committees.senate.michigan.gov/information/legislatively-directed-spending-items/2026/county-of-kent/"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "rogue-river-park",
+   "name": "Rogue River Park",
+   "status": "anchor",
+   "lat": 43.0768,
+   "lon": -85.6037,
+   "precision": "site",
+   "lead": "Kent County Parks",
+   "place": "Belmont (Plainfield Charter Township), MI",
+   "blurb": "A 79 acre county park on the Rogue River in Belmont that doubles as the main White Pine Trail parking lot for this stretch.",
+   "facts": [
+    "6300 Belshire Ave NE",
+    "1.3 mi nature trail, restrooms near the trail entrance",
+    "Borders White Pine Trail State Park"
+   ],
+   "sources": [
+    "https://outdoormichigan.org/feature/2053",
+    "https://www.kentcountymi.gov/DocumentCenter/View/978",
+    "https://whitepinetrail.com/parking-options"
+   ],
+   "tags": [
+    "amenities",
+    "regional"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "south-rogue-river-bridge",
+   "name": "Rogue River pedestrian bridge (Rogue River Road)",
+   "status": "completed",
+   "lat": 43.0724,
+   "lon": -85.5971,
+   "precision": "site",
+   "lead": "Plainfield Charter Township with Kent County",
+   "place": "Plainfield Charter Township, MI",
+   "start": "Spring 2026 (set May 14, 2026)",
+   "goal": "Opened late May 2026",
+   "sy": 2026,
+   "dy": 2026,
+   "blurb": "A prefabricated weathering steel bridge that carries the South Rogue River Trail over the Rogue River beside the Rogue River Road bridge.",
+   "facts": [
+    "175 ft long, 10 ft wide, concrete deck",
+    "About $800K to $880K of the trail budget",
+    "Rogue River Rd closed May 12 to 18, 2026 between Verta Dr and Woodwater Dr for crane work"
+   ],
+   "sources": [
+    "https://mi-plainfieldcharter.civicplus.com/CivicAlerts.asp?AID=75",
+    "https://mi-plainfieldcharter.civicplus.com/m/newsflash/Home/Detail/54",
+    "https://getoffthecouchnews.blogspot.com/2026/05/rogue-river-road-non-motorized-bridge.html",
+    "https://bridgelookup.com/bridge/253356"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "north"
+  },
+  {
+   "id": "white-pine-trail-connection",
+   "name": "White Pine Trail connection at Rogue River Road",
+   "status": "completed",
+   "lat": 43.0718,
+   "lon": -85.6165,
+   "precision": "area",
+   "radius": 220,
+   "lead": "Plainfield Charter Township",
+   "place": "Plainfield Charter Township, MI",
+   "start": "Summer 2025",
+   "goal": "Summer 2026",
+   "sy": 2025,
+   "dy": 2026,
+   "blurb": "The west end of the South Rogue River Trail, where the Greenway ties into the Fred Meijer White Pine Trail State Park near Belmont. From here riders can go north to Rockford and Cadillac or south to Comstock Park and Grand Rapids.",
+   "facts": [
+    "Annual report lists the Rogue River Drive Trail as running from the White Pine Trail to the Rogue River Dr and Northland Dr intersection"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/south-rogue-river-trail/",
+    "https://content.govdelivery.com/attachments/KENTCOMI/2026/06/11/file_attachments/3681260/KC_Parks_2025_AnnualReport_R4_Digital-Pages.pdf",
+    "https://mi-plainfieldcharter.civicplus.com/CivicAlerts.asp?AID=75"
+   ],
+   "tags": [
+    "regional"
+   ],
+   "carbon": true,
+   "area": "north"
+  },
+  {
+   "id": "south-rogue-river-trail",
+   "name": "South Rogue River Trail",
+   "status": "completed",
+   "lat": 43.0713,
+   "lon": -85.586,
+   "precision": "route",
+   "lead": "Plainfield Charter Township",
+   "place": "Plainfield Charter Township, MI",
+   "start": "Summer 2025 (site work Sept 2025)",
+   "goal": "Summer 2026",
+   "sy": 2025,
+   "dy": 2026,
+   "blurb": "A roughly two mile township trail along Rogue River Road that carries the Greenway from the White Pine Trail east to Northland Drive, including a new bridge over the Rogue River. It also closes the township's first trail loop with the Rockford and Jericho trails.",
+   "facts": [
+    "Route: South side of Rogue River Rd NE from the Fred Meijer White Pine Trail east across the Rogue River to the Northland Dr NE tunnel area",
+    "About 2 mi, 10 ft wide",
+    "About $2.2M to $2.5M, paid by the 2016 Plainfield trails millage (its last project)",
+    "Kent County reimburses the township for the bridge",
+    "Contractor Dan's Excavating; engineer Prein&Newhof",
+    "Fully usable by May 28, 2026; final restoration and signs summer 2026"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/south-rogue-river-trail/",
+    "https://mi-plainfieldcharter.civicplus.com/CivicAlerts.asp?AID=75",
+    "https://mi-plainfieldcharter.civicplus.com/m/newsflash/Home/Detail/54",
+    "https://getoffthecouchnews.blogspot.com/2026/04/south-rogue-river-trail-construction.html",
+    "https://getoffthecouchnews.blogspot.com/2026/05/rogue-river-road-non-motorized-bridge.html",
+    "https://grandriver.network/2026/04/spring-construction/"
+   ],
+   "tags": [
+    "backbone",
+    "regional",
+    "enviro"
+   ],
+   "carbon": true,
+   "area": "north",
+   "seg": "south-rogue",
+   "zoom": 14.4
+  },
+  {
+   "id": "northland-drive-tunnel",
+   "name": "Northland Drive pedestrian tunnel",
+   "status": "construction",
+   "lat": 43.07114,
+   "lon": -85.57932,
+   "precision": "site",
+   "lead": "Kent County Parks",
+   "place": "Plainfield Charter Township, MI",
+   "start": "Spring 2026 (groundbreaking Apr 30, 2026)",
+   "goal": "Late fall 2026",
+   "sy": 2026,
+   "dy": 2026,
+   "blurb": "A 166 foot bike and pedestrian tunnel under the seven lanes of Northland Drive just south of Rogue River Road and 7 Mile Road, beside Blythefield Country Club. It links the South Rogue River Trail to the new Northland, Cannonsburg and Pettis trails.",
+   "facts": [
+    "Tunnel 166 ft long, 18 ft wide, built from 19 precast concrete arches",
+    "Northland Drive closed Sept 25, 2026 for the arch install and reopened ahead of schedule (announced Sept 30)",
+    "Funded by $10M ARPA through a Michigan DNR grant to DGRI; county lists a $9M budget; bid value $7.47M",
+    "Design Prein&Newhof; contractor Kalin Construction",
+    "Partners: Plainfield Twp, DGRI, MDOT, Kent County Road Commission, Blythefield Country Club"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/northland-tunnel/",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41470d3",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/42b06ed",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/42ce061",
+    "https://mi-plainfieldcharter.civicplus.com/m/newsflash/Home/Detail/53",
+    "https://content.govdelivery.com/attachments/KENTCOMI/2026/06/11/file_attachments/3681260/KC_Parks_2025_AnnualReport_R4_Digital-Pages.pdf"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "north"
+  },
+  {
+   "id": "northland-drive-trail",
+   "name": "Northland Drive trail",
+   "status": "construction",
+   "lat": 43.0675,
+   "lon": -85.5797,
+   "precision": "route",
+   "lead": "Kent County Parks",
+   "place": "Plainfield Charter Township, MI",
+   "start": "Spring 2026",
+   "goal": "Winter 2026",
+   "sy": 2026,
+   "dy": 2026,
+   "blurb": "About half a mile of new separated path along the east side of Northland Drive between the tunnel and Cannonsburg Road, where the Cannonsburg Trail begins.",
+   "facts": [
+    "Route: East side of Northland Dr NE from Rogue River Rd / 7 Mile Rd NE south about half a mile to Cannonsburg Rd NE / West River Dr",
+    "About 0.5 mi",
+    "Budget about $1M (Kent County, ARPA via DGRI and DNR)",
+    "Design Prein&Newhof; contractor Kalin Construction",
+    "One earlier county bulletin described it as leaving the tunnel's west exit; later releases say east side"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/northland-trail/",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/42ce061",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/3fecf42"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "carbon": true,
+   "area": "north",
+   "seg": "northland",
+   "zoom": 14.4
+  },
+  {
+   "id": "indian-drive-access",
+   "name": "Indian Drive river access (DNR)",
+   "status": "anchor",
+   "lat": 43.0631,
+   "lon": -85.5851,
+   "precision": "site",
+   "lead": "Michigan DNR",
+   "place": "Belmont (Plainfield Charter Township), MI",
+   "blurb": "A public boat ramp on the Grand River at Indian Drive, just below where the Rogue River comes in.",
+   "facts": [
+    "3277 Indian Dr NE",
+    "Part of the Lower Grand River Water Trail network of public access sites"
+   ],
+   "sources": [
+    "https://howsyourriver.com/access_sites/indian-drive",
+    "https://grandriver.network/projects/lower-grand-river-water-trail/"
+   ],
+   "tags": [
+    "water"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "grand-rogue-park-trail-phases",
+   "name": "Grand Rogue Park and Trail build out",
+   "status": "future",
+   "lat": 43.0605,
+   "lon": -85.591,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Plainfield Charter Township",
+   "place": "Plainfield Charter Township, MI",
+   "blurb": "Later phases of Grand Rogue Park that would add a pedestrian bridge over the Rogue River, overlooks, restrooms, more parking and a trail toward the Grand Rapids to Lowell route.",
+   "facts": [
+    "Total estimate $5.8M in the DGRI project summary; Phase I $604,600 funded, Phases II to IV largely unfunded",
+    "Listed as near term in the 2025 Greenway framework",
+    "Current status of later phases not confirmed"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://grandriver.network/wp-content/uploads/2025/07/GRG-Vision-and-Framework.pdf"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "grand-isle-park",
+   "name": "Grand Isle Park",
+   "status": "anchor",
+   "lat": 43.0604,
+   "lon": -85.5999,
+   "precision": "site",
+   "lead": "Plainfield Charter Township",
+   "place": "Plainfield Charter Township, MI",
+   "blurb": "A 62 acre township park with almost 3,000 feet of Grand River frontage and an 18 hole disc golf course.",
+   "facts": [
+    "6266 West River Dr NE, Belmont",
+    "Course reworked in 2026 with no mow natural areas"
+   ],
+   "sources": [
+    "https://mi-plainfieldcharter.civicplus.com/282/Township-Parks",
+    "https://www.pdga.com/node/215036",
+    "https://mi-plainfieldcharter.civicplus.com/m/newsflash/Home/Detail/63"
+   ],
+   "tags": [
+    "amenities"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "grand-rogue-park",
+   "name": "Grand Rogue Park",
+   "status": "anchor",
+   "lat": 43.0591,
+   "lon": -85.5937,
+   "precision": "area",
+   "radius": 700,
+   "lead": "Plainfield Charter Township",
+   "place": "Plainfield Charter Township, MI",
+   "blurb": "A township park of about 65 acres where the Rogue River meets the Grand, built on a former campground, golf course and gravel pit. It has natural trails, ponds and kayak launches.",
+   "facts": [
+    "6400 West River Dr NE, between Jupiter Ave and Northland Dr",
+    "Opened Oct 2020",
+    "Only Plainfield park with access to both rivers; kayak launches were under repair after April 2026 flooding"
+   ],
+   "sources": [
+    "https://mi-plainfieldcharter.civicplus.com/282/Township-Parks",
+    "https://wgrd.com/new-65-acre-park-along-grand-and-rogue-rivers-now-open/",
+    "https://mi-plainfieldcharter.civicplus.com/m/newsflash/Home/Detail/63",
+    "https://en.wikipedia.org/wiki/Rogue_River_(Michigan)"
+   ],
+   "tags": [
+    "amenities",
+    "water",
+    "flood"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "lamoreaux-park",
+   "name": "Donald J. Lamoreaux Park",
+   "status": "anchor",
+   "lat": 43.0446,
+   "lon": -85.6457,
+   "precision": "site",
+   "lead": "Kent County Parks",
+   "place": "Plainfield Charter Township, MI",
+   "blurb": "A 263 acre county park with about a mile and a half of Grand River shoreline, loop trails through woods and wetlands, and a river overlook deck.",
+   "facts": [
+    "Entrances on Bailey Park Dr and Coit Ave NE",
+    "About 6 mi of nature trail"
+   ],
+   "sources": [
+    "https://outdoormichigan.org/feature/1988",
+    "https://www.kentcountymi.gov/374/Lamoreaux-Park",
+    "https://www.kentcountymi.gov/345/All-Parks-A---Z"
+   ],
+   "tags": [
+    "amenities",
+    "enviro"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "white-pine-trail-comstock-park",
+   "name": "Fred Meijer White Pine Trail, Comstock Park trailhead",
+   "status": "anchor",
+   "lat": 43.025,
+   "lon": -85.6656,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Michigan DNR",
+   "place": "Plainfield Charter Township, MI",
+   "blurb": "The southern trailhead of the state rail trail that the Greenway uses to link Grand Rapids with Belmont and Rockford. Trail users also reach it from Riverside Park in Grand Rapids.",
+   "facts": [
+    "Route: Rail trail running north from Comstock Park past Belmont and Rogue River Park to Rockford and on to Cadillac",
+    "State park rail trail, Comstock Park to Cadillac"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fred_Meijer_White_Pine_Trail_State_Park",
+    "https://greatruns.com/grand-rapids-fred-meijer-white-pine-trail/",
+    "https://www.michigan.gov/whitepinetrail"
+   ],
+   "tags": [
+    "regional"
+   ],
+   "area": "north"
+  },
+  {
+   "id": "grand-river-edges-trail-north",
+   "name": "Grand River Edges Trail, north segment (Ann St to White Pine Trail)",
+   "status": "anchor",
+   "lat": 43.012,
+   "lon": -85.67,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "The existing northern piece of the Grand River Edges Trail, separate from the downtown loop until the Leonard to Ann link is finished.",
+   "facts": [
+    "Route: East bank from Ann Street north through Riverside Park to N Park St just north of I-96/M-37, then across a bridge to the west side to meet White Pine Trail State Park near US-131.",
+    "Part of the 5.4 mile Grand River Edges Trail",
+    "Wooden section and rough pavement noted by users"
+   ],
+   "sources": [
+    "https://www.traillink.com/trail/grand-river-edges-trail"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "area": "northend"
+  },
+  {
+   "id": "riverside-park",
+   "name": "Riverside Park",
+   "status": "anchor",
+   "lat": 43.0115,
+   "lon": -85.6689,
+   "precision": "area",
+   "radius": 600,
+   "lead": "City of Grand Rapids Parks and Recreation",
+   "place": "Grand Rapids, MI",
+   "blurb": "A large city park along Monroe Avenue on the river's east bank north of Ann Street, with a lagoon, paved loops and the city's accessible kayak launch. It is the northern anchor that the Leonard to Ann trail will reach.",
+   "facts": [
+    "About 250 acres along the Grand River",
+    "Address 2001 Monroe Ave NE",
+    "Paved loops of about 2.2 and 1.5 miles; disc golf; two boat launches",
+    "2021 upgrades: restroom building, accessible kayak launch, lagoon edge plantings",
+    "Connects north via the Grand River Edges Trail to White Pine Trail State Park"
+   ],
+   "sources": [
+    "https://ahealthiermichigan.org/stories/community/mi-big-green-gym-riverside-park",
+    "https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/Grand-Rapids-Parks-Projects",
+    "https://www.grandrapidsmi.gov/departments/parks-recreation/recreation/kayaking/",
+    "https://www.grmag.com/people-places/accessible-kayak-launch-opens-at-riverside-park/"
+   ],
+   "tags": [
+    "amenities",
+    "access",
+    "water",
+    "regional"
+   ],
+   "tour": true,
+   "area": "northend"
+  },
+  {
+   "id": "riverside-park-accessible-launch",
+   "name": "Riverside Park accessible kayak launch",
+   "status": "completed",
+   "lat": 43.0073,
+   "lon": -85.6688,
+   "precision": "site",
+   "lead": "City of Grand Rapids Parks and Recreation",
+   "place": "Grand Rapids, MI",
+   "blurb": "A barrier-free dock on the Riverside Park lagoon that gives paddlers calm-water access to the Grand River. The city runs weekend kayak rentals here in summer.",
+   "facts": [
+    "About $230,000: $150,000 DNR Recreation Passport grant plus $80,000 parks millage",
+    "Eight-foot paved paths from parking to the dock",
+    "Rentals Fri 4 to 8 pm, Sat and Sun 10 am to 4 pm in summer"
+   ],
+   "sources": [
+    "https://www.grmag.com/people-places/accessible-kayak-launch-opens-at-riverside-park/",
+    "https://www.grandrapidsmi.gov/departments/parks-recreation/recreation/kayaking/",
+    "https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/Grand-Rapids-Parks-Projects"
+   ],
+   "tags": [
+    "water"
+   ],
+   "area": "northend"
+  },
+  {
+   "id": "westside-park-ann-to-i96",
+   "name": "Westside Park (Ann St to I-96, west bank)",
+   "status": "future",
+   "lat": 43.004,
+   "lon": -85.679,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A long-term idea for a 1.1 mile natural area on the west bank between the river and US-131 from Ann Street up to the I-96 interchange. No design exists yet.",
+   "facts": [
+    "Listed in DGRI Greenway catalogue with cost TBD",
+    "Design not yet completed"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "northend"
+  },
+  {
+   "id": "scribner-ave-city-site",
+   "name": "Former Kent County Road Commission site (Scribner Ave)",
+   "status": "future",
+   "lat": 42.995,
+   "lon": -85.6775,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A 14.4 acre riverfront site south of Ann Street along Scribner Avenue, picked to take the city services that moved off the 201 Market amphitheater site. The city parks office now lists 1500 Scribner Ave NW.",
+   "facts": [
+    "14.4 acres",
+    "City services from Market Ave relocated to 1500 Scribner Ave NW (Crain's, 2025)",
+    "Riverfront treatment not designed"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf",
+    "https://www.crainsgrandrapids.com/news/economic-development/work-begins-to-create-greenspace-trailway-behind-acrisure-amphitheater",
+    "https://www.grandrapidsmi.gov/departments/parks-recreation/recreation/kayaking/"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "northend"
+  },
+  {
+   "id": "indian-mill-creek",
+   "name": "Indian Mill Creek mouth",
+   "status": "future",
+   "lat": 42.9935,
+   "lon": -85.6785,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A west side tributary that enters the Grand River north of the Genesee and Wyoming railway. The Greenway list calls for habitat work and public access, with no design yet.",
+   "facts": [
+    "Watershed spans Grand Rapids, Walker and Alpine Township"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "neighborhood",
+    "enviro"
+   ],
+   "area": "northend"
+  },
+  {
+   "id": "leonard-to-ann-trail",
+   "name": "Grand River Edges Trail, Leonard to Ann",
+   "status": "construction",
+   "lat": 42.9901,
+   "lon": -85.67196,
+   "precision": "route",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "start": "Spring 2026 (milestone event June 15, 2026)",
+   "goal": "December 2026 (Fall/Winter 2026)",
+   "sy": 2026,
+   "dy": 2026,
+   "blurb": "A new 12 ft multi-use trail that closes the gap between downtown and Riverside Park, and through it the White Pine Trail. Underpasses at the street and railroad bridges are left for a later phase.",
+   "facts": [
+    "Route: East bank of the Grand River along Monroe Ave NW from Leonard St north to Ann St (project address 1529 Monroe Ave NW), with at-grade crossings at the streets.",
+    "0.75 mile, 12 ft wide",
+    "Estimated $9.1 million",
+    "Funding: City, MDNR, MDOT, ARPA via DGRI and MDNR, West Michigan Trails, private partners",
+    "Design Fishbeck and VIRIDIS; contractors Wieland and Anlaan",
+    "City said in June 2026 it was near halfway, completion expected December",
+    "Includes an interpretive plaza, lighting, benches, native plantings"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/grand-river-edges-trail-leonard-to-ann/",
+    "https://www.grandrapidsmi.gov/city-news/posts/city-celebrates-major-milestone-in-grand-river-edges-trail-leonard-to-ann-extension/",
+    "https://www.wgvunews.org/news/2026-06-16/new-grand-river-edges-trail-segment-to-connect-riverside-park-with-downtown-grand-rapids",
+    "https://getoffthecouchnews.blogspot.com/2026/04/grand-river-edges-connection.html",
+    "https://woodradio.iheart.com/featured/wood-radio-local-news/content/2026-01-08-171-mile-grand-river-greenway-trails-network-draws-closer-to-completion/",
+    "https://downtowngr.org/announcements/2023/05/dgri-greenway-priorities"
+   ],
+   "tags": [
+    "backbone",
+    "regional",
+    "enviro"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "northend",
+   "seg": "leonard-ann",
+   "zoom": 14.4
+  },
+  {
+   "id": "adventure-park-water-yard",
+   "name": "Adventure Park (former city water storage yard)",
+   "status": "future",
+   "lat": 42.988,
+   "lon": -85.6738,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A concept to turn the decommissioned water storage yard on the east bank along N Monroe Ave into a riverfront park with a canopy trail and playground. River for All once floated reusing a big tank as an event hall.",
+   "facts": [
+    "Estimated $22.4 million, unfunded",
+    "Conceptual design only"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf",
+    "https://www.wgvunews.org/news/2018-11-01/gr-city-officials-unveil-plans-to-dramatically-change-the-grand-river-corridor"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "northend"
+  },
+  {
+   "id": "upper-reach-revitalization",
+   "name": "Grand River Upper Reach Revitalization (Sea Lamprey Control and Habitat)",
+   "status": "future",
+   "lat": 42.985,
+   "lon": -85.6735,
+   "precision": "area",
+   "radius": 900,
+   "lead": "Great Lakes Fishery Commission (decision maker); USACE Detroit District runs the EIS",
+   "place": "Grand Rapids, MI",
+   "start": "EIS restarted spring 2026",
+   "goal": "Draft EIS expected July 2027; construction TBD",
+   "blurb": "The second phase would remove or replace the Sixth Street Dam with a new lamprey barrier and restore rapids from Ann Street down to just above Bridge Street. No design has been chosen.",
+   "facts": [
+    "Extent: Ann St to just upstream of Bridge St",
+    "Seven alternatives under study: no action; fixed crest at existing site; adjustable at existing site; fixed crest about 0.5 mi upstream; adjustable about 0.5 mi upstream; fixed crest about 1 mi upstream; adjustable about 1 mi upstream",
+    "Public scoping meeting April 22, 2026; comments closed May 22, 2026",
+    "Over $20 million in federal funds committed to GLFC for a new barrier",
+    "Snuffbox mussel impacts add complexity; construction two to three years away at best (April 2026)"
+   ],
+   "sources": [
+    "https://grandrapidswhitewater.org/the-project/",
+    "https://spectrumlocalnews.com/mi/michigan/news/2026/04/24/public-weighs-in-on-plan-to-remove-grand-rapids--6th-street-dam-and-block-invasive-sea-lamprey",
+    "https://www.grandrapidsmi.gov/city-news/posts/usace-to-hold-public-scoping-meeting-for-grand-river-upper-reach-revitalization-project/",
+    "https://grandriver.network/projects/grand-river-restoration-upper-reach/",
+    "https://www.awesomemitten.com/restore-the-rapids/"
+   ],
+   "tags": [
+    "neighborhood",
+    "enviro"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "coldbrook-river-north-site",
+   "name": "Coldbrook / River North riverfront site (1101 to 1165 Monroe Ave NW)",
+   "status": "future",
+   "lat": 42.984,
+   "lon": -85.674,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "start": "Developer RFP due Nov 16, 2026",
+   "goal": "12 month master planning after selection",
+   "blurb": "About 6.5 acres of city land at Monroe and Leonard, including the historic Coldbrook Pumping Station, that the city is offering for redevelopment with required public riverfront access. Greenway plans once proposed a park here with partly daylighted Coldbrook Creek.",
+   "facts": [
+    "Parcels 1101, 1120 and 1165 Monroe Ave NW",
+    "Fire training facility vacates by June 2027",
+    "Earlier Greenway concept: Coldbrook Park, $23 million, creek daylighting and river access",
+    "John Ball Zoo aquarium floated as a possible use by a business group (not a plan)"
+   ],
+   "sources": [
+    "https://www.fox17online.com/news/local-news/grand-rapids/grand-rapids-seeks-developer-for-significant-redevelopment-of-riverfront-site-just-north-of-downtown",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "neighborhood",
+    "culture",
+    "enviro"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "canal-park",
+   "name": "Canal Park",
+   "status": "completed",
+   "lat": 42.98184,
+   "lon": -85.67234,
+   "precision": "site",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "start": "Spring 2025 (groundbreaking April 2025)",
+   "goal": "Opened late Oct 2026; official grand opening spring 2027",
+   "sy": 2025,
+   "dy": 2027,
+   "blurb": "A rebuilt east bank park in Monroe North with a playground shaped by Anishinaabe design, a heated rentable pavilion, overlooks and an accessible canoe and kayak launch. It opened to the public in October 2026.",
+   "facts": [
+    "Address 905 Monroe Ave NW",
+    "Estimated $9.9 million (City, Monroe North TIFA, MEDC)",
+    "Half-mile renovation that raises the site and improves flood protection",
+    "Design VIRIDIS; contractor Owen-Ames-Kimball",
+    "Partner: Grand River Bands of Ottawa Indians",
+    "Unofficial opening reported Oct 27, 2026"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/canal-park/",
+    "https://www.fox17online.com/news/local-news/grand-rapids/new-and-improved-canal-park-opens-along-the-grand-river-drawing-families-kayakers-and-foot-traffic",
+    "https://www.owen-ames-kimball.com/stories/canal-park-update",
+    "https://www.experiencegr.com/articles/post/boat-launches/",
+    "https://www.wgvunews.org/news/2025-05-27/spring-update-on-grand-rapids-biggest-riverfront-projects",
+    "https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/Grand-Rapids-Parks-Projects"
+   ],
+   "tags": [
+    "amenities",
+    "access",
+    "water",
+    "flood"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "downtown",
+   "seg": "canal",
+   "zoom": 14.4
+  },
+  {
+   "id": "belknap-park",
+   "name": "Belknap Park",
+   "status": "anchor",
+   "lat": 42.9817,
+   "lon": -85.6671,
+   "precision": "area",
+   "radius": 300,
+   "lead": "City of Grand Rapids Parks and Recreation",
+   "place": "Grand Rapids, MI",
+   "blurb": "A hilltop park above Monroe North, upgraded in 2019. It is the uphill end of the proposed Hill and River Network.",
+   "facts": [
+    "30 Coldbrook St NE",
+    "2019: paths, restrooms, electrical, court and field upgrades ($540,859 plus $97,000 outside funds)"
+   ],
+   "sources": [
+    "https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/Grand-Rapids-Parks-Projects"
+   ],
+   "tags": [
+    "amenities"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "sixth-street-bridge",
+   "name": "Sixth Street Bridge",
+   "status": "anchor",
+   "lat": 42.9767,
+   "lon": -85.674,
+   "precision": "site",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "An 1886 iron truss bridge over the Grand River at Sixth Street, the longest pin-connected highway truss in Michigan.",
+   "facts": [
+    "536 ft long",
+    "Built 1886; west truss shortened in 1921 after a canal was filled"
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sixth_Street_Bridge_(Grand_Rapids,_Michigan)",
+    "https://training-pr.opencities.com/RESIDENTS/City-Parks/Sixth-Street-Bridge-Park"
+   ],
+   "tags": [
+    "bridge",
+    "backbone"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "sixth-street-bridge-park",
+   "name": "Sixth Street Bridge Park",
+   "status": "anchor",
+   "lat": 42.9753,
+   "lon": -85.6731,
+   "precision": "site",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "East bank park at the Sixth Street Bridge with a boat launch, overlook and sitting steps beside the Sixth Street Dam. A larger rebuild is planned around future dam work.",
+   "facts": [
+    "Address 647 Monroe Ave NW (also the Upper Reach project address)",
+    "Existing boat launch, barrier-free loading ramp, fish cleaning station, shelter",
+    "Future Sixth Street/Monroe North Park concept: $29 million, terraced ADA bank, boat launch, pavilion, skate park; needs Spectrum land",
+    "Would serve as staging area for dam work"
+   ],
+   "sources": [
+    "https://training-pr.opencities.com/RESIDENTS/City-Parks/Sixth-Street-Bridge-Park",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf",
+    "https://grandriver.network/projects/grand-river-restoration-upper-reach/"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "sixth-street-dam",
+   "name": "Sixth Street Dam",
+   "status": "future",
+   "lat": 42.975,
+   "lon": -85.6745,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Great Lakes Fishery Commission with US Army Corps of Engineers (Detroit District)",
+   "place": "Grand Rapids, MI",
+   "blurb": "The low dam between Fish Ladder Park and Sixth Street Park stays in place for now because it blocks invasive sea lamprey from about 1,900 miles of upstream habitat. Its removal or replacement is the subject of the Upper Reach study.",
+   "facts": [
+    "Not part of the Lower Reach work",
+    "Removal depends on a new lamprey barrier still under federal study"
+   ],
+   "sources": [
+    "https://engage.grandrapidsmi.gov/lowerreach",
+    "https://www.ecoportal.net/en/grand-river-dams-lake-sturgeon/42044/",
+    "https://www.awesomemitten.com/restore-the-rapids/",
+    "https://grandrapidswhitewater.org/the-project/"
+   ],
+   "tags": [
+    "enviro"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "fish-ladder-park",
+   "name": "Fish Ladder Park",
+   "status": "anchor",
+   "lat": 42.9745,
+   "lon": -85.6766,
+   "precision": "site",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A west bank park off Front Ave NW where a stepped concrete fish ladder sculpture lets fish climb past the Sixth Street Dam. A future upgrade would add trails, picnic groves and an emergency boat ramp.",
+   "facts": [
+    "624 Front Ave NW",
+    "Fish ladder built 1974 by artist Joseph Kinnebrew",
+    "2021 erosion control and path replacement",
+    "Future plan $4.1 million at 30% design"
+   ],
+   "sources": [
+    "https://www.waymarking.com/waymarks/WM11282_Fish_Ladder_Park_Grand_Rapids_MI",
+    "https://www.topozone.com/?p=510232",
+    "https://atlasobscura.com/places/fish-ladder-park",
+    "https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/Grand-Rapids-Parks-Projects",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "usps-225-michigan",
+   "name": "225 Michigan St NW riverfront site (USPS)",
+   "status": "future",
+   "lat": 42.9735,
+   "lon": -85.6735,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A riverfront parcel just north of Michigan Street held by the Postal Service that the Greenway list flags as a development and access opportunity if acquired.",
+   "facts": [
+    "Requires acquisition from USPS"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "grand-river-edges-trail-downtown",
+   "name": "Grand River Edges Trail, downtown loop",
+   "status": "anchor",
+   "lat": 42.97,
+   "lon": -85.676,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "The existing downtown riverwalk that ties museums, GVSU's Pew Campus and the convention center together. It is the spine the Greenway projects are extending north and south.",
+   "facts": [
+    "Route: Loops along both banks between W Fulton St and NW Coldbrook St, crossing on pedestrian bridges including the converted Blue Bridge trestle.",
+    "Whole trail 5.4 miles in two pieces not yet joined",
+    "Asphalt surface"
+   ],
+   "sources": [
+    "https://www.traillink.com/trail/grand-river-edges-trail"
+   ],
+   "tags": [
+    "backbone",
+    "culture"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "ah-nab-awen-park",
+   "name": "Ah-Nab-Awen Park",
+   "status": "upcoming",
+   "lat": 42.9687,
+   "lon": -85.6767,
+   "precision": "area",
+   "radius": 160,
+   "lead": "City of Grand Rapids; partners DGRI and Grand River Bands of Ottawa Indians",
+   "place": "Grand Rapids, MI",
+   "start": "Fall 2027",
+   "goal": "Fall 2028",
+   "sy": 2027,
+   "dy": 2028,
+   "blurb": "The west bank park on historic Anishinaabe village and burial mound ground is closed as the main staging yard for the rapids work. A rebuild with accessible paths and river access follows the Lower Reach.",
+   "facts": [
+    "220 Front Ave NW",
+    "Closed from May 2026 through the Lower Reach project",
+    "Lower area (Bridge St to Gillett Bridge) rebuilt after Lower Reach; upper area (Gillett Bridge to Pearl) timing depends on funding",
+    "Estimated $6 million; design VIRIDIS"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/ah-nab-awen-park/",
+    "https://engage.grandrapidsmi.gov/lowerreach",
+    "https://www.wgvunews.org/news/2026-02-26/rapids-return-construction-set-to-begin-this-spring-on-grand-river-revitalization",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf"
+   ],
+   "tags": [
+    "amenities",
+    "access",
+    "culture"
+   ],
+   "tour": true,
+   "area": "downtown"
+  },
+  {
+   "id": "lower-reach-rapids-restoration",
+   "name": "Grand River Restoration, Lower Reach (rapids return)",
+   "status": "construction",
+   "lat": 42.96859,
+   "lon": -85.67567,
+   "precision": "area",
+   "radius": 420,
+   "lead": "City of Grand Rapids with Grand Rapids WhiteWater; contractor Taplin Group",
+   "place": "Grand Rapids, MI",
+   "start": "Summer 2026 (in-river work began July 1, 2026)",
+   "goal": "Fall 2027 (end of 2027, weather permitting)",
+   "sy": 2026,
+   "dy": 2027,
+   "blurb": "Four low-head dams between Bridge Street and the Fulton Street bridge are being removed and replaced with two channel-wide rock grade-control structures, riffles and habitat boulders. It is the first phase of returning rapids to the downtown river.",
+   "facts": [
+    "Extent: from 300 ft upstream of the Bridge St bridge down to the Fulton St bridge (some news describes it as I-196 to Fulton)",
+    "2,887 ft of channel and about 30 acres of river corridor",
+    "Construction contract $14,562,625.98 to Taplin; total spending capped at $25,982,101",
+    "$11,026,695 from USDA NRCS watershed program; NRCS finding of no significant impact Jan 2026",
+    "Staging at Ah-Nab-Awen Park from May 18, 2026; groundbreaking on Gillett Bridge June 1, 2026; in-river work July 1, 2026",
+    "Over 125 habitat boulders, three j-hook edge structures for slower access water; standing wave features dropped from design",
+    "By July 31, 2026 nearly half of one dam was out and a finished section near the Blue Bridge showed whitewater (FOX 17)",
+    "Work pauses in winter; second season summer 2027 removes the remaining dams",
+    "Target species: lake sturgeon, river redhorse, snuffbox mussel"
+   ],
+   "sources": [
+    "https://engage.grandrapidsmi.gov/lowerreach",
+    "https://www.grandrapidsmi.gov/city-news/posts/grand-river-restoration-enters-the-river-july-1-marks-start-of-dam-removal-and-the-return-of-the-rapids/",
+    "https://grandrapidswhitewater.org/the-project/",
+    "https://www.wgvunews.org/news/2026-02-26/rapids-return-construction-set-to-begin-this-spring-on-grand-river-revitalization",
+    "https://www.wgvunews.org/news/2026-07-01/its-happening-construction-starts-on-the-grand-river-rapids-restoration",
+    "https://www.michiganpublic.org/news/2026-07-02/two-year-project-to-restore-rapids-to-grand-rapids-begins"
+   ],
+   "tags": [
+    "enviro"
+   ],
+   "carbon": true,
+   "carbonNote": "Carbon Stories has shot video here for the River Content log, with Dam 1 removal photos from Nov 2, 2026.",
+   "tour": true,
+   "area": "downtown"
+  },
+  {
+   "id": "amway-stadium",
+   "name": "Amway Stadium",
+   "status": "construction",
+   "lat": 42.9683,
+   "lon": -85.6807,
+   "precision": "site",
+   "lead": "Grand Action 2.0 with Kent County CAA",
+   "place": "Grand Rapids, MI",
+   "start": "Spring 2025 (ceremonial groundbreaking April 22, 2025)",
+   "goal": "Spring 2027",
+   "sy": 2025,
+   "dy": 2027,
+   "blurb": "An 8,500 seat soccer stadium on the west side near Pearl St and Mt Vernon Ave, a few blocks west of the river. The Greenway route is described as passing it.",
+   "facts": [
+    "230 Winter Ave NW",
+    "About $175 million; Amway $33 million naming deal",
+    "Home of AC Grand Rapids (MLS NEXT Pro) from 2027",
+    "Wikipedia gives groundbreaking as May 28, 2025; FOX 17 says April 22, 2025"
+   ],
+   "sources": [
+    "https://fox17online.com/news/local-news/construction-begins-on-175-million-amway-stadium-in-grand-rapids",
+    "https://en.wikipedia.org/wiki/Amway_Stadium",
+    "https://woodradio.iheart.com/featured/wood-radio-local-news/content/2026-01-08-171-mile-grand-river-greenway-trails-network-draws-closer-to-completion/"
+   ],
+   "tags": [
+    "amenities",
+    "neighborhood"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "gillett-bridge",
+   "name": "Gillett Bridge",
+   "status": "anchor",
+   "lat": 42.9675,
+   "lon": -85.6753,
+   "precision": "site",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A pedestrian bridge between the Gerald R. Ford Presidential Museum and DeVos Place that links Ah-Nab-Awen Park and Lyon Square. It got a new deck in 2025 and hosted the rapids groundbreaking in June 2026.",
+   "facts": [
+    "About 500 ft long, 25 ft wide",
+    "Deck replacement and railing work July to Sept 2025, $866,000 (City and DDA)",
+    "Stays open during in-river construction"
+   ],
+   "sources": [
+    "https://www.grandrapidsmi.gov/media/d1fgrzjg/gillett-bridge-brochure.pdf",
+    "https://fox17online.com/news/local-news/grand-rapids-set-to-close-popular-downtown-bridge-for-upgrades",
+    "https://engage.grandrapidsmi.gov/lowerreach"
+   ],
+   "tags": [
+    "bridge",
+    "backbone",
+    "culture"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "lyon-square",
+   "name": "Lyon Square",
+   "status": "completed",
+   "lat": 42.9672,
+   "lon": -85.6744,
+   "precision": "site",
+   "lead": "City of Grand Rapids with DGRI",
+   "place": "Grand Rapids, MI",
+   "start": "Fall 2023",
+   "goal": "Summer 2025",
+   "sy": 2023,
+   "dy": 2025,
+   "blurb": "A rebuilt riverfront plaza between DeVos Place and the Amway Grand Plaza with a river overlook, shade trees and a heated snow melt drive, meant for year-round use.",
+   "facts": [
+    "Riverwalk Promenade, 299 Lyon St NW",
+    "Estimated $10.3 million",
+    "Design Progressive Companies; contractor Rockford Construction",
+    "Groundbreaking Oct 25, 2023; DGRI expected early July 2025 opening"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/lyon-square/",
+    "https://woodtv.com/news/grand-rapids/lyon-square-redesign-kicks-off-after-years-of-planning/amp",
+    "https://www.fox17online.com/news/local-news/lyon-square-project-features-snow-melt-roadway-making-outdoor-plaza-a-year-round-destination",
+    "https://www.grandriverfront.com/developments"
+   ],
+   "tags": [
+    "amenities"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "downtown"
+  },
+  {
+   "id": "grpm-riverfront",
+   "name": "Grand Rapids Public Museum riverfront",
+   "status": "completed",
+   "lat": 42.966,
+   "lon": -85.6774,
+   "precision": "site",
+   "lead": "Grand Rapids Public Museum",
+   "place": "Grand Rapids, MI",
+   "start": "Fall 2023",
+   "goal": "Spring 2026 (public opening June 13, 2026)",
+   "sy": 2023,
+   "dy": 2026,
+   "blurb": "The museum opened an accessible stretch of west bank riverfront with an outdoor classroom, direct water access and links to the renovated carousel pavilion. The opening slipped from April to June 2026 because of high water.",
+   "facts": [
+    "272 Pearl St NW",
+    "Riverfront portion estimated $12.2 million",
+    "Design VIRIDIS and TowerPinkster; contractor Owen-Ames-Kimball",
+    "Part of a larger museum expansion; phase 2 (lobby, classrooms) underway in 2026"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/grand-rapids-public-museum/",
+    "https://rapidgrowthmedia.com/three-years-in-the-making-the-grand-rapids-public-museum-turns-curiosity-toward-the-river/",
+    "https://www.woodtv.com/news/grand-rapids/grand-rapids-public-museum-riverfront-opening-postponed/amp/",
+    "https://www.grandriverfront.com/developments",
+    "https://www.experiencegr.com/articles/post/restoring-the-rapids/"
+   ],
+   "tags": [
+    "amenities",
+    "access",
+    "culture"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "downtown"
+  },
+  {
+   "id": "riverwalk-blue-bridge-to-jw",
+   "name": "Grand River Edges Trail, Blue Bridge to JW Marriott",
+   "status": "completed",
+   "lat": 42.9654,
+   "lon": -85.6752,
+   "precision": "site",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "start": "Summer 2024",
+   "goal": "Spring 2025",
+   "sy": 2024,
+   "dy": 2025,
+   "blurb": "A rebuilt stretch of the east bank riverwalk with bank stabilization, new plantings and universal access to the water's edge.",
+   "facts": [
+    "Route: East bank riverwalk from the Blue Bridge (49 Campau Ave NW) south to the JW Marriott at Louis St.",
+    "Estimated $1.7 million (DDA and ARPA)",
+    "Design VIRIDIS and Fishbeck; contractor Katerberg VerHage"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/grand-river-edges-trail-blue-bridge-jwmarriott/",
+    "https://woodradio.iheart.com/featured/wood-radio-local-news/content/2026-01-08-171-mile-grand-river-greenway-trails-network-draws-closer-to-completion/",
+    "https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/Grand-Rapids-Parks-Projects"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "blue-bridge",
+   "name": "Blue Bridge",
+   "status": "anchor",
+   "lat": 42.9646,
+   "lon": -85.6755,
+   "precision": "site",
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A former 1868 railroad bridge, now a pedestrian crossing, linking Campau Ave on the east bank to GVSU's Eberhard Center on the west. Restored whitewater was already visible next to it by summer 2026.",
+   "facts": [
+    "450 ft long, 25 ft wide",
+    "Built 1868, rebuilt 1892, converted to walkway after rail use ended in the 1980s"
+   ],
+   "sources": [
+    "https://www.grandrapidsmi.gov/media/r3fb5h00/the-blue-bridge-brochure.pdf",
+    "https://www.fox17online.com/news/local-news/grand-rapids/grand-rapids-dam-removal-reveals-evidence-of-original-rapids-as-restoration-project-continues"
+   ],
+   "tags": [
+    "bridge",
+    "backbone",
+    "enviro"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "lower-reach-dam-2-boulder-arch",
+   "name": "Dam 2 boulder arch and cofferdam",
+   "status": "construction",
+   "lat": 42.964,
+   "lon": -85.6759,
+   "precision": "area",
+   "radius": 140,
+   "lead": "City of Grand Rapids; Taplin Group",
+   "place": "Grand Rapids, MI",
+   "start": "July 2026",
+   "goal": "2027",
+   "sy": 2026,
+   "dy": 2027,
+   "blurb": "A cofferdam isolates part of Dam 2 so crews can build a boulder arch, the first rock structure of the Lower Reach. The exact position of Dam 2 within the reach is not published on the pages read, so this point sits at the reach center.",
+   "facts": [
+    "Cofferdam plus causeways built first in July 2026",
+    "Boulders started going into designed positions about July 30, 2026",
+    "Crews found a limestone slab with flow-cut marks they believe is part of the original rapids (July 2026)"
+   ],
+   "sources": [
+    "https://engage.grandrapidsmi.gov/lowerreach",
+    "https://engage.grandrapidsmi.gov/r45268",
+    "https://www.grandrapidsmi.gov/city-news/posts/grand-river-restoration-enters-the-river-july-1-marks-start-of-dam-removal-and-the-return-of-the-rapids/",
+    "https://www.fox17online.com/news/local-news/grand-rapids/grand-rapids-dam-removal-reveals-evidence-of-original-rapids-as-restoration-project-continues"
+   ],
+   "tags": [
+    "enviro"
+   ],
+   "carbon": true,
+   "area": "downtown"
+  },
+  {
+   "id": "fulton-and-market",
+   "name": "Fulton & Market riverfront development",
+   "status": "upcoming",
+   "lat": 42.9624,
+   "lon": -85.677,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Magellan Development with DeVos and Van Andel family backers",
+   "place": "Grand Rapids, MI",
+   "start": "Fall 2026 (planned)",
+   "goal": "Fall 2028 to spring 2029",
+   "sy": 2026,
+   "dy": 2029,
+   "blurb": "A large mixed-use project on about seven acres of riverfront parking at Fulton and Market, including the former Charley's Crab site, with a public promenade and extended riverwalk toward the amphitheater.",
+   "facts": [
+    "$740 million per Dec 2025 report (earlier plan was about $800 million, three towers)",
+    "Nearly 700 homes, boutique hotel, 53,000+ sq ft retail; $8.5 million to affordable housing fund",
+    "Greenway catalogue: Fulton/Market riverfront trail and edge, $5 million",
+    "Construction start not confirmed in sources read"
+   ],
+   "sources": [
+    "https://spectrumlocalnews.com/mi/michigan/news/2025/12/22/fulton---market-development-brings--740-million-investment--new-homes--and-riverfront-transformation-to-downtown-grand-rapids",
+    "https://www.constructconnect.com/construction-economic-news/grand-rapids-michigan-800-million-downtown-project-gets-plan-approval",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://www.grandriverfront.com/developments"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "fulton-to-us131-trail-phase",
+   "name": "Riverfront trail, Fulton St to US-131 (incl. US-131 underpass)",
+   "status": "future",
+   "lat": 42.9612,
+   "lon": -85.6775,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids with DGRI",
+   "place": "Grand Rapids, MI",
+   "blurb": "A later phase of the Fulton to Wealthy riverfront trail that would carry the path from Fulton Street under US-131. It is not scheduled.",
+   "facts": [
+    "Route: East bank from the Fulton St bridge south along Market Ave SW riverfront, under US-131, to the start of East Riverfront Phase 1.",
+    "Listed as later phase on the Greenway hub",
+    "Would tie into Fulton & Market promenade"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/grand-river-edges-trail-fulton-to-wealthy/",
+    "https://downtowngr.org/announcements/2024/08/designs-unveiled-for-dramatic-southeast-side-riverfront-improvement"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "studio-park",
+   "name": "Studio Park",
+   "status": "anchor",
+   "lat": 42.9606,
+   "lon": -85.6714,
+   "precision": "area",
+   "radius": 200,
+   "lead": "Studio C / Olsen Loeks Development",
+   "place": "Grand Rapids, MI",
+   "start": "April 2018",
+   "goal": "2019",
+   "blurb": "A mixed-use block a few streets east of the river with a cinema, music venue, apartments and a piazza. It is not on the riverbank but sits in the walk between downtown and the amphitheater.",
+   "facts": [
+    "123 Ionia Ave SW",
+    "$160 million; opened Oct 2019",
+    "Phase two: Canopy by Hilton hotel and offices"
+   ],
+   "sources": [
+    "https://www.grmag.com/entertainment/studio-park-opens-downtown/"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "downtown"
+  },
+  {
+   "id": "east-riverfront-park-phase-1",
+   "name": "East Riverfront Park, Phase 1 (Grand River Edges Trail, Fulton to Wealthy)",
+   "status": "construction",
+   "lat": 42.95996,
+   "lon": -85.67811,
+   "precision": "route",
+   "lead": "City of Grand Rapids with DGRI",
+   "place": "Grand Rapids, MI",
+   "start": "Aug 21, 2025 groundbreaking",
+   "goal": "Fall 2026 (north part targeted spring 2026; south stretch end of 2026)",
+   "sy": 2025,
+   "dy": 2026,
+   "blurb": "A 4.5 acre riverfront park and half-mile trail on a former public works yard behind the amphitheater, with river seating, a kayak launch and a west gate entrance to the venue.",
+   "facts": [
+    "Route: East bank from the US-131 off-ramp at Market Ave SW south past the amphitheater to the CSX railroad crossing (333 Market Ave SW).",
+    "$19 million budget; $18 million contract to Owen-Ames-Kimball (March 2025)",
+    "Design VIRIDIS",
+    "Funding: ARPA via DNR grant to DGRI, City, DDA, Kent County floodwall bonds, MEDC",
+    "Opening not confirmed in sources read as of Nov 2026"
+   ],
+   "sources": [
+    "https://www.grandrapidsmi.gov/city-news/posts/grand-rapids-breaks-ground-on-19-million-east-riverfront-park/",
+    "https://www.fox17online.com/news/local-news/grand-rapids/former-gr-industrial-site-to-become-riverfront-park-next-to-acrisure-amphitheater",
+    "https://www.crainsgrandrapids.com/news/economic-development/work-begins-to-create-greenspace-trailway-behind-acrisure-amphitheater",
+    "https://www.wgvunews.org/news/2025-03-17/gr-community-planning-committee-approves-18-million-for-riverside-revitalization",
+    "https://grandriver.network/projects/grand-river-edges-trail-fulton-to-wealthy/",
+    "https://downtowngr.org/announcements/2024/08/designs-unveiled-for-dramatic-southeast-side-riverfront-improvement"
+   ],
+   "tags": [
+    "amenities",
+    "water",
+    "flood"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "downtown",
+   "seg": "fulton-wealthy",
+   "zoom": 14.4
+  },
+  {
+   "id": "acrisure-amphitheater",
+   "name": "Acrisure Amphitheater",
+   "status": "completed",
+   "lat": 42.9595,
+   "lon": -85.6766,
+   "precision": "site",
+   "lead": "Grand Action 2.0; Grand Rapids-Kent County Convention/Arena Authority; operator Legends",
+   "place": "Grand Rapids, MI",
+   "start": "May 2024",
+   "goal": "Opened May 15, 2026",
+   "sy": 2024,
+   "dy": 2026,
+   "blurb": "A 12,000 capacity riverfront concert venue on the former city services yard at 201 Market Ave SW. It opened in May 2026 with a Lionel Richie show.",
+   "facts": [
+    "201 Market Ave SW",
+    "Final cost $184 million ($70M private, $114M public)",
+    "Built by Pioneer Construction with Barton Malow",
+    "Includes a nearly 4 acre riverside green ribbon"
+   ],
+   "sources": [
+    "https://www.fox17online.com/news/local-news/grand-rapids/acrisure-amphitheater-opens-in-grand-rapids-after-years-of-planning-and-184-million-investment",
+    "https://www.grandriverfront.com/developments/acrisure-amphitheater",
+    "https://en.wikipedia.org/wiki/Acrisure_Amphitheater",
+    "https://www.experiencegr.com/articles/post/restoring-the-rapids/"
+   ],
+   "tags": [
+    "amenities",
+    "neighborhood"
+   ],
+   "tour": true,
+   "area": "downtown"
+  },
+  {
+   "id": "railroad-to-wealthy-trail-phase",
+   "name": "Riverfront trail, CSX railroad to Wealthy St",
+   "status": "future",
+   "lat": 42.957,
+   "lon": -85.6792,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids with DGRI",
+   "place": "Grand Rapids, MI",
+   "blurb": "The southern unscheduled phase of the Fulton to Wealthy trail. City-owned land at 509 Wealthy is named as a future riverfront site.",
+   "facts": [
+    "Route: East bank from the CSX railroad south of the amphitheater to the Wealthy St bridge, including a rail underpass.",
+    "Not yet scheduled",
+    "Future phases named: 509 Wealthy property, trail underpasses at US-131 and CSX"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/grand-river-edges-trail-fulton-to-wealthy/",
+    "https://downtowngr.org/announcements/2024/08/designs-unveiled-for-dramatic-southeast-side-riverfront-improvement"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "area": "south"
+  },
+  {
+   "id": "market-wealthy-housing",
+   "name": "447 to 449 Market Ave SW housing and outdoor stage",
+   "status": "upcoming",
+   "lat": 42.9565,
+   "lon": -85.6792,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Dwelling Place with P.S. Equities",
+   "place": "Grand Rapids, MI",
+   "start": "Fall 2026 (target, if tax credits awarded)",
+   "sy": 2026,
+   "blurb": "A planned affordable housing building of about 90 apartments near Wealthy Street with a small outdoor performance space and food trucks, meant as a link between the Oxford Trail and the riverwalk.",
+   "facts": [
+    "About 90 apartments over a two-story garage",
+    "Depends on MSHDA tax credits"
+   ],
+   "sources": [
+    "https://www.yahoo.com/news/articles/project-planned-market-wealthy-corner-211650747.html"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "south"
+  },
+  {
+   "id": "wealthy-street-river-access",
+   "name": "Wealthy Street river access",
+   "status": "future",
+   "lat": 42.955,
+   "lon": -85.6797,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "Planned river access on both banks just south of the Wealthy St bridge, with parking, an overlook and stair and ramp launches for kayaks and canoes.",
+   "facts": [
+    "Estimated $3 million",
+    "30% design completed (DGRI summary)"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "water"
+   ],
+   "area": "south"
+  },
+  {
+   "id": "wealthy-to-oxford-connector",
+   "name": "Wealthy St to Oxford Trail connector",
+   "status": "future",
+   "lat": 42.9545,
+   "lon": -85.681,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A short planned link that would join the river edges trail to the Oxford Trail on the west bank.",
+   "facts": [
+    "Route: West bank, a quarter mile from the Wealthy St bridge to the head of the Oxford Trail.",
+    "About 0.25 mile",
+    "Estimated $1 million; 30% design"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "area": "south"
+  },
+  {
+   "id": "oxford-trail",
+   "name": "Oxford Trail rehabilitation and extension",
+   "status": "construction",
+   "lat": 42.9468,
+   "lon": -85.6855,
+   "precision": "route",
+   "lead": "City of Grand Rapids with DGRI",
+   "place": "Grand Rapids, MI",
+   "start": "Fall 2025 (groundbreaking Sept 30, 2025)",
+   "goal": "Fall 2026",
+   "sy": 2025,
+   "dy": 2026,
+   "blurb": "A rebuild of the southwest neighborhood trail to the river plus extensions to Godfrey Avenue and Hall Street, with a playground, fitness area, small amphitheater and court under the Oxford St bridge.",
+   "facts": [
+    "Route: From Wealthy St SW on the west side of the river, crossing the river and running south past Market Ave through Black Hills to Oxford St SW (trailhead 751 Oxford St SW), with new legs to Godfrey Ave SW and Hall St SW.",
+    "Over 1.5 miles of new and rebuilt trail",
+    "$9 million: $8M DGRI Greenway grant, $1M City ARPA",
+    "Contractor Erhardt Construction; design Progressive Companies",
+    "First major investment since 2011"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/oxford-trail/",
+    "https://www.grandrapidsmi.gov/city-news/posts/oxford-trail/",
+    "https://www.crainsgrandrapids.com/news/economic-development/9m-oxford-trail-improvement-work-set-to-begin-in-september",
+    "https://downtowngr.org/announcements/2025/01/new-designs-for-the-oxford-trail-project-highlight-rehabilitations-and-extensions-to-connect-southwest-neighborhoods-to-the-grand-river",
+    "https://downtowngr.org/announcements/2023/05/dgri-greenway-priorities"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "south",
+   "seg": "oxford",
+   "zoom": 14.4
+  },
+  {
+   "id": "plaster-creek-trail-extension",
+   "name": "Plaster Creek Trail extension to Oxford Trail",
+   "status": "future",
+   "lat": 42.93,
+   "lon": -85.68,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "start": "TBD (design and engagement 2025 to 2026)",
+   "goal": "TBD",
+   "blurb": "A planned extension that would carry the Plaster Creek Trail to the Oxford Trail and the river, giving the Third Ward and 49507 neighborhoods a trail link.",
+   "facts": [
+    "Route: From the current trail end at Buchanan Ave SW (2509 Buchanan) west toward the Plaster Creek mouth and the Oxford Trail; alignment not yet set.",
+    "$1.5 million for engagement, planning and design only (ARPA)",
+    "Designer SmithGroup",
+    "Partners include City of Wyoming and Kent County"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/plaster-creek-trail/",
+    "https://www.wgvunews.org/news/2026-03-12/grand-rapids-seeks-public-input-on-southside-creekways-trail-expansion",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf"
+   ],
+   "tags": [
+    "backbone"
+   ],
+   "carbon": true,
+   "area": "south"
+  },
+  {
+   "id": "southside-creekways",
+   "name": "Southside Creekways plan (Plaster and Silver creeks)",
+   "status": "future",
+   "lat": 42.925,
+   "lon": -85.655,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids Parks and Recreation",
+   "place": "Grand Rapids, MI",
+   "start": "2025",
+   "blurb": "A city planning effort to turn the Plaster Creek and buried Silver Creek corridors into a connected greenway and trail system on the southeast side.",
+   "facts": [
+    "Consultant SmithGroup",
+    "Public event March 11, 2026 at MLK Park Community Center",
+    "Some near-term projects planned"
+   ],
+   "sources": [
+    "https://www.wgvunews.org/news/2026-03-12/grand-rapids-seeks-public-input-on-southside-creekways-trail-expansion",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf"
+   ],
+   "tags": [
+    "neighborhood"
+   ],
+   "area": "south"
+  },
+  {
+   "id": "butterworth-trail",
+   "name": "Butterworth Trail",
+   "status": "anchor",
+   "lat": 42.95,
+   "lon": -85.695,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids / Kent County (Kent Trails network)",
+   "place": "Grand Rapids, MI",
+   "blurb": "A 3.5 mile rail trail that links the Oxford Trail area to Kent Trails and on to Millennium Park.",
+   "facts": [
+    "Route: Rail trail from Kent Trails just south of John Ball Park and Zoo southeast to Oxford St SW and Norwich Ave SW.",
+    "3.5 miles, asphalt and concrete",
+    "Oxford branch reported closed during Oxford Trail construction"
+   ],
+   "sources": [
+    "https://www.traillink.com/trail/butterworth-trail/",
+    "https://grandriver.network/projects/oxford-trail/"
+   ],
+   "tags": [
+    "backbone",
+    "regional"
+   ],
+   "area": "west"
+  },
+  {
+   "id": "butterworth-boat-ramp",
+   "name": "Butterworth boat ramp (proposed)",
+   "status": "future",
+   "lat": 42.953,
+   "lon": -85.7,
+   "precision": "area",
+   "radius": 350,
+   "lead": "City of Grand Rapids",
+   "place": "Grand Rapids, MI",
+   "blurb": "A proposed boat launch with truck and trailer parking off Veterans Memorial Dr near Butterworth St. The site is private and would need to be bought.",
+   "facts": [
+    "Estimated $500,000; 30% design"
+   ],
+   "sources": [
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Projects-Catalogue-DRAFT-min.pdf",
+    "https://s3.amazonaws.com/downtowngr.org/general/Greenway-Project-Summary-Updated.pdf"
+   ],
+   "tags": [
+    "water"
+   ],
+   "area": "west"
+  },
+  {
+   "id": "kent-trails-butterworth-trailhead",
+   "name": "Kent Trails trailhead (Butterworth)",
+   "status": "completed",
+   "lat": 42.9541,
+   "lon": -85.7064,
+   "precision": "site",
+   "lead": "Kent County Parks",
+   "place": "Walker / Grand Rapids, MI",
+   "goal": "Early 2024",
+   "dy": 2024,
+   "blurb": "A rebuilt Kent Trails trailhead near Butterworth that removed nearly an acre of asphalt, added about 90 parking spaces, more than 100 trees and a restored wetland.",
+   "facts": [
+    "Kent Trails runs about 15 mi from John Ball Park through Millennium and Johnson parks to Byron Township"
+   ],
+   "sources": [
+    "https://www.kentcountymi.gov/332/Parks-Projects",
+    "https://en.wikipedia.org/wiki/Kent_Trails",
+    "https://grandriver.network/wp-content/uploads/2025/07/GRG-Vision-and-Framework.pdf"
+   ],
+   "tags": [
+    "regional",
+    "enviro"
+   ],
+   "area": "west"
+  },
+  {
+   "id": "millennium-park",
+   "name": "Millennium Park",
+   "status": "anchor",
+   "lat": 42.942,
+   "lon": -85.733,
+   "precision": "area",
+   "radius": 1400,
+   "lead": "Kent County Parks",
+   "place": "Walker, Grand Rapids, Grandville and Wyoming, MI",
+   "blurb": "Kent County's 1,465 acre riverside park and the west end of the Kent County Greenway, with a beach, splash pad, boat rental and nearly 20 miles of trails. A new entry sign and landscaping went in at Butterworth and Maynard in spring 2026.",
+   "facts": [
+    "New four season restroom and fountain 2024, playground 2025",
+    "Entry corner property bought with a DNR Trust Fund grant; house removed 2025",
+    "Replaces the downtown file's approximate millennium-park point"
+   ],
+   "sources": [
+    "https://outdoormichigan.org/feature/2019",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3",
+    "https://www.kentcountymi.gov/332/Parks-Projects"
+   ],
+   "tags": [
+    "amenities"
+   ],
+   "tour": true,
+   "area": "west"
+  },
+  {
+   "id": "johnson-park",
+   "name": "Johnson Park",
+   "status": "completed",
+   "lat": 42.9285,
+   "lon": -85.761,
+   "precision": "area",
+   "radius": 800,
+   "lead": "Kent County Parks",
+   "place": "Walker, MI",
+   "start": "Summer 2025 (lot 2024)",
+   "goal": "Ribbon cutting Oct 2026",
+   "sy": 2025,
+   "dy": 2026,
+   "blurb": "The county's western Greenway trailhead, a 1928 park with about a mile and a half of Grand River shoreline. A $2.7 million upgrade added a four season family restroom, a new playground, covered gathering spaces and a bigger parking lot.",
+   "facts": [
+    "2600 Wilson Ave SW; about 224 to 258 acres",
+    "$2.7M total investment; contractor Spectrum",
+    "Partners WMMBA, Kent County Parks Foundation, DGRI, DNR (Trust Fund $400K)",
+    "Boat launch on Veterans Memorial Dr"
+   ],
+   "sources": [
+    "https://grandriver.network/projects/johnson-park/",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/42fafb1",
+    "https://outdoormichigan.org/feature/1975",
+    "https://howsyourriver.com/access_sites/veterans-park",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/3fecf42"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "area": "west"
+  },
+  {
+   "id": "indian-mounds-drive-study",
+   "name": "Indian Mounds Drive corridor study",
+   "status": "future",
+   "lat": 42.9135,
+   "lon": -85.764,
+   "precision": "route",
+   "lead": "Kent County Parks and DGRI",
+   "place": "Grandville, Wyoming and Grand Rapids, MI",
+   "start": "Fall 2025",
+   "goal": "Fall 2026",
+   "blurb": "A feasibility study of the four mile one way road along the river that weighed options including closing it to cars, to make it safer for walking and biking while protecting cultural sites and river access.",
+   "facts": [
+    "Route: Indian Mounds Dr SW along the south bank of the Grand from Wilson Ave SW in Grandville northeast about 4 mi to Market Ave SW in Grand Rapids",
+    "About 4 mi corridor; nearly 2,000 survey responses in fall 2025",
+    "April 27, 2026 open house showed scenarios",
+    "Partners include Grand River Bands of Ottawa Indians, Grand Rapids, Wyoming, Grandville, Road Commission, Metro Council, GR Public Museum",
+    "Consultants VIRIDIS Design Group and Fishbeck; ARPA via DGRI",
+    "Marker placed at the Grandville end on purpose; no sensitive site is located here"
+   ],
+   "sources": [
+    "https://www.kentcountymi.gov/1903/Indian-Mounds-Drive-Study",
+    "https://grandriver.network/projects/indian-mounds-drive/",
+    "https://www.fox17online.com/news/local-news/kent/kent-county-parks-department-shares-new-plans-for-the-future-of-indian-mounds-drive",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/3fecf42"
+   ],
+   "tags": [
+    "neighborhood",
+    "culture"
+   ],
+   "carbon": true,
+   "area": "west",
+   "seg": "indian-mounds",
+   "zoom": 14.4
+  },
+  {
+   "id": "johnson-park-adaptive-mtb",
+   "name": "Johnson Park adaptive mountain bike trails",
+   "status": "completed",
+   "lat": 42.92185,
+   "lon": -85.76792,
+   "precision": "site",
+   "lead": "Kent County Parks with West Michigan Mountain Biking Alliance",
+   "place": "Walker, MI",
+   "start": "2024",
+   "goal": "Fall 2026",
+   "sy": 2024,
+   "dy": 2026,
+   "blurb": "About eight miles of natural surface trail built to adaptive and IMBA standards, from easy loops to features with a 130 foot vertical drop, opened with a community jamboree in October 2026.",
+   "facts": [
+    "Route: Natural surface loops through the wooded uplands of Johnson Park",
+    "About 8 mi (grown from 6)",
+    "DGRI sub grant $540,000",
+    "Built by Spectrum Trail Design"
+   ],
+   "sources": [
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/42fafb1",
+    "https://getoffthecouchnews.blogspot.com/2026/01/johnson-park-bike-path-extension.html",
+    "https://content.govdelivery.com/attachments/KENTCOMI/2026/06/11/file_attachments/3681260/KC_Parks_2025_AnnualReport_R4_Digital-Pages.pdf",
+    "https://content.govdelivery.com/accounts/KENTCOMI/bulletins/41b6dc3"
+   ],
+   "tags": [
+    "backbone",
+    "access"
+   ],
+   "carbon": true,
+   "tour": true,
+   "area": "west"
+  },
+  {
+   "id": "grandville-river-waterfront",
+   "name": "Grandville Grand River Waterfront and boat launch",
+   "status": "anchor",
+   "lat": 42.913,
+   "lon": -85.7682,
+   "precision": "site",
+   "lead": "City of Grandville",
+   "place": "Grandville, MI",
+   "blurb": "A 15 acre city riverfront on Grandville's north edge with a public boat launch, picnic area and a bike path to Kent Trails.",
+   "facts": [
+    "4745 Jenison St SW",
+    "Next to the M-11 (Wilson Ave) river bridge"
+   ],
+   "sources": [
+    "https://cityofgrandville.com/city_services/parks/grand_river_waterfront.php",
+    "https://www.howsyourriver.com/access_sites/grandville",
+    "https://bridgelookup.com/bridge/253154"
+   ],
+   "tags": [
+    "water",
+    "regional"
+   ],
+   "area": "west"
+  },
+  {
+   "id": "secchia-gateway-arch",
+   "name": "Secchia Gateway Arch at the Kent and Ottawa line",
+   "status": "anchor",
+   "lat": 42.9145,
+   "lon": -85.7825,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Ottawa County Parks",
+   "place": "Georgetown Township, MI (county line)",
+   "goal": "Dedicated Sept 27, 2023",
+   "blurb": "An arch and small plaza marking where the Idema Explorers Trail from Grand Haven meets Kent Trails at the county line, near the Grandville clean water plant.",
+   "facts": [
+    "Named for Peter Secchia, co-chair of the Greenway campaign"
+   ],
+   "sources": [
+    "https://grandrivergreenway.org/2023/10/04/trail-updates-3/",
+    "https://whtc.com/2023/09/27/photos-path-connection-between-ottawa-co-kent-trails-unveiled/",
+    "https://cityofgrandville.com/city_services/clean_water_plant/"
+   ],
+   "tags": [
+    "regional"
+   ],
+   "tour": true,
+   "area": "west"
+  },
+  {
+   "id": "jenison-mill-segment",
+   "name": "Jenison Mill segment (Idema Explorers Trail)",
+   "status": "completed",
+   "lat": 42.915,
+   "lon": -85.795,
+   "precision": "area",
+   "radius": 350,
+   "lead": "Ottawa County Parks",
+   "place": "Georgetown Township, MI",
+   "goal": "2022 (dedicated 2023)",
+   "dy": 2023,
+   "blurb": "A one mile riverside segment that finished the trail link between Ottawa County's Idema Explorers Trail and Kent Trails.",
+   "facts": [
+    "Route: Along the Grand River from Cottonwood Dr in Georgetown Township east to the Grandville clean water plant at the Kent County line, with a bridge and boardwalk over Rush Creek",
+    "About 1 mi",
+    "Completes a 3 mi run from the Bend Area to the county line"
+   ],
+   "sources": [
+    "https://grandrivergreenway.org/2023/10/04/trail-updates-3/",
+    "https://content.govdelivery.com/accounts/MIOTTAWA/bulletins/3117ddf"
+   ],
+   "tags": [
+    "backbone",
+    "regional"
+   ],
+   "area": "west"
+  },
+  {
+   "id": "grand-river-park-georgetown",
+   "name": "Grand River Park (Ottawa County)",
+   "status": "anchor",
+   "lat": 42.9417,
+   "lon": -85.8592,
+   "precision": "area",
+   "radius": 500,
+   "lead": "Ottawa County Parks",
+   "place": "Georgetown Township, MI",
+   "blurb": "An Ottawa County park with a Grand River boat launch west of the county line, reached by the Idema Explorers Trail. It sits just outside Kent County.",
+   "facts": [
+    "Boat launch off 28th Ave",
+    "Bend Area to Grand River Park segment (3.52 mi) still in land acquisition"
+   ],
+   "sources": [
+    "https://boatrampfinder.com/?p=5647",
+    "https://grandrivergreenway.org/2026/07/17/trail-updates-5/"
+   ],
+   "tags": [
+    "amenities",
+    "water"
+   ],
+   "area": "west"
+  }
+ ],
+ "segments": [
+  {
+   "id": "pettis-north",
+   "name": "Pettis Trail North",
+   "osm": [
+    {
+     "name": "Pettis",
+     "bbox": [
+      43.004,
+      -85.54,
+      43.06,
+      -85.522
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      43.0573,
+      -85.5306
+     ],
+     [
+      43.0315,
+      -85.5302
+     ],
+     [
+      43.0064,
+      -85.5309
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2026,
+   "dy": 2027
+  },
+  {
+   "id": "pettis-south",
+   "name": "Pettis Trail South",
+   "osm": [
+    {
+     "name": "Pettis",
+     "bbox": [
+      42.955,
+      -85.492,
+      42.966,
+      -85.48
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      42.9636,
+      -85.4868
+     ],
+     [
+      42.9578,
+      -85.4855
+     ]
+    ]
+   ],
+   "status": "completed",
+   "sy": 2025,
+   "dy": 2025
+  },
+  {
+   "id": "cannonsburg-1",
+   "name": "Cannonsburg Trail, Chauncey to Pettis",
+   "osm": [
+    {
+     "name": "Cannonsburg",
+     "bbox": [
+      43.05,
+      -85.5505,
+      43.064,
+      -85.529
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      43.0564,
+      -85.5505
+     ],
+     [
+      43.0574,
+      -85.5304
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2026,
+   "dy": 2026
+  },
+  {
+   "id": "cannonsburg-2",
+   "name": "Cannonsburg Trail, Northland to Chauncey",
+   "osm": [
+    {
+     "name": "Cannonsburg",
+     "bbox": [
+      43.05,
+      -85.581,
+      43.068,
+      -85.5505
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      43.0562,
+      -85.5505
+     ],
+     [
+      43.0574,
+      -85.5507
+     ],
+     [
+      43.0575,
+      -85.5556
+     ],
+     [
+      43.06,
+      -85.5606
+     ],
+     [
+      43.0651,
+      -85.5679
+     ],
+     [
+      43.0656,
+      -85.5739
+     ],
+     [
+      43.0648,
+      -85.5798
+     ]
+    ]
+   ],
+   "status": "upcoming",
+   "sy": 2027
+  },
+  {
+   "id": "northland",
+   "name": "Northland Drive trail and tunnel",
+   "osm": [
+    {
+     "name": "Northland",
+     "bbox": [
+      43.064,
+      -85.583,
+      43.0725,
+      -85.575
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      43.0719,
+      -85.5779
+     ],
+     [
+      43.0694,
+      -85.5795
+     ],
+     [
+      43.0647,
+      -85.5795
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2026,
+   "dy": 2026
+  },
+  {
+   "id": "south-rogue",
+   "name": "South Rogue River Trail",
+   "osm": [
+    {
+     "name": "Rogue River Road",
+     "bbox": [
+      43.066,
+      -85.612,
+      43.078,
+      -85.579
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      43.0717,
+      -85.5976
+     ],
+     [
+      43.0734,
+      -85.5946
+     ],
+     [
+      43.0736,
+      -85.5928
+     ],
+     [
+      43.0734,
+      -85.591
+     ],
+     [
+      43.0719,
+      -85.5893
+     ],
+     [
+      43.0712,
+      -85.5881
+     ],
+     [
+      43.0713,
+      -85.5845
+     ],
+     [
+      43.0713,
+      -85.5817
+     ],
+     [
+      43.0714,
+      -85.5809
+     ]
+    ]
+   ],
+   "status": "completed",
+   "sy": 2025,
+   "dy": 2026
+  },
+  {
+   "id": "knapp",
+   "name": "Knapp Street bridge and path",
+   "osm": [
+    {
+     "name": "Knapp",
+     "bbox": [
+      43.0035,
+      -85.548,
+      43.0075,
+      -85.5395
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      43.0057,
+      -85.5471
+     ],
+     [
+      43.0058,
+      -85.5412
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2025,
+   "dy": 2027
+  },
+  {
+   "id": "leonard-ann",
+   "name": "Leonard to Ann trail",
+   "osm": [
+    {
+     "name": "Monroe Avenue",
+     "bbox": [
+      42.9845,
+      -85.6745,
+      42.9958,
+      -85.67
+     ]
+    }
+   ],
+   "paths": [
+    [
+     [
+      42.9848,
+      -85.6722
+     ],
+     [
+      42.9955,
+      -85.6722
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2026,
+   "dy": 2026
+  },
+  {
+   "id": "canal",
+   "name": "Canal Park riverfront",
+   "paths": [
+    [
+     [
+      42.984,
+      -85.6721
+     ],
+     [
+      42.9807,
+      -85.6728
+     ],
+     [
+      42.9767,
+      -85.6736
+     ]
+    ]
+   ],
+   "status": "completed",
+   "sy": 2025,
+   "dy": 2027
+  },
+  {
+   "id": "fulton-wealthy",
+   "name": "Fulton to Wealthy riverfront",
+   "paths": [
+    [
+     [
+      42.9631,
+      -85.6756
+     ],
+     [
+      42.9597,
+      -85.6784
+     ],
+     [
+      42.9562,
+      -85.6812
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2025,
+   "dy": 2026
+  },
+  {
+   "id": "oxford",
+   "name": "Oxford Trail",
+   "paths": [
+    [
+     [
+      42.9543,
+      -85.6866
+     ],
+     [
+      42.9531,
+      -85.6911
+     ],
+     [
+      42.9512,
+      -85.6995
+     ],
+     [
+      42.95,
+      -85.705
+     ],
+     [
+      42.9533,
+      -85.7042
+     ],
+     [
+      42.9562,
+      -85.7038
+     ]
+    ],
+    [
+     [
+      42.9543,
+      -85.6866
+     ],
+     [
+      42.9505,
+      -85.6852
+     ],
+     [
+      42.9476,
+      -85.685
+     ],
+     [
+      42.9441,
+      -85.6865
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2025,
+   "dy": 2026
+  },
+  {
+   "id": "lowell-connector",
+   "name": "Lowell riverside connector",
+   "paths": [
+    [
+     [
+      42.9238,
+      -85.369
+     ],
+     [
+      42.9262,
+      -85.356
+     ],
+     [
+      42.929,
+      -85.344
+     ]
+    ]
+   ],
+   "status": "construction",
+   "sy": 2026,
+   "dy": 2026
+  },
+  {
+   "id": "indian-mounds",
+   "name": "Indian Mounds Drive",
+   "osm": [
+    {
+     "name": "Indian Mounds",
+     "bbox": [
+      42.905,
+      -85.775,
+      42.955,
+      -85.68
+     ]
+    }
+   ],
+   "status": "future"
+  }
+ ]
+}

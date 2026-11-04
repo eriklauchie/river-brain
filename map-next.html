@@ -437,7 +437,7 @@
    Google Photorealistic 3D Tiles in CesiumJS. No WebGL, or ?flat: a flat drawing of the same data.
    Stops and project routes: data/greenway.json. Real trail and river lines: data/greenway-geo.json,
    written monthly from OpenStreetMap by scripts/greenway.mjs. */
-var V='20261104b';
+var V='20261104c';
 var MAPLIBRE='https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/';
 var CESIUM='https://cdn.jsdelivr.net/npm/cesium@1.121.0/Build/Cesium/';
 var CONFIG='https://river.carbonstories.us/projectmap/config.js';
@@ -597,7 +597,6 @@ function mapBase(){
         map.addLayer({id:'gw-seg-done',type:'line',source:'segs',filter:['==',['get','done'],1],layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':['get','color'],'line-width':['interpolate',['linear'],['zoom'],9,2.2,14,4.6,17,7.5],'line-opacity':['get','dim']}},before);
         map.addLayer({id:'gw-seg-open',type:'line',source:'segs',filter:['==',['get','done'],0],layout:{'line-cap':'butt','line-join':'round'},paint:{'line-color':['get','color'],'line-width':['interpolate',['linear'],['zoom'],9,2.2,14,4.6,17,7.5],'line-opacity':['get','dim'],'line-dasharray':[1.6,1.1]}},before);
         map.addLayer({id:'gw-ring',type:'line',source:'ring',paint:{'line-color':'#3d3d3d','line-width':1.6,'line-dasharray':[2,2],'line-opacity':0.6}});
-        map.on('click','gw-seg-done',segClick);map.on('click','gw-seg-open',segClick);
         ['gw-seg-done','gw-seg-open'].forEach(function(l){map.on('mouseenter',l,function(){map.getCanvas().style.cursor='pointer';});map.on('mouseleave',l,function(){map.getCanvas().style.cursor='';});});
         res(map);
       });
@@ -631,6 +630,7 @@ function mapBase(){
     };
     function segClick(e){var id=e.features&&e.features[0]&&e.features[0].properties.id;if(!id)return;
       var k=-1;STOPS.forEach(function(s,i){if(s.seg===id||s.id===id)k=i;});if(k>=0)openStop(k,false);}
+    map.on('click','gw-seg-done',segClick);map.on('click','gw-seg-open',segClick);
     return api;
   });
 }
